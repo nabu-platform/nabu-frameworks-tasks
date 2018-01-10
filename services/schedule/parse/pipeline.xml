@@ -1,0 +1,10 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="schedule" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.frameworks.tasks.types.schedule" name="schedule"/>
+    </structure>
+    <field maxOccurs="unbounded" minOccurs="0" name="parts" type="java.lang.String"/>
+    <structure definition="nabu.utils.types.ParameterDescription" maxOccurs="unbounded" minOccurs="0" name="parameters"/>
+</structure>

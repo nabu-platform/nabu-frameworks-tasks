@@ -1,0 +1,10 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="after" type="java.util.Date"/>
+        <structure definition="nabu.frameworks.tasks.types.schedule" name="schedule"/>
+    </structure>
+    <structure name="output">
+        <field name="nextRun" type="java.util.Date"/>
+    </structure>
+    <structure definition="nabu.utils.types.DateValues" minOccurs="0" name="values"/>
+</structure>
