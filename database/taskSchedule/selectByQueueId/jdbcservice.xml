@@ -1,4 +1,5 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</outputDefinition>
 	<sql>select
 	id,
 	created,
@@ -12,9 +13,10 @@
 	task_type,
 	task_uri,
 	enabled,
+	manual,
 	task_queue_id
 from task_schedules
 where task_queue_id = :queueId
-and enabled = true</sql>
-	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</outputDefinition>
+and enabled = true
+and manual = :manual</sql>
 </jdbcService>

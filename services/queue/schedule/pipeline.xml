@@ -4,6 +4,7 @@
         <field minOccurs="0" name="transactionId" type="java.lang.String"/>
         <field name="name" type="java.lang.String"/>
         <field minOccurs="0" name="after" type="java.util.Date"/>
+        <field minOccurs="0" name="manual" type="java.lang.Boolean"/>
     </structure>
     <structure name="output">
         <field name="earliest" type="java.util.Date"/>
@@ -15,4 +16,6 @@
     <field name="disabled" type="java.lang.Boolean"/>
     <field name="lock" type="java.lang.String"/>
     <structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" name="task" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <field maxOccurs="unbounded" name="taskStates" type="java.lang.String"/>
+    <field name="submitTask" type="java.lang.Boolean"/>
 </structure>
