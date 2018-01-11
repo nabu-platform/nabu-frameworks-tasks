@@ -64,3 +64,11 @@ create table task_properties (
 	key text not null,
 	value text not null
 );
+create table task_schedule_properties (
+	id uuid primary key,
+	created timestamp not null,
+	modified timestamp not null,
+	key text not null,
+	value text not null,
+	task_schedule_id uuid references task_schedules(id) not null
+);
