@@ -1,0 +1,18 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <field name="name" type="java.lang.String"/>
+        <field minOccurs="0" name="after" type="java.util.Date"/>
+    </structure>
+    <structure name="output">
+        <field name="earliest" type="java.util.Date"/>
+    </structure>
+    <structure definition="nabu.frameworks.tasks.types.queueOutput" minOccurs="0" name="queue"/>
+    <structure collectionName="TaskSchedules" definition="nabu.frameworks.tasks.types.model.tasks.TaskSchedule" maxOccurs="unbounded" minOccurs="0" name="schedules" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <field name="next" type="java.util.Date"/>
+    <field name="count" type="java.lang.Long"/>
+    <field name="disabled" type="java.lang.Boolean"/>
+    <field name="lock" type="java.lang.String"/>
+    <structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" name="task" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+</structure>

@@ -1,10 +1,15 @@
 <structure interface="be.nabu.eai.module.services.vm.api.ServiceExecutor.execute" name="pipeline">
     <structure name="input">
         <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
         <field name="queue" type="java.lang.String"/>
-        <field minOccurs="0" name="target" type="java.lang.String"/>
+        <field minOccurs="0" name="taskTarget" type="java.lang.String"/>
+        <field minOccurs="0" name="schedule" type="java.lang.String"/>
+        <structure definition="java.lang.Object" minOccurs="0" name="metadata"/>
     </structure>
     <structure name="output"/>
     <field minOccurs="0" name="uri" type="java.net.URI"/>
     <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueue" name="queue" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <field minOccurs="0" name="nextRun" type="java.util.Date"/>
+    <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="properties"/>
 </structure>

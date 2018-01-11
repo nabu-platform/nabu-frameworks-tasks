@@ -1,0 +1,12 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <structure collectionName="TaskSchedules" definition="nabu.frameworks.tasks.types.model.tasks.TaskSchedule" name="schedule" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+        <field name="after" type="java.util.Date"/>
+    </structure>
+    <structure name="output"/>
+    <field name="disabled" type="java.lang.Boolean"/>
+    <field name="next" type="java.util.Date"/>
+    <field name="count" type="java.lang.Long"/>
+</structure>

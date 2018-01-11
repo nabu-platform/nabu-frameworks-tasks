@@ -1,0 +1,59 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="0ce87069-ebcc-4a66-a2ff-26d9c22788a3">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="!input/targets" comment="Add $any, the server name and the server group" id="89df3f61fbc940cb8736369f000c18a7">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e1c527d0cdec41c2896854700159fdf2" mask="false" fixedValue="true" optional="false">
+			<from>$any</from>
+			<to>input/targets[0]</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="6e1acaea-efd6-484a-b82b-3795fbd3a50d" invocationOrder="0" temporaryMapping="true" resultName="result9499befa2b8f40779425dcb12af9abf8" serviceId="nabu.utils.Server.getServerName" y="63" x="4">
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="e6d3c4cc-5509-4bdc-bf48-7d046020bb0c" invocationOrder="0" temporaryMapping="true" resultName="result45010fae5e634d1c9afde25e20385020" serviceId="nabu.utils.Server.getServerGroup" y="162" x="59">
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="913d28b5-51ae-42c1-8e17-e3e93790c2d4" mask="false" fixedValue="false" optional="false">
+			<from>result9499befa2b8f40779425dcb12af9abf8/server</from>
+			<to>input/targets[1]</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c6cc4afc-15e1-4b9a-9569-6fb7c75a8774" mask="false" fixedValue="false" optional="false">
+			<from>result45010fae5e634d1c9afde25e20385020/group</from>
+			<to>input/targets[2]</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="671b2358-7a95-4fb6-ab96-623e2e81e41e">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="dbc4637c-a7ca-410f-8a1a-f5634590fe5d" invocationOrder="0" temporaryMapping="true" resultName="result453db094c47f4bf78789d8ff4bc3b756" serviceId="nabu.frameworks.tasks.database.task.selectTasksOfInterest" y="56" x="23">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="ad375748-bbfb-416b-a6da-fb04a7ad6ed2" mask="false" fixedValue="false" optional="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b7920957-7a4c-47ec-ab53-24655a6fbe4d" mask="false" fixedValue="false" optional="false">
+				<from>input/transactionId</from>
+				<to>transaction</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7f4ca257-0d6e-4146-ad66-20159bcfc2f8" mask="false" fixedValue="false" optional="false">
+				<from>input/limit</from>
+				<to>limit</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="ebbb00f5-f128-4f61-b315-558613ba16a5" mask="false" fixedValue="false" optional="false">
+				<from>input/queue</from>
+				<to>parameters/queue</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="37a6bf13-be82-473a-9f90-197b172a3d3b" mask="false" fixedValue="true" optional="false">
+				<from>WAITING</from>
+				<to>parameters/states[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b78b7c25-f1e2-44e3-85de-bb6b3ae53206" mask="false" fixedValue="false" optional="false">
+				<from>input/taskType</from>
+				<to>parameters/taskType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="edf2a157-eef3-4d0e-b116-7880b300db8c" mask="false" fixedValue="false" optional="false">
+				<from>input/targets</from>
+				<to>parameters/targets</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d2d96234-eeec-4458-b07d-0cf87ec5fc03" mask="true" fixedValue="false" optional="false">
+			<from>result453db094c47f4bf78789d8ff4bc3b756/results</from>
+			<to>output/tasks</to>
+		</steps>
+	</steps>
+</sequence>

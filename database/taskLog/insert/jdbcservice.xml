@@ -1,0 +1,22 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<inputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskLog</inputDefinition>
+	<sql>insert into task_logs (
+	id,
+	created,
+	modified,
+	severity,
+	actor,
+	title,
+	description,
+	task_id
+) values (
+	:id,
+	:created,
+	:modified,
+	:severity,
+	:actor,
+	:title,
+	:description,
+	:taskId
+)</sql>
+</jdbcService>

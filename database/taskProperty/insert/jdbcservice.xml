@@ -1,0 +1,18 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>insert into task_properties (
+	id,
+	created,
+	modified,
+	key,
+	value,
+	task_id
+) values (
+	:id,
+	:created,
+	:modified,
+	:key,
+	:value,
+	:taskId
+)</sql>
+	<inputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskProperty</inputDefinition>
+</jdbcService>

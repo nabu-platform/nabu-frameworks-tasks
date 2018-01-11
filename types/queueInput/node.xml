@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.types.structure.StructureManager" lastModified="2018-01-11T14:56:10.408+01:00" leaf="true" version="5"><environmentId>hyperion</environmentId><properties/><references>java.lang.Integer</references><references>java.util.UUID</references><references>java.lang.String</references></node>

@@ -9,7 +9,9 @@
 	dependency_id,
 	schedule,
 	target,
-	name
+	name,
+	executor,
+	published
 from task_queues
 where name = :name</sql>
 </jdbcService>

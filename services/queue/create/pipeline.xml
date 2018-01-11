@@ -1,0 +1,13 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <structure definition="nabu.frameworks.tasks.types.queueInput" name="queue"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.frameworks.tasks.types.queueOutput" name="queue"/>
+    </structure>
+    <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueue" name="queue" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueue" name="otherQueue" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <field name="manage" type="java.lang.Boolean"/>
+</structure>

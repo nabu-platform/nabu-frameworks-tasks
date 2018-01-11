@@ -1,0 +1,10 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="2ce73ddc-5591-41f8-afce-7921d373c4fa">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence" disabled="false" comment="Execute task (if we can start it)" id="c7b1afa4-22fb-4287-b322-ab0c2b2cf0a8">
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence" disabled="false" comment="Check queue, see if it is not paused" id="3266369e-ab28-4858-972f-3327fa6017cb">
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence" disabled="false" comment="Check for next task, if not unlock" id="a6a19f3d-af38-4f17-b50e-cb9a3fa79367">
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence" disabled="false" comment="If no task and the queue is done publishing, check if all tasks are done, set to finished and activate queues that depend on it" id="d8a2702f-c1a6-46d9-82a0-b58544b3014d">
+	</steps>
+</sequence>

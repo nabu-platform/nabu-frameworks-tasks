@@ -1,0 +1,18 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select
+	id,
+	created,
+	modified,
+	concurrency,
+	state,
+	dependency_id,
+	schedule,
+	target,
+	name,
+	executor,
+	published
+from task_queues
+where id = :id
+$footer</sql>
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskQueue</outputDefinition>
+</jdbcService>

@@ -1,0 +1,4 @@
+<structure name="parameter">
+    <field maxOccurs="unbounded" name="states" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="targets" type="java.lang.String"/>
+</structure>

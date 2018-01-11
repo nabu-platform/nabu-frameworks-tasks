@@ -1,0 +1,13 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <field name="queue" type="java.lang.String"/>
+        <field minOccurs="0" name="taskType" type="java.lang.String"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="targets" type="java.lang.String"/>
+        <field minOccurs="0" name="limit" type="java.lang.Integer"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.frameworks.tasks.types.taskOutput" maxOccurs="unbounded" minOccurs="0" name="tasks"/>
+    </structure>
+</structure>

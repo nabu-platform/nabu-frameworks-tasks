@@ -1,0 +1,24 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="12d482e4-212a-4414-b7f7-7ab3955fe592">
+	<steps xsi:type="be.nabu.libs.services.vm.step.For" disabled="false" id="ae9cd2d5-b9af-42cf-b30d-fc320f1bc17b">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence" disabled="false" id="ed362d55-a31b-44b2-bb7a-e3fc2b205dbb">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="ba6f0a66-84c3-412f-a776-98c7496ec582">
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="e07a80f0-e77a-4627-b840-4241c469c20f">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="a295280e-308a-4db2-b8ae-ccc310d29664" temporaryMapping="true" invocationOrder="0" serviceId="nabu.utils.Server.sleep" resultName="resultcf8a11edf6044bbabfc76adc2f07e713" y="57" x="27">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d1e5f12b-344e-4b07-a38e-36ec6e73532c" mask="false" fixedValue="true" optional="false">
+						<from>10</from>
+						<to>amount</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="de37e09e-aee6-4ad8-a2c2-b2b4b4204bae" mask="false" fixedValue="true" optional="false">
+						<from>SECONDS</from>
+						<to>unit</to>
+					</steps>
+					<asynchronous>false</asynchronous>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Catch" disabled="false" id="69bce9f6-daf0-4e26-bb76-6609e7b0315e">
+			</steps>
+		</steps>
+		<query>true</query>
+	</steps>
+</sequence>

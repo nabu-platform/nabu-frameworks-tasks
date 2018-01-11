@@ -1,0 +1,30 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select
+	t.id,
+	t.created,
+	t.modified,
+	t.creator,
+	t.target,
+	t.owner,
+	t.state,
+	t.dependency_id,
+	t.task_index,
+	t.task,
+	t.task_type,
+	t.task_uri,
+	t.scheduled,
+	t.stopped,
+	t.started,
+	t.task_queue_id,
+	t.task_schedule_id
+from tasks t join task_queues q on t.task_queue_id = q.id
+where q.name = :queue
+and t.state = any(:states)
+and (:owner is null or t.owner = :owner)
+-- must be scheduled in the past
+and (t.scheduled is null or t.scheduled &lt;= current_timestamp)
+and (:taskType is null or t.task_type = :taskType)
+and t.target = any(:targets)
+order by task_index asc</sql>
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.Task</outputDefinition>
+</jdbcService>

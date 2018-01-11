@@ -1,0 +1,10 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>update tasks set
+	modified = current_timestamp,
+	started = current_timestamp,
+	state = 'RUNNING',
+	owner = :owner
+where id = :id
+and state = 'WAITING'
+and owner is null</sql>
+</jdbcService>

@@ -1,0 +1,4 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="929baf40-9fb8-4849-b531-d744bb2c95fc">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="52503995-2f91-4309-bf1f-b75ba16013d1">
+	</steps>
+</sequence>

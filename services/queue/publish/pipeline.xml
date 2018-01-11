@@ -1,10 +1,17 @@
 <structure name="pipeline">
     <structure name="input">
         <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
         <field name="queue" type="java.lang.String"/>
         <structure definition="nabu.frameworks.tasks.types.taskInput" name="task"/>
+        <field minOccurs="0" name="wakeup" type="java.lang.Boolean"/>
+        <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="properties"/>
     </structure>
     <structure name="output"/>
     <structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" name="task" namespace="nabu.frameworks.tasks.types.model.tasks"/>
     <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueue" name="queue" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" maxOccurs="unbounded" minOccurs="0" name="properties" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" name="taskProperty" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" maxOccurs="unbounded" minOccurs="0" name="taskProperties" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <field name="manage" type="java.lang.Boolean"/>
 </structure>

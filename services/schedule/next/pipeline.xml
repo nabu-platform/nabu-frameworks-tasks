@@ -7,4 +7,5 @@
         <field name="nextRun" type="java.util.Date"/>
     </structure>
     <structure definition="nabu.utils.types.DateValues" minOccurs="0" name="values"/>
+    <field minOccurs="0" name="date" type="java.util.Date"/>
 </structure>
