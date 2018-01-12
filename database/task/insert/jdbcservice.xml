@@ -1,4 +1,5 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<inputDefinition>nabu.frameworks.tasks.types.model.tasks.Task</inputDefinition>
 	<sql>insert into tasks (
 	id,
 	created,
@@ -10,7 +11,7 @@
 	dependency_id,
 	task,
 	task_type,
-	task_uri,
+	task_input,
 	scheduled,
 	stopped,
 	started,
@@ -27,12 +28,11 @@
 	:dependencyId,
 	:task,
 	:taskType,
-	:taskUri,
+	:taskInput,
 	:scheduled,
 	:stopped,
 	:started,
 	:taskQueueId,
 	:taskScheduleId
 )</sql>
-	<inputDefinition>nabu.frameworks.tasks.types.model.tasks.Task</inputDefinition>
 </jdbcService>

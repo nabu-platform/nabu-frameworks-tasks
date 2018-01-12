@@ -2,13 +2,7 @@
     <structure name="input"/>
     <structure name="output"/>
     <structure definition="nabu.frameworks.tasks.providers.taskProvider" maxOccurs="unbounded" minOccurs="0" name="taskProviders"/>
+    <field name="server" type="java.lang.String"/>
+    <field name="amountOfTasks" type="java.lang.Integer"/>
     <structure definition="nabu.frameworks.tasks.types.queueOutput" maxOccurs="unbounded" minOccurs="0" name="queues"/>
-    <field name="canSubscribe" type="java.lang.Boolean"/>
-    <field name="concurrency" type="java.lang.Integer"/>
-    <field name="lockName" type="java.lang.String"/>
-    <structure definition="nabu.frameworks.tasks.types.taskOutput" maxOccurs="unbounded" minOccurs="0" name="tasks"/>
-    <field name="taskIndex" type="java.lang.Integer"/>
-    <field minOccurs="0" name="clusterLock" type="java.lang.String"/>
-    <field name="taskStarted" type="java.lang.Boolean"/>
-    <field minOccurs="0" name="amountOfTasks" type="java.lang.Integer"/>
 </structure>

@@ -1,4 +1,5 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskQueue</outputDefinition>
 	<sql>select
 	id,
 	created,
@@ -14,5 +15,4 @@
 from task_queues
 where id = :id
 $footer</sql>
-	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskQueue</outputDefinition>
 </jdbcService>

@@ -11,7 +11,7 @@
 	allow_overlap,
 	task,
 	task_type,
-	task_uri,
+	task_input,
 	enabled,
 	manual,
 	task_queue_id

@@ -23,7 +23,7 @@ create table task_schedules (
 	allow_overlap boolean not null,
 	task text not null,
 	task_type text not null,
-	task_uri text,
+	task_input text,
 	enabled boolean not null,
 	task_queue_id uuid references task_queues(id) not null,
 	manual boolean not null default false
@@ -40,7 +40,8 @@ create table tasks (
 	task_index integer not null default nextval('seq_tasks'),
 	task text not null,
 	task_type text not null,
-	task_uri text,
+	task_input text,
+	task_output text,
 	scheduled timestamp default now(), 
 	stopped timestamp,
 	started timestamp,
@@ -55,6 +56,7 @@ create table task_logs (
 	actor text not null,
 	title text not null,
 	description text,
+	code text,
 	task_id uuid references tasks(id) not null
 );
 create table task_properties (

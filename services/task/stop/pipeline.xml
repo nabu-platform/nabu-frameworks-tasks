@@ -3,9 +3,18 @@
         <field minOccurs="0" name="connectionId" type="java.lang.String"/>
         <field minOccurs="0" name="transactionId" type="java.lang.String"/>
         <field name="taskId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-        <field name="owner" type="java.lang.String"/>
+        <field minOccurs="0" name="owner" type="java.lang.String"/>
+        <field minOccurs="0" name="uri" type="java.net.URI"/>
         <field comment="An error message in case an error occurred" minOccurs="0" name="errorMessage" type="java.lang.String"/>
         <field minOccurs="0" name="errorDescription" type="java.lang.String"/>
+        <field minOccurs="0" name="code" type="java.lang.String"/>
     </structure>
-    <structure name="output"/>
+    <structure name="output">
+        <field name="stopped" type="java.lang.Boolean"/>
+    </structure>
+    <field name="state" type="java.lang.String"/>
+    <field name="rowCount" type="java.lang.Long"/>
+    <field name="severity" type="java.lang.String"/>
+    <field name="title" type="java.lang.String"/>
+    <field name="manage" type="java.lang.Boolean"/>
 </structure>

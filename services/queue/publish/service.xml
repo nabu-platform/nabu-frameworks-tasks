@@ -34,6 +34,7 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" label="!queue" id="561512b9-5f66-4084-a942-964f2b98fe5c" message="=&quot;Could not find queue: &quot; + input/queue" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" label="queue/published != null" id="967281c4-bd3e-498f-b225-4e793df4d3ab" message="=&quot;The queue is closed for publishing&quot;" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Map initial" id="37ca58e5-fa4c-4d95-9a05-593694bfb2da">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d70d0f90-ddc9-4e1d-b0ab-9c0a097b4e32" fixedValue="false" optional="false" mask="true">
 			<from>input/task</from>
@@ -71,7 +72,7 @@
 			<to>task/target</to>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="8d21d15b-4b5c-4295-a71c-b419ccc03e31" fixedValue="true" optional="false" mask="false">
-			<from>WAITING</from>
+			<from>CREATED</from>
 			<to>task/state</to>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d5ef60ec-13e9-4e8c-928d-2320748a4919" fixedValue="false" optional="false" mask="false">

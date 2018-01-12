@@ -1,0 +1,26 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <structure definition="nabu.frameworks.tasks.types.queueOutput" name="queue"/>
+        <field minOccurs="0" name="localLock" type="java.lang.String"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="targets" type="java.lang.String"/>
+        <field minOccurs="0" name="taskType" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.frameworks.tasks.types.taskOutput" maxOccurs="unbounded" minOccurs="0" name="tasks"/>
+    </structure>
+    <structure definition="nabu.frameworks.tasks.providers.taskProvider" maxOccurs="unbounded" minOccurs="0" name="taskProviders"/>
+    <field name="canSubscribe" type="java.lang.Boolean"/>
+    <field name="concurrency" type="java.lang.Integer"/>
+    <field name="lockName" type="java.lang.String"/>
+    <structure definition="nabu.frameworks.tasks.types.taskOutput" maxOccurs="unbounded" minOccurs="0" name="tasks"/>
+    <field name="taskIndex" type="java.lang.Integer"/>
+    <field minOccurs="0" name="clusterLock" type="java.lang.String"/>
+    <field minOccurs="0" name="amountOfTasks" type="java.lang.Integer"/>
+    <field name="manage" type="java.lang.Boolean"/>
+    <field name="currentLockName" type="java.lang.String"/>
+    <field name="releaseLocalLock" type="java.lang.Boolean"/>
+    <field name="amountOfRunningTasks" type="java.lang.Long"/>
+    <field name="waitingCount" type="java.lang.Long"/>
+</structure>

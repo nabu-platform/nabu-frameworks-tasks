@@ -2,9 +2,8 @@
 	<sql>update tasks set
 	modified = current_timestamp,
 	started = current_timestamp,
-	state = 'RUNNING',
-	owner = :owner
+	state = 'RUNNING'
 where id = :id
 and state = 'WAITING'
-and owner is null</sql>
+and owner = :owner</sql>
 </jdbcService>

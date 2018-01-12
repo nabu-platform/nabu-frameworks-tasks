@@ -49,7 +49,8 @@ This is specifically the database timestamp and _not_ the application server tim
 
 ## State
 
-WAITING: the task is published but requires someone to pick it up and start it
+CREATED: the task is published but requires someone to pick it up and start it
+WAITING: the task is picked up but awaiting processing
 RUNNING: the task is being processed
 SUCCEEDED: the task was run successfully
 ERROR: the task failed and a decision has to be made about it (retry or set to failed)

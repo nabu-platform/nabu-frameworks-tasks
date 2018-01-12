@@ -9,4 +9,5 @@
         <field name="started" type="java.lang.Boolean"/>
     </structure>
     <field name="rowCount" type="java.lang.Long"/>
+    <field name="manage" type="java.lang.Boolean"/>
 </structure>

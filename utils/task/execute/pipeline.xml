@@ -1,0 +1,22 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <field name="localLock" type="java.lang.String"/>
+        <field minOccurs="0" name="clusterLock" type="java.lang.String"/>
+        <structure definition="nabu.frameworks.tasks.types.queueOutput" name="queue"/>
+        <structure definition="nabu.frameworks.tasks.types.taskOutput" name="task"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="targets" type="java.lang.String"/>
+        <field minOccurs="0" name="taskType" type="java.lang.String"/>
+    </structure>
+    <structure name="output"/>
+    <field name="manage" type="java.lang.Boolean"/>
+    <field name="started" type="java.lang.Boolean"/>
+    <structure definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
+    <structure definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
+    <field minOccurs="0" name="uri" type="java.net.URI"/>
+    <field name="stopped" type="java.lang.Boolean"/>
+    <structure definition="nabu.utils.types.ExceptionSummary" minOccurs="0" name="summary"/>
+    <field minOccurs="0" name="amountOfRescheduledTasks" type="java.lang.Integer"/>
+    <field name="chain" type="java.lang.Boolean"/>
+</structure>

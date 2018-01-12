@@ -8,6 +8,7 @@
 	actor,
 	title,
 	description,
+	code,
 	task_id
 ) values (
 	:id,
@@ -17,6 +18,7 @@
 	:actor,
 	:title,
 	:description,
+	:code,
 	:taskId
 )</sql>
 </jdbcService>
