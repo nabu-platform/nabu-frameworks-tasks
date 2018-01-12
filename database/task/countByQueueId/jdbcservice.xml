@@ -1,0 +1,4 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select count(id) as total from tasks where task_queue_id = :queueId
+	and (:states is null or state = any(:states))</sql>
+</jdbcService>

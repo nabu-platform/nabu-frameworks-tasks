@@ -1,0 +1,4 @@
+<structure name="taskProvider">
+    <field name="connectionId" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="targets" type="java.lang.String"/>
+</structure>

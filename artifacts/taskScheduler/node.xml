@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.startup.StartupServiceManager" lastModified="2018-01-11T17:53:02.848+01:00" leaf="true" version="2"><environmentId>hyperion</environmentId><properties/><references>nabu.frameworks.tasks.startup.taskScheduler</references></node>

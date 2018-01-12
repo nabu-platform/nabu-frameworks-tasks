@@ -1,0 +1,9 @@
+<structure name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure definition="nabu.frameworks.tasks.providers.taskProvider" maxOccurs="unbounded" minOccurs="0" name="taskProviders"/>
+    <structure definition="nabu.frameworks.tasks.types.queueOutput" maxOccurs="unbounded" minOccurs="0" name="queues"/>
+    <field name="earliest" type="java.util.Date"/>
+    <field name="earliestForQueue" type="java.util.Date"/>
+    <field name="diff" type="java.lang.Double"/>
+</structure>

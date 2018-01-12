@@ -186,6 +186,15 @@
 			<asynchronous>false</asynchronous>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="manage" id="f2646543-b8ab-4322-a13d-23056cbbaeac">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="bc5c5f0e-6474-4588-aee6-14541c01669e" serviceId="nabu.utils.Transaction.commit" resultName="resultb5de570bbfa946bdbb7a796c779d9465" invocationOrder="0" temporaryMapping="true" y="66" x="66">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d35c56ac-7739-4bf8-88b8-bb87a86cca85" fixedValue="false" optional="false" mask="false">
+				<from>input/transactionId</from>
+				<to>transactionId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/wakeup" comment="Wake up the task checker if necessary" id="4727453b-e2bf-4d43-bae8-13868911b73b">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="bf0a9e59-8420-4e6c-860a-802661462a2a" serviceId="nabu.utils.Runtime.interrupt" resultName="resultdd19b37e723944bd9342669fdacfacba" invocationOrder="0" temporaryMapping="true" y="57" x="21">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d7b7226a-58ba-47e6-9e0f-9c75c7c4cc8e" fixedValue="true" optional="false" mask="false">
@@ -194,15 +203,6 @@
 			</steps>
 			<asynchronous>false</asynchronous>
 			<target>$all</target>
-		</steps>
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="manage" id="f2646543-b8ab-4322-a13d-23056cbbaeac">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="bc5c5f0e-6474-4588-aee6-14541c01669e" serviceId="nabu.utils.Transaction.commit" resultName="resultb5de570bbfa946bdbb7a796c779d9465" invocationOrder="0" temporaryMapping="true" y="66" x="66">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d35c56ac-7739-4bf8-88b8-bb87a86cca85" fixedValue="false" optional="false" mask="false">
-				<from>input/transactionId</from>
-				<to>transactionId</to>
-			</steps>
-			<asynchronous>false</asynchronous>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Catch" disabled="false" id="b2a455da-3c0f-4777-b462-2a2c29945b61" variable="exception">

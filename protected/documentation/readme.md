@@ -54,3 +54,4 @@ RUNNING: the task is being processed
 SUCCEEDED: the task was run successfully
 ERROR: the task failed and a decision has to be made about it (retry or set to failed)
 FAILED: a permanent failure
+CANCELLED: task is no longer necessary
