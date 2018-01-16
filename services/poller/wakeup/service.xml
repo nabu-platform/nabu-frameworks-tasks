@@ -1,0 +1,12 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="ff904bd4-cda1-4c33-8da3-602c0e461cbc">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="42995e3a-addb-4bf4-a681-eee52a534af7">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="c24c0658-526d-42c3-bb1e-bd0fb42523fe" serviceId="nabu.utils.Runtime.interrupt" resultName="result360e38841fd44457a34596daa121c0cf" invocationOrder="0" temporaryMapping="true" y="112" x="28">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="dea3c7e4-33b3-4ba4-8714-bc9482ebfb1f" mask="false" fixedValue="true" optional="false">
+				<from>nabu.frameworks.tasks.artifacts.taskChecker</from>
+				<to>artifactId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+			<target>$all</target>
+		</steps>
+	</steps>
+</sequence>

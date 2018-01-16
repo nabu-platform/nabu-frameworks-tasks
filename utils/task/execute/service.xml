@@ -213,15 +213,6 @@
 				<asynchronous>false</asynchronous>
 			</steps>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Kickstart local subscriber to check once more (if not already busy)" id="a5cfc7bb-cb1c-4dba-a983-2b1aa727d8cd">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="6390059f-a4a9-4543-a257-4d5a788ad447" serviceId="nabu.utils.Runtime.interrupt" resultName="resultc90e2d0f96484b41a6f93adfe26f5262" invocationOrder="0" temporaryMapping="true" y="125" x="40">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2f2a93d9-a7ae-4db6-828f-e6fa30cc4f4e" fixedValue="true" optional="false" mask="false">
-					<from>nabu.frameworks.tasks.artifacts.taskChecker</from>
-					<to>artifactId</to>
-				</steps>
-				<asynchronous>false</asynchronous>
-			</steps>
-		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Catch" disabled="false" id="722bfa3c09fd4e8696fcb8971b6eb6b6" variable="exception">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Summarize exception" id="21f06c17a22b424aacf16a2a90e90820">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="127b2b781a834270afb9dbd9ff6a4b9a" serviceId="nabu.utils.Runtime.summarizeException" resultName="result6c61a1da4ba9459d9352d7d20bb5f1cc" invocationOrder="0" temporaryMapping="true" y="205" x="77">
@@ -606,6 +597,15 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d35c56ac-7739-4bf8-88b8-bb87a86cca85" fixedValue="false" optional="false" mask="false">
 				<from>input/transactionId</from>
 				<to>transactionId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Kickstart local subscriber to check once more (if not already busy)" id="a5cfc7bb-cb1c-4dba-a983-2b1aa727d8cd">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="6390059f-a4a9-4543-a257-4d5a788ad447" serviceId="nabu.utils.Runtime.interrupt" resultName="resultc90e2d0f96484b41a6f93adfe26f5262" invocationOrder="0" temporaryMapping="true" y="125" x="40">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2f2a93d9-a7ae-4db6-828f-e6fa30cc4f4e" fixedValue="true" optional="false" mask="false">
+				<from>nabu.frameworks.tasks.artifacts.taskChecker</from>
+				<to>artifactId</to>
 			</steps>
 			<asynchronous>false</asynchronous>
 		</steps>

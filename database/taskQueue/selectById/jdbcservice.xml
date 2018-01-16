@@ -11,7 +11,8 @@
 	target,
 	name,
 	executor,
-	published
+	published,
+	allow_overlap
 from task_queues
 where id = :id
 $footer</sql>

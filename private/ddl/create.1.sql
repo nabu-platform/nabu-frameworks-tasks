@@ -10,7 +10,8 @@ create table task_queues (
 	schedule text,
 	target text not null,
 	name text not null unique,
-	executor text
+	executor text,
+	allow_overlap boolean
 );
 create table task_schedules (
 	id uuid primary key,
@@ -25,8 +26,14 @@ create table task_schedules (
 	task_type text not null,
 	task_input text,
 	enabled boolean not null,
-	task_queue_id uuid references task_queues(id) not null,
 	manual boolean not null default false
+);
+create table task_queue_schedules (
+	id uuid primary key,
+	created timestamp not null,
+	modified timestamp not null,
+	task_schedule_id uuid references task_schedules(id) not null,
+	task_queue_id uuid references task_queues(id) not null
 );
 create table tasks (
 	id uuid primary key,

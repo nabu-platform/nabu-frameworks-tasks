@@ -1,7 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<inputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskQueue</inputDefinition>
 	<sql>update task_queues set
-	created = :created,
 	modified = :modified,
 	concurrency = :concurrency,
 	state = :state,
@@ -10,6 +9,7 @@
 	target = :target,
 	name = :name,
 	executor = :executor,
-	published = :published
+	published = :published,
+	allow_overlap = :allowOverlap
  where id = :id</sql>
 </jdbcService>

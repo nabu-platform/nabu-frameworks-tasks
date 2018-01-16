@@ -1,22 +1,21 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</outputDefinition>
 	<sql>select
-	id,
-	created,
-	modified,
-	target,
-	schedule,
-	until,
-	amount,
-	allow_overlap,
-	task,
-	task_type,
-	task_input,
-	enabled,
-	manual,
-	task_queue_id
-from task_schedules
-where task_queue_id = :queueId
-and enabled = true
-and manual = :manual</sql>
+	s.id,
+	s.created,
+	s.modified,
+	s.target,
+	s.schedule,
+	s.until,
+	s.amount,
+	s.allow_overlap,
+	s.task,
+	s.task_type,
+	s.task_input,
+	s.enabled,
+	s.manual
+from task_schedules s join task_queue_schedules q on q.task_schedule_id = s.id
+where q.task_queue_id = :queueId
+and s.enabled = true
+and s.manual = :manual</sql>
 </jdbcService>

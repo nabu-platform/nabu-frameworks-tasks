@@ -5,4 +5,5 @@
     <field name="server" type="java.lang.String"/>
     <field name="amountOfTasks" type="java.lang.Integer"/>
     <structure definition="nabu.frameworks.tasks.types.queueOutput" maxOccurs="unbounded" minOccurs="0" name="queues"/>
+    <field name="interrupted" type="java.lang.Boolean"/>
 </structure>
