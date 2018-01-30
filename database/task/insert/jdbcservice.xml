@@ -15,6 +15,7 @@
 	scheduled,
 	stopped,
 	started,
+	task_output,
 	task_queue_id,
 	task_schedule_id
 ) values (
@@ -32,6 +33,7 @@
 	:scheduled,
 	:stopped,
 	:started,
+	:taskOutput,
 	:taskQueueId,
 	:taskScheduleId
 )</sql>

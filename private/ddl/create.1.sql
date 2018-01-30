@@ -11,6 +11,7 @@ create table task_queues (
 	target text not null,
 	name text not null unique,
 	executor text,
+	published timestamp,
 	allow_overlap boolean
 );
 create table task_schedules (
@@ -71,7 +72,8 @@ create table task_properties (
 	created timestamp not null,
 	modified timestamp not null,
 	key text not null,
-	value text not null
+	value text not null,
+	task_id uuid references tasks(id) not null
 );
 create table task_schedule_properties (
 	id uuid primary key,

@@ -2,7 +2,7 @@
     <structure name="input">
         <field minOccurs="0" name="connectionId" type="java.lang.String"/>
         <field minOccurs="0" name="transactionId" type="java.lang.String"/>
-        <field name="queue" type="java.lang.String"/>
+        <field minOccurs="0" name="queue" type="java.lang.String"/>
         <field minOccurs="0" name="taskTarget" type="java.lang.String"/>
         <field minOccurs="0" name="schedule" type="java.lang.String"/>
         <structure definition="java.lang.Object" minOccurs="0" name="metadata"/>
