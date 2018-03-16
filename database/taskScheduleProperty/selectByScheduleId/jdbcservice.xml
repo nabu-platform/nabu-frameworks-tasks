@@ -7,6 +7,6 @@
 	key,
 	value,
 	task_schedule_id
-from task_schedule_properties
+from ~task_schedule_properties
 where task_schedule_id = :taskScheduleId</sql>
 </jdbcService>

@@ -1,5 +1,5 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<sql>update tasks set state = 'CREATED', owner = null, started = null
+	<sql>update ~tasks set state = 'CREATED', owner = null, started = null
 where id = :taskId
 and (:owner is null or owner = :owner)
 and (state = 'RUNNING' or state = 'WAITING')</sql>

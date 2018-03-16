@@ -7,10 +7,14 @@
         <field minOccurs="0" name="schedule" type="java.lang.String"/>
         <structure definition="java.lang.Object" minOccurs="0" name="metadata"/>
         <field minOccurs="0" name="datastore" type="java.lang.Boolean"/>
+        <field comment="A precalculated moment to run the task" minOccurs="0" name="runAt" type="java.util.Date"/>
+        <field minOccurs="0" name="contextId" type="java.lang.String"/>
+        <field minOccurs="0" name="groupId" type="java.lang.String"/>
+        <field minOccurs="0" name="correlationId" type="java.lang.String"/>
+        <field name="test" type="java.lang.Integer"/>
     </structure>
     <structure name="output"/>
     <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueue" name="queue" namespace="nabu.frameworks.tasks.types.model.tasks"/>
-    <field minOccurs="0" name="nextRun" type="java.util.Date"/>
     <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="properties"/>
     <field name="taskInput" type="java.lang.String"/>
 </structure>

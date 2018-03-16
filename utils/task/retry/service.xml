@@ -1,0 +1,62 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="c3b62351-8102-480f-8fe0-d04f6d46886e">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/transactionId = null" id="da207ea8-963d-4c75-87d2-46daa7933eb7">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="14d20b61-6bfc-401d-a5da-4e51346d1513" serviceId="nabu.utils.Transaction.start" resultName="result5061d92f1c7f4588a566e41928d678d0" invocationOrder="0" temporaryMapping="true" y="52" x="29">
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="98d5049a-4669-499a-b3ba-82ed2833dfb6" fixedValue="false" mask="false" optional="false">
+			<from>result5061d92f1c7f4588a566e41928d678d0/transactionId</from>
+			<to>input/transactionId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a9beadea-0379-4ed5-87aa-47ffc7169283" fixedValue="true" mask="false" optional="false">
+			<from>true</from>
+			<to>manage</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Roll back the task" id="815ce057-51fd-4fa8-bffa-8492c502cff8">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="d7cecae9-a966-494f-82d6-c8d412f6926b" serviceId="nabu.frameworks.tasks.database.task.rollbackTransientErrorTask" resultName="result03461bdb57294a91acf26962fa642eb2" invocationOrder="0" temporaryMapping="true" y="109" x="285">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b81f5f9d-b2cb-46cb-b0b9-924e7ad2efd7" fixedValue="false" mask="false" optional="false">
+				<from>input/taskId</from>
+				<to>parameters[0]/taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="9aaa4fb7-c616-4660-b9cb-1b7b4628bfd4" fixedValue="false" mask="false" optional="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="54525873-da5e-4f7a-af3c-91729f2eada9" fixedValue="false" mask="false" optional="false">
+				<from>input/transactionId</from>
+				<to>transaction</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5421a36f-78b7-4cdf-adf8-88cd8e0ef594" fixedValue="false" mask="false" optional="false">
+			<from>result03461bdb57294a91acf26962fa642eb2/rowCount</from>
+			<to>rowCount</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="manage" id="f2646543-b8ab-4322-a13d-23056cbbaeac">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="bc5c5f0e-6474-4588-aee6-14541c01669e" serviceId="nabu.utils.Transaction.commit" resultName="resultb5de570bbfa946bdbb7a796c779d9465" invocationOrder="0" temporaryMapping="true" y="66" x="66">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d35c56ac-7739-4bf8-88b8-bb87a86cca85" fixedValue="false" mask="false" optional="false">
+				<from>input/transactionId</from>
+				<to>transactionId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="rowCount &gt; 0" comment="If we actually rolled it back, wake up the listeners" id="aceb024a-af56-4d28-b1af-f631f5bc4ccd">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="ad38e137-f4b4-4766-a3c8-0dd025ffcc1d" serviceId="nabu.frameworks.tasks.services.poller.wakeup" resultName="result751845b1684d4a98a2b705eb754c128f" invocationOrder="0" temporaryMapping="true" y="90" x="33">
+			<asynchronous>false</asynchronous>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Catch" disabled="false" id="b2a455da-3c0f-4777-b462-2a2c29945b61" variable="exception">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="manage" id="2b0819a8277e40df8f0faaefbb689e69">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="19411fd4-b5a0-490f-9ce4-a3abfee1158c" serviceId="nabu.utils.Transaction.rollback" resultName="result929732ee1d7445c4ac10a67717aa7017" invocationOrder="0" temporaryMapping="true" y="23" x="22">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="59dbb8cb-9569-40a3-85a4-462181040d52" fixedValue="false" mask="false" optional="false">
+					<from>input/transactionId</from>
+					<to>transactionId</to>
+				</steps>
+				<asynchronous>false</asynchronous>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" id="3c30a983-c6ce-4d88-9a50-9e79c602483e" message="=exception" xsi:nil="true"/>
+	</steps>
+</sequence>

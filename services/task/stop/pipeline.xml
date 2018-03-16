@@ -4,10 +4,12 @@
         <field minOccurs="0" name="transactionId" type="java.lang.String"/>
         <field name="taskId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
         <field minOccurs="0" name="owner" type="java.lang.String"/>
-        <field minOccurs="0" name="uri" type="java.net.URI"/>
+        <field minOccurs="0" name="taskOutput" type="java.lang.String"/>
         <field comment="An error message in case an error occurred" minOccurs="0" name="errorMessage" type="java.lang.String"/>
         <field minOccurs="0" name="errorDescription" type="java.lang.String"/>
         <field minOccurs="0" name="code" type="java.lang.String"/>
+        <field minOccurs="0" name="transient" type="java.lang.Boolean"/>
+        <field minOccurs="0" name="fail" type="java.lang.Boolean"/>
     </structure>
     <structure name="output">
         <field name="stopped" type="java.lang.Boolean"/>

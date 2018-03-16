@@ -13,7 +13,7 @@
 	executor,
 	published,
 	allow_overlap
-from task_queues
+from ~task_queues
 where state = any(:states)
 	and target = any(:targets)
 </sql>

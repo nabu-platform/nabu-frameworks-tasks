@@ -1,0 +1,20 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="taskId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field name="connectionId" type="java.lang.String"/>
+        <field name="stacktrace" type="java.lang.String"/>
+        <field minOccurs="0" name="code" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <field comment="Whether or not it should be retried" name="transient" type="java.lang.Boolean"/>
+        <field comment="Whether or not it should be put immediately to failed (bypassing the error state)" name="fail" type="java.lang.Boolean"/>
+        <field minOccurs="0" name="code" type="java.lang.String"/>
+        <field minOccurs="0" name="message" type="java.lang.String"/>
+        <field minOccurs="0" name="retryInterval" type="java.lang.Integer"/>
+    </structure>
+    <structure definition="nabu.frameworks.tasks.providers.taskProvider" maxOccurs="unbounded" minOccurs="0" name="configurations"/>
+    <structure definition="nabu.frameworks.tasks.providers.taskProvider" name="configuration"/>
+    <field name="count" type="java.lang.Long"/>
+    <field name="amountOfRetries" type="java.lang.Integer"/>
+    <structure definition="nabu.frameworks.tasks.types.taskProviderError" name="error"/>
+</structure>

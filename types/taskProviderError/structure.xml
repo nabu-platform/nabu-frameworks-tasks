@@ -1,0 +1,7 @@
+<structure name="error">
+    <field comment="A structural code to log for this type of exception" minOccurs="0" name="code" type="java.lang.String"/>
+    <field comment="A message to describe this error" minOccurs="0" name="message" type="java.lang.String"/>
+    <field comment="Regexes used to identify the exceptions based on the stacktrace" maxOccurs="unbounded" minOccurs="0" name="regexes" type="java.lang.String"/>
+    <field comment="Amount of ms before we try again. The amount of intervals will determine the amount of times we try." maxOccurs="unbounded" minOccurs="0" name="retryIntervals" type="java.lang.Integer"/>
+    <field comment="You may want to set some errors to failed immediately, use this to do that" minOccurs="0" name="fail" type="java.lang.Boolean"/>
+</structure>

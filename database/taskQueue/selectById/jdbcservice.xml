@@ -13,7 +13,7 @@
 	executor,
 	published,
 	allow_overlap
-from task_queues
+from ~task_queues
 where id = :id
 $footer</sql>
 </jdbcService>

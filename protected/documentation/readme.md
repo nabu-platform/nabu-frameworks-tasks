@@ -28,6 +28,11 @@ It is his duty to first reset the running task (there should only be one) knowin
 
 (Note that there is an edge case for split brain)
 
+**Important**: if you publish scheduled tasks to a "serial" queue, they will only be considered for the queue once the schedule triggers, that means they are effectively not part of the serialness.
+In other words, a task scheduled in the far future will not block other earlier tasks on a concurrency=0 queue.
+
+If you need serial processing in the future, you could submit all the tasks with the same or incremental timestamps, once the time-constraint is fulfilled, the tasks become part of the serial queue again.
+
 ### Parallel
 
 If concurrency is larger, we take on local locks per task that is running, for example if we can run 2 tasks at once, we lock "queue-id-1" and "queue-id-2" locally.
@@ -54,5 +59,6 @@ WAITING: the task is picked up but awaiting processing
 RUNNING: the task is being processed
 SUCCEEDED: the task was run successfully
 ERROR: the task failed and a decision has to be made about it (retry or set to failed)
+TRANSIENT_ERROR: a transient error which will automatically be retried by the system up to a max time
 FAILED: a permanent failure
 CANCELLED: task is no longer necessary

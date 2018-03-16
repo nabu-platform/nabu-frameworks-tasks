@@ -7,6 +7,6 @@
 	key,
 	value,
 	task_id
-from task_properties
+from ~task_properties
 where task_id = :taskId</sql>
 </jdbcService>

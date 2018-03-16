@@ -6,4 +6,7 @@
     <field name="amountOfTasks" type="java.lang.Integer"/>
     <structure definition="nabu.frameworks.tasks.types.queueOutput" maxOccurs="unbounded" minOccurs="0" name="queues"/>
     <field name="interrupted" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="scheduled" timezone="UTC" type="java.util.Date"/>
+    <field minOccurs="0" name="nearestSchedule" timezone="UTC" type="java.util.Date"/>
+    <field name="amountOfMs" type="java.lang.Double"/>
 </structure>

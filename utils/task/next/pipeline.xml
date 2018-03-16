@@ -1,0 +1,12 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <field maxOccurs="unbounded" name="states" type="java.lang.String"/>
+        <field minOccurs="0" name="taskType" type="java.lang.String"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="targets" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <field minOccurs="0" name="scheduled" timezone="UTC" type="java.util.Date"/>
+    </structure>
+</structure>

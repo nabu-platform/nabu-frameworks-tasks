@@ -1,6 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<inputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskQueue</inputDefinition>
-	<sql>insert into task_queues (
+	<sql>insert into ~task_queues (
 	id,
 	created,
 	modified,

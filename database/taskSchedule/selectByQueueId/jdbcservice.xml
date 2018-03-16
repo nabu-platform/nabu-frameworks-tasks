@@ -14,7 +14,7 @@
 	s.task_input,
 	s.enabled,
 	s.manual
-from task_schedules s join task_queue_schedules q on q.task_schedule_id = s.id
+from ~task_schedules s join ~task_queue_schedules q on q.task_schedule_id = s.id
 where q.task_queue_id = :queueId
 and s.enabled = true
 and s.manual = :manual</sql>

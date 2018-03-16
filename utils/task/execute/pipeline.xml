@@ -14,9 +14,18 @@
     <field name="started" type="java.lang.Boolean"/>
     <structure definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
     <structure definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
-    <field minOccurs="0" name="uri" type="java.net.URI"/>
+    <field minOccurs="0" name="taskOutput" type="java.lang.String"/>
     <field name="stopped" type="java.lang.Boolean"/>
     <structure definition="nabu.utils.types.ExceptionSummary" minOccurs="0" name="summary"/>
     <field minOccurs="0" name="amountOfRescheduledTasks" type="java.lang.Integer"/>
     <field name="chain" type="java.lang.Boolean"/>
+    <field name="useXml" type="java.lang.Boolean"/>
+    <structure name="classification">
+        <field name="transient" type="java.lang.Boolean"/>
+        <field name="code" type="java.lang.String"/>
+        <field name="fail" type="java.lang.Boolean"/>
+        <field minOccurs="0" name="message" type="java.lang.String"/>
+        <field minOccurs="0" name="retryInterval" type="java.lang.Integer"/>
+        <field minOccurs="0" name="runAt" type="java.util.Date"/>
+    </structure>
 </structure>

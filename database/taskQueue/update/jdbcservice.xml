@@ -1,6 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<inputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskQueue</inputDefinition>
-	<sql>update task_queues set
+	<sql>update ~task_queues set
 	modified = :modified,
 	concurrency = :concurrency,
 	state = :state,

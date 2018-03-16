@@ -45,7 +45,7 @@ create table tasks (
 	owner text,
 	state text not null,
 	dependency_id uuid references tasks(id),
-	task_index integer not null default nextval('seq_tasks'),
+	task_index bigint not null default nextval('seq_tasks'),
 	task text not null,
 	task_type text not null,
 	task_input text,
@@ -53,6 +53,10 @@ create table tasks (
 	scheduled timestamp default now(), 
 	stopped timestamp,
 	started timestamp,
+	parent_id uuid references tasks(id),
+	correlation_id text,
+	group_id text,
+	context_id text,
 	task_queue_id uuid references task_queues(id) not null,
 	task_schedule_id uuid references task_schedules(id)
 );

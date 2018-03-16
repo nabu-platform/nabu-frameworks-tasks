@@ -1,6 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<inputDefinition>nabu.frameworks.tasks.types.model.tasks.Task</inputDefinition>
-	<sql>insert into tasks (
+	<sql>insert into ~tasks (
 	id,
 	created,
 	modified,
@@ -16,6 +16,10 @@
 	stopped,
 	started,
 	task_output,
+	parent_id,
+	correlation_id,
+	group_id,
+	context_id,
 	task_queue_id,
 	task_schedule_id
 ) values (
@@ -34,6 +38,10 @@
 	:stopped,
 	:started,
 	:taskOutput,
+	:parentId,
+	:correlationId,
+	:groupId,
+	:contextId,
 	:taskQueueId,
 	:taskScheduleId
 )</sql>

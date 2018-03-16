@@ -11,4 +11,5 @@
         <structure definition="nabu.frameworks.tasks.types.taskOutput" maxOccurs="unbounded" minOccurs="0" name="tasks"/>
     </structure>
     <structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" name="task" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <field minOccurs="0" name="reference" type="java.util.Date"/>
 </structure>
