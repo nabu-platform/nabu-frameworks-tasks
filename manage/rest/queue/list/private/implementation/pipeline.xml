@@ -1,0 +1,6 @@
+<structure interface="$self:api" name="pipeline">
+    <structure name="input" validate="true"/>
+    <structure name="output"/>
+    <structure definition="nabu.frameworks.tasks.database.task.countByQueueIdAndState.results" maxOccurs="unbounded" minOccurs="0" name="states"/>
+    <structure definition="nabu.frameworks.tasks.database.task.countByQueueIdAndState.results" maxOccurs="unbounded" minOccurs="0" name="queueStates"/>
+</structure>

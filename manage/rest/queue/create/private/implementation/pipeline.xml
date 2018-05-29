@@ -1,0 +1,5 @@
+<structure interface="$self:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueue" name="queue" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+</structure>

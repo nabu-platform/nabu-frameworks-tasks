@@ -5,4 +5,5 @@
     <field minOccurs="0" name="target" type="java.lang.String"/>
     <field name="name" type="java.lang.String" unique="true"/>
     <field minOccurs="0" name="executor" type="java.lang.String"/>
+    <field minOccurs="0" name="anonymous" type="java.lang.Boolean"/>
 </structure>

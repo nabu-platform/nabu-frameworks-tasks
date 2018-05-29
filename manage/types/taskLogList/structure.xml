@@ -1,0 +1,3 @@
+<structure name="logList">
+    <structure collectionName="TaskLogs" definition="nabu.frameworks.tasks.types.model.tasks.TaskLog" maxOccurs="unbounded" minOccurs="0" name="logs" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+</structure>

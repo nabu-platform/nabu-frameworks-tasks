@@ -1,0 +1,6 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</outputDefinition>
+	<sql>select *
+from ~task_schedules ts
+where ts.id = :id</sql>
+</jdbcService>

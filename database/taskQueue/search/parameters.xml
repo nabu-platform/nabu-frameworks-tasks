@@ -1,0 +1,5 @@
+<structure name="parameter">
+    <field minOccurs="0" name="q" type="java.lang.String"/>
+    <field minOccurs="0" name="anonymous" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="state" type="java.lang.String"/>
+</structure>

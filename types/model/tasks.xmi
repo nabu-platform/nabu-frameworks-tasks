@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8' ?>
-<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Fri Mar 16 12:41:26 CET 2018'>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Tue May 29 16:38:01 CEST 2018'>
   <XMI.header>    <XMI.documentation>
       <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
       <XMI.exporterVersion>0.34(6) revised on $Date: 2010-01-11 22:20:14 +0100 (Mon, 11 Jan 2010) $ </XMI.exporterVersion>
@@ -569,6 +569,30 @@
                 <UML:DataType href = 'http://argouml.org/user-profiles/baseTypes.xmi#be.nabu.uml.xmi:base:types:0000000000000001'/>
               </UML:StructuralFeature.type>
             </UML:Attribute>
+            <UML:Attribute xmi.id = '127-0-1-1-5343c335:163ac4329e0:-8000:0000000000000FF7'
+              name = 'serviceContext' visibility = 'public' isSpecification = 'false'
+              ownerScope = 'instance' changeability = 'changeable' targetScope = 'instance'>
+              <UML:StructuralFeature.multiplicity>
+                <UML:Multiplicity xmi.id = '127-0-1-1-5343c335:163ac4329e0:-8000:0000000000000FFC'>
+                  <UML:Multiplicity.range>
+                    <UML:MultiplicityRange xmi.id = '127-0-1-1-5343c335:163ac4329e0:-8000:0000000000000FFB'
+                      lower = '0' upper = '1'/>
+                  </UML:Multiplicity.range>
+                </UML:Multiplicity>
+              </UML:StructuralFeature.multiplicity>
+              <UML:ModelElement.taggedValue>
+                <UML:TaggedValue xmi.id = '127-0-1-1-5343c335:163ac4329e0:-8000:0000000000000FFA'
+                  isSpecification = 'false'>
+                  <UML:TaggedValue.dataValue>The service context that should be set for the execution of this task</UML:TaggedValue.dataValue>
+                  <UML:TaggedValue.type>
+                    <UML:TagDefinition xmi.idref = '127-0-1-1-a7d867c:160bb36b83c:-8000:0000000000000CBF'/>
+                  </UML:TaggedValue.type>
+                </UML:TaggedValue>
+              </UML:ModelElement.taggedValue>
+              <UML:StructuralFeature.type>
+                <UML:DataType href = 'http://argouml.org/user-profiles/baseTypes.xmi#be.nabu.uml.xmi:base:types:0000000000000001'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
           </UML:Classifier.feature>
         </UML:Class>
         <UML:Class xmi.id = '127-0-1-1-a7d867c:160bb36b83c:-8000:0000000000000D6B'
@@ -1053,6 +1077,30 @@ Manual schedules require someone external to calculate the next entries, if they
                 <UML:TaggedValue xmi.id = '127-0-1-1--31a3790c:160e1176186:-8000:0000000000000F97'
                   isSpecification = 'false'>
                   <UML:TaggedValue.dataValue>If you submit something for execution and that exact same something is still awaiting execution, we can prevent it from being submitted. This for example can allow you to schedule a mail every time something changes but only have 1 mail sent at 17 in the evening.</UML:TaggedValue.dataValue>
+                  <UML:TaggedValue.type>
+                    <UML:TagDefinition xmi.idref = '127-0-1-1-a7d867c:160bb36b83c:-8000:0000000000000CBF'/>
+                  </UML:TaggedValue.type>
+                </UML:TaggedValue>
+              </UML:ModelElement.taggedValue>
+              <UML:StructuralFeature.type>
+                <UML:DataType href = 'http://argouml.org/user-profiles/baseTypes.xmi#be.nabu.uml.xmi:base:types:0000000000000004'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = '127-0-1-1--6b0c29b4:16371c6dd65:-8000:0000000000000FFE'
+              name = 'anonymous' visibility = 'public' isSpecification = 'false' ownerScope = 'instance'
+              changeability = 'changeable' targetScope = 'instance'>
+              <UML:StructuralFeature.multiplicity>
+                <UML:Multiplicity xmi.id = '127-0-1-1--6b0c29b4:16371c6dd65:-8000:0000000000000FFF'>
+                  <UML:Multiplicity.range>
+                    <UML:MultiplicityRange xmi.id = '127-0-1-1--6b0c29b4:16371c6dd65:-8000:0000000000001000'
+                      lower = '1' upper = '1'/>
+                  </UML:Multiplicity.range>
+                </UML:Multiplicity>
+              </UML:StructuralFeature.multiplicity>
+              <UML:ModelElement.taggedValue>
+                <UML:TaggedValue xmi.id = '127-0-1-1--6b0c29b4:16371c6dd65:-8000:0000000000001001'
+                  isSpecification = 'false'>
+                  <UML:TaggedValue.dataValue>Anonymous queues are not named by users but instead have generated names. They generally serve a different purpose (batch processing)</UML:TaggedValue.dataValue>
                   <UML:TaggedValue.type>
                     <UML:TagDefinition xmi.idref = '127-0-1-1-a7d867c:160bb36b83c:-8000:0000000000000CBF'/>
                   </UML:TaggedValue.type>

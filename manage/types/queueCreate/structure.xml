@@ -1,0 +1,7 @@
+<structure name="queue">
+    <field name="name" type="java.lang.String" unique="true"/>
+    <field name="concurrency" type="java.lang.Integer"/>
+    <field name="target" type="java.lang.String"/>
+    <field minOccurs="0" name="schedule" type="java.lang.String"/>
+    <field minOccurs="0" name="executor" type="java.lang.String"/>
+</structure>

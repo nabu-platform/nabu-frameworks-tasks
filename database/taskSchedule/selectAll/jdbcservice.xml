@@ -1,0 +1,7 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</outputDefinition>
+	<sql>select *
+from ~task_schedules ts
+where (:enabled is null or ts.enabled = :enabled)
+	and (:manual is null or ts.manual = :manual)</sql>
+</jdbcService>

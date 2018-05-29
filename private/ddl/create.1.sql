@@ -12,7 +12,8 @@ create table task_queues (
 	name text not null unique,
 	executor text,
 	published timestamp,
-	allow_overlap boolean
+	allow_overlap boolean,
+	anonymous boolean not null default false
 );
 create table task_schedules (
 	id uuid primary key,
@@ -57,6 +58,7 @@ create table tasks (
 	correlation_id text,
 	group_id text,
 	context_id text,
+	service_context text,
 	task_queue_id uuid references task_queues(id) not null,
 	task_schedule_id uuid references task_schedules(id)
 );

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <path>/tasks/v1/api</path>
+    <webFragments>nabu.frameworks.tasks.manage.rest.queue.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.queue.pause</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.queue.resume</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.log.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.fail</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.retry</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.queue.create</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.queue.get</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.queue.countAll</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.queue.countByQueue</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.queue.schedule.add</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.queue.schedule.remove</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.create</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.delete</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.disable</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.enable</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.update</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.log.create</webFragments>
+</webModule>

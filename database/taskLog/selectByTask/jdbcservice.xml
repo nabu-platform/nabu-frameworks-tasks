@@ -1,0 +1,6 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select *
+from ~task_logs tl
+where tl.task_id = :taskId</sql>
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskLog</outputDefinition>
+</jdbcService>

@@ -1,28 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.Task</outputDefinition>
-	<sql>select
-	t.id,
-	t.created,
-	t.modified,
-	t.creator,
-	t.target,
-	t.owner,
-	t.state,
-	t.dependency_id,
-	t.task_index,
-	t.task,
-	t.task_type,
-	t.task_input,
-	t.scheduled,
-	t.stopped,
-	t.started,
-	t.task_output,
-	t.parent_id,
-	t.correlation_id,
-	t.group_id,
-	t.context_id,
-	t.task_queue_id,
-	t.task_schedule_id
+	<sql>select *
 from ~tasks t join ~task_queues q on t.task_queue_id = q.id
 where q.name = :queue
 -- can only take from an active queue

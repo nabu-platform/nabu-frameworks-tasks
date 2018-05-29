@@ -11,7 +11,6 @@
         <field minOccurs="0" name="contextId" type="java.lang.String"/>
         <field minOccurs="0" name="groupId" type="java.lang.String"/>
         <field minOccurs="0" name="correlationId" type="java.lang.String"/>
-        <field name="test" type="java.lang.Integer"/>
     </structure>
     <structure name="output"/>
     <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueue" name="queue" namespace="nabu.frameworks.tasks.types.model.tasks"/>

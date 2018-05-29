@@ -1,0 +1,4 @@
+<structure name="result">
+    <field name="total" type="java.lang.Long"/>
+    <field name="state" type="java.lang.String"/>
+</structure>

@@ -1,0 +1,3 @@
+<structure name="stateList">
+    <structure definition="nabu.frameworks.tasks.database.task.countByState.results" maxOccurs="unbounded" minOccurs="0" name="states"/>
+</structure>

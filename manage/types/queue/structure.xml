@@ -1,0 +1,10 @@
+<structure name="queue" superType="nabu.frameworks.tasks.types.model.tasks.TaskQueue">
+    <field name="createdAmount" type="java.lang.Long"/>
+    <field name="waitingAmount" type="java.lang.Long"/>
+    <field name="runningAmount" type="java.lang.Long"/>
+    <field name="errorAmount" type="java.lang.Long"/>
+    <field name="transientErrorAmount" type="java.lang.Long"/>
+    <field name="succeededAmount" type="java.lang.Long"/>
+    <field name="failedAmount" type="java.lang.Long"/>
+    <field name="cancelledAmount" type="java.lang.Long"/>
+</structure>

@@ -1,0 +1,4 @@
+<structure name="taskList">
+    <structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" maxOccurs="unbounded" minOccurs="0" name="tasks" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure definition="nabu.services.jdbc.types.Page" minOccurs="0" name="page"/>
+</structure>

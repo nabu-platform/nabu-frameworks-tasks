@@ -1,18 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskQueue</outputDefinition>
-	<sql>select
-	id,
-	created,
-	modified,
-	concurrency,
-	state,
-	dependency_id,
-	schedule,
-	target,
-	name,
-	executor,
-	published,
-	allow_overlap
+	<sql>select *
 from ~task_queues
 where id = :id
 $footer</sql>

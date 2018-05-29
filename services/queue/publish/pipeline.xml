@@ -15,4 +15,5 @@
     <structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" maxOccurs="unbounded" minOccurs="0" name="taskProperties" namespace="nabu.frameworks.tasks.types.model.tasks"/>
     <field name="manage" type="java.lang.Boolean"/>
     <field name="closeQueue" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="anonymous" type="java.lang.Boolean"/>
 </structure>

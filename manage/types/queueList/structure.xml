@@ -1,0 +1,4 @@
+<structure name="queueList">
+    <structure definition="nabu.frameworks.tasks.manage.types.queue" maxOccurs="unbounded" minOccurs="0" name="queues"/>
+    <structure definition="nabu.services.jdbc.types.Page" minOccurs="0" name="page"/>
+</structure>
