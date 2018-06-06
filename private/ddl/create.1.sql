@@ -59,6 +59,8 @@ create table tasks (
 	group_id text,
 	context_id text,
 	service_context text,
+	alias text,
+	realm text,
 	task_queue_id uuid references task_queues(id) not null,
 	task_schedule_id uuid references task_schedules(id)
 );

@@ -376,18 +376,18 @@
 								</steps>
 							</steps>
 							<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="71bb5f78-783e-49ee-a2ec-5887260ecdb3">
-								<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="d55c12ff-d2e9-49c7-b2f8-7dcf771165c7" serviceId="nabu.services.jdbc.Services.insert" resultName="resultc210d00026d04e92abe47d049ee37042" invocationOrder="0" temporaryMapping="true" y="204" x="72">
-									<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="71521c46-5c41-489b-82a7-8c22deaa13db" fixedValue="false" optional="false" mask="false">
-										<from>taskTransactionId</from>
-										<to>transaction</to>
-									</steps>
-									<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a519f856-38b3-4dfe-b04e-90188d672bf8" fixedValue="false" optional="false" mask="false">
+								<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="d331d16f-6828-469e-8179-4bcb6697595e" serviceId="nabu.frameworks.tasks.database.task.insert" resultName="result03c7d45fe6394160972f7d4558e4607a" invocationOrder="0" temporaryMapping="true" y="55" x="77">
+									<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b2153376-ff88-45d1-939d-f1b87542f2d4" fixedValue="false" optional="false" mask="false">
 										<from>input/connectionId</from>
 										<to>connection</to>
 									</steps>
-									<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0ad4d220-2616-4a5a-8ab8-bb77adfa43e7" fixedValue="false" optional="false" mask="false">
+									<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="bd187d70-2c6e-4ca7-b8d1-e91ee8b39699" fixedValue="false" optional="false" mask="false">
+										<from>taskTransactionId</from>
+										<to>transaction</to>
+									</steps>
+									<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="afc85cf1-b5e2-4811-9fc1-1296ee07d851" fixedValue="false" optional="false" mask="false">
 										<from>task</from>
-										<to>instances[0]</to>
+										<to>parameters[0]</to>
 									</steps>
 									<asynchronous>false</asynchronous>
 								</steps>

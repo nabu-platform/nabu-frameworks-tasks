@@ -216,18 +216,18 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="c77e24d5-4514-4d75-a82a-f77e37f6c944">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="b0807700-56c5-46bd-b3f8-838b6e569be1" serviceId="nabu.services.jdbc.Services.insert" resultName="result4c44a54d46824a118d95fb8e5ac61aac" invocationOrder="0" temporaryMapping="true" y="137" x="70">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="752b2f90-029d-4aef-bb08-792e18b84f04" fixedValue="false" optional="false" mask="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="8e68e6f4-89ff-45f5-b5cc-20f8a984aba3" serviceId="nabu.frameworks.tasks.database.task.insert" resultName="resultf8b9502f795c4eaeb4a703f2da8f5331" invocationOrder="0" temporaryMapping="true" y="49" x="68">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b244ef95-100e-480d-96cb-9bfbb0d586c9" fixedValue="false" optional="false" mask="false">
 				<from>input/connectionId</from>
 				<to>connection</to>
 			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7d155664-c837-4355-9094-047d1b4eacc1" fixedValue="false" optional="false" mask="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="8b0fc8e5-d110-40c9-bbca-87290bc6cce6" fixedValue="false" optional="false" mask="false">
 				<from>input/transactionId</from>
 				<to>transaction</to>
 			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="8226b5fe-b201-4269-85ee-7eb3bd30d4c4" fixedValue="false" optional="false" mask="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c5c840e5-eb56-4f20-87d2-6fc508a4dd0c" fixedValue="false" optional="false" mask="false">
 				<from>task</from>
-				<to>instances[0]</to>
+				<to>parameters[0]</to>
 			</steps>
 			<asynchronous>false</asynchronous>
 		</steps>
