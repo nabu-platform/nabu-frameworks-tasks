@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>POST</method>
-    <path>/schedule</path>
-    <role>manager</role>
-    <permissionAction>queue.write</permissionAction>
-    <input>nabu.frameworks.tasks.manage.types.scheduleCreate</input>
-    <output>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</output>
+    <path>/taskSchedule</path>
+    <role>$user</role>
+    <permissionAction>taskSchedule.create</permissionAction>
+    <input>nabu.frameworks.tasks.manage.rest.schedule.taskScheduleInput</input>
+    <output>nabu.frameworks.tasks.manage.rest.schedule.taskSchedule</output>
     <lenient>false</lenient>
     <webApplicationId>false</webApplicationId>
     <language>false</language>

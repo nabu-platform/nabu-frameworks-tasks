@@ -3,7 +3,7 @@
     <method>PUT</method>
     <path>/task/{taskId}/retry</path>
     <role>manager</role>
-    <permissionAction>queue.write</permissionAction>
+    <permissionAction>task.write</permissionAction>
     <lenient>false</lenient>
     <webApplicationId>false</webApplicationId>
     <language>false</language>

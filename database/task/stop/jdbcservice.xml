@@ -1,7 +1,7 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<sql>update ~tasks set
-	modified = current_timestamp,
-	stopped = current_timestamp,
+	modified = :now,
+	stopped = :now,
 	state = :state,
 	task_output = :taskOutput
 where id = :id

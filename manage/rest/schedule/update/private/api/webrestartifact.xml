@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>PUT</method>
-    <path>/schedule/{scheduleId}</path>
-    <role>manager</role>
-    <permissionAction>queue.write</permissionAction>
-    <input>nabu.frameworks.tasks.manage.types.scheduleCreate</input>
+    <path>/taskSchedule/{taskScheduleId}</path>
+    <role>$user</role>
+    <permissionContext>=input/path/taskScheduleId</permissionContext>
+    <permissionAction>taskSchedule.update</permissionAction>
+    <input>nabu.frameworks.tasks.manage.rest.schedule.taskScheduleInput</input>
     <lenient>false</lenient>
     <webApplicationId>false</webApplicationId>
     <language>false</language>

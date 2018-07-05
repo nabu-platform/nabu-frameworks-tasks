@@ -1,0 +1,4 @@
+<structure name="taskSchedulePropertyList">
+    <structure definition="nabu.frameworks.tasks.manage.rest.schedule.property.taskScheduleProperty" maxOccurs="unbounded" minOccurs="0" name="taskScheduleProperties"/>
+    <structure definition="nabu.services.jdbc.types.Page" minOccurs="0" name="page"/>
+</structure>

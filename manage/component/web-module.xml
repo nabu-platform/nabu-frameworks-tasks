@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <webModule>
     <path>/tasks/v1/api</path>
-    <webFragments>nabu.frameworks.tasks.manage.rest.queue.list</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.task.list</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.queue.pause</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.queue.resume</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.task.log.list</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.task.fail</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.task.retry</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.queue.create</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.queue.get</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.list</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.queue.countAll</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.queue.countByQueue</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.queue.schedule.add</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.queue.schedule.remove</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.create</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.delete</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.get</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.update</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.create</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.delete</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.disable</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.enable</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.get</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.list</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.update</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.log.create</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.log.delete</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.log.get</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.log.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.log.update</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.property.create</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.property.delete</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.property.get</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.property.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.property.update</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.create</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.delete</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.get</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.update</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.schedule.create</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.schedule.delete</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.schedule.get</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.schedule.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.schedule.update</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.create</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.delete</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.get</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.update</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.retry</webFragments>
 </webModule>

@@ -1,0 +1,4 @@
+<structure name="taskQueueList">
+    <structure definition="nabu.frameworks.tasks.manage.rest.taskQueue.taskQueue" maxOccurs="unbounded" minOccurs="0" name="taskQueues"/>
+    <structure definition="nabu.services.jdbc.types.Page" minOccurs="0" name="page"/>
+</structure>

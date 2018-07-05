@@ -2,10 +2,10 @@
 <restInterface>
     <method>GET</method>
     <path>/task</path>
-    <queryParameters>q, limit, offset, orderBy, state, correlationId, groupId, contextId, queueId, scheduleId</queryParameters>
+    <queryParameters>orderBy, limit, offset, id, creator, target, owner, state, dependencyId, taskIndex, task, taskType, taskInput, scheduled, stopped, started, taskOutput, parentId, correlationId, groupId, contextId, serviceContext, alias, realm, taskQueueId, taskScheduleId</queryParameters>
     <role>manager</role>
-    <permissionAction>queue.read</permissionAction>
-    <output>nabu.frameworks.tasks.manage.types.taskList</output>
+    <permissionAction>task.read</permissionAction>
+    <output>nabu.frameworks.tasks.manage.rest.task.taskList</output>
     <lenient>false</lenient>
     <webApplicationId>false</webApplicationId>
     <language>false</language>

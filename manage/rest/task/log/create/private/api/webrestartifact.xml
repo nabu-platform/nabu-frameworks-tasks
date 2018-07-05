@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>POST</method>
-    <path>/task/{taskId}/log</path>
+    <path>/taskLog</path>
     <role>manager</role>
-    <permissionAction>queue.write</permissionAction>
-    <input>nabu.frameworks.tasks.manage.types.taskLogCreate</input>
-    <output>nabu.frameworks.tasks.types.model.tasks.TaskLog</output>
+    <permissionAction>task.write</permissionAction>
+    <input>nabu.frameworks.tasks.manage.rest.task.log.taskLogInput</input>
+    <output>nabu.frameworks.tasks.manage.rest.task.log.taskLog</output>
     <lenient>false</lenient>
     <webApplicationId>false</webApplicationId>
     <language>false</language>

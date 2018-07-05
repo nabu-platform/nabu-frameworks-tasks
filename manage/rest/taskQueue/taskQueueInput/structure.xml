@@ -1,0 +1,12 @@
+<structure name="taskQueue">
+    <field comment="If set to 0, it means it is sequential. That also means you must get a cluster lock on the queue before being able to take something off of it." name="concurrency" type="java.lang.Integer"/>
+    <field comment="PUBLISHING (publisher is not done yet), PUBLISHED (everything is done), SUCCEEDED (everything is successfully completed), ERROR (transient), FAILED" name="state" type="java.lang.String"/>
+    <field comment="This task group must be in a final state before the next task group is started" foreignKey="nabu.frameworks.tasks.types.model.tasks.TaskQueue:id" minOccurs="0" name="dependencyId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field comment="Tasks submitted to the queue are scheduled according to this. This allows for example a queue that starts clearing items at 18:00" minOccurs="0" name="schedule" type="java.lang.String"/>
+    <field comment="Who can access this queue? This can be a server, a group, a uuid, $any,..." name="target" type="java.lang.String"/>
+    <field name="name" type="java.lang.String" unique="true"/>
+    <field comment="We can set a custom executor for a task queue, e.g. a dedicated thread pool. If not set, it will be executed by the central shared pool." minOccurs="0" name="executor" type="java.lang.String"/>
+    <field comment="The published timestamp indicates when the queue was done publishing. No new items are allowed onto the queue." minOccurs="0" name="published" timezone="UTC" type="java.util.Date"/>
+    <field comment="If you submit something for execution and that exact same something is still awaiting execution, we can prevent it from being submitted. This for example can allow you to schedule a mail every time something changes but only have 1 mail sent at 17 in the evening." minOccurs="0" name="allowOverlap" type="java.lang.Boolean"/>
+    <field comment="Anonymous queues are not named by users but instead have generated names. They generally serve a different purpose (batch processing)" name="anonymous" type="java.lang.Boolean"/>
+</structure>

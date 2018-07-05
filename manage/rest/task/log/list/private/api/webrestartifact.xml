@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>GET</method>
-    <path>/task/{taskId}/log</path>
-    <queryParameters>orderBy</queryParameters>
+    <path>/taskLog</path>
+    <queryParameters>orderBy, limit, offset, id, severity, actor, title, description, code, taskId</queryParameters>
     <role>manager</role>
-    <permissionAction>queue.read</permissionAction>
-    <output>nabu.frameworks.tasks.manage.types.taskLogList</output>
+    <permissionAction>task.read</permissionAction>
+    <output>nabu.frameworks.tasks.manage.rest.task.log.taskLogList</output>
     <lenient>false</lenient>
     <webApplicationId>false</webApplicationId>
     <language>false</language>

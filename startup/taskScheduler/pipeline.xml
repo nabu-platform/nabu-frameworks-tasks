@@ -6,4 +6,5 @@
     <field name="earliest" type="java.util.Date"/>
     <field name="earliestForQueue" type="java.util.Date"/>
     <field name="diff" type="java.lang.Double"/>
+    <field name="safetyBuffer" type="java.lang.Double"/>
 </structure>

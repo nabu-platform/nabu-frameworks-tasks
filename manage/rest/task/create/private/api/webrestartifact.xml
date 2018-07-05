@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restInterface>
+    <method>POST</method>
+    <path>/task</path>
+    <role>manager</role>
+    <permissionAction>task.write</permissionAction>
+    <input>nabu.frameworks.tasks.manage.rest.task.taskInput</input>
+    <output>nabu.frameworks.tasks.manage.rest.task.task</output>
+    <lenient>false</lenient>
+    <webApplicationId>false</webApplicationId>
+    <language>false</language>
+    <allowFormBinding>false</allowFormBinding>
+    <caseInsensitive>false</caseInsensitive>
+    <cache>false</cache>
+</restInterface>

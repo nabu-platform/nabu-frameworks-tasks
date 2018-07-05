@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>GET</method>
-    <path>/scheduler</path>
-    <queryParameters>limit, offset, orderBy, queueId, enabled, manual</queryParameters>
-    <role>manager</role>
-    <permissionAction>queue.read</permissionAction>
-    <output>nabu.frameworks.tasks.manage.types.scheduleList</output>
+    <path>/taskSchedule</path>
+    <queryParameters>orderBy, limit, offset, id, target, schedule, until, amount, allowOverlap, task, taskType, taskInput, enabled, manual</queryParameters>
+    <role>$user</role>
+    <permissionAction>taskSchedule.list</permissionAction>
+    <output>nabu.frameworks.tasks.manage.rest.schedule.taskScheduleList</output>
     <lenient>false</lenient>
     <webApplicationId>false</webApplicationId>
     <language>false</language>

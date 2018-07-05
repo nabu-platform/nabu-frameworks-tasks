@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restInterface>
+    <method>GET</method>
+    <path>/taskScheduleProperty</path>
+    <queryParameters>orderBy, limit, offset, id, key, value, taskScheduleId</queryParameters>
+    <role>$user</role>
+    <permissionAction>taskScheduleProperty.list</permissionAction>
+    <output>nabu.frameworks.tasks.manage.rest.schedule.property.taskSchedulePropertyList</output>
+    <lenient>false</lenient>
+    <webApplicationId>false</webApplicationId>
+    <language>false</language>
+    <allowFormBinding>false</allowFormBinding>
+    <caseInsensitive>false</caseInsensitive>
+    <cache>false</cache>
+</restInterface>

@@ -1,0 +1,12 @@
+<structure name="taskSchedule">
+    <field comment="Who has to perform the task? This can be a specific user, a group, a server or $all, $any..." name="target" type="java.lang.String"/>
+    <field comment="The schedule for this action, this allows an action to be repeated following a certain schedule.&#10;If the schedule is null, the action is always planned unless limited by amount and/or until" minOccurs="0" name="schedule" type="java.lang.String"/>
+    <field comment="A limit in time until when the action should be executed. If null, it never stops" minOccurs="0" name="until" timezone="UTC" type="java.util.Date"/>
+    <field comment="The amount of times that an action should be executed. If null, it never stops" minOccurs="0" name="amount" type="java.lang.Integer"/>
+    <field comment="If the target is already running an instance that is not yet done, do we offer a new instance?" name="allowOverlap" type="java.lang.Boolean"/>
+    <field comment="The task that has to be performed" name="task" type="java.lang.String"/>
+    <field name="taskType" type="java.lang.String"/>
+    <field minOccurs="0" name="taskInput" type="java.lang.String"/>
+    <field name="enabled" type="java.lang.Boolean"/>
+    <field comment="Whether this schedule is automatically filled in or manually triggered.&#10;Manual schedules require someone external to calculate the next entries, if they don't or with large intervals, instances can be missed." name="manual" type="java.lang.Boolean"/>
+</structure>

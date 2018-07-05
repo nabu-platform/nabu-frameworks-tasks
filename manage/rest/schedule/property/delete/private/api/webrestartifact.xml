@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restInterface>
+    <method>DELETE</method>
+    <path>/taskScheduleProperty/{taskSchedulePropertyId}</path>
+    <role>$user</role>
+    <permissionContext>=input/path/taskSchedulePropertyId</permissionContext>
+    <permissionAction>taskScheduleProperty.delete</permissionAction>
+    <lenient>false</lenient>
+    <webApplicationId>false</webApplicationId>
+    <language>false</language>
+    <allowFormBinding>false</allowFormBinding>
+    <caseInsensitive>false</caseInsensitive>
+    <cache>false</cache>
+</restInterface>
