@@ -1,7 +1,0 @@
-<structure interface="$self:api" name="pipeline">
-    <structure name="input" validate="true"/>
-    <structure name="output"/>
-    <structure collectionName="TaskLogs" definition="nabu.frameworks.tasks.types.model.tasks.TaskLog" name="log" namespace="nabu.frameworks.tasks.types.model.tasks"/>
-    <structure definition="be.nabu.libs.authentication.api.Token" minOccurs="0" name="token"/>
-    <field name="actor" type="java.lang.String"/>
-</structure>

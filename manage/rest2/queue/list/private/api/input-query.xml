@@ -1,8 +1,0 @@
-<structure name="query">
-    <field minOccurs="0" name="q" type="java.lang.String"/>
-    <field maxInclusive="100" minOccurs="0" name="limit" type="java.lang.Integer"/>
-    <field minOccurs="0" name="offset" type="java.lang.Integer"/>
-    <field maxOccurs="unbounded" minOccurs="0" name="orderBy" type="java.lang.String"/>
-    <field minOccurs="0" name="anonymous" type="java.lang.Boolean"/>
-    <field minOccurs="0" name="state" type="java.lang.String"/>
-</structure>
