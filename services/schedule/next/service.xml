@@ -1,328 +1,349 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="7ff1a92f-6550-43c0-ba38-f15f07c54dde">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="!input/after" id="1257f7ee-b68b-43fb-8728-c9fb3661dc09">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="59059f95-7f07-4107-8470-59f009b2821b" serviceId="nabu.utils.Date.now" resultName="resulte136514987d64984a1d2935795d3bc6b" invocationOrder="0" temporaryMapping="true" y="85" x="25">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="59059f95-7f07-4107-8470-59f009b2821b" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.Date.now" resultName="resulte136514987d64984a1d2935795d3bc6b" y="85" x="25">
 			<asynchronous>false</asynchronous>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="eaa0fdf0-4368-4c18-8136-fbcefef7a8eb" fixedValue="false" mask="false" optional="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="eaa0fdf0-4368-4c18-8136-fbcefef7a8eb" optional="false" mask="false" fixedValue="false">
 			<from>resulte136514987d64984a1d2935795d3bc6b/date</from>
 			<to>input/after</to>
 		</steps>
 	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="e5de8497-deb1-4adc-b2b3-4b000e530188">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="cfbe1103-6c2e-49ce-9773-206cf28ca26e" serviceId="nabu.utils.Date.toValues" resultName="resulteae30fad63074fde8d677a31c9c3b7ec" invocationOrder="0" temporaryMapping="true" y="83" x="77">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5f3f15e3-e102-4e9e-a033-fefc7a2fbdfe" fixedValue="false" mask="false" optional="false">
-				<from>input/after</from>
-				<to>date</to>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/timezone == null" comment="Get server-wide timezone: nabu.tasks.timezone" id="d11776c2-e650-4540-bb16-7fd39b008c43">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="7ebe1e0c-f6a7-4d5e-a963-0bfbcbaf18bb" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.Server.property" resultName="resultf027ab7c535f44adbce87147beea5c7f" y="243" x="231">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="24891254-7bb1-4209-b5b1-e2694dc30478" optional="false" mask="false" fixedValue="true">
+				<from>nabu.tasks.timezone</from>
+				<to>key</to>
 			</steps>
 			<asynchronous>false</asynchronous>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fff50460-429d-4d41-abd6-04a8549e6724" fixedValue="false" mask="false" optional="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="4e627bfb-c621-4468-83f9-1e3759b87ae7" optional="false" mask="false" fixedValue="false">
+			<from>resultf027ab7c535f44adbce87147beea5c7f/value</from>
+			<to>input/timezone</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="e5de8497-deb1-4adc-b2b3-4b000e530188">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="cfbe1103-6c2e-49ce-9773-206cf28ca26e" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.Date.toValues" resultName="resulteae30fad63074fde8d677a31c9c3b7ec" y="83" x="77">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5f3f15e3-e102-4e9e-a033-fefc7a2fbdfe" optional="false" mask="false" fixedValue="false">
+				<from>input/after</from>
+				<to>date</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="90bc0ce0-6905-4d2f-9f02-33531868cad7" optional="false" mask="false" fixedValue="false">
+				<from>input/timezone</from>
+				<to>timezone</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fff50460-429d-4d41-abd6-04a8549e6724" optional="false" mask="false" fixedValue="false">
 			<from>resulteae30fad63074fde8d677a31c9c3b7ec/values</from>
 			<to>values</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Explicitly set milliseconds to 0, we don't want that granularity and it can mess up the resulting dates" id="3701aa51-0705-46da-a7bb-fc835819a6c3">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fb832518-b699-4451-b83e-84268f12868a" fixedValue="true" mask="false" optional="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fb832518-b699-4451-b83e-84268f12868a" optional="false" mask="false" fixedValue="true">
 			<from>0</from>
 			<to>values/millisecond</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.For" disabled="false" comment="Find the first one that matches" id="a2cccdd4-a520-4560-bccc-5ad8093773b5">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="5122c467-8cc9-455d-8ac9-2a92f954cb13">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="b75f187f-3de9-4c1d-a30a-b90de0798e75" serviceId="nabu.utils.Date.fromValues" resultName="resulte69c7ff31d494cbab82a97707a491095" invocationOrder="0" temporaryMapping="true" y="36" x="17">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="3864e6eb-ddea-4ea9-b8b5-ae86bb740fb1" fixedValue="false" mask="false" optional="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="b75f187f-3de9-4c1d-a30a-b90de0798e75" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.Date.fromValues" resultName="resulte69c7ff31d494cbab82a97707a491095" y="36" x="17">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="3864e6eb-ddea-4ea9-b8b5-ae86bb740fb1" optional="false" mask="false" fixedValue="false">
 					<from>values</from>
 					<to>values</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="251d6cde-88e6-46d8-9e91-838581d80135" optional="false" mask="false" fixedValue="false">
+					<from>input/timezone</from>
+					<to>timezone</to>
+				</steps>
 				<asynchronous>false</asynchronous>
 			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="caa07975-91fb-47ed-a054-e8fcc9e9033b" fixedValue="false" mask="false" optional="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="caa07975-91fb-47ed-a054-e8fcc9e9033b" optional="false" mask="false" fixedValue="false">
 				<from>resulte69c7ff31d494cbab82a97707a491095/date</from>
 				<to>date</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Switch" disabled="false" id="d1f59023-2453-4bc5-b46b-663d3618324a">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/years != null &amp;&amp; values/year !# input/schedule/years" id="34ceee907f1d4745b0c5224cebd7a989">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="059c0a9146994c859308cce303509266" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="059c0a9146994c859308cce303509266" optional="false" mask="false" fixedValue="true">
 					<from>1</from>
 					<to>values/month</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b847712710884ba992bbce4101b987d2" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b847712710884ba992bbce4101b987d2" optional="false" mask="false" fixedValue="true">
 					<from>1</from>
 					<to>values/day</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e826197744a84d058bd7426056628966" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e826197744a84d058bd7426056628966" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/hour</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="ac9bcc15e89f420e87e5bdac305206ed" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="ac9bcc15e89f420e87e5bdac305206ed" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/minute</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="cee91e25d36448eb86604bd5f3632bcd" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="cee91e25d36448eb86604bd5f3632bcd" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/millisecond</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2d7601c67b01456a884e932e8be0aeff" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2d7601c67b01456a884e932e8be0aeff" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/second</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="543bfca1-ad39-4d83-a4a1-61dbd5e707e5" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="543bfca1-ad39-4d83-a4a1-61dbd5e707e5" optional="false" mask="false" fixedValue="true">
 					<from>=values/year + 1</from>
 					<to>values/year</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/months != null &amp;&amp; values/month !# input/schedule/months" id="bc7e5e68-9215-4fbc-9fb6-7e0c9caff929">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="4d28bc52-5f71-420e-ad5f-68f75141ba9e" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="4d28bc52-5f71-420e-ad5f-68f75141ba9e" optional="false" mask="false" fixedValue="true">
 					<from>=values/month + 1</from>
 					<to>values/month</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="4d704df8-f4a0-4297-94ed-c922bfacfa48" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="4d704df8-f4a0-4297-94ed-c922bfacfa48" optional="false" mask="false" fixedValue="true">
 					<from>1</from>
 					<to>values/day</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="745b3355-70cf-4f15-9a4b-7fa13285726f" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="745b3355-70cf-4f15-9a4b-7fa13285726f" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/hour</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="028dde1b-f24a-4e74-8f7e-c80dd0e46de0" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="028dde1b-f24a-4e74-8f7e-c80dd0e46de0" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/minute</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d1a9f2f6-842e-46ab-9740-3d303a3106e4" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d1a9f2f6-842e-46ab-9740-3d303a3106e4" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/millisecond</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2c8b432a-9e71-49ac-96cc-48efebe6a290" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2c8b432a-9e71-49ac-96cc-48efebe6a290" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/second</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/days != null &amp;&amp; values/day !# input/schedule/days" id="0eeff66f772140e8baa719e03985bb57">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="04bad2669efe4385892c18c57aaa6774" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="04bad2669efe4385892c18c57aaa6774" optional="false" mask="false" fixedValue="true">
 					<from>=values/day + 1</from>
 					<to>values/day</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d10c9a43-7f0b-48b1-9d9b-07efc2cd3f31" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d10c9a43-7f0b-48b1-9d9b-07efc2cd3f31" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/second</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="410e53f4-a43f-4d5d-abaa-554e9775bbb1" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="410e53f4-a43f-4d5d-abaa-554e9775bbb1" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/hour</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="8698696e-b21c-44fe-8857-60a53291647e" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="8698696e-b21c-44fe-8857-60a53291647e" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/minute</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="71a15eea-0b35-445a-9149-25ac69894477" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="71a15eea-0b35-445a-9149-25ac69894477" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/millisecond</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/weekDays != null &amp;&amp; values/dayOfWeek !# input/schedule/weekDays" id="1436fd911a1b45079b7755d1b83f317d">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="54fa748956cb42fb805350177d0d894d" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="54fa748956cb42fb805350177d0d894d" optional="false" mask="false" fixedValue="true">
 					<from>=values/day + 1</from>
 					<to>values/day</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="053871af-42a3-41a2-8695-8eeca2d8276e" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="053871af-42a3-41a2-8695-8eeca2d8276e" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/second</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b6f8dc37-f575-4b0f-824d-d620888c3493" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b6f8dc37-f575-4b0f-824d-d620888c3493" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/minute</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a55c863e-cf57-449b-9969-2e9c45e29349" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a55c863e-cf57-449b-9969-2e9c45e29349" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/hour</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="6ecd806b-7e72-457b-8f1f-060ea3e467ca" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="6ecd806b-7e72-457b-8f1f-060ea3e467ca" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/millisecond</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/hours != null &amp;&amp; values/hour !# input/schedule/hours" id="ee9c6e5054814825a66889ed89f53d35">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7b640449-7154-4dd5-b750-0b7781e3a89a" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7b640449-7154-4dd5-b750-0b7781e3a89a" optional="false" mask="false" fixedValue="true">
 					<from>=values/hour + 1</from>
 					<to>values/hour</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="aa2af853-b18c-4f50-a9f7-e454256783cc" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="aa2af853-b18c-4f50-a9f7-e454256783cc" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/minute</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0928fd93-bdfb-448c-aaff-8d5dadbee1cf" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0928fd93-bdfb-448c-aaff-8d5dadbee1cf" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/millisecond</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="50ed38a1-cfd7-409d-a3b6-921b43ff711d" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="50ed38a1-cfd7-409d-a3b6-921b43ff711d" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/second</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/minutes != null &amp;&amp; values/minute !# input/schedule/minutes" id="f345682621f64b9d982cbad0e7574209">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c66aa042-d3aa-4f76-90db-9c500b113cd5" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c66aa042-d3aa-4f76-90db-9c500b113cd5" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/second</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5cbe1253-0cdc-4381-9efc-411ea3f49d11" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5cbe1253-0cdc-4381-9efc-411ea3f49d11" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/millisecond</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c3ec2fda-7369-4508-ba63-890fbc34139c" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c3ec2fda-7369-4508-ba63-890fbc34139c" optional="false" mask="false" fixedValue="true">
 					<from>=values/minute + 1</from>
 					<to>values/minute</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/seconds != null &amp;&amp; values/second !# input/schedule/seconds" id="aa6272f8207f420e92495705d79e76e2">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="519a5f57-b1a9-4fa7-a465-515ef7d19e85" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="519a5f57-b1a9-4fa7-a465-515ef7d19e85" optional="false" mask="false" fixedValue="true">
 					<from>=values/second + 1</from>
 					<to>values/second</to>
 				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="94e351b9-3069-439a-b926-af94de67a745" fixedValue="true" mask="false" optional="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="94e351b9-3069-439a-b926-af94de67a745" optional="false" mask="false" fixedValue="true">
 					<from>0</from>
 					<to>values/millisecond</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Switch" disabled="false" label="date &lt;= input/after" comment="Make sure our date is actually after the one we provided" id="eaee416d78ee4db4a7a01cab151e84fa">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/seconds != null" id="102bd164010e4aadb80b6fb1329d81e4">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7fc8e5401e054bac9a1537a8101f81fc" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7fc8e5401e054bac9a1537a8101f81fc" optional="false" mask="false" fixedValue="true">
 						<from>=values/second + 1</from>
 						<to>values/second</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="98ccef50f1fc40dabae9d3211046ebb0" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="98ccef50f1fc40dabae9d3211046ebb0" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/millisecond</to>
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/minutes != null" id="d981d96f720a4b2db29400bd3b0ec40c">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="55beddb550e241698c0f2cf759d091cf" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="55beddb550e241698c0f2cf759d091cf" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/second</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="97434fe282ee4d978a7be7686af69fcd" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="97434fe282ee4d978a7be7686af69fcd" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/millisecond</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7e48eb6858464fc7950985be8b703c28" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7e48eb6858464fc7950985be8b703c28" optional="false" mask="false" fixedValue="true">
 						<from>=values/minute + 1</from>
 						<to>values/minute</to>
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/hours != null" id="48c325e450f3463db09f4708b5f5e518">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="dffa5c05-7ecf-4cd4-8b72-9881062ef951" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="dffa5c05-7ecf-4cd4-8b72-9881062ef951" optional="false" mask="false" fixedValue="true">
 						<from>=values/hour + 1</from>
 						<to>values/hour</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="96d6c7cb-af7d-4b38-9144-3d62184b37b8" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="96d6c7cb-af7d-4b38-9144-3d62184b37b8" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/minute</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e97069ec-3aab-4aca-8df7-7c4782537147" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e97069ec-3aab-4aca-8df7-7c4782537147" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/millisecond</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7ba48e6e-0e24-4791-8a39-65142ab5db5a" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7ba48e6e-0e24-4791-8a39-65142ab5db5a" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/second</to>
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/weekDays != null" id="6dd4fec3faa145618cd5a3e507ea8dbf">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="11b77f5b29644e2585e185db68da6137" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="11b77f5b29644e2585e185db68da6137" optional="false" mask="false" fixedValue="true">
 						<from>=values/day + 1</from>
 						<to>values/day</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fadd1cca28fc484c9fff960d95429358" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fadd1cca28fc484c9fff960d95429358" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/second</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2483cbe8086947d2bf9f29ffa6bf3e5d" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2483cbe8086947d2bf9f29ffa6bf3e5d" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/minute</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="03392e08f209413cab96c50a8cada0a4" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="03392e08f209413cab96c50a8cada0a4" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/hour</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="79e46fef11a64e868552a05b1aafd91b" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="79e46fef11a64e868552a05b1aafd91b" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/millisecond</to>
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/days != null" id="208fcb8acde94f47912248a390ffc595">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d87391f2913e45c0a5f3548037b593ce" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d87391f2913e45c0a5f3548037b593ce" optional="false" mask="false" fixedValue="true">
 						<from>=values/day + 1</from>
 						<to>values/day</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="60097eb50a8149bb805c0d2bb85784e8" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="60097eb50a8149bb805c0d2bb85784e8" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/second</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0c6505e775104438a20cae8b08e86d77" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0c6505e775104438a20cae8b08e86d77" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/hour</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0db6eaab8ca9493c83b11d8591c755f1" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0db6eaab8ca9493c83b11d8591c755f1" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/minute</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="65322cd661c949c5bdabf7363f310b75" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="65322cd661c949c5bdabf7363f310b75" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/millisecond</to>
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/months != null" id="9a570becf2a04b8eba1e61d103d62a20">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="4c6963480dc34973b5ed3bf25aef0e75" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="4c6963480dc34973b5ed3bf25aef0e75" optional="false" mask="false" fixedValue="true">
 						<from>=values/month + 1</from>
 						<to>values/month</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="20c3f1bc78e94ff9b8986c6cb7c66daf" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="20c3f1bc78e94ff9b8986c6cb7c66daf" optional="false" mask="false" fixedValue="true">
 						<from>1</from>
 						<to>values/day</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b00baa231e6a4e0bad2ecd2fd5c37107" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b00baa231e6a4e0bad2ecd2fd5c37107" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/hour</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="96d05309668445b98234939b0117c4f8" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="96d05309668445b98234939b0117c4f8" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/minute</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="49e85989d6d447f0a75c4a02555a6cff" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="49e85989d6d447f0a75c4a02555a6cff" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/millisecond</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b4c82796202047b78c91ea93fa9d73a4" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b4c82796202047b78c91ea93fa9d73a4" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/second</to>
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/schedule/years != null" id="be4a59fafae2446994a6d2d3195663d3">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="cad041d944574703b79614cab3969887" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="cad041d944574703b79614cab3969887" optional="false" mask="false" fixedValue="true">
 						<from>1</from>
 						<to>values/month</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="025df5c3358c4619b3d1420b20542a60" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="025df5c3358c4619b3d1420b20542a60" optional="false" mask="false" fixedValue="true">
 						<from>1</from>
 						<to>values/day</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fe3e7ae48a23431c8a3ab26773cf84da" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fe3e7ae48a23431c8a3ab26773cf84da" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/hour</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c172cd5b98714add978c76b6d41a5f9a" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c172cd5b98714add978c76b6d41a5f9a" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/minute</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="58e29bd0fa74491386be6f60269cd69d" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="58e29bd0fa74491386be6f60269cd69d" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/millisecond</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a332f8f6461749508b19fc7b518ab6cc" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a332f8f6461749508b19fc7b518ab6cc" optional="false" mask="false" fixedValue="true">
 						<from>0</from>
 						<to>values/second</to>
 					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="6d4f804f824f4cbcafc2ce3015dd534b" fixedValue="true" mask="false" optional="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="6d4f804f824f4cbcafc2ce3015dd534b" optional="false" mask="false" fixedValue="true">
 						<from>=values/year + 1</from>
 						<to>values/year</to>
 					</steps>
@@ -333,14 +354,18 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="04ff54c1-f89d-4723-87b9-b58894d56f8c">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="59b712ea-dff9-4a0e-901a-fb4185d57fc0" serviceId="nabu.utils.Date.normalize" resultName="result4d0596ab879f47a188af502e0cf4327b" invocationOrder="0" temporaryMapping="true" y="29" x="1">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c783ac74-9ba0-46b9-b1f4-d337ef4f46bd" fixedValue="false" mask="false" optional="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="59b712ea-dff9-4a0e-901a-fb4185d57fc0" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.Date.normalize" resultName="result4d0596ab879f47a188af502e0cf4327b" y="29" x="1">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c783ac74-9ba0-46b9-b1f4-d337ef4f46bd" optional="false" mask="false" fixedValue="false">
 					<from>values</from>
 					<to>values</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="3a618c9b-9e6f-425f-bf4d-207956e0146b" optional="false" mask="false" fixedValue="false">
+					<from>input/timezone</from>
+					<to>timezone</to>
+				</steps>
 				<asynchronous>false</asynchronous>
 			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e9bcae82-b8b6-4906-9446-72b3308c05d6" fixedValue="false" mask="false" optional="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e9bcae82-b8b6-4906-9446-72b3308c05d6" optional="false" mask="false" fixedValue="false">
 				<from>result4d0596ab879f47a188af502e0cf4327b/normalized</from>
 				<to>values</to>
 			</steps>
@@ -348,27 +373,35 @@
 		<query>1000</query>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="1839fa3f2129467099a8a6f6aa0521af">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="4f20404f999749deb3ecbffff8bbabe1" serviceId="nabu.utils.Date.normalize" resultName="result4d0596ab879f47a188af502e0cf4327b" invocationOrder="0" temporaryMapping="true" y="29" x="1">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fa52caf08785481584094b0d05c0807f" fixedValue="false" mask="false" optional="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="4f20404f999749deb3ecbffff8bbabe1" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.Date.normalize" resultName="result4d0596ab879f47a188af502e0cf4327b" y="29" x="1">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="fa52caf08785481584094b0d05c0807f" optional="false" mask="false" fixedValue="false">
 				<from>values</from>
 				<to>values</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="8d7c6cd6-8f75-4f35-94b2-ad171c7be782" optional="false" mask="false" fixedValue="false">
+				<from>input/timezone</from>
+				<to>timezone</to>
+			</steps>
 			<asynchronous>false</asynchronous>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="dce841930c8d4d8f9d8a5b2e7ff35537" fixedValue="false" mask="false" optional="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="dce841930c8d4d8f9d8a5b2e7ff35537" optional="false" mask="false" fixedValue="false">
 			<from>result4d0596ab879f47a188af502e0cf4327b/normalized</from>
 			<to>values</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="27ea6b87-8dea-4514-94a8-394312be061f">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="92a9215c-eb51-4ffc-87ce-e096e11427cf" serviceId="nabu.utils.Date.fromValues" resultName="result2c228968053442c389230505233fedbb" invocationOrder="0" temporaryMapping="true" y="151" x="35">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="1e02d6cd-f0cc-4c96-a1c0-ec72ea302c04" fixedValue="false" mask="false" optional="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="92a9215c-eb51-4ffc-87ce-e096e11427cf" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.Date.fromValues" resultName="result2c228968053442c389230505233fedbb" y="151" x="35">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="1e02d6cd-f0cc-4c96-a1c0-ec72ea302c04" optional="false" mask="false" fixedValue="false">
 				<from>values</from>
 				<to>values</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="eac1eca0-2880-4c69-9c51-c556dc2b409e" optional="false" mask="false" fixedValue="false">
+				<from>input/timezone</from>
+				<to>timezone</to>
+			</steps>
 			<asynchronous>false</asynchronous>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2df69a3f-e9e8-4e06-a534-27b596fd567a" fixedValue="false" mask="false" optional="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2df69a3f-e9e8-4e06-a534-27b596fd567a" optional="false" mask="false" fixedValue="false">
 			<from>result2c228968053442c389230505233fedbb/date</from>
 			<to>output/nextRun</to>
 		</steps>

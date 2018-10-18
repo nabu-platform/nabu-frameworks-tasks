@@ -1,3 +1,10 @@
+# Timezones
+
+By default the task framework will calculate the next run in the timezone of the server.
+So suppose your server is set to UTC, the numbers you enter in the scheduler format (e.g. * * 10,12,14,16,18,20,22 * * * *) will be interpreted in UTC. So that is 10 in the morning UTC time.
+
+This can be counterintuitive and potentially environment specific and servers may not be in line with expectations so there is a server-wide override: "nabu.tasks.timezone". If set, this will be the default timezone schedulers are calculated in.
+
 # Queue
 
 ## Transactions

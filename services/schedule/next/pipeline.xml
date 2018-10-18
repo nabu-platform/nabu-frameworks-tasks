@@ -2,6 +2,7 @@
     <structure name="input">
         <field minOccurs="0" name="after" type="java.util.Date"/>
         <structure definition="nabu.frameworks.tasks.types.schedule" name="schedule"/>
+        <field minOccurs="0" name="timezone" type="java.util.TimeZone"/>
     </structure>
     <structure name="output">
         <field name="nextRun" type="java.util.Date"/>

@@ -1,0 +1,51 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="9e73481f-d4d3-40e4-beb0-fa96c5e4ba4e">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Get task providers" id="43efc0d8-a4a3-437f-9a7f-c566302402f8">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="fe190944-8f56-4770-a4c1-008d936baba6" serviceId="nabu.misc.configuration.Services.configurations" resultName="result02e55a89a445473a971d93c61d0ec730" temporaryMapping="true" invocationOrder="0" y="110" x="75">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="db382308-50a4-4754-8e68-90ea1bfc6fe4" mask="false" fixedValue="true" optional="false">
+				<from>nabu.frameworks.tasks.providers.taskProvider</from>
+				<to>typeId</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="05a55d6b-ff13-4279-a513-597803387fc9" mask="false" fixedValue="false" optional="false">
+			<from>result02e55a89a445473a971d93c61d0ec730/configurations</from>
+			<to>output/providers</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="43a2b1f2-0ac9-4637-ae36-59b8cfe702e0">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="44cf80a1-48e1-4233-998d-196b09949795" serviceId="nabu.frameworks.tasks.utils.misc.getSupportedConnections" resultName="result50c11526ceda41f1baa3d343586d4a21" temporaryMapping="true" invocationOrder="0" y="110" x="67">
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="9077b412-d614-45b5-99dc-2c1c5f0f490e" mask="false" fixedValue="false" optional="false">
+			<from>result50c11526ceda41f1baa3d343586d4a21/connections</from>
+			<to>connections</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For" disabled="false" comment="Create task provider if not available" id="7955f94c-a04d-4fba-b77a-bde73708ee00" variable="connection">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Map task provider" id="74ac04d7-b6d9-4154-95a1-201076d8cce8">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e7a94cc2-4ef0-4051-892b-cab6cd9f2ce8" mask="false" fixedValue="false" optional="false">
+				<from>connection</from>
+				<to>provider/connectionId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="51710eac-f733-498a-bbcf-6957b92dd588">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="22accb49-f5f0-4e0c-a77e-c3df059f65b7" serviceId="nabu.utils.List.add" resultName="result0dd882a301b84a74ad1c07f9101d2af6" temporaryMapping="true" invocationOrder="0" y="80" x="74">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5e0d2674-d7f2-4c1b-b455-c646c55f0c62" mask="false" fixedValue="false" optional="false">
+					<from>provider</from>
+					<to>object</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="3c7cb6f6-4496-4bf9-9b51-969d7308505c" mask="false" fixedValue="false" optional="false">
+					<from>output/providers</from>
+					<to>list</to>
+				</steps>
+				<asynchronous>false</asynchronous>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2583a767-13fc-49bb-a041-376d48fa8250" mask="false" fixedValue="false" optional="false">
+				<from>result0dd882a301b84a74ad1c07f9101d2af6/list</from>
+				<to>output/providers</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Drop" disabled="false" id="f0b681bb-7575-4a9a-b041-73482477ccb1" path="provider" xsi:nil="true"/>
+		</steps>
+		<query>connections[$this !# /output/providers/connectionId]</query>
+	</steps>
+</sequence>

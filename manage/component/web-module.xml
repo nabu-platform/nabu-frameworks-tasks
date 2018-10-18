@@ -37,4 +37,5 @@
     <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.list</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.update</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.retry</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.wakeup</webFragments>
 </webModule>

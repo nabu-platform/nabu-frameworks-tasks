@@ -8,6 +8,7 @@
         <structure definition="java.lang.Object" minOccurs="0" name="metadata"/>
         <field minOccurs="0" name="datastore" type="java.lang.Boolean"/>
         <field comment="A precalculated moment to run the task" minOccurs="0" name="runAt" type="java.util.Date"/>
+        <field minOccurs="0" name="runIn" type="be.nabu.libs.types.base.Duration"/>
         <field minOccurs="0" name="contextId" type="java.lang.String"/>
         <field minOccurs="0" name="groupId" type="java.lang.String"/>
         <field minOccurs="0" name="correlationId" type="java.lang.String"/>
