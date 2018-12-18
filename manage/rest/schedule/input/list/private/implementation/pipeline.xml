@@ -1,0 +1,9 @@
+<structure interface="$self:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="TaskScheduleProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty" maxOccurs="unbounded" minOccurs="0" name="existing" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure collectionName="TaskSchedules" definition="nabu.frameworks.tasks.types.model.tasks.TaskSchedule" minOccurs="0" name="scheduler" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure definition="nabu.utils.types.ParameterDescription" maxOccurs="unbounded" minOccurs="0" name="parameters"/>
+    <structure definition="nabu.frameworks.tasks.manage.rest.schedule.input.propertyOutput" minOccurs="0" name="property"/>
+    <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="inputProperties"/>
+</structure>

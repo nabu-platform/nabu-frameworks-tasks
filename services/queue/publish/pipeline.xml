@@ -6,8 +6,11 @@
         <structure definition="nabu.frameworks.tasks.types.taskInput" name="task"/>
         <field minOccurs="0" name="wakeup" type="java.lang.Boolean"/>
         <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="properties"/>
+        <field minOccurs="0" name="stage" type="java.lang.Boolean"/>
     </structure>
-    <structure name="output"/>
+    <structure name="output">
+        <field name="taskId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    </structure>
     <structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" name="task" namespace="nabu.frameworks.tasks.types.model.tasks"/>
     <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueue" name="queue" namespace="nabu.frameworks.tasks.types.model.tasks"/>
     <structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" maxOccurs="unbounded" minOccurs="0" name="properties" namespace="nabu.frameworks.tasks.types.model.tasks"/>

@@ -4,12 +4,10 @@
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.create</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.delete</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.get</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.list</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.update</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.create</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.delete</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.get</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.list</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.update</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.log.create</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.log.delete</webFragments>
@@ -38,4 +36,7 @@
     <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.update</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.retry</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.wakeup</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.input.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.input.merge</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.list</webFragments>
 </webModule>

@@ -1,0 +1,4 @@
+<structure name="property" superType="nabu.utils.types.Property">
+    <field name="required" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="type" type="java.lang.String"/>
+</structure>

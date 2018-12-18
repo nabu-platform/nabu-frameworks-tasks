@@ -1,0 +1,6 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>update ~tasks set state = 'CANCELLED' where state = 'STAGED'
+	and (:correlationId is null or correlation_id = :correlationId)
+	and (:contextId is null or context_id = any(:contextId))
+	and (:groupId is null or group_id = any(:groupId))</sql>
+</jdbcService>

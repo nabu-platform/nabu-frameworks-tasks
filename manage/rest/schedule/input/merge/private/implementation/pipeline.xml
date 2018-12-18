@@ -1,0 +1,11 @@
+<structure interface="$self:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="TaskSchedules" definition="nabu.frameworks.tasks.types.model.tasks.TaskSchedule" minOccurs="0" name="scheduler" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure collectionName="TaskScheduleProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty" maxOccurs="unbounded" minOccurs="0" name="existing" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure collectionName="TaskScheduleProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty" maxOccurs="unbounded" minOccurs="0" name="toDelete" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure collectionName="TaskScheduleProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty" minOccurs="0" name="current" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <field minOccurs="0" name="date" type="java.util.Date"/>
+    <structure collectionName="TaskScheduleProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty" maxOccurs="unbounded" minOccurs="0" name="toMerge" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure definition="java.lang.Object" minOccurs="0" name="typeInstance"/>
+</structure>

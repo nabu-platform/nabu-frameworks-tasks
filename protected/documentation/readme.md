@@ -61,6 +61,7 @@ This is specifically the database timestamp and _not_ the application server tim
 
 ## State
 
+STAGED: the task is staged but not yet part of the actual queue, it is likely awaiting an external trigger to start it
 CREATED: the task is published but requires someone to pick it up and start it
 WAITING: the task is picked up but awaiting processing
 RUNNING: the task is being processed
