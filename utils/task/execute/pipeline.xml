@@ -29,4 +29,5 @@
         <field minOccurs="0" name="runAt" type="java.util.Date"/>
     </structure>
     <structure definition="be.nabu.libs.authentication.api.Token" minOccurs="0" name="runAs"/>
+    <structure definition="be.nabu.utils.cep.impl.ComplexEventImpl" name="event"/>
 </structure>

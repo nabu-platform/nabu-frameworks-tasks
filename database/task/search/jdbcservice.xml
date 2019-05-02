@@ -1,0 +1,11 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.Task</outputDefinition>
+	<sql>select *
+from ~tasks t join ~task_queues tq on t.task_queue_id = tq.id
+where (:correlationId is null or t.correlation_id = :correlationId)
+	and (:groupId is null or t.group_id = :groupId)
+	and (:contextId is null or t.context_id = :contextId)
+	and (:task is null or t.task = :task)
+	and (:queue is null or tq.name = :queue)
+	and (:queueId is null or tq.id = :queueId)</sql>
+</jdbcService>

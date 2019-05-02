@@ -10,4 +10,6 @@
     <field minOccurs="0" name="nearestSchedule" timezone="UTC" type="java.util.Date"/>
     <field name="amountOfMs" type="java.lang.Double"/>
     <field maxOccurs="unbounded" minOccurs="0" name="connections" type="java.lang.String"/>
+    <field minOccurs="0" name="lastScheduled" timezone="UTC" type="java.util.Date"/>
+    <field minOccurs="0" name="now" type="java.util.Date"/>
 </structure>
