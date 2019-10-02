@@ -39,4 +39,5 @@
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.input.list</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.input.merge</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.list</webFragments>
 </webModule>

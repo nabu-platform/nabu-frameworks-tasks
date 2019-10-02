@@ -157,7 +157,7 @@
 				mask="false"
 				optional="false"
 				fixedValue="true">
-			<from>INFO</from>
+			<from>DEBUG</from>
 			<to>event/severity</to>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
