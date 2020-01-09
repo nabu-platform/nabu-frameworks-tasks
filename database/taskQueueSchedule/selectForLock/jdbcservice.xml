@@ -1,0 +1,8 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskQueueSchedule</outputDefinition>
+	<sql>select *
+from ~task_queue_schedules tqs
+where tqs.task_queue_id = :taskQueueId
+	and tqs.task_schedule_id = :taskScheduleId
+for update</sql>
+</jdbcService>
