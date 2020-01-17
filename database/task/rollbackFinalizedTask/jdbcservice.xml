@@ -2,5 +2,5 @@
 	<sql>update ~tasks set state = 'CREATED', owner = null, started = null
 where id = :taskId
 -- only final states and ERROR
-and (state = 'ERROR' or state = 'FAILED' or state = 'SUCCEEDED' or state = 'CANCELLED')</sql>
+and (state = 'TRANSIENT_ERROR' or state = 'ERROR' or state = 'FAILED' or state = 'SUCCEEDED' or state = 'CANCELLED')</sql>
 </jdbcService>

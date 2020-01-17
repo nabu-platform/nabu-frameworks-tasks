@@ -2,10 +2,10 @@
 		disabled="false"
 		id="0ce87069-ebcc-4a66-a2ff-26d9c22788a3">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			disabled="false"
-			label="!input/targets"
 			comment="Add $any, the server name, the server group and the server aliases"
-			id="0828b11f4d314b5c981d3357b8f4c66d">
+			disabled="false"
+			id="0828b11f4d314b5c981d3357b8f4c66d"
+			label="!input/targets">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="4aa3e7e78785479cbe735e8c8319e8c8"
@@ -125,13 +125,13 @@
 			id="566ebc23-94f8-46a7-9c8c-1aca71dca5c8"
 			query="input/queue/concurrency">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
-				disabled="false"
-				label="0"
 				comment="If serial, we are interested in lowest non-final task index only"
-				id="31ffa9c6-1dfe-42a0-acd9-22d42af9e996">
+				disabled="false"
+				id="31ffa9c6-1dfe-42a0-acd9-22d42af9e996"
+				label="0">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-					disabled="false"
 					comment="Get task"
+					disabled="false"
 					id="923a7b3382ed46c3b0c46aae1bc6230b">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
@@ -232,7 +232,7 @@
 							mask="false"
 							optional="false"
 							fixedValue="true">
-						<from>CREATED,WAITING,ERROR,RUNNING</from>
+						<from>CREATED,WAITING,ERROR,RUNNING,TRANSIENT_ERROR</from>
 						<to>string</to>
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -257,8 +257,8 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="true"
-					label="task/state = &quot;CREATED&quot; &amp;&amp; (task/scheduled = null || task/scheduled &lt;= reference)"
-					id="55e7bcbf-4d88-4121-ae2d-c4a2bf7f047e">
+					id="55e7bcbf-4d88-4121-ae2d-c4a2bf7f047e"
+					label="task/state = &quot;CREATED&quot; &amp;&amp; (task/scheduled = null || task/scheduled &lt;= reference)">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="5bd2dac0-d142-4088-be4d-347de5e7eee8"
@@ -270,10 +270,10 @@
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-					disabled="false"
-					label="task/state = &quot;CREATED&quot;"
 					comment="For serial queues, we ignore tasks in the future, this make them non-serial in a way!"
-					id="81ced1ff49814a8b939a7fc24331a50e">
+					disabled="false"
+					id="81ced1ff49814a8b939a7fc24331a50e"
+					label="task/state = &quot;CREATED&quot;">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="64f2082c636c41069f02b7544598ca32"
@@ -286,8 +286,8 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-				disabled="false"
 				comment="Otherwise, we just want available tasks"
+				disabled="false"
 				id="671b2358-7a95-4fb6-ab96-623e2e81e41e">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
