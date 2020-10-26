@@ -19,4 +19,6 @@
     <field name="manage" type="java.lang.Boolean"/>
     <field name="closeQueue" type="java.lang.Boolean"/>
     <field minOccurs="0" name="anonymous" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="rootService" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="services" type="java.lang.String"/>
 </structure>

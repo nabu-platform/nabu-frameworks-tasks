@@ -1,0 +1,10 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.Task</outputDefinition>
+	<sql>select *
+from ~tasks t join ~task_queues q on t.task_queue_id = q.id
+where q.id = :queueId
+-- can only take from an active queue
+and q.state = 'ACTIVE'
+and t.state not in ('CANCELLED', 'SUCCEEDED', 'FAILED', 'STAGED')
+order by task_index asc</sql>
+</jdbcService>

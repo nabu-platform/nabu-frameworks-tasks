@@ -4,4 +4,5 @@
         <field maxOccurs="unbounded" minOccurs="0" name="connections" type="java.lang.String"/>
     </structure>
     <structure definition="nabu.utils.types.NodeDescription" maxOccurs="unbounded" minOccurs="0" name="pools"/>
+    <field name="amountOfChanges" type="java.lang.Integer"/>
 </structure>

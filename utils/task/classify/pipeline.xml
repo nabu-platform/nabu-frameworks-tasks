@@ -4,6 +4,7 @@
         <field name="connectionId" type="java.lang.String"/>
         <field name="stacktrace" type="java.lang.String"/>
         <field minOccurs="0" name="code" type="java.lang.String"/>
+        <field minOccurs="0" name="queueName" type="java.lang.String"/>
     </structure>
     <structure name="output">
         <field comment="Whether or not it should be retried" name="transient" type="java.lang.Boolean"/>
@@ -17,4 +18,6 @@
     <field name="count" type="java.lang.Long"/>
     <field name="amountOfRetries" type="java.lang.Integer"/>
     <structure definition="nabu.frameworks.tasks.types.taskProviderError" name="error"/>
+    <structure collectionName="TaskErrorRules" definition="nabu.frameworks.tasks.types.model.tasks.TaskErrorRule" maxOccurs="unbounded" minOccurs="0" name="additionalRules" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure definition="nabu.frameworks.tasks.types.taskProviderError" minOccurs="0" name="additionalError"/>
 </structure>

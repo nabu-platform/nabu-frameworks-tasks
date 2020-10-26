@@ -12,4 +12,6 @@
     <field maxOccurs="unbounded" minOccurs="0" name="connections" type="java.lang.String"/>
     <field minOccurs="0" name="lastScheduled" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="now" type="java.util.Date"/>
+    <structure definition="nabu.frameworks.tasks.types.queueAndProvider" name="queueToCheck"/>
+    <structure definition="nabu.frameworks.tasks.types.queueAndProvider" maxOccurs="unbounded" minOccurs="0" name="queuesToCheck"/>
 </structure>

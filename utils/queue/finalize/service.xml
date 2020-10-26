@@ -1,0 +1,376 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="e9554f71-b5e6-4c6e-8aa3-d5a6525805fc">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			comment="Only useful if the queue is set to published"
+			disabled="false"
+			id="2e84d682-776f-42e5-b5ee-f796f55c7708"
+			label="input/queue/published != null">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Set lock name"
+				disabled="false"
+				id="7a2b16dc-3fb5-4f5f-92c0-936d4ca81b6a">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d8b1ef72-cb29-4466-b1fb-75a96ce27c85"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>="finished.queue." + input/queue/name</from>
+				<to>lockName</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="We use a lock to prevent someone from unstaging and triggering new tasks at an inopportune time"
+				disabled="false"
+				id="9a916502-5b62-422e-9a75-3efa8fb56c6b">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="671a80e7-6456-49d3-a464-9b15a9527728"
+					serviceId="nabu.utils.Lock.lock"
+					resultName="result51378ad7c53b48099a8df58df8569704"
+					temporaryMapping="true"
+					x="48"
+					y="44"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="754b7d96-d399-4eca-83b0-c7e486776269"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>lockName</from>
+					<to>name</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="6e7ec53b-7f0e-4c68-a772-2a747261cdfa"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>false</from>
+					<to>local</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+				disabled="false"
+				id="b58358dc-6556-4575-9717-02156aaa493f">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="982b4a68-9d68-4022-b5c9-ef44da26e70c">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="a8fc37fe-6f4e-4c61-9757-de00b31c27a5"
+						serviceId="nabu.frameworks.tasks.database.task.selectActiveTask"
+						resultName="result2a96aa02383541f3b732a6c7363fbb77"
+						temporaryMapping="true"
+						x="47"
+						y="66"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="e0b7a8cb-c664-4e4f-a11a-b1bb2b637c10"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>input/queue/id</from>
+						<to>parameters/queueId</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="3f4699c9-8245-4e96-b574-e27b331265f4"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>1</from>
+						<to>limit</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="c2877317-3786-4b1e-852b-e9ac1ec3a60f"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>input/connectionId</from>
+						<to>connection</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="0f3fb1c1-411e-41cd-a798-2d7fcfd374f2"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>input/transactionId</from>
+						<to>transaction</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="b2349f52-b1a7-4dcc-83de-e0859861237b"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result2a96aa02383541f3b732a6c7363fbb77/results</from>
+					<to>active</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="975d2d88-0ca3-4278-9a8a-48f8c9125687"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result2a96aa02383541f3b732a6c7363fbb77/rowCount</from>
+					<to>rowCount</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+					comment="If there are no active tasks left on a published queue, we unstage anything that was left as staged"
+					disabled="false"
+					id="8fef09cc-6ece-460a-a927-96f0abf9555e"
+					label="rowCount = 0">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						comment="We unstage all the tasks for this queue"
+						disabled="false"
+						id="bcc57d59-1dae-466c-b9bb-d21b397c71e8">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+							disabled="false"
+							id="e321e838-5b71-45d9-8976-991214c1814d"
+							serviceId="nabu.frameworks.tasks.database.task.unstageAll"
+							resultName="result334e140d67a2432a8e9343b5b29035a5"
+							temporaryMapping="true"
+							x="30"
+							y="30"
+							invocationOrder="0"
+							asynchronous="false"
+							recache="false">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="d1e21f8a-9b9a-4aed-9095-5cc2257f4745"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>input/queue/id</from>
+							<to>parameters[0]/queueId</to>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="1ff49f50-714d-40f1-905f-74fa9e45ca8b"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>input/connectionId</from>
+							<to>connection</to>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="8ee4eae9-c81f-407a-affe-9894747230dc"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>input/transactionId</from>
+							<to>transaction</to>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="beec63f5-3485-4c71-8215-befa8118a7e7"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>result334e140d67a2432a8e9343b5b29035a5/rowCount</from>
+						<to>rowCount</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+						disabled="false"
+						id="2e5c1178-eedd-4861-8bcf-12a5172a0e7c"
+						query="rowCount">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+							comment="If there were no staged tasks left, we finalize the queue"
+							disabled="false"
+							id="f5a122c3-c373-4b0d-a3e4-5fb346415737"
+							label="0">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+								disabled="false"
+								id="d95ee484-94ec-403e-b418-7a65e54c9283">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+									disabled="false"
+									id="d95b6fce-3742-45b2-94fb-5f67e331d86e"
+									serviceId="nabu.frameworks.tasks.database.taskQueue.finishQueue"
+									resultName="result9e8eb922ee6e4e8a9c58a22b8aeff324"
+									temporaryMapping="true"
+									x="30"
+									y="30"
+									invocationOrder="0"
+									asynchronous="false"
+									recache="false">
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="bf192337-4a7c-4cd3-86de-fd3e942cc036"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>input/queue/id</from>
+									<to>parameters[0]/queueId</to>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="77a13e19-b57e-4860-80c2-8be34902ad97"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>input/connectionId</from>
+									<to>connection</to>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="c6c3a181-5f7b-40e5-8fdf-f736a5561d28"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>input/transactionId</from>
+									<to>transaction</to>
+								</steps>
+							</steps>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+								comment="Activate dependencies"
+								disabled="false"
+								id="7d642d88-b06e-440e-9755-bf6e35639013">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+									disabled="false"
+									id="9b18779c-9c44-4938-a55b-0109b3f086a1"
+									serviceId="nabu.frameworks.tasks.database.taskQueue.activateDependencies"
+									resultName="resultecd12b759a994e668a94d6ab627fe894"
+									temporaryMapping="true"
+									x="19"
+									y="146"
+									invocationOrder="0"
+									asynchronous="false"
+									recache="false">
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="3b562588-f37b-496f-b222-f7001262617a"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>input/connectionId</from>
+									<to>connection</to>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="4a34154e-5155-41c1-aad3-8d9acd7fea75"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>input/transactionId</from>
+									<to>transaction</to>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="dbf7923d-3804-46f6-9a6a-41535e3ba6ae"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>input/queue/id</from>
+									<to>parameters[0]/queueId</to>
+								</steps>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="0cc072b4-3e71-4486-9837-162f44eb4ee7"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>resultecd12b759a994e668a94d6ab627fe894/rowCount</from>
+								<to>rowCount</to>
+							</steps>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+								comment="If we activated a queue, make sure the task runner is active again"
+								disabled="false"
+								id="74485935-bbd7-4554-8eac-89c51b2a3140"
+								label="rowCount &gt; 0">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+									disabled="false"
+									id="fcb9f379-46aa-4a00-a835-eb30dc4d4659"
+									serviceId="nabu.frameworks.tasks.services.poller.wakeup"
+									resultName="resultbeba21e0603f453ab3bf6faaca0edbf8"
+									temporaryMapping="true"
+									x="73"
+									y="82"
+									invocationOrder="0"
+									asynchronous="false"
+									recache="false">
+							</steps>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+							comment="Wake up the poller to process the unstaged tasks"
+							disabled="false"
+							id="0f70b5ae-b854-4e3d-b098-d2e8c3daf2c8">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+								disabled="false"
+								id="c72d54e1-8383-4a08-9de3-0cb24667db87"
+								serviceId="nabu.frameworks.tasks.services.poller.wakeup"
+								resultName="result54675462bc5d4f2d874e050ae74fe53d"
+								temporaryMapping="true"
+								x="61"
+								y="31"
+								invocationOrder="0"
+								asynchronous="false"
+								recache="false">
+						</steps>
+					</steps>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Finally"
+					disabled="false"
+					id="8c233acc-1e5e-452f-a662-961f9fdbd938">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						disabled="false"
+						id="23bae92d-6f86-4e68-84e3-482adbf40691">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+							disabled="false"
+							id="ea27cf6a-9319-4d51-96b1-22d561b5fd8d"
+							serviceId="nabu.utils.Lock.unlock"
+							resultName="result3683d1ff3780455aabed6b668255a700"
+							temporaryMapping="true"
+							x="49"
+							y="90"
+							invocationOrder="0"
+							asynchronous="false"
+							recache="false">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="756afa41-3857-44d5-921f-84329b5f95a8"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>lockName</from>
+							<to>name</to>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="8028d9bf-9a68-4f52-90da-cca124a69884"
+								mask="false"
+								optional="false"
+								fixedValue="true">
+							<from>false</from>
+							<to>local</to>
+						</steps>
+					</steps>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
+				disabled="false"
+				id="629d6600-1788-4a22-a8b7-14c0fbbcc06b">
+		</steps>
+	</steps>
+</sequence>

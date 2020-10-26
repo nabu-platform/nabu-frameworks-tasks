@@ -1,0 +1,6 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskErrorRule</outputDefinition>
+	<sql>select *
+from ~task_error_rules ter
+where (ter.queue is null or ter.queue = :queue)</sql>
+</jdbcService>

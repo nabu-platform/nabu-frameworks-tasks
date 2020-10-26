@@ -1,0 +1,4 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>update ~tasks set state = 'CREATED' where state = 'STAGED'
+	and task_queue_id = :queueId</sql>
+</jdbcService>

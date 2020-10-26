@@ -5,4 +5,5 @@
     <field minOccurs="0" name="schedule" type="java.lang.String"/>
     <field name="name" type="java.lang.String"/>
     <field minOccurs="0" name="executor" type="java.lang.String"/>
+    <field minOccurs="0" name="published" timezone="UTC" type="java.util.Date"/>
 </structure>

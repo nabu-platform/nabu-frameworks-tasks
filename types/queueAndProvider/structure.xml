@@ -1,0 +1,4 @@
+<structure name="queueAndProvider">
+    <structure definition="nabu.frameworks.tasks.providers.taskProvider" name="provider"/>
+    <structure definition="nabu.frameworks.tasks.types.queueOutput" name="queue"/>
+</structure>

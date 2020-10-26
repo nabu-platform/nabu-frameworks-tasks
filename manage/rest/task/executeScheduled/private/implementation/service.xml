@@ -1,0 +1,132 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="e5ad94ee-946a-459f-b3f5-815efa4dee4e">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="4a703c32-4eec-4946-ae14-94ffaedfc159">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="fa5517ea-e388-496c-83d5-1ebe808f7ebc"
+				serviceId="nabu.frameworks.tasks.database.task.selectById"
+				resultName="result216ca1a911fb4afcadda049383eb91b7"
+				temporaryMapping="true"
+				x="83"
+				y="77"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="41ba2ce6-6d7a-4a69-968d-e697df6e90d0"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/taskId</from>
+				<to>parameters/id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="c29dacd1-fc93-4f0c-b656-ba5139e27f4b"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result216ca1a911fb4afcadda049383eb91b7/results[0]</from>
+			<to>task</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="d8d4fec2-d7fe-47a9-92ab-7d024fae12e5"
+				serviceId="nabu.utils.Date.increment"
+				resultName="result8c531873d2434789b4f581488a6ddaec"
+				temporaryMapping="true"
+				x="104"
+				y="159"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="83fbb7ce-6326-470e-8c34-536be05e0847"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>3</from>
+				<to>increment</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7affe298-e16a-45a3-8ab0-28ee69a6a18c"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>SECONDS</from>
+				<to>unit</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e5e3f1db-8f73-4a26-bc36-337fabc418bf"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result8c531873d2434789b4f581488a6ddaec/date</from>
+			<to>now</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			disabled="false"
+			id="85f970fd-88de-45ac-bd42-7902dfed319f"
+			label="task/scheduled != null &amp;&amp; task/scheduled &gt; now">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Unset scheduled"
+				disabled="false"
+				id="a7d8f54e-c8b7-4a33-8a08-dabbe7d5f709">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Drop"
+					disabled="false"
+					id="bc8c3676-0938-4bd1-89ec-7995b4264716"
+					path="task/scheduled" xsi:nil="true"/>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="e854a8d5-bb9a-4485-beb1-e64618d0760f">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="1881a824-4428-493b-8650-d96f844a6805"
+					serviceId="nabu.services.jdbc.Services.update"
+					resultName="resultf0fcfdb9c09846b48df57e1446a1a9a7"
+					temporaryMapping="true"
+					x="107"
+					y="139"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="15a85baa-17cd-4732-afd7-affebb0dbfcb"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>task</from>
+					<to>instances[0]</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="aec6a670-95e7-436b-82d6-1c0224ba0110">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="0ce5246c-00c5-43b5-8d68-2dc1463095fd"
+					serviceId="nabu.frameworks.tasks.services.poller.wakeup"
+					resultName="resulte4d11e8a9ac140e2a4ca30c8904dbc85"
+					temporaryMapping="true"
+					x="202"
+					y="115"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+			</steps>
+		</steps>
+	</steps>
+</sequence>

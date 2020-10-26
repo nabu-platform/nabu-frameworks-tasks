@@ -1,0 +1,3 @@
+<structure name="query">
+    <field name="newSchedule" type="java.util.Date"/>
+</structure>
