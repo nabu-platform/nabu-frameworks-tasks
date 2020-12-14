@@ -30,4 +30,5 @@
     </structure>
     <structure definition="be.nabu.libs.authentication.api.Token" minOccurs="0" name="runAs"/>
     <structure definition="be.nabu.utils.cep.impl.ComplexEventImpl" name="event"/>
+    <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
 </structure>

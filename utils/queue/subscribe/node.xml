@@ -1,1 +1,34 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:56:27.785+02:00" lastModified="2020-09-25T08:50:04.267+02:00" leaf="true" version="78"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>nabu.utils.Transaction.start</references><references>nabu.utils.List.add</references><references>nabu.frameworks.tasks.services.task.log</references><references>nabu.frameworks.tasks.providers.taskProvider</references><references>nabu.frameworks.tasks.utils.queue.finalize</references><references>java.lang.Integer</references><references>nabu.frameworks.tasks.utils.queue.poll</references><references>java.lang.Long</references><references>nabu.frameworks.tasks.database.task.countByQueueId</references><references>java.lang.Boolean</references><references>java.lang.String</references><references>nabu.utils.String.split</references><references>nabu.utils.Transaction.commit</references><references>nabu.utils.Server.getServerGroup</references><references>nabu.utils.Server.getServerAliases</references><references>nabu.utils.Date.now</references><references>nabu.frameworks.tasks.types.queueOutput</references><references>nabu.frameworks.tasks.utils.task.execute</references><references>nabu.frameworks.tasks.utils.queue.rollback</references><references>nabu.utils.List.addAll</references><references>nabu.frameworks.tasks.types.taskOutput</references><references>nabu.utils.Server.getServerName</references><references>nabu.frameworks.tasks.database.task.pickup</references><references>nabu.utils.Transaction.rollback</references><references>nabu.utils.Lock.tryLock</references><references>nabu.utils.List.size</references><references>nabu.utils.Lock.unlock</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:56:27.785+02:00" lastModified="2020-12-14T14:39:38.633+01:00" leaf="true" version="84">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.Transaction.start</references>
+    <references>nabu.utils.List.add</references>
+    <references>nabu.frameworks.tasks.services.task.log</references>
+    <references>nabu.frameworks.tasks.providers.taskProvider</references>
+    <references>nabu.frameworks.tasks.utils.queue.finalize</references>
+    <references>java.lang.Integer</references>
+    <references>nabu.frameworks.tasks.utils.queue.poll</references>
+    <references>java.lang.Long</references>
+    <references>nabu.frameworks.tasks.database.task.countByQueueId</references>
+    <references>java.lang.Boolean</references>
+    <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.String.split</references>
+    <references>nabu.utils.Transaction.commit</references>
+    <references>nabu.utils.Server.getServerGroup</references>
+    <references>nabu.utils.Server.getServerAliases</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.frameworks.tasks.types.queueOutput</references>
+    <references>nabu.frameworks.tasks.utils.task.execute</references>
+    <references>nabu.frameworks.tasks.utils.queue.rollback</references>
+    <references>nabu.utils.List.addAll</references>
+    <references>nabu.frameworks.tasks.types.taskOutput</references>
+    <references>nabu.utils.Server.getServerName</references>
+    <references>nabu.frameworks.tasks.database.task.pickup</references>
+    <references>nabu.utils.Transaction.rollback</references>
+    <references>nabu.utils.Lock.tryLock</references>
+    <references>nabu.utils.List.size</references>
+    <references>nabu.utils.Lock.unlock</references>
+</node>

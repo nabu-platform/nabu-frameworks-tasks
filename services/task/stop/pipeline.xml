@@ -10,6 +10,7 @@
         <field minOccurs="0" name="code" type="java.lang.String"/>
         <field minOccurs="0" name="transient" type="java.lang.Boolean"/>
         <field minOccurs="0" name="fail" type="java.lang.Boolean"/>
+        <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
     </structure>
     <structure name="output">
         <field name="stopped" type="java.lang.Boolean"/>

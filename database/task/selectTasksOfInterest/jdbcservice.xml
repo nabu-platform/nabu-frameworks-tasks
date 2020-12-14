@@ -12,5 +12,6 @@ and (:notOwner is null or t.owner &lt;&gt; :notOwner)
 and (t.scheduled is null or :scheduled is null or t.scheduled &lt;= :scheduled)
 and (:taskType is null or t.task_type = :taskType)
 and t.target = any(:targets)
+and (:after is null or t.created &gt;= :after)
 order by task_index asc</sql>
 </jdbcService>

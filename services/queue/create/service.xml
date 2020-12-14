@@ -198,6 +198,24 @@
 				<from>configuration/schedule</from>
 				<to>queue/schedule</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ca08edd7-bab1-4582-8b47-376b959d8768"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>configuration/affix</from>
+				<to>queue/affix</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="12270d0e-02a2-43fb-95b5-7ba01da83e14"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>configuration/lookback</from>
+				<to>queue/lookback</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
 				disabled="false"

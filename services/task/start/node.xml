@@ -1,1 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:52:29.475+02:00" lastModified="2018-07-05T13:54:34.890+02:00" leaf="true" version="24"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>nabu.utils.Transaction.start</references><references>nabu.utils.Server.getServerName</references><references>nabu.frameworks.tasks.database.task.start</references><references>nabu.utils.Transaction.rollback</references><references>nabu.frameworks.tasks.services.task.log</references><references>nabu.utils.Transaction.commit</references><references>java.lang.Long</references><references>nabu.utils.Date.now</references><references>java.lang.Boolean</references><references>java.lang.String</references><references>java.util.UUID</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:52:29.475+02:00" lastModified="2020-12-14T09:41:47.412+01:00" leaf="true" version="26">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.Transaction.start</references>
+    <references>nabu.utils.Server.getServerName</references>
+    <references>nabu.frameworks.tasks.database.task.start</references>
+    <references>nabu.utils.Transaction.rollback</references>
+    <references>nabu.frameworks.tasks.services.task.log</references>
+    <references>nabu.utils.Transaction.commit</references>
+    <references>java.lang.Long</references>
+    <references>nabu.utils.Date.now</references>
+    <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.String</references>
+    <references>java.util.UUID</references>
+</node>

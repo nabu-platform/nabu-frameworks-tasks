@@ -320,6 +320,59 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="3f302815-a8d8-4ac2-9d9b-f34b6f173bac"
+				label="input/queue/affix != null">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9c5309e0-63c0-4e5b-a867-981b81a057ba"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/queue/affix</from>
+				<to>affix/affix</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="e3023c30-42c8-4e0d-adaa-71cb75f6b93d"
+					serviceId="nabu.utils.String.split"
+					resultName="resultd3b8fb9e88bd48d787337f6570feda0c"
+					temporaryMapping="true"
+					x="192"
+					y="333"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="fcf24b2c-5297-41c4-b312-6ce95ea6faec"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>tasks,task_logs,task_properties</from>
+					<to>string</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="0516aec6-a1ab-4472-942a-5a7e97e60c52"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>,</from>
+					<to>separator</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="03bc3f4a-7e6f-47f8-9a72-8b2367e28e8e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultd3b8fb9e88bd48d787337f6570feda0c/parts</from>
+				<to>affix/tables</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="Get amount of running tasks"
 				disabled="false"
 				id="9855a797-7b05-4483-a6b3-c6ec6c32e554">
@@ -369,6 +422,15 @@
 						fixedValue="false">
 					<from>resulta92b243bc1864fd7bf08d3fa866f11d4/parts</from>
 					<to>parameters/states</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="8fcdb4e9-8b9c-4cb3-b482-85e4ad769136"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>affix</from>
+					<to>affix[0]</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
@@ -595,8 +657,8 @@
 									serviceId="nabu.frameworks.tasks.database.task.pickup"
 									resultName="resultfcd0f6e8ace34345971fe60c4a056852"
 									temporaryMapping="true"
-									x="328"
-									y="171"
+									x="486"
+									y="179"
 									invocationOrder="1"
 									asynchronous="false"
 									recache="false">
@@ -645,6 +707,15 @@
 									<from>resultfc60faec495e4871868e98d55b3672cc/date</from>
 									<to>parameters[0]/now</to>
 								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="8577664f-cf85-41e3-8528-085fe221cc44"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>affix</from>
+									<to>affix[0]</to>
+								</steps>
 							</steps>
 							<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 									disabled="false"
@@ -658,15 +729,6 @@
 									asynchronous="false"
 									recache="false">
 							</steps>
-							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-									disabled="false"
-									id="b6744a0d-fa0d-4ab9-bdf0-2040d58a60b1"
-									mask="false"
-									optional="false"
-									fixedValue="false">
-								<from>resultfcd0f6e8ace34345971fe60c4a056852/rowCount</from>
-								<to>waitingCount</to>
-							</steps>
 							<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 									disabled="false"
 									id="0049ecf5-21b2-458c-adc4-1527ac44d084"
@@ -678,6 +740,15 @@
 									invocationOrder="0"
 									asynchronous="false"
 									recache="false">
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="2fc4da54-dcdc-466d-bbe8-6b7a3ff04d15"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>resultfcd0f6e8ace34345971fe60c4a056852/rowCount</from>
+								<to>waitingCount</to>
 							</steps>
 						</steps>
 						<steps xsi:type="be.nabu.libs.services.vm.step.Map"
@@ -739,6 +810,15 @@
 										fixedValue="true">
 									<from>Picked up task for processing</from>
 									<to>title</to>
+								</steps>
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="f558a346-cefb-46c9-9691-8c23516b4b90"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>affix</from>
+									<to>affix</to>
 								</steps>
 							</steps>
 						</steps>

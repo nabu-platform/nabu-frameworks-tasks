@@ -23,4 +23,5 @@
     <field name="releaseLocalLock" type="java.lang.Boolean"/>
     <field name="amountOfRunningTasks" type="java.lang.Long"/>
     <field name="waitingCount" type="java.lang.Long"/>
+    <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
 </structure>

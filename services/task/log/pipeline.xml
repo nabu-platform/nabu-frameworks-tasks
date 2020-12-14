@@ -8,6 +8,7 @@
         <field minOccurs="0" name="code" type="java.lang.String"/>
         <field name="title" type="java.lang.String"/>
         <field minOccurs="0" name="description" type="java.lang.String"/>
+        <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
     </structure>
     <structure name="output"/>
     <structure collectionName="TaskLogs" definition="nabu.frameworks.tasks.types.model.tasks.TaskLog" name="log" namespace="nabu.frameworks.tasks.types.model.tasks"/>

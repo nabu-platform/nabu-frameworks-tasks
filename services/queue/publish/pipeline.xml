@@ -21,4 +21,5 @@
     <field minOccurs="0" name="anonymous" type="java.lang.Boolean"/>
     <field minOccurs="0" name="rootService" type="java.lang.String"/>
     <field maxOccurs="unbounded" minOccurs="0" name="services" type="java.lang.String"/>
+    <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
 </structure>

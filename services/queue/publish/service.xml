@@ -485,6 +485,59 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="3f302815-a8d8-4ac2-9d9b-f34b6f173bac"
+			label="queue/affix != null">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="e3023c30-42c8-4e0d-adaa-71cb75f6b93d"
+				serviceId="nabu.utils.String.split"
+				resultName="resultd3b8fb9e88bd48d787337f6570feda0c"
+				temporaryMapping="true"
+				x="109"
+				y="94"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fcf24b2c-5297-41c4-b312-6ce95ea6faec"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>tasks,task_logs,task_properties</from>
+				<to>string</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0516aec6-a1ab-4472-942a-5a7e97e60c52"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>,</from>
+				<to>separator</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="03bc3f4a-7e6f-47f8-9a72-8b2367e28e8e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultd3b8fb9e88bd48d787337f6570feda0c/parts</from>
+			<to>affix/tables</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="5cd71365-0473-492d-a237-fcb3b80982cc"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>queue/affix</from>
+			<to>affix/affix</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Map initial"
 			disabled="false"
 			id="37ca58e5-fa4c-4d95-9a05-593694bfb2da">
@@ -735,6 +788,15 @@
 				<from>task</from>
 				<to>parameters[0]</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="90254637-4a78-4c45-b3ef-69a797163521"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>affix</from>
+				<to>affix[0]</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -923,6 +985,15 @@
 					fixedValue="false">
 				<from>taskProperties</from>
 				<to>instances</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ae00077a-92a9-4915-ab28-f4589da765a4"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>affix</from>
+				<to>affixes[0]</to>
 			</steps>
 		</steps>
 	</steps>

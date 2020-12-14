@@ -6,4 +6,5 @@
     <field minOccurs="0" name="scheduled" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="taskType" type="java.lang.String"/>
     <field maxOccurs="unbounded" name="targets" type="java.lang.String"/>
+    <field minOccurs="0" name="after" timezone="UTC" type="java.util.Date"/>
 </structure>
