@@ -278,6 +278,21 @@
 			<to>queue/target</to>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="The retry queue must never be serial, it is shared across other queues."
+			disabled="false"
+			id="6fe97aeb-f42b-4d6e-bbda-3018ffecabce"
+			label="queueName == &quot;$retry&quot; &amp;&amp; queue/concurrency = 0">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="f87f1550-7db5-4864-9834-888db8b7bf5c"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>1</from>
+			<to>queue/concurrency</to>
+		</steps>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			disabled="false"
 			id="4257e06d-b4fc-4e70-8c93-6d5ff7cbc3af"
