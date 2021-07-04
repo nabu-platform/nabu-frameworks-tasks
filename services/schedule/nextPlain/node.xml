@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2021-02-19T12:21:59.903+01:00" lastModified="2021-02-23T16:11:45.496+01:00" leaf="true" version="5">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.lang.Long</references>
+    <references>java.util.Date</references>
+    <references>java.util.TimeZone</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.services.schedule.parse</references>
+    <references>nabu.frameworks.tasks.services.schedule.next</references>
+</node>

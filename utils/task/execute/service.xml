@@ -1203,15 +1203,6 @@
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
-							id="11619a99c8884fcdb44de46ae590f242"
-							mask="false"
-							optional="false"
-							fixedValue="false">
-						<from>summary/message</from>
-						<to>errorMessage</to>
-					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-							disabled="false"
 							id="74d5e8d236934e3f8b379f2c39fc9b6c"
 							mask="false"
 							optional="false"
@@ -1245,6 +1236,15 @@
 							fixedValue="false">
 						<from>affix</from>
 						<to>affix</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="8b79b3f3-f0a3-426a-91e4-ce37625b4e1d"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>summary/coreMessage</from>
+						<to>errorMessage</to>
 					</steps>
 				</steps>
 			</steps>

@@ -625,21 +625,30 @@
 					<from>result6c7b6c39917845ee82d9ec9a8e8afd87/size</from>
 					<to>amountOfTasks</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="eceff012-97ff-4e5d-ba59-aa6125013895"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result42f527826a0f4e9aae5139b28f6443f5/tasks</from>
+					<to>output/tasks</to>
+				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.For"
 					disabled="false"
 					id="0909cf3a-e680-4e45-b95e-1c778e3b2fae"
 					label="amountOfTasks &gt; 0"
-					variable="current">
+					variable="currentTask">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Break"
 						comment="Stop if we have no more tasks left"
-						disabled="false"
+						disabled="true"
 						id="d7ed6891-f1aa-48d1-84e0-cba22e716872"
 						label="taskIndex &gt;= amountOfTasks">
 					<count>1</count>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
-						disabled="false"
+						disabled="true"
 						id="80808c81-eb6b-4a35-b4e2-ee9a40af4ed1"
 						label="canSubscribe">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
@@ -657,8 +666,8 @@
 									serviceId="nabu.frameworks.tasks.database.task.pickup"
 									resultName="resultfcd0f6e8ace34345971fe60c4a056852"
 									temporaryMapping="true"
-									x="486"
-									y="179"
+									x="456"
+									y="36"
 									invocationOrder="1"
 									asynchronous="false"
 									recache="false">
@@ -910,8 +919,8 @@
 								serviceId="nabu.utils.List.add"
 								resultName="result32593c0358734b2898540f00cfbd842b"
 								temporaryMapping="true"
-								x="78"
-								y="202"
+								x="146"
+								y="269"
 								invocationOrder="0"
 								asynchronous="false"
 								recache="false">
@@ -954,7 +963,192 @@
 						</steps>
 					</steps>
 				</steps>
-				<query>concurrency</query>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+						disabled="false"
+						id="c663fe3f-2332-4af7-9c72-29589fd2efeb"
+						query="input/queue/concurrency">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+							comment="When serial, don't offload to thread pool"
+							disabled="false"
+							id="e859f34a-f318-4202-a70c-3dcae6cae964"
+							label="0">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+								disabled="false"
+								id="7775268e-bdc8-43e6-acde-934a2ffac79d"
+								serviceId="nabu.frameworks.tasks.utils.queue.startTaskExecution"
+								resultName="result1671defb009f4afab972957c3892d404"
+								temporaryMapping="true"
+								x="81"
+								y="74"
+								invocationOrder="0"
+								asynchronous="false"
+								recache="false">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="8407cf0b-a8e5-4749-9fad-bae9156d4fea"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>input/connectionId</from>
+								<to>connectionId</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="1c2550bd-96be-4402-9394-92b8c4b52ef8"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>input/queue</from>
+								<to>queue</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="f1191019-b79e-43ac-a0cc-a81462807185"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>input/targets</from>
+								<to>targets</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="9e85854b-fd4b-4ea8-b3e2-73c7f0a0576b"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>input/taskType</from>
+								<to>taskType</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="904b2401-ee0d-43b8-bc8f-252694eaa577"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>affix</from>
+								<to>affix</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="4d6f5aaf-ac5c-468e-bd8a-649f6148e933"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>currentTask</from>
+								<to>task</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="b1c1ff78-5fc7-406d-9b57-be3a1f56d87b"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>currentLockName</from>
+								<to>localLock</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="b1e98600-3807-4db6-8f69-88fe2016265f"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>clusterLock</from>
+								<to>clusterLock</to>
+							</steps>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+							comment="When concurrent queues are used, spin off the task subscription to separate threads. Otherwise this becomes a bottleneck for high speed queues"
+							disabled="false"
+							id="4ddcbec9dd014ba89b94535eac4f247b">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+								disabled="false"
+								id="e132d410e1a543bc88b2e24d5ff0c13c"
+								serviceId="nabu.frameworks.tasks.utils.queue.startTaskExecution"
+								resultName="result1671defb009f4afab972957c3892d404"
+								temporaryMapping="true"
+								x="81"
+								y="74"
+								invocationOrder="0"
+								target="nabu.frameworks.tasks.artifacts.sharedExecutor"
+								asynchronous="true"
+								recache="false">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="72dd69f466014fd5b4468d24b59da79b"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>input/connectionId</from>
+								<to>connectionId</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="e774f2669b2845999382f41b86a7b09d"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>input/queue</from>
+								<to>queue</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="cbf56e367e4a43ddbf0ea980c0d2fd20"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>input/targets</from>
+								<to>targets</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="e306a1682898475e8c3aa5f685a36e33"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>input/taskType</from>
+								<to>taskType</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="26a245dfca8a46819a51d076f9d4268d"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>affix</from>
+								<to>affix</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="249b9a35454044f1bee72b3b6fb58c1e"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>currentTask</from>
+								<to>task</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="79721f9d4b084c01b9063ce86382b998"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>currentLockName</from>
+								<to>localLock</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="c0075ae9a51e4c04afe99b1f65a62e10"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>clusterLock</from>
+								<to>clusterLock</to>
+							</steps>
+						</steps>
+					</steps>
+				</steps>
+				<query>tasks</query>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="If no one is running anything, we can't pick anything new up _and_ the queue is set to published, finalize it"

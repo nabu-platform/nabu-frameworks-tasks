@@ -1,0 +1,11 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="after" type="java.util.Date"/>
+        <field name="schedule" type="java.lang.String"/>
+        <field minOccurs="0" name="timezone" type="java.util.TimeZone"/>
+        <field minOccurs="0" name="amount" type="java.lang.Long"/>
+    </structure>
+    <structure name="output">
+        <field maxOccurs="unbounded" name="nextRun" type="java.util.Date"/>
+    </structure>
+</structure>

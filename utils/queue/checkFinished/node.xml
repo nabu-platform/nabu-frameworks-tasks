@@ -1,1 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-18T08:03:07.588+02:00" lastModified="2020-01-15T23:16:26.059+01:00" leaf="true" version="19"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>nabu.services.jdbc.Services.update</references><references>java.lang.Long</references><references>nabu.utils.Lock.lock</references><references>nabu.frameworks.tasks.database.task.countByQueueId</references><references>nabu.frameworks.tasks.database.taskQueue.activateDependencies</references><references>nabu.utils.Runtime.interrupt</references><references>nabu.frameworks.tasks.types.queueOutput</references><references>java.lang.String</references><references>nabu.frameworks.tasks.types.model.tasks.TaskQueue</references><references>nabu.utils.String.split</references><references>nabu.utils.Lock.unlock</references><references>nabu.frameworks.tasks.database.taskQueue.selectById</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-18T08:03:07.588+02:00" lastModified="2021-04-01T10:24:52.692+02:00" leaf="true" version="20">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>java.lang.Long</references>
+    <references>nabu.utils.Lock.lock</references>
+    <references>nabu.frameworks.tasks.database.task.countByQueueId</references>
+    <references>nabu.frameworks.tasks.database.taskQueue.activateDependencies</references>
+    <references>nabu.utils.Runtime.interrupt</references>
+    <references>nabu.frameworks.tasks.types.queueOutput</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskQueue</references>
+    <references>nabu.utils.String.split</references>
+    <references>nabu.utils.Lock.unlock</references>
+    <references>nabu.frameworks.tasks.database.taskQueue.selectById</references>
+</node>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-12-14T15:11:23.138+01:00" lastModified="2020-12-14T15:16:52.524+01:00" leaf="true" version="8">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.frameworks.tasks.database.task.pickup</references>
+    <references>nabu.utils.Server.getServerName</references>
+    <references>nabu.frameworks.tasks.services.task.log</references>
+    <references>java.lang.Long</references>
+    <references>nabu.utils.Date.now</references>
+    <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>nabu.frameworks.tasks.types.queueOutput</references>
+    <references>nabu.frameworks.tasks.utils.task.execute</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.types.taskOutput</references>
+</node>

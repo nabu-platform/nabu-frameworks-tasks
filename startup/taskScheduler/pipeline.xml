@@ -7,4 +7,6 @@
     <field name="earliestForQueue" type="java.util.Date"/>
     <field name="diff" type="java.lang.Double"/>
     <field name="safetyBuffer" type="java.lang.Double"/>
+    <structure definition="nabu.frameworks.tasks.providers.taskProvider" maxOccurs="unbounded" minOccurs="0" name="taskProvidersToRemove"/>
+    <field minOccurs="0" name="developmentMode" type="java.lang.Boolean"/>
 </structure>

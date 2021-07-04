@@ -1,0 +1,106 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="5212617d-1ee6-49d0-bc46-cdce34c9e6e3">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="c843bfeb-21a4-4338-9d16-dea2ebbbc908"
+			label="input/amount = null">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="95873815-bb1f-453d-bca9-adb272c2ec36"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>1</from>
+			<to>input/amount</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="03d5df72-b917-4fe2-9eb0-c7613cd8ed1c"
+			into="output/nextRun">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="cf8f9849-9014-4e92-a86a-865697cb1d60">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="4e8e408b-26c8-448f-9e11-1d5e3b995e76"
+					serviceId="nabu.frameworks.tasks.services.schedule.parse"
+					resultName="result30eaa0bd43a843b6b518925a2df348ab"
+					temporaryMapping="true"
+					x="89"
+					y="50"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4e4f11e7-4c8f-47b8-a4a1-ca1e282066f2"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/schedule</from>
+					<to>schedule</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="91af659c-a0ab-440d-aec9-ed858710203d"
+					serviceId="nabu.frameworks.tasks.services.schedule.next"
+					resultName="result68ac8568e65046bfbeec87d7c8e4fadc"
+					temporaryMapping="true"
+					x="176"
+					y="183"
+					invocationOrder="1"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="9fc5fd9c-60c1-45ce-aae6-477d8e7d651c"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result30eaa0bd43a843b6b518925a2df348ab/schedule</from>
+					<to>schedule</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="2aa1ca8c-e43c-460a-a438-96685334b9f0"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/after</from>
+					<to>after</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="0ed41740-c9c2-4c24-84e2-0ce52ad2d14a"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/timezone</from>
+					<to>timezone</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="5ab92170-6d3b-4a0a-925a-385c1c121ddb"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result68ac8568e65046bfbeec87d7c8e4fadc/nextRun</from>
+				<to>output/nextRun</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6c47f7a3-f9b3-4868-bc94-074a3ea39462"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result68ac8568e65046bfbeec87d7c8e4fadc/nextRun</from>
+				<to>input/after</to>
+			</steps>
+		</steps>
+		<query>input/amount</query>
+	</steps>
+</sequence>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:56:27.785+02:00" lastModified="2020-12-14T14:39:38.633+01:00" leaf="true" version="84">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:56:27.785+02:00" lastModified="2020-12-14T16:09:50.372+01:00" leaf="true" version="91">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
@@ -15,6 +15,7 @@
     <references>java.lang.Boolean</references>
     <references>be.nabu.libs.services.jdbc.AffixInput</references>
     <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.artifacts.sharedExecutor</references>
     <references>nabu.utils.String.split</references>
     <references>nabu.utils.Transaction.commit</references>
     <references>nabu.utils.Server.getServerGroup</references>
@@ -31,4 +32,5 @@
     <references>nabu.utils.Lock.tryLock</references>
     <references>nabu.utils.List.size</references>
     <references>nabu.utils.Lock.unlock</references>
+    <references>nabu.frameworks.tasks.utils.queue.startTaskExecution</references>
 </node>

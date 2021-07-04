@@ -1,0 +1,14 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
+        <structure definition="nabu.frameworks.tasks.types.taskOutput" name="task"/>
+        <field name="localLock" type="java.lang.String"/>
+        <field minOccurs="0" name="clusterLock" type="java.lang.String"/>
+        <structure definition="nabu.frameworks.tasks.types.queueOutput" name="queue"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="targets" type="java.lang.String"/>
+        <field minOccurs="0" name="taskType" type="java.lang.String"/>
+    </structure>
+    <structure name="output"/>
+    <field name="waitingCount" type="java.lang.Long"/>
+</structure>

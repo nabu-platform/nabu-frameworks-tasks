@@ -1,0 +1,1028 @@
+{ 
+	"category": "Task",
+	"name": "Task Schedules",
+	"description": "An overview of all the task schedules",
+	"icon": "images/icons/tasks.svg",
+	"content": {
+		"type": "page",
+		"content": {
+			"rows": [
+				{
+					"id": 1,
+					"cells": [
+						{
+							"id": 2,
+							"rows": [],
+							"alias": "data-table-list",
+							"bindings": {
+								"orderBy": null,
+								"limit": null,
+								"offset": null,
+								"id": null,
+								"target": null,
+								"schedule": null,
+								"until": null,
+								"amount": null,
+								"allowOverlap": null,
+								"task": null,
+								"taskType": null,
+								"taskInput": null,
+								"enabled": null,
+								"manual": null,
+								"properties": null
+							},
+							"name": null,
+							"state": {
+								"autoRefresh": null,
+								"orderBy": [],
+								"filterPlaceHolder": null,
+								"filterType": null,
+								"title": "Schedules",
+								"limit": 10,
+								"actions": [
+									{
+										"name": "selectSchedule",
+										"icon": null,
+										"class": null,
+										"label": null,
+										"condition": null,
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									},
+									{
+										"name": "createSchedule",
+										"icon": null,
+										"class": "primary",
+										"label": "Create Schedule",
+										"condition": null,
+										"refresh": false,
+										"global": true,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									}
+								],
+								"filters": [],
+								"fields": [
+									{
+										"label": "task",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "task",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "schedule",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "schedule",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "enabled",
+										"fragments": [
+											{
+												"type": "form",
+												"key": "enabled",
+												"content": null,
+												"format": "checkbox",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {
+													"name": "enabled",
+													"label": null,
+													"description": null,
+													"type": "checkbox",
+													"enumerations": [],
+													"value": null
+												},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"disabled": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "manual",
+										"fragments": [
+											{
+												"type": "form",
+												"key": "manual",
+												"content": null,
+												"format": "checkbox",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {
+													"name": "manual",
+													"label": null,
+													"description": null,
+													"type": "checkbox",
+													"enumerations": [],
+													"value": null
+												},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"disabled": null
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "target",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "target",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [],
+										"hidden": null
+									}
+								],
+								"updateOperation": "nabu.frameworks.tasks.manage.rest.schedule.update",
+								"updateBindings": {
+									"taskScheduleId": "record.id",
+									"body": null
+								},
+								"multiselect": false,
+								"styles": [],
+								"refreshOn": [
+									"createdSchedule"
+								],
+								"showRefresh": false,
+								"result": {
+									"allowOverlap": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"amount": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"enabled": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"id": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"manual": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"schedule": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"target": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"task": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"taskInput": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"taskType": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"until": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									}
+								},
+								"operation": "nabu.frameworks.tasks.manage.rest.schedule.list"
+							},
+							"target": "page",
+							"on": null,
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": null,
+							"result": {}
+						},
+						{
+							"id": 3,
+							"rows": [],
+							"alias": "page-fields",
+							"bindings": {},
+							"name": null,
+							"state": {
+								"class": "row",
+								"fields": [
+									{
+										"label": "Allow Overlap",
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": "checkbox",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectSchedule.allowOverlap",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"hidden": null,
+										"styles": []
+									},
+									{
+										"label": "Amount",
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectSchedule.amount",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"hidden": "$value(\"selectSchedule.amount\") == null",
+										"styles": []
+									},
+									{
+										"label": "Until",
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectSchedule.until",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"hidden": "!$value(\"selectSchedule.until\")",
+										"styles": []
+									},
+									{
+										"label": "Type",
+										"fragments": [
+											{
+												"type": "data",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"key": "selectSchedule.taskType",
+												"disabled": null,
+												"hidden": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null
+											}
+										],
+										"hidden": null,
+										"styles": []
+									}
+								]
+							},
+							"target": "page",
+							"on": "selectSchedule",
+							"class": "align-start",
+							"customId": null,
+							"width": "0.25",
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": null
+						}
+					],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				},
+				{
+					"id": 9,
+					"cells": [
+						{
+							"id": 10,
+							"rows": [],
+							"alias": "data-table-list",
+							"bindings": {
+								"orderBy": null,
+								"limit": null,
+								"offset": null,
+								"id": null,
+								"key": null,
+								"value": null,
+								"taskScheduleId": null,
+								"properties": null
+							},
+							"name": null,
+							"state": {
+								"autoRefresh": null,
+								"orderBy": [],
+								"filterPlaceHolder": null,
+								"filterType": null,
+								"title": "Properties",
+								"limit": 10,
+								"actions": [
+									{
+										"name": "addProperty",
+										"icon": null,
+										"class": "primary",
+										"label": "Add Property",
+										"condition": null,
+										"refresh": false,
+										"global": true,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									},
+									{
+										"name": "deleteProperty",
+										"icon": "fa-times",
+										"class": "danger-text",
+										"label": null,
+										"condition": null,
+										"refresh": true,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									}
+								],
+								"filters": [],
+								"fields": [
+									{
+										"label": "key",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "key",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [],
+										"hidden": null
+									},
+									{
+										"label": "value",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "value",
+												"content": null,
+												"format": null,
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {}
+											}
+										],
+										"styles": [],
+										"hidden": null
+									}
+								],
+								"updateOperation": null,
+								"updateBindings": {},
+								"multiselect": false,
+								"styles": [],
+								"refreshOn": [
+									"addedProperty"
+								],
+								"showRefresh": false,
+								"result": {
+									"id": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"key": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"taskScheduleId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"value": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									}
+								},
+								"operation": "nabu.frameworks.tasks.manage.rest.schedule.property.list"
+							},
+							"target": "page",
+							"on": "selectSchedule",
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": null,
+							"result": {}
+						},
+						{
+							"id": 8,
+							"rows": [],
+							"alias": "data-table-list",
+							"bindings": {
+								"orderBy": null,
+								"limit": null,
+								"offset": null,
+								"id": null,
+								"taskScheduleId": null,
+								"taskQueueId": null,
+								"properties": null
+							},
+							"name": null,
+							"state": {
+								"autoRefresh": null,
+								"orderBy": [],
+								"filterPlaceHolder": null,
+								"filterType": null,
+								"title": "Queues",
+								"limit": 10,
+								"actions": [
+									{
+										"name": "deleteQueue",
+										"icon": "fa-times",
+										"class": "danger-text",
+										"label": null,
+										"condition": null,
+										"refresh": true,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									},
+									{
+										"name": "viewQueue",
+										"icon": "fa-chevron-right",
+										"class": null,
+										"label": null,
+										"condition": null,
+										"refresh": false,
+										"global": false,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									},
+									{
+										"name": "addQueue",
+										"icon": null,
+										"class": "primary",
+										"label": "Add Queue",
+										"condition": null,
+										"refresh": false,
+										"global": true,
+										"close": false,
+										"type": "button",
+										"useSelection": false
+									}
+								],
+								"filters": [],
+								"fields": [
+									{
+										"label": "Queue",
+										"fragments": [
+											{
+												"type": "data",
+												"key": "taskQueueId",
+												"content": null,
+												"format": "resolve",
+												"javascript": null,
+												"template": null,
+												"class": null,
+												"form": {},
+												"dateFormat": null,
+												"tag": null,
+												"html": null,
+												"amountOfDecimals": null,
+												"resolveOperationBinding": {},
+												"resolveOperation": "nabu.frameworks.tasks.manage.rest.taskQueue.list",
+												"resolveOperationLabel": "name",
+												"resolveOperationId": "id",
+												"resolveOperationIds": "id"
+											}
+										],
+										"styles": [],
+										"hidden": null
+									}
+								],
+								"updateOperation": null,
+								"updateBindings": {},
+								"multiselect": false,
+								"styles": [],
+								"refreshOn": [
+									"addedQueue"
+								],
+								"showRefresh": false,
+								"result": {
+									"id": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"taskQueueId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									},
+									"taskScheduleId": {
+										"label": null,
+										"format": null,
+										"custom": null,
+										"styles": []
+									}
+								},
+								"operation": "nabu.frameworks.tasks.manage.rest.taskQueue.schedule.list"
+							},
+							"target": "page",
+							"on": "selectSchedule",
+							"class": null,
+							"customId": null,
+							"width": "1",
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": null,
+							"result": {}
+						}
+					],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				},
+				{
+					"id": 6,
+					"cells": [
+						{
+							"id": 7,
+							"rows": [],
+							"alias": "tasks-list",
+							"bindings": {
+								"scheduleId": "selectSchedule.id"
+							},
+							"name": null,
+							"state": {},
+							"target": "page",
+							"on": "selectSchedule",
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": null
+						}
+					],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				},
+				{
+					"id": 4,
+					"cells": [
+						{
+							"id": 5,
+							"rows": [],
+							"alias": "page-form",
+							"bindings": {
+								"body.target": "fixed.$any",
+								"body.schedule": null,
+								"body.until": null,
+								"body.amount": null,
+								"body.allowOverlap": null,
+								"body.task": null,
+								"body.taskType": "fixed.service",
+								"body.taskInput": null,
+								"body.enabled": "fixed.true",
+								"body.manual": null
+							},
+							"name": null,
+							"state": {
+								"title": "Create Schedule",
+								"immediate": false,
+								"pages": [
+									{
+										"name": "Form Fields",
+										"title": null,
+										"fields": [
+											{
+												"name": "body.task",
+												"label": "Task",
+												"description": null,
+												"type": "text",
+												"enumerations": [],
+												"value": null,
+												"group": "row",
+												"joinGroup": false,
+												"textType": null
+											},
+											{
+												"name": "body.taskType",
+												"label": "Type",
+												"description": null,
+												"type": "text",
+												"enumerations": [],
+												"value": null,
+												"group": null,
+												"joinGroup": true,
+												"textType": null
+											},
+											{
+												"name": "body.target",
+												"label": "Target",
+												"description": null,
+												"type": "text",
+												"enumerations": [],
+												"value": null,
+												"group": null,
+												"joinGroup": true,
+												"textType": null
+											},
+											{
+												"name": "body.schedule",
+												"label": "Schedule (seconds minutes hours days months years weekDays)",
+												"description": null,
+												"type": "text",
+												"enumerations": [],
+												"value": null,
+												"group": null,
+												"joinGroup": false,
+												"textType": null
+											},
+											{
+												"name": "body.until",
+												"label": "Run Until",
+												"description": null,
+												"type": "date",
+												"enumerations": [],
+												"value": null,
+												"group": "row",
+												"joinGroup": false
+											},
+											{
+												"name": "body.amount",
+												"label": "Max Amount of Runs",
+												"description": null,
+												"type": "text",
+												"enumerations": [],
+												"value": null,
+												"group": null,
+												"joinGroup": true,
+												"textType": "number"
+											},
+											{
+												"name": "body.enabled",
+												"label": "Enabled",
+												"description": null,
+												"type": "checkbox",
+												"enumerations": [],
+												"value": null,
+												"group": null,
+												"joinGroup": false
+											},
+											{
+												"name": "body.manual",
+												"label": "Manual",
+												"description": null,
+												"type": "checkbox",
+												"enumerations": [],
+												"value": null,
+												"group": null,
+												"joinGroup": false
+											}
+										]
+									}
+								],
+								"class": null,
+								"ok": "Create",
+								"next": "Next",
+								"cancel": "Cancel",
+								"event": "createdSchedule",
+								"synchronize": false,
+								"operation": "nabu.frameworks.tasks.manage.rest.schedule.create"
+							},
+							"target": "prompt",
+							"on": "createSchedule",
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": null
+						},
+						{
+							"id": 12,
+							"rows": [],
+							"alias": "page-form",
+							"bindings": {
+								"body.taskScheduleId": "addQueue.id",
+								"body.taskQueueId": null
+							},
+							"name": null,
+							"state": {
+								"title": "Add Queue",
+								"immediate": false,
+								"pages": [
+									{
+										"name": "Form Fields",
+										"title": null,
+										"fields": [
+											{
+												"name": "body.taskQueueId",
+												"label": "Queue",
+												"description": null,
+												"type": "enumeration-operation",
+												"enumerations": [],
+												"value": null,
+												"group": null,
+												"joinGroup": false,
+												"enumerationProvider": null,
+												"enumerationOperation": "nabu.frameworks.tasks.manage.rest.taskQueue.list",
+												"enumerationOperationLabel": "name",
+												"enumerationOperationValue": "id",
+												"enumerationOperationQuery": "id",
+												"enumerationOperationBinding": {}
+											}
+										]
+									}
+								],
+								"class": null,
+								"ok": "Add",
+								"next": "Next",
+								"cancel": "Cancel",
+								"event": "addedQueue",
+								"synchronize": false,
+								"operation": "nabu.frameworks.tasks.manage.rest.taskQueue.schedule.create"
+							},
+							"target": "prompt",
+							"on": "addQueue",
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": null
+						},
+						{
+							"id": 13,
+							"rows": [],
+							"alias": "page-form",
+							"bindings": {
+								"body.key": null,
+								"body.value": null,
+								"body.taskScheduleId": "addProperty.id"
+							},
+							"name": null,
+							"state": {
+								"title": "Add Property",
+								"immediate": false,
+								"pages": [
+									{
+										"name": "Form Fields",
+										"title": null,
+										"fields": [
+											{
+												"name": "body.key",
+												"label": "Key",
+												"description": null,
+												"type": "text",
+												"enumerations": [],
+												"value": null,
+												"group": "row",
+												"joinGroup": false,
+												"textType": null
+											},
+											{
+												"name": "body.value",
+												"label": "Value",
+												"description": null,
+												"type": "text",
+												"enumerations": [],
+												"value": null,
+												"group": null,
+												"joinGroup": true,
+												"textType": null
+											}
+										]
+									}
+								],
+								"class": null,
+								"ok": "Add",
+								"next": "Next",
+								"cancel": "Cancel",
+								"event": "addedProperty",
+								"synchronize": false,
+								"operation": "nabu.frameworks.tasks.manage.rest.schedule.property.create"
+							},
+							"target": "prompt",
+							"on": "addProperty",
+							"class": null,
+							"customId": null,
+							"width": 1,
+							"height": null,
+							"instances": {},
+							"condition": null,
+							"devices": [],
+							"clickEvent": null
+						}
+					],
+					"class": null,
+					"customId": null,
+					"instances": {},
+					"condition": null,
+					"direction": null,
+					"align": null,
+					"on": null,
+					"collapsed": false,
+					"name": null
+				}
+			],
+			"path": "/tasks/schedules",
+			"counter": 14,
+			"variables": [],
+			"query": [
+				"scheduleId"
+			],
+			"actions": [
+				{
+					"name": "Delete Queue",
+					"on": "deleteQueue",
+					"confirmation": "Are you sure you want to remove this queue from the schedule?",
+					"operation": "nabu.frameworks.tasks.manage.rest.taskQueue.schedule.delete",
+					"route": null,
+					"event": null,
+					"anchor": null,
+					"bindings": {
+						"taskQueueScheduleId": "deleteQueue.id"
+					}
+				},
+				{
+					"name": "View Queue",
+					"on": "viewQueue",
+					"confirmation": null,
+					"operation": null,
+					"route": "tasks-queues",
+					"event": null,
+					"anchor": null,
+					"bindings": {
+						"queueId": "viewQueue.taskQueueId"
+					}
+				},
+				{
+					"name": "Delete Property",
+					"on": "deleteProperty",
+					"confirmation": "Are you sure you want to delete this property?",
+					"operation": "nabu.frameworks.tasks.manage.rest.schedule.property.delete",
+					"route": null,
+					"event": null,
+					"anchor": null,
+					"bindings": {
+						"taskSchedulePropertyId": "deleteProperty.id"
+					}
+				}
+			],
+			"class": null,
+			"initial": false,
+			"menuX": 0,
+			"menuY": 0,
+			"states": [],
+			"category": "Tasks",
+			"name": "tasks-schedules",
+			"label": "Task Schedules",
+			"slow": false
+		}
+	}
+}

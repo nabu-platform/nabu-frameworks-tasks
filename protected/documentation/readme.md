@@ -1,3 +1,9 @@
+# Known issues
+
+- DDL synchronization does not work yet with affixes, so if you are using affixes for your task tables,
+	- the task framework will deduce wrongly that the tables are not in sync
+	- as a workaround you can create an explicit configuration of the connection, which will make sure it is picked up
+
 # Timezones
 
 By default the task framework will calculate the next run in the timezone of the server.

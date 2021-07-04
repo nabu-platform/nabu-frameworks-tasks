@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-09-24T22:12:01.124+02:00" lastModified="2020-09-25T09:10:16.551+02:00" leaf="true" version="19"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>nabu.frameworks.tasks.database.task.selectActiveTask</references><references>java.lang.Long</references><references>nabu.utils.Lock.lock</references><references>nabu.frameworks.tasks.services.poller.wakeup</references><references>nabu.frameworks.tasks.database.taskQueue.activateDependencies</references><references>nabu.frameworks.tasks.types.queueOutput</references><references>java.lang.String</references><references>nabu.frameworks.tasks.database.task.unstageAll</references><references>nabu.frameworks.tasks.database.taskQueue.finishQueue</references><references>nabu.utils.Lock.unlock</references><references>nabu.frameworks.tasks.types.model.tasks.Task</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-09-24T22:12:01.124+02:00" lastModified="2021-04-01T13:15:42.208+02:00" leaf="true" version="22">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.frameworks.tasks.database.task.selectActiveTask</references>
+    <references>java.lang.Long</references>
+    <references>nabu.utils.Lock.lock</references>
+    <references>nabu.frameworks.tasks.services.poller.wakeup</references>
+    <references>nabu.frameworks.tasks.database.taskQueue.activateDependencies</references>
+    <references>nabu.frameworks.tasks.types.queueOutput</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.database.task.unstageAll</references>
+    <references>nabu.frameworks.tasks.database.taskQueue.finishQueue</references>
+    <references>nabu.utils.Lock.unlock</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.Task</references>
+</node>

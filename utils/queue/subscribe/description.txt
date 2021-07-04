@@ -1,0 +1,4 @@
+The actual updating to WAIT for the tasks and starting them (plus logs) limited throughput on my laptop to 450 messages / s
+By allowing parallel updates, this was boosted to slightly over 2000 / s
+
+The amount of database connections did have to keep up to make this happen.
