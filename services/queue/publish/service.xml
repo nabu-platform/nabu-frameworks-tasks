@@ -552,6 +552,132 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="If we have no target, check if we want to make the server group the default target"
+			disabled="false"
+			id="557eb5be-8a73-4b07-86a1-e834cf2f0a24"
+			label="task/target = null">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="85e4d220-6eee-4fe3-a48a-54e08de455e9"
+				serviceId="nabu.utils.Server.property"
+				resultName="result74e59bc3576642e4be9f6610959bd57f"
+				temporaryMapping="true"
+				x="131"
+				y="48"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9aa778d1-d3b7-4f1b-9a70-7d7259503fd4"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>nabu.tasks.defaultTarget</from>
+				<to>key</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="a90850c2-1f10-4318-9a80-75180fcc18b3"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>$any</from>
+				<to>defaultValue</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="87d91f01-8f92-4af1-90af-005c54ae8f3f"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result74e59bc3576642e4be9f6610959bd57f/value</from>
+			<to>task/target</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Pseudo target for the server group"
+			disabled="false"
+			id="ac34d00a-9d91-407d-87d1-51cee6cf9c84"
+			label="task/target = &quot;$group&quot;">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="340a6e24-c5ce-40af-b5c7-26c511a14032"
+				serviceId="nabu.utils.Server.getServerGroup"
+				resultName="result920851f2bb584e1387a99a2e247cbdba"
+				temporaryMapping="true"
+				x="97"
+				y="42"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="fdf12b21-411f-40bc-9e8d-3a67553f4d9a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result920851f2bb584e1387a99a2e247cbdba/group</from>
+			<to>task/target</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Pseudo target for the current server"
+			disabled="false"
+			id="3645ad7c4a5e483295cf8abea1336922"
+			label="task/target = &quot;$self&quot;">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="6adedf0d-6c49-4936-a536-74f67764a97f"
+				serviceId="nabu.utils.Server.getServerName"
+				resultName="resultf9875e2970f341e084c7791e222052a4"
+				temporaryMapping="true"
+				x="191"
+				y="111"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="08cef5bd-19d3-4529-a248-9c9e37561410"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultf9875e2970f341e084c7791e222052a4/server</from>
+			<to>task/target</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="We take the default technical correlation id"
+			disabled="false"
+			id="01a374eb-38f4-405d-b7f4-4163251f5e2f"
+			label="task/correlationId = null">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="96129b84-2d1a-45d6-930f-1c3867c0c553"
+				serviceId="nabu.utils.Runtime.getCorrelationId"
+				resultName="result98ebc9145fbd40058cfaea1cc74fc2b6"
+				temporaryMapping="true"
+				x="50"
+				y="58"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="f855e007-f314-4932-bceb-86e858815a60"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result98ebc9145fbd40058cfaea1cc74fc2b6/correlationId</from>
+			<to>task/correlationId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Map rest"
 			disabled="false"
 			id="b487be46-765a-4df7-bbf0-e94e7e45e2a6">

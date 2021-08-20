@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-04-25T17:17:00.593+02:00" lastModified="2020-12-14T09:44:35.492+01:00" leaf="true" version="95">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-04-25T17:17:00.593+02:00" lastModified="2021-07-27T14:30:52.028+02:00" leaf="true" version="97">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
@@ -8,6 +8,7 @@
     <references>be.nabu.libs.types.api.KeyValuePair</references>
     <references>nabu.utils.providers.onTransactionClose</references>
     <references>nabu.utils.Server.uuid</references>
+    <references>nabu.utils.Server.property</references>
     <references>nabu.frameworks.tasks.services.queue.create</references>
     <references>nabu.frameworks.tasks.types.taskInput</references>
     <references>nabu.frameworks.tasks.database.task.insert</references>
@@ -25,6 +26,7 @@
     <references>nabu.utils.Runtime.getServices</references>
     <references>nabu.utils.Transaction.commit</references>
     <references>nabu.utils.Runtime.setContext</references>
+    <references>nabu.utils.Server.getServerGroup</references>
     <references>nabu.utils.Date.now</references>
     <references>nabu.utils.Runtime.getContext</references>
     <references>java.util.UUID</references>
@@ -32,6 +34,7 @@
     <references>nabu.utils.Server.getServerName</references>
     <references>nabu.utils.Transaction.rollback</references>
     <references>nabu.frameworks.tasks.utils.queue.setPublished</references>
+    <references>nabu.utils.Runtime.getCorrelationId</references>
     <references>nabu.frameworks.tasks.types.model.tasks.TaskProperty</references>
     <references>nabu.frameworks.tasks.types.model.tasks.TaskQueue</references>
     <references>nabu.frameworks.tasks.services.schedule.next</references>
