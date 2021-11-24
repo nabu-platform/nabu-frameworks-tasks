@@ -1,0 +1,15 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="blockWindow" type="java.lang.String"/>
+        <field minOccurs="0" name="scheduled" type="java.util.Date"/>
+    </structure>
+    <structure name="output">
+        <field minOccurs="0" name="scheduled" type="java.util.Date"/>
+    </structure>
+    <field maxOccurs="unbounded" minOccurs="0" name="windows" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="parts" type="java.lang.String"/>
+    <field minOccurs="0" name="amountOfParts" type="java.lang.Integer"/>
+    <field name="duration" type="be.nabu.libs.types.base.Duration"/>
+    <field minOccurs="0" name="windowStart" type="java.util.Date"/>
+    <field name="nextRun" type="java.util.Date"/>
+</structure>

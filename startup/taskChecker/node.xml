@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-11T17:10:14.416+02:00" lastModified="2020-12-22T11:18:13.532+01:00" leaf="true" version="162">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-11T17:10:14.416+02:00" lastModified="2021-09-13T11:08:24.794+02:00" leaf="true" version="167">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
+    <references>nabu.utils.Runtime.summarizeException</references>
     <references>nabu.utils.List.add</references>
     <references>java.lang.Double</references>
     <references>java.util.Date</references>
@@ -17,6 +18,7 @@
     <references>nabu.utils.Runtime.interrupted</references>
     <references>nabu.frameworks.tasks.services.queue.list</references>
     <references>java.lang.Boolean</references>
+    <references>nabu.utils.Event.fire</references>
     <references>java.lang.String</references>
     <references>nabu.utils.Server.sleep</references>
     <references>nabu.utils.List.removeAll</references>
@@ -28,5 +30,6 @@
     <references>nabu.utils.Server.getServerName</references>
     <references>nabu.utils.List.size</references>
     <references>nabu.frameworks.tasks.artifacts.queueFinalizer</references>
+    <references>nabu.utils.Event.create</references>
     <references>nabu.utils.Date.increment</references>
 </node>

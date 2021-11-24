@@ -4,6 +4,32 @@
 	- the task framework will deduce wrongly that the tables are not in sync
 	- as a workaround you can create an explicit configuration of the connection, which will make sure it is picked up
 
+# Block window
+
+Sometimes you don't want tasks to be executed during a specific period. E.g. no tasks between midnight and 5 AM (because other systems have downtime), no tasks in the weekend etc.
+To this end you can configure one or more block windows.
+
+How it works is: the schedule is calculated as per usual (run in, run at, according to queue schedule, task schedule, or no scheduled at all which means "now").
+If the end result falls within a block period, it will be moved to the end of the block period.
+
+For example if we submit a task with no schedule on a saturday and the weekend is blocked, it will be scheduled at midnight monday morning: the first available moment after the block period.
+
+Syntax for the block period is the same as a regular schedule syntax but followed by a duration. Use ";" separation to list multiple:
+
+For example:
+
+```
+* * 0 PT5H;* * * * * * P2D
+```
+
+The first block is for anything between midnight and 5, the second block is for the weekend.
+
+# Performance
+
+Important index for querying tasks per queue:
+
+create index idx_tasks_queue on tasks(task_queue_id);
+
 # Timezones
 
 By default the task framework will calculate the next run in the timezone of the server.
@@ -56,7 +82,6 @@ To prevent double pickup of a task, suppose we hava concurrency of 2, we pick up
 First step in execution is to (in a separate transaction) update the task where the task still has the state WAITING. If this fails (update count == 0) then we assume someone else picked it up and immediately chain a new task for execution (if any).
 
 Assuming tasks take "some" amount of time, this means servers will hop over one another finishing tasks.
-
 
 ## Scheduled timestamps
 

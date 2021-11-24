@@ -216,6 +216,15 @@
 				<from>configuration/lookback</from>
 				<to>queue/lookback</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b17a1549-051d-4c4d-9ddf-cd991b499e71"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>configuration/blockWindow</from>
+				<to>queue/blockWindow</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
 				disabled="false"

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8' ?>
-<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Mon Dec 14 08:49:42 CET 2020'>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Mon Dec 14 09:18:21 CET 2020'>
   <XMI.header>    <XMI.documentation>
       <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
       <XMI.exporterVersion>0.34(6) revised on $Date: 2010-01-11 22:20:14 +0100 (Mon, 11 Jan 2010) $ </XMI.exporterVersion>
@@ -1214,7 +1214,7 @@ This can be done for performance reasons.</UML:TaggedValue.dataValue>
               </UML:StructuralFeature.type>
             </UML:Attribute>
             <UML:Attribute xmi.id = '127-0-1-1--6e2649dd:1766037ace5:-8000:00000000000010A7'
-              name = 'window' visibility = 'public' isSpecification = 'false' ownerScope = 'instance'
+              name = 'lookback' visibility = 'public' isSpecification = 'false' ownerScope = 'instance'
               changeability = 'changeable' targetScope = 'instance'>
               <UML:StructuralFeature.multiplicity>
                 <UML:Multiplicity xmi.id = '127-0-1-1--6e2649dd:1766037ace5:-8000:00000000000010AB'>
@@ -1227,7 +1227,7 @@ This can be done for performance reasons.</UML:TaggedValue.dataValue>
               <UML:ModelElement.taggedValue>
                 <UML:TaggedValue xmi.id = '127-0-1-1--6e2649dd:1766037ace5:-8000:00000000000010B7'
                   isSpecification = 'false'>
-                  <UML:TaggedValue.dataValue>You can set a window and the task poller will only check that far back in the past for available tasks.
+                  <UML:TaggedValue.dataValue>You can set a lookback window and the task poller will only check that far back in the past for available tasks. Note that window is a reserved word in SQL which is why this was chosen.
 This is especially interesting for &quot;best effort&quot; processing of large amounts of data, combined with for example partitioning.</UML:TaggedValue.dataValue>
                   <UML:TaggedValue.type>
                     <UML:TagDefinition xmi.idref = '127-0-1-1-a7d867c:160bb36b83c:-8000:0000000000000CBF'/>
@@ -1600,7 +1600,7 @@ This is especially interesting for &quot;best effort&quot; processing of large a
               </UML:StructuralFeature.type>
             </UML:Attribute>
             <UML:Attribute xmi.id = '127-0-1-1--6e2649dd:1766037ace5:-8000:00000000000010B1'
-              name = 'window' visibility = 'public' isSpecification = 'false' ownerScope = 'instance'
+              name = 'lookback' visibility = 'public' isSpecification = 'false' ownerScope = 'instance'
               changeability = 'changeable' targetScope = 'instance'>
               <UML:StructuralFeature.multiplicity>
                 <UML:Multiplicity xmi.id = '127-0-1-1--6e2649dd:1766037ace5:-8000:00000000000010B5'>
