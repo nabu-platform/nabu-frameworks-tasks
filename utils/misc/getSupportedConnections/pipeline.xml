@@ -5,4 +5,5 @@
     </structure>
     <structure definition="nabu.utils.types.NodeDescription" maxOccurs="unbounded" minOccurs="0" name="pools"/>
     <field name="amountOfChanges" type="java.lang.Integer"/>
+    <structure definition="nabu.protocols.jdbc.pool.types.JDBCPoolInformation" minOccurs="0" name="information"/>
 </structure>

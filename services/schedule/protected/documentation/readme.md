@@ -11,3 +11,5 @@
 
 Either fill in "*" for "any" value or a comma separated list of possible values
 The string is whitespace separated so whitespace must not exist between the comma separated values
+
+*Important*: day can not be 0! This will give faraway dates in the futures.
