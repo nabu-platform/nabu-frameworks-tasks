@@ -1278,7 +1278,7 @@
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-					comment="Pause queue if it is a serial queue and we did not set it immediately to failed"
+					comment="Pause queue if it is a serial queue and we did not set it immediately to failed. If we want to do transient reprocessing, we can pause it because the retry intervals might be large"
 					disabled="false"
 					id="ada782615dea4e5db077ddc876f99376"
 					label="input/queue/concurrency = 0 &amp;&amp; !classification/fail"

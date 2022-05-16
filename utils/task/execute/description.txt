@@ -1,0 +1,4 @@
+@2022-05-16
+If we want transient processing, we might define large intervals.
+In that interval, we don't want to keep checking the queue, so we still pause it if applicable.
+That does mean that the retry logic will automatically unpause a queue
