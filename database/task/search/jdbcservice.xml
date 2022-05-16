@@ -7,5 +7,7 @@ where (:correlationId is null or t.correlation_id = :correlationId)
 	and (:contextId is null or t.context_id = :contextId)
 	and (:task is null or t.task = :task)
 	and (:queue is null or tq.name = :queue)
-	and (:queueId is null or tq.id = :queueId)</sql>
+	and (:queueId is null or tq.id = :queueId)
+	-- can only take from an active queue
+	and (:active is null or (:active = true and t.state not in ('CANCELLED', 'SUCCEEDED', 'FAILED', 'STAGED')) or (:active = false and t.state in ('CANCELLED', 'SUCCEEDED', 'FAILED', 'STAGED')))</sql>
 </jdbcService>

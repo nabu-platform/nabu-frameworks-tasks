@@ -3,8 +3,11 @@
 	<sql>select *
 from ~tasks t join ~task_queues q on t.task_queue_id = q.id
 where q.id = :queueId
--- can only take from an active queue
-and q.state = 'ACTIVE'
+-- @2022-05-16: we had a problem where a batch queue had gone into error halfway through the processing
+-- however, the task goes into error, a lot of tasks stay on created but the queue was serial so it got paused
+-- that means by only checking active queues, we got no tasks back and the final tasks got unstaged!
+-- note that this only happens in serial batch queues that are fully published (so no new tasks) which should still work as intended
+and (q.state = 'ACTIVE' or q.state = 'PAUSED')
 and t.state not in ('CANCELLED', 'SUCCEEDED', 'FAILED', 'STAGED')
 order by task_index asc</sql>
 </jdbcService>
