@@ -1505,6 +1505,15 @@
 						<from>result4381eb98595343979d3f4c87a79961b5/date</from>
 						<to>classification/runAt</to>
 					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="d7d21a24-c78e-4576-a0c8-2bc8bfcbae4c"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>WARNING</from>
+						<to>event/severity</to>
+					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						disabled="false"
