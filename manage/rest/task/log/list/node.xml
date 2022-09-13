@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-07-05T10:03:19.640+02:00" lastModified="2019-04-26T09:57:10.423+02:00" leaf="true" version="6"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>nabu.services.jdbc.Services.paging</references><references>nabu.services.jdbc.Services.page</references><references>nabu.services.jdbc.Services.select</references><references>nabu.frameworks.tasks.manage.rest.task.log.taskLogList</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-07-05T10:03:19.640+02:00" deprecated="2022-09-13T12:41:21.185+02:00" lastModified="2019-04-26T09:57:10.423+02:00" leaf="true" version="6">
+    <environmentId>hyperion</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.services.jdbc.Services.paging</references>
+    <references>nabu.services.jdbc.Services.page</references>
+    <references>nabu.services.jdbc.Services.select</references>
+    <references>nabu.frameworks.tasks.manage.rest.task.log.taskLogList</references>
+</node>

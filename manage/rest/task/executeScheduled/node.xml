@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2020-09-03T15:24:23.111+02:00" lastModified="2020-09-03T15:28:50.112+02:00" leaf="true" version="12"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>nabu.services.jdbc.Services.update</references><references>nabu.frameworks.tasks.services.poller.wakeup</references><references>java.util.Date</references><references>nabu.utils.Date.increment</references><references>nabu.frameworks.tasks.database.task.selectById</references><references>nabu.frameworks.tasks.types.model.tasks.Task</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2020-09-03T15:24:23.111+02:00" lastModified="2020-09-03T15:28:50.112+02:00" leaf="true" version="12">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.frameworks.tasks.services.poller.wakeup</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.Date.increment</references>
+    <references>nabu.frameworks.tasks.database.task.selectById</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.Task</references>
+</node>

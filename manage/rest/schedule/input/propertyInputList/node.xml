@@ -1,1 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2018-12-17T13:33:20.951+01:00" lastModified="2018-12-17T13:33:50.420+01:00" leaf="true" version="2"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>nabu.utils.types.Property</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2018-12-17T13:33:20.951+01:00" deprecated="2022-09-13T12:41:21.018+02:00" lastModified="2018-12-17T13:33:50.420+01:00" leaf="true" version="2">
+    <environmentId>hyperion</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.types.Property</references>
+</node>

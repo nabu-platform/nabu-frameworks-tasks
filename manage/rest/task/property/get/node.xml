@@ -1,1 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-07-05T10:03:30.315+02:00" lastModified="2018-07-05T10:09:48.096+02:00" leaf="true" version="4"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>nabu.frameworks.tasks.manage.rest.task.property.taskProperty</references><references>nabu.services.jdbc.Services.select</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-07-05T10:03:30.315+02:00" deprecated="2022-09-13T12:41:21.273+02:00" lastModified="2018-07-05T10:09:48.096+02:00" leaf="true" version="4">
+    <environmentId>hyperion</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.frameworks.tasks.manage.rest.task.property.taskProperty</references>
+    <references>nabu.services.jdbc.Services.select</references>
+</node>

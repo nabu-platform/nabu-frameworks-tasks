@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-09-13T12:40:14.832+02:00" lastModified="2022-09-13T13:15:18.336+02:00" leaf="true" version="4">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.frameworks.tasks.manage.crud.task</references>
+    <references>nabu.frameworks.tasks.manage.crud.taskErrorRule</references>
+    <references>nabu.frameworks.tasks.manage.crud.taskLog</references>
+    <references>nabu.frameworks.tasks.manage.crud.taskProperty</references>
+    <references>nabu.frameworks.tasks.manage.crud.taskQueue</references>
+    <references>nabu.frameworks.tasks.manage.crud.taskQueueConfiguration</references>
+    <references>nabu.frameworks.tasks.manage.crud.taskQueueSchedule</references>
+    <references>nabu.frameworks.tasks.manage.crud.taskSchedule</references>
+    <references>nabu.frameworks.tasks.manage.crud.taskScheduleProperty</references>
+    <references>nabu.frameworks.tasks.manage.rest.task.executeScheduled</references>
+    <references>nabu.frameworks.tasks.manage.rest.task.reschedule</references>
+    <references>nabu.frameworks.tasks.manage.rest.task.retry</references>
+    <references>nabu.frameworks.tasks.manage.rest.task.wakeup</references>
+</node>

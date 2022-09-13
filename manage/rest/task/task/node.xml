@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2018-07-05T09:57:06.633+02:00" lastModified="2018-07-05T11:42:10.162+02:00" leaf="true" version="3"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>nabu.frameworks.tasks.manage.rest.task.taskInput</references><references>java.util.UUID</references><references>java.lang.Long</references><references>java.util.Date</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2018-07-05T09:57:06.633+02:00" deprecated="2022-09-13T12:41:21.254+02:00" lastModified="2018-07-05T11:42:10.162+02:00" leaf="true" version="3">
+    <environmentId>hyperion</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.frameworks.tasks.manage.rest.task.taskInput</references>
+    <references>java.util.UUID</references>
+    <references>java.lang.Long</references>
+    <references>java.util.Date</references>
+</node>

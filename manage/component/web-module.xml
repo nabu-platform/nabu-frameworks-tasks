@@ -42,5 +42,4 @@
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.property.list</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.executeScheduled</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.reschedule</webFragments>
-    <audience>MANAGER</audience>
 </webModule>

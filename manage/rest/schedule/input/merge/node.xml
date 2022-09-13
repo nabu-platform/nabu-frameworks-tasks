@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-12-17T13:33:12.804+01:00" lastModified="2018-12-18T11:55:09.247+01:00" leaf="true" version="28"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty</references><references>nabu.utils.List.add</references><references>nabu.frameworks.tasks.manage.rest.schedule.input.propertyInputList</references><references>nabu.services.jdbc.Services.merge</references><references>java.util.Date</references><references>nabu.utils.Date.now</references><references>nabu.utils.Server.uuid</references><references>nabu.frameworks.tasks.database.taskScheduleProperty.deleteByIds</references><references>nabu.data.xml.Services.marshal</references><references>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</references><references>nabu.frameworks.tasks.database.taskSchedule.selectById</references><references>java.lang.Object</references><references>nabu.utils.Properties.toObject</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-12-17T13:33:12.804+01:00" deprecated="2022-09-13T12:41:21.037+02:00" lastModified="2018-12-18T11:55:09.247+01:00" leaf="true" version="28">
+    <environmentId>hyperion</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty</references>
+    <references>nabu.utils.List.add</references>
+    <references>nabu.frameworks.tasks.manage.rest.schedule.input.propertyInputList</references>
+    <references>nabu.services.jdbc.Services.merge</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.utils.Server.uuid</references>
+    <references>nabu.frameworks.tasks.database.taskScheduleProperty.deleteByIds</references>
+    <references>nabu.data.xml.Services.marshal</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</references>
+    <references>nabu.frameworks.tasks.database.taskSchedule.selectById</references>
+    <references>java.lang.Object</references>
+    <references>nabu.utils.Properties.toObject</references>
+</node>
