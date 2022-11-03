@@ -16,4 +16,5 @@
     <references>nabu.frameworks.tasks.manage.rest.task.reschedule</references>
     <references>nabu.frameworks.tasks.manage.rest.task.retry</references>
     <references>nabu.frameworks.tasks.manage.rest.task.wakeup</references>
+    <tags>Tasks Manage</tags>
 </node>
