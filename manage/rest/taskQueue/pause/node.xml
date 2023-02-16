@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2023-01-13T13:17:33.736+01:00" lastModified="2023-01-13T13:19:21.970+01:00" leaf="true" version="11">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.crud.taskQueue.types.output</references>
+    <references>nabu.frameworks.tasks.crud.taskQueue.services.update</references>
+    <references>nabu.frameworks.tasks.crud.taskQueue.services.get</references>
+</node>

@@ -1,12 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskProperty</outputDefinition>
-	<sql>select
-	id,
-	created,
-	modified,
-	key,
-	value,
-	task_id
+	<sql>select *
 from ~task_properties
 where task_id = :taskId</sql>
 </jdbcService>

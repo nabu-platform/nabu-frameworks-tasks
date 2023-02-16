@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.data.model.DataModelManager" created="2022-11-03T12:53:45.482+01:00" lastModified="2022-11-03T13:30:03.881+01:00" leaf="true" version="3">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.frameworks.tasks.types.model.tasks.Task</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskErrorRule</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskLog</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskProperty</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskQueue</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskQueueConfiguration</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskQueueSchedule</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty</references>
+</node>

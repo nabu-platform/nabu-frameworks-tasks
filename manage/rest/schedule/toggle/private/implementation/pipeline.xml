@@ -1,0 +1,5 @@
+<structure interface="$self:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="TaskSchedules" definition="nabu.frameworks.tasks.manage.crud.taskSchedule.types.output" name="schedule"/>
+</structure>

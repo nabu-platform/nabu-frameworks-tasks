@@ -1,0 +1,4 @@
+<structure name="path">
+    <field name="taskScheduleId" type="java.util.UUID"/>
+    <field name="enabled" type="java.lang.Boolean"/>
+</structure>

@@ -1,4 +1,4 @@
-<structure interface="$self:api" name="pipeline">
+<structure interface="nabu.frameworks.tasks.manage.rest.task.reschedule:api" name="pipeline">
     <structure name="input" validate="true"/>
     <structure name="output"/>
     <structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" name="task" namespace="nabu.frameworks.tasks.types.model.tasks"/>

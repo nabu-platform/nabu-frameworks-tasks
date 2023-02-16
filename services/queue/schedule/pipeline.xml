@@ -21,4 +21,5 @@
     <structure collectionName="TaskScheduleProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty" maxOccurs="unbounded" minOccurs="0" name="scheduleProperties" namespace="nabu.frameworks.tasks.types.model.tasks"/>
     <structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" name="taskProperty" namespace="nabu.frameworks.tasks.types.model.tasks"/>
     <structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" maxOccurs="unbounded" minOccurs="0" name="taskProperties" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
 </structure>

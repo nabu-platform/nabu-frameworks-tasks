@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-09-09T21:17:43.465+02:00" lastModified="2018-09-09T21:18:13.752+02:00" leaf="true" version="5">
-    <environmentId>hyperion</environmentId>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-09-09T21:17:43.465+02:00" lastModified="2023-01-13T11:53:43.751+01:00" leaf="true" version="6">
+    <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.frameworks.tasks.services.poller.wakeup</references>
 </node>

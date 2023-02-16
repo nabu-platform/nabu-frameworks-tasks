@@ -30,6 +30,14 @@ Important index for querying tasks per queue:
 
 create index idx_tasks_queue on tasks(task_queue_id);
 
+To get the logs on a task:
+
+create index idx_task_logs_task_id on task_logs(task_id)
+
+To search tasks by the scheduler:
+
+
+
 # Timezones
 
 By default the task framework will calculate the next run in the timezone of the server.

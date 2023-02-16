@@ -4,6 +4,7 @@
     <broadcastCreate>false</broadcastCreate>
     <broadcastUpdate>false</broadcastUpdate>
     <coreType>nabu.frameworks.tasks.types.model.tasks.Task</coreType>
+    <createPermission>task.manage</createPermission>
     <createRole>$user</createRole>
     <deleteRole>$user</deleteRole>
     <filters>
@@ -167,11 +168,23 @@
         <foreignName>taskQueueId:state</foreignName>
         <localName>taskQueueState</localName>
     </foreignFields>
+    <getPermission>task.list</getPermission>
+    <hooks>false</hooks>
+    <listPermission>task.list</listPermission>
     <listRole>$user</listRole>
     <provider>nabu.services.crud.provider.basic.provider</provider>
+    <restLimitToUser>true</restLimitToUser>
+    <updateBlacklistFields>created</updateBlacklistFields>
+    <updateBlacklistFields>modified</updateBlacklistFields>
+    <updatePermission>task.manage</updatePermission>
+    <updateRegenerateFields>modified</updateRegenerateFields>
     <updateRole>$user</updateRole>
     <useExplicitLanguage>false</useExplicitLanguage>
+    <useGlobalPermissionContext>false</useGlobalPermissionContext>
     <useLanguage>false</useLanguage>
     <useListOutputForCreate>false</useListOutputForCreate>
     <useListOutputForUpdate>false</useListOutputForUpdate>
+    <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
+    <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
+    <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
 </crud>

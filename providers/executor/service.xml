@@ -1,15 +1,18 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="ae1a7289-54c3-4300-8c84-c4db3313a535">
+		id="ae1a7289-54c3-4300-8c84-c4db3313a535"
+		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			disabled="false"
 			id="a8fbf445-8c78-4c35-ad9c-19621e6867a4"
 			label="input/input != null"
+			lineNumber="2"
 			query="input/datastore">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="2da67b32-9458-40df-88c2-61f660bc12e4"
-				label="true">
+				label="true"
+				lineNumber="3">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="1d7542d1-03f9-4170-a317-0f0ac871977c"
@@ -61,7 +64,8 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
-				id="1030adf7-05ff-439d-8e6c-dd26c133eefa">
+				id="1030adf7-05ff-439d-8e6c-dd26c133eefa"
+				lineNumber="4">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="d08b2424-af07-41e4-bc28-216fd315f1a2"
@@ -136,7 +140,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="5f6eb28007464863a0c6d713f2fe7576"
-			label="input/runAt == null &amp;&amp; input/runIn != null">
+			label="input/runAt == null &amp;&amp; input/runIn != null"
+			lineNumber="5">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="1a0b8420-cced-4a66-a0c5-655aaec6958a"
@@ -171,7 +176,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="591528e3-d681-458d-84ac-7df1233d154a"
-			label="input/runAt == null &amp;&amp; input/schedule != null">
+			label="input/runAt == null &amp;&amp; input/schedule != null"
+			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="080ff4d0-da5b-4ad8-9c8e-5d7aab98a1bd"
@@ -227,7 +233,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="35b59378-b234-4046-975e-2344cead3b1e"
-			label="input/metadata != null">
+			label="input/metadata != null"
+			lineNumber="7">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="75ce8c17-c855-4b37-9f61-4f8d9fe0629e"
@@ -262,7 +269,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Publish the task"
 			disabled="false"
-			id="ff934975-15e3-4d44-aad8-d2447b424427">
+			id="ff934975-15e3-4d44-aad8-d2447b424427"
+			lineNumber="8">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="e7dc3ef5-456e-4b8f-a8f3-9c862a082d15"
@@ -417,6 +425,42 @@
 					fixedValue="false">
 				<from>input/finalize</from>
 				<to>stage</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="597986f1-d4a9-4fb5-b46d-eaa13b25ed64"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result2e6df19308904bfaa4aa47336e137e95/token/authenticationId</from>
+				<to>task/authenticationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4bba8d95-7f83-46d5-b277-8cd49a565267"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result2e6df19308904bfaa4aa47336e137e95/token/impersonator</from>
+				<to>task/impersonator</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f8504702-4c15-44b2-a912-696717a04d29"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result2e6df19308904bfaa4aa47336e137e95/token/impersonatorId</from>
+				<to>task/impersonatorId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b80d7f7f-0bc5-4795-8c91-3b8181ba0e76"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result2e6df19308904bfaa4aa47336e137e95/token/impersonatorRealm</from>
+				<to>task/impersonatorRealm</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"

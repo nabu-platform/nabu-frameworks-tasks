@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2020-09-21T17:38:18.082+02:00" lastModified="2020-09-24T14:44:38.174+02:00" leaf="true" version="22">
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2020-09-21T17:38:18.082+02:00" lastModified="2023-01-13T11:53:19.496+01:00" leaf="true" version="23">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.services.jdbc.Services.update</references>
     <references>nabu.frameworks.tasks.services.poller.wakeup</references>

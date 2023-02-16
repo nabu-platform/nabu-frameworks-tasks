@@ -1,0 +1,5 @@
+<structure interface="nabu.frameworks.tasks.manage.rest.task.fail:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" name="task" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+</structure>

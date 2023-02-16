@@ -14,4 +14,9 @@
     <webFragments>nabu.frameworks.tasks.manage.rest.task.reschedule</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.retry</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.wakeup</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.cancel</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.fail</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.schedule.toggle</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.pause</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.resume</webFragments>
 </webModule>

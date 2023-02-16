@@ -1,0 +1,18 @@
+<structure collectionName="TaskQueues" name="TaskQueue">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field name="created" timezone="UTC" type="java.util.Date"/>
+    <field name="modified" timezone="UTC" type="java.util.Date"/>
+    <field comment="If set to 0, it means it is sequential. That also means you must get a cluster lock on the queue before being able to take something off of it." name="concurrency" type="java.lang.Integer"/>
+    <field comment="PUBLISHING (publisher is not done yet), PUBLISHED (everything is done), SUCCEEDED (everything is successfully completed), ERROR (transient), FAILED" name="state" type="java.lang.String"/>
+    <field comment="This task group must be in a final state before the next task group is started" foreignKey="nabu.frameworks.tasks.types.model.tasks.TaskQueue:id" minOccurs="0" name="dependencyId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field comment="Tasks submitted to the queue are scheduled according to this. This allows for example a queue that starts clearing items at 18:00" minOccurs="0" name="schedule" type="java.lang.String"/>
+    <field comment="Who can access this queue? This can be a server, a group, a uuid, $any,..." name="target" type="java.lang.String"/>
+    <field name="name" type="java.lang.String" unique="true"/>
+    <field comment="We can set a custom executor for a task queue, e.g. a dedicated thread pool. If not set, it will be executed by the central shared pool." minOccurs="0" name="executor" type="java.lang.String"/>
+    <field comment="The published timestamp indicates when the queue was done publishing. No new items are allowed onto the queue." minOccurs="0" name="published" timezone="UTC" type="java.util.Date"/>
+    <field comment="If you submit something for execution and that exact same something is still awaiting execution, we can prevent it from being submitted. This for example can allow you to schedule a mail every time something changes but only have 1 mail sent at 17 in the evening." minOccurs="0" name="allowOverlap" type="java.lang.Boolean"/>
+    <field comment="Anonymous queues are not named by users but instead have generated names. They generally serve a different purpose (batch processing)" name="anonymous" type="java.lang.Boolean"/>
+    <field comment="A particular queue might use different tables for its operational data (tasks, properties &amp; logs)&#10;This can be done for performance reasons." minOccurs="0" name="affix" type="java.lang.String"/>
+    <field comment="You can set a lookback window and the task poller will only check that far back in the past for available tasks. Note that window is a reserved word in SQL which is why this was chosen.&#10;This is especially interesting for &quot;best effort&quot; processing of large amounts of data, combined with for example partitioning." minOccurs="0" name="lookback" type="be.nabu.libs.types.base.Duration"/>
+    <field comment="You can configure one or more windows (&quot;;&quot; separated) using cron syntax appended with a duration syntax.&#10;During these blocks, no tasks are scheduled, every task that is to be executed inside a block period, is scheduled for the first available moment after the block finishes.&#10;" minOccurs="0" name="blockWindow" type="java.lang.String"/>
+</structure>

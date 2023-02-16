@@ -558,6 +558,42 @@
 				<from>input/task/realm</from>
 				<to>runAs/realm</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ceb42480-9084-4eff-89f8-9bad33de599f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/task/authenticationId</from>
+				<to>runAs/authenticationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="84aa86d9-8422-4323-af80-0599d03115be"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/task/impersonator</from>
+				<to>runAs/impersonator</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="91c641a8-249d-429e-9358-07b67ffc6878"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/task/impersonatorRealm</from>
+				<to>runAs/impersonatorRealm</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f775b7a8-fd23-4610-8a21-5cc4e6bb59ec"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/task/impersonatorId</from>
+				<to>runAs/impersonatorId</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-12-14T09:40:04.587+01:00" lastModified="2020-12-14T09:40:04.587+01:00" leaf="true" version="20">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-12-14T09:40:04.587+01:00" lastModified="2022-11-03T13:45:36.145+01:00" leaf="true" version="21">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
     <references>nabu.utils.Transaction.start</references>
     <references>nabu.utils.Server.getServerName</references>
-    <references>nabu.frameworks.tasks.database.taskLog.insert</references>
     <references>nabu.utils.Transaction.rollback</references>
+    <references>nabu.services.jdbc.Services.insert</references>
     <references>nabu.utils.Transaction.commit</references>
     <references>nabu.utils.Server.uuid</references>
     <references>nabu.utils.Date.now</references>

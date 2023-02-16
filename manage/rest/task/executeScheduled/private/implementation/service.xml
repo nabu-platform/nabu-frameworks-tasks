@@ -1,9 +1,11 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="e5ad94ee-946a-459f-b3f5-815efa4dee4e">
+		id="e5ad94ee-946a-459f-b3f5-815efa4dee4e"
+		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="4a703c32-4eec-4946-ae14-94ffaedfc159">
+			id="4a703c32-4eec-4946-ae14-94ffaedfc159"
+			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="fa5517ea-e388-496c-83d5-1ebe808f7ebc"
@@ -77,11 +79,13 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 			disabled="false"
 			id="85f970fd-88de-45ac-bd42-7902dfed319f"
-			label="task/scheduled != null &amp;&amp; task/scheduled &gt; now">
+			label="task/scheduled != null &amp;&amp; task/scheduled &gt; now"
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="Unset scheduled"
 				disabled="false"
-				id="a7d8f54e-c8b7-4a33-8a08-dabbe7d5f709">
+				id="a7d8f54e-c8b7-4a33-8a08-dabbe7d5f709"
+				lineNumber="4">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Drop"
 					disabled="false"
 					id="bc8c3676-0938-4bd1-89ec-7995b4264716"
@@ -89,7 +93,8 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
-				id="e854a8d5-bb9a-4485-beb1-e64618d0760f">
+				id="e854a8d5-bb9a-4485-beb1-e64618d0760f"
+				lineNumber="5">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="1881a824-4428-493b-8650-d96f844a6805"
@@ -114,7 +119,8 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
-				id="aec6a670-95e7-436b-82d6-1c0224ba0110">
+				id="aec6a670-95e7-436b-82d6-1c0224ba0110"
+				lineNumber="6">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="0ce5246c-00c5-43b5-8d68-2dc1463095fd"
