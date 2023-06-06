@@ -7,23 +7,23 @@
     <field comment="The id of who currently owns the task" minOccurs="0" name="owner" type="java.lang.String"/>
     <field comment="The state of the task, it is either WAITING, RUNNING, ERROR (temporary), FAILED, SUCCEEDED" name="state" type="java.lang.String"/>
     <field comment="This task may depend on another task that has to be in a final state before this one can start" foreignKey="nabu.frameworks.tasks.types.model.tasks.Task:id" minOccurs="0" name="dependencyId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-    <field comment="In case we are part of a batch, this is the index inside the batch for sequential processing" generated="true" name="taskIndex" type="java.lang.Long"/>
+    <field comment="In case we are part of a batch, this is the index inside the batch for sequential processing" generated="true" indexed="true" name="taskIndex" type="java.lang.Long"/>
     <field comment="The task to run, this could for example be a service id." name="task" type="java.lang.String"/>
     <field comment="The type of the task, this allows for example schedulers to exist next to asynchronous service runs" name="taskType" type="java.lang.String"/>
     <field comment="Content of the task, for example xmlified input of a service" maxLength="1000000" minOccurs="0" name="taskInput" type="java.lang.String"/>
     <field comment="If based on a schedule, this is the timestamp of the instance. This allows us to make sure only one such instance exists. Because we set a unique constraint on this in combination with the task id we always need a sensible value." minOccurs="0" name="scheduled" timezone="UTC" type="java.util.Date"/>
     <field comment="When the task was done executing" minOccurs="0" name="stopped" timezone="UTC" type="java.util.Date"/>
     <field comment="There are three times of interest: created indicates when the task was initially created, started means when the actor started performing the task and stopped is when it stopped" minOccurs="0" name="started" timezone="UTC" type="java.util.Date"/>
-    <field maxLength="1000000" minOccurs="0" name="taskOutput" type="java.lang.String"/>
+    <field indexed="false" maxLength="1000000" minOccurs="0" name="taskOutput" type="java.lang.String"/>
     <field comment="The parent task (if any), it is a way to link tasks to one another." foreignKey="nabu.frameworks.tasks.types.model.tasks.Task:id" minOccurs="0" name="parentId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-    <field comment="You can use this field to link the task to something arbitrary (e.g. cms nodes)" minOccurs="0" name="correlationId" type="java.lang.String"/>
+    <field comment="You can use this field to link the task to something arbitrary (e.g. cms nodes)" indexed="true" minOccurs="0" name="correlationId" type="java.lang.String"/>
     <field comment="A grouping within a single queue. This is for the user to group tasks together logically" minOccurs="0" name="groupId" type="java.lang.String"/>
     <field comment="An id that identifies the content-to-be-processed for the task. For instance if you want to start processing an invoice, this could be the invoice number. This is a logical identifier for lookup purposes." minOccurs="0" name="contextId" type="java.lang.String"/>
     <field comment="The service context that should be set for the execution of this task" minOccurs="0" name="serviceContext" type="java.lang.String"/>
     <field comment="Allow a task to run as a certain user" minOccurs="0" name="alias" type="java.lang.String"/>
     <field comment="Allow a task to run in a certain realm" minOccurs="0" name="realm" type="java.lang.String"/>
-    <field aggregation="composite" foreignKey="nabu.frameworks.tasks.types.model.tasks.TaskQueue:id" name="taskQueueId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-    <field foreignKey="nabu.frameworks.tasks.types.model.tasks.TaskSchedule:id" minOccurs="0" name="taskScheduleId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field aggregation="composite" foreignKey="nabu.frameworks.tasks.types.model.tasks.TaskQueue:id" indexed="true" name="taskQueueId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field foreignKey="nabu.frameworks.tasks.types.model.tasks.TaskSchedule:id" indexed="true" minOccurs="0" name="taskScheduleId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
     <field comment="The unique identifier of the user" minOccurs="0" name="authenticationId" type="java.lang.String"/>
     <field comment="The alias of the impersonator (if any)" minOccurs="0" name="impersonator" type="java.lang.String"/>
     <field comment="The realm of the impersonator" minOccurs="0" name="impersonatorRealm" type="java.lang.String"/>

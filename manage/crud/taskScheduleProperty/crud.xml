@@ -64,7 +64,7 @@
     <updateRegenerateFields>modified</updateRegenerateFields>
     <updateRole>$user</updateRole>
     <useExplicitLanguage>false</useExplicitLanguage>
-    <useGlobalPermissionContext>false</useGlobalPermissionContext>
+    <useGlobalPermissionContext>true</useGlobalPermissionContext>
     <useLanguage>false</useLanguage>
     <useListOutputForCreate>false</useListOutputForCreate>
     <useListOutputForUpdate>false</useListOutputForUpdate>

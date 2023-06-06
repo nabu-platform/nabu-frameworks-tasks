@@ -3,7 +3,7 @@
     <method>PUT</method>
     <path>/task/{taskId}/reschedule</path>
     <queryParameters>newSchedule</queryParameters>
-    <role>manager</role>
+    <role>$user</role>
     <permissionAction>task.manage</permissionAction>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>

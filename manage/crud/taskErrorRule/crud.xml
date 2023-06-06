@@ -4,8 +4,10 @@
     <broadcastCreate>false</broadcastCreate>
     <broadcastUpdate>false</broadcastUpdate>
     <coreType>nabu.frameworks.tasks.types.model.tasks.TaskErrorRule</coreType>
+    <createBlacklistFields>created</createBlacklistFields>
+    <createBlacklistFields>modified</createBlacklistFields>
+    <createPermission>task.manage</createPermission>
     <createRole>$user</createRole>
-    <createRole>task.manage</createRole>
     <deletePermission>task.manage</deletePermission>
     <deleteRole>$user</deleteRole>
     <filters>
@@ -48,10 +50,13 @@
     <listRole>$user</listRole>
     <provider>nabu.services.crud.provider.basic.provider</provider>
     <restLimitToUser>true</restLimitToUser>
+    <updateBlacklistFields>created</updateBlacklistFields>
+    <updateBlacklistFields>modified</updateBlacklistFields>
     <updatePermission>task.manage</updatePermission>
+    <updateRegenerateFields>modified</updateRegenerateFields>
     <updateRole>$user</updateRole>
     <useExplicitLanguage>false</useExplicitLanguage>
-    <useGlobalPermissionContext>false</useGlobalPermissionContext>
+    <useGlobalPermissionContext>true</useGlobalPermissionContext>
     <useLanguage>false</useLanguage>
     <useListOutputForCreate>false</useListOutputForCreate>
     <useListOutputForUpdate>false</useListOutputForUpdate>

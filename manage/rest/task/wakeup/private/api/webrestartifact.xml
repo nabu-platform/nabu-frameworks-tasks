@@ -2,7 +2,7 @@
 <restInterface>
     <method>POST</method>
     <path>/wakeup</path>
-    <role>manager</role>
+    <role>$user</role>
     <permissionAction>task.list</permissionAction>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>

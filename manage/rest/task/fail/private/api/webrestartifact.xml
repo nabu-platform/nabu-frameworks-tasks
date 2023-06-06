@@ -2,7 +2,7 @@
 <restInterface>
     <method>PATCH</method>
     <path>/task/{taskId}/fail</path>
-    <role>manager</role>
+    <role>$user</role>
     <permissionAction>task.manage</permissionAction>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
