@@ -3,7 +3,8 @@
 	modified = :now,
 	stopped = :now,
 	state = :state,
-	task_output = :taskOutput
+	task_output = :taskOutput,
+	task_output_type_id = :taskOutputTypeId
 where id = :id
 and state = 'RUNNING'
 and owner = :owner</sql>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-09-18T08:44:34.190+02:00" lastModified="2023-09-18T08:55:49.157+02:00" leaf="true" version="4">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.services.task.log</references>
+    <references>java.util.UUID</references>
+    <references>nabu.frameworks.tasks.database.task.rollbackRunningTask</references>
+</node>

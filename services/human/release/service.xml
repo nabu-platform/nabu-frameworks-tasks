@@ -1,0 +1,84 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="916ac52a59b64f7d9f8cf12a6b1c61f2"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="d563ef0bf9f840e3a92aef0611f8b804"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="5303812906674903a9b22a70fe73b21b"
+				serviceId="nabu.frameworks.tasks.database.task.rollbackRunningTask"
+				resultName="resultfc5735291dba4d64a167989c2c6b75b5"
+				temporaryMapping="true"
+				x="325"
+				y="58"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c07dd213a36f42dc80990a53d4828687"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskId</from>
+				<to>parameters[0]/taskId</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="cfd22bea-4712-425b-8d9d-7b199996c5dd"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="7352ab8f-650e-45c4-99d2-994a89efb229"
+				serviceId="nabu.frameworks.tasks.services.task.log"
+				resultName="result65e927ffa2594b1494819a8d1a316c55"
+				temporaryMapping="true"
+				x="180"
+				y="77"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2b477e29-d372-49d4-9eef-c8b961f5939f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskId</from>
+				<to>taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ee35010aa35e4aafa733751fe87520e9"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>WARN</from>
+				<to>severity</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="789d12441232475295ea4ed3d97b7289"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>rollback</from>
+				<to>code</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ea1f3180fbda4491a63744530079f1a0"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>Rolled back running task</from>
+				<to>title</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

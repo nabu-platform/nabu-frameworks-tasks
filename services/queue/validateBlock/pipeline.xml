@@ -5,6 +5,7 @@
     </structure>
     <structure name="output">
         <field minOccurs="0" name="scheduled" type="java.util.Date"/>
+        <field name="inBlock" type="java.lang.Boolean"/>
     </structure>
     <field maxOccurs="unbounded" minOccurs="0" name="windows" type="java.lang.String"/>
     <field maxOccurs="unbounded" minOccurs="0" name="parts" type="java.lang.String"/>

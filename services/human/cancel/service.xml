@@ -1,0 +1,119 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="eaeb9062cb344ee8b9f02bdcc482fc17"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="694e780236b748eaaf7163aefa77c6c3"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="03dbc889456e47b49f032fc613160d11"
+				serviceId="nabu.frameworks.tasks.database.task.cancel"
+				resultName="result526713cd4cbe4c0684b48266582d449d"
+				temporaryMapping="true"
+				x="210"
+				y="70"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e3d7aa888f4340febb7a68dbf6c6842d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskId</from>
+				<to>parameters[0]/id</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="cfd22bea-4712-425b-8d9d-7b199996c5dd"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="7352ab8f-650e-45c4-99d2-994a89efb229"
+				serviceId="nabu.frameworks.tasks.services.task.log"
+				resultName="result65e927ffa2594b1494819a8d1a316c55"
+				temporaryMapping="true"
+				x="180"
+				y="77"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2b477e29-d372-49d4-9eef-c8b961f5939f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskId</from>
+				<to>taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ee35010aa35e4aafa733751fe87520e9"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>WARN</from>
+				<to>severity</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="789d12441232475295ea4ed3d97b7289"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>cancel</from>
+				<to>code</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ea1f3180fbda4491a63744530079f1a0"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>Cancelled task</from>
+				<to>title</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="0812f0a29fc64e2c87f637f1935e00a4"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="3f5e3b88b9504cc4a168bcb9f2f891a1"
+				serviceId="nabu.frameworks.tasks.hooks.human.stop"
+				resultName="resultda42e72599c5409a9bbc62bf9ce168f8"
+				temporaryMapping="true"
+				x="30"
+				y="30"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e599047a467e47d3b6af94300a2b89d1"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskId</from>
+				<to>taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6fa298f5a15349d3b60d379f4bdd6b5e"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>CANCELLED</from>
+				<to>state</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

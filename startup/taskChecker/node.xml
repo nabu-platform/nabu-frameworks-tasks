@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-11T17:10:14.416+02:00" lastModified="2022-03-21T14:47:17.007+01:00" leaf="true" version="169">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-11T17:10:14.416+02:00" lastModified="2023-09-18T08:44:01.837+02:00" leaf="true" version="170">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.utils.Runtime.summarizeException</references>
     <references>nabu.utils.List.add</references>

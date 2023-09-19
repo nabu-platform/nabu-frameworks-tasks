@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.data.model.DataModelManager" created="2022-11-03T12:53:45.482+01:00" lastModified="2022-11-03T13:30:03.881+01:00" leaf="true" version="3">
+<node artifactManager="be.nabu.eai.module.data.model.DataModelManager" created="2022-11-03T12:53:45.482+01:00" lastModified="2023-09-06T14:02:15.156+02:00" leaf="true" version="4">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.frameworks.tasks.types.model.tasks.Task</references>
     <references>nabu.frameworks.tasks.types.model.tasks.TaskErrorRule</references>

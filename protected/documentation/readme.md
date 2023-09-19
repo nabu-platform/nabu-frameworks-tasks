@@ -34,9 +34,9 @@ To get the logs on a task:
 
 create index idx_task_logs_task_id on task_logs(task_id)
 
-To search tasks by the scheduler:
 
-
+CREATE INDEX idx_task_task_queue ON tasks(task_queue_id, "state", scheduled, task_type, owner, target, created);
+CREATE INDEX idx_task_queues_name_state ON task_queues(name, "state");
 
 # Timezones
 
@@ -109,3 +109,17 @@ ERROR: the task failed and a decision has to be made about it (retry or set to f
 TRANSIENT_ERROR: a transient error which will automatically be retried by the system up to a max time
 FAILED: a permanent failure
 CANCELLED: task is no longer necessary
+
+# Human task
+
+Human tasks can also be modelled in tasks, they use all the same fields but sometimes in slightly different ways. Human tasks are mostly a standardized way to use tasks and as such it is captured in this framework. Other frameworks (like process engine, cms,...) may build upon this for their respective issues (e.g. state management, security,...)
+
+Note that the state model of a human task in the task system is limited to a subset of the states of a regular service task:
+
+CREATED: the task is published but requires someone to pick it up and start it
+RUNNING: a user has picked up the task and is working on it, this prevents the same task from being picked up multiple times in case it takes a while
+SUCCEEDED: the task was completed successfully
+FAILED: the task was completed but with a failed state (e.g. rejected)
+CANCELLED: task is no longer necessary, should only be triggered from the system that created it (?)
+
+You can "release" a human task which effectively rolls it back, this allows someone else to pick it up

@@ -2,4 +2,5 @@
     <field name="connectionId" type="java.lang.String"/>
     <field maxOccurs="unbounded" minOccurs="0" name="targets" type="java.lang.String"/>
     <structure definition="nabu.frameworks.tasks.types.taskProviderError" maxOccurs="unbounded" minOccurs="0" name="errors"/>
+    <field comment="You can explicitly configure a connection to be skipped" minOccurs="0" name="skip" type="java.lang.Boolean"/>
 </structure>

@@ -1,0 +1,16 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <field name="taskId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field name="ownerId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field comment="This should be either FAILED or SUCCEEDED" minOccurs="0" name="state" type="java.lang.String"/>
+        <structure comment="Optionally any output you want to set for the task" definition="java.lang.Object" minOccurs="0" name="taskOutput"/>
+        <field minOccurs="0" name="code" type="java.lang.String"/>
+        <field minOccurs="0" name="title" type="java.lang.String"/>
+        <field minOccurs="0" name="description" type="java.lang.String"/>
+    </structure>
+    <structure name="output"/>
+    <field name="rowCount" type="java.lang.Long"/>
+    <field name="stopped" type="java.lang.Boolean"/>
+</structure>

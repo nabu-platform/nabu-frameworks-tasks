@@ -1,0 +1,7 @@
+<structure comment="If you subscribe to this hook, you will be notified when human tasks are stopped.&#10;This hook is run _after_ the stop is completed so all data should be available." name="pipeline">
+    <structure name="input">
+        <field name="taskId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field comment="SUCCEEDED, FAILED, CANCELLED" name="state" type="java.lang.String"/>
+    </structure>
+    <structure name="output"/>
+</structure>

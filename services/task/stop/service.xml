@@ -1,10 +1,12 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="24ae85ed-6dad-43f9-aa15-c1047aedc1ba">
+		id="24ae85ed-6dad-43f9-aa15-c1047aedc1ba"
+		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="da207ea8-963d-4c75-87d2-46daa7933eb7"
-			label="input/transactionId = null">
+			label="input/transactionId = null"
+			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="14d20b61-6bfc-401d-a5da-4e51346d1513"
@@ -39,7 +41,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="790e40bc-5fdb-4d53-ae3f-ecf6d30884ce"
-			label="input/owner = null">
+			label="input/owner = null"
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="13bb575a-f1a0-4244-bd44-cf5a7c1656b2"
@@ -65,7 +68,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="011a78f3-8663-4e74-8bea-8f279010033c"
-			label="input/code = null">
+			label="input/code = null"
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="6cecdec8-7f77-401b-a620-8efd4c79c742"
@@ -79,11 +83,13 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			disabled="false"
 			id="b95127c8-6f53-43fa-b55f-b40ce70912ea"
+			lineNumber="5"
 			query="input/errorMessage">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="f4ed3bab-485f-467c-b6cf-780de0eace1c"
-				label="null">
+				label="null"
+				lineNumber="6">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="cfcfc3ac-06f8-443a-87a8-d1b7f6edb3a0"
@@ -115,11 +121,13 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 				disabled="false"
 				id="8d4f50b3-2a42-40a3-8feb-b16688302672"
+				lineNumber="7"
 				query="input/transient">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
 					id="65a32558-f5b9-4ee9-94b7-a1f61bae6a97"
-					label="true">
+					label="true"
+					lineNumber="8">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="ae5ab69e-6d62-444d-b459-51d73095e992"
@@ -151,12 +159,14 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 					disabled="false"
 					id="fa59f220-586f-4a20-8956-1bc109e8fe4d"
+					lineNumber="9"
 					query="input/fail">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="In some cases we want to set it to failed immediately"
 						disabled="false"
 						id="10408a53ff7e4ab8858f52741e040bcf"
-						label="true">
+						label="true"
+						lineNumber="10">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
 							id="7cd6de1779a44ab78a4f171b23b4ee73"
@@ -187,7 +197,8 @@
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						disabled="false"
-						id="c7674310-5500-4e19-903f-dd30c68ee661">
+						id="c7674310-5500-4e19-903f-dd30c68ee661"
+						lineNumber="11">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
 							id="fa495399-5385-41f3-ac09-c176d7e82c33"
@@ -222,7 +233,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Stop the task"
 			disabled="false"
-			id="e9d93c57-c0af-4d73-a27a-7adee9fee52b">
+			id="e9d93c57-c0af-4d73-a27a-7adee9fee52b"
+			lineNumber="12">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="feaabde4-35fc-4dfd-b5a8-a68df478cf09"
@@ -306,6 +318,15 @@
 				<from>input/affix</from>
 				<to>affix[0]</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="14270af66ee54e01a97272b1ef44251a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskOutputTypeId</from>
+				<to>parameters[0]/taskOutputTypeId</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -332,7 +353,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="It is stopped if the rowCount is larger than 0"
 			disabled="false"
-			id="6bccb192-e376-46c6-b72f-8c5d2ca7ba35">
+			id="6bccb192-e376-46c6-b72f-8c5d2ca7ba35"
+			lineNumber="13">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="615befcc-4e19-4bd8-8093-762859fdf3a3"
@@ -346,7 +368,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="cfd22bea-4712-425b-8d9d-7b199996c5dd"
-			label="output/stopped">
+			label="output/stopped"
+			lineNumber="14">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="7352ab8f-650e-45c4-99d2-994a89efb229"
@@ -444,7 +467,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="f2646543-b8ab-4322-a13d-23056cbbaeac"
-			label="manage">
+			label="manage"
+			lineNumber="15">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="bc5c5f0e-6474-4588-aee6-14541c01669e"
@@ -470,7 +494,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="d44acb2b-a26c-4116-891d-9be109a81a17"
-			label="state == &quot;ERROR&quot;">
+			label="state == &quot;ERROR&quot;"
+			lineNumber="16">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="d5c72258-84f1-494c-937b-c0e0869c9d33"
@@ -553,11 +578,13 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
 			disabled="false"
 			id="b2a455da-3c0f-4777-b462-2a2c29945b61"
+			lineNumber="17"
 			variable="exception">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="2b0819a8277e40df8f0faaefbb689e69"
-				label="manage">
+				label="manage"
+				lineNumber="18">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="19411fd4-b5a0-490f-9ce4-a3abfee1158c"
@@ -583,6 +610,8 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 				disabled="false"
 				id="3c30a983-c6ce-4d88-9a50-9e79c602483e"
-				message="=exception" xsi:nil="true"/>
+				lineNumber="19"
+				message="=exception"
+				whitelist="false" xsi:nil="true"/>
 	</steps>
 </sequence>

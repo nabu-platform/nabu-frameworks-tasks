@@ -1,0 +1,5 @@
+When you start working on a human task, you assign it to the human in question.
+That prevents other people from picking it up and working concurrently on it.
+Depending on the length of the actual task, this may take a while or be done quickly.
+
+Once picked up, you can either finalize it (stop) or you can release it back into the pool of tasks to be done (rollback).

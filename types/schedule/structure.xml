@@ -6,4 +6,5 @@
     <field maxInclusive="12" maxOccurs="unbounded" minInclusive="1" minOccurs="0" name="months" type="java.lang.Integer"/>
     <field maxInclusive="12" maxOccurs="unbounded" minInclusive="1" minOccurs="0" name="years" type="java.lang.Integer"/>
     <field maxInclusive="7" maxOccurs="unbounded" minInclusive="1" minOccurs="0" name="weekDays" type="java.lang.Integer"/>
+    <field maxInclusive="7" maxOccurs="unbounded" minInclusive="1" minOccurs="0" name="weekOfYear" type="java.lang.Integer"/>
 </structure>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-29T16:41:28.348+02:00" lastModified="2023-03-20T16:16:40.465+01:00" leaf="true" version="152">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-29T16:41:28.348+02:00" lastModified="2023-09-14T11:55:19.175+02:00" leaf="true" version="155">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -37,12 +37,14 @@
     <references>nabu.utils.Runtime.setContext</references>
     <references>nabu.frameworks.tasks.types.queueOutput</references>
     <references>nabu.frameworks.tasks.utils.queue.checkFinished</references>
+    <references>nabu.utils.Runtime.getContext</references>
     <references>be.nabu.libs.authentication.api.Token</references>
     <references>nabu.data.xml.Services.marshal</references>
     <references>nabu.frameworks.tasks.types.taskOutput</references>
     <references>nabu.utils.Transaction.rollback</references>
     <references>nabu.utils.List.size</references>
     <references>nabu.utils.Lock.lock</references>
+    <references>nabu.utils.reflection.Type.whatIs</references>
     <references>java.lang.Object</references>
     <references>nabu.frameworks.tasks.providers.executor</references>
     <references>nabu.utils.Date.increment</references>

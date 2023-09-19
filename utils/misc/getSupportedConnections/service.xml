@@ -3,7 +3,9 @@
 		id="5af30f4c-bc74-44bc-a107-ea4a0ffbdb76"
 		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="We simply check all connections to see if the schema is present"
 			disabled="false"
+			features="TASKS_VALIDATE_SCHEMA"
 			id="3ced90a2-be3f-45c3-9b58-03b1b905853e"
 			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
@@ -37,19 +39,56 @@
 			<to>pools</to>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Use dependencies of the model rather than checking all connections"
+			disabled="false"
+			features="!TASKS_VALIDATE_SCHEMA"
+			id="fce8259673f64ca7ae886b6373106ff0"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="b25c7b4dd07b4ee39380895cf608b9e7"
+				serviceId="nabu.utils.reflection.Node.dependencies"
+				resultName="resultf3194d481aee40b8b02677c5d4eb1e24"
+				temporaryMapping="true"
+				x="225"
+				y="191"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="47325d65f6d4405b9d0d325f7fac0a83"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>nabu.frameworks.tasks.types.dataModel</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="797ff77d01bf4ff6b0caba56d2c5985a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultf3194d481aee40b8b02677c5d4eb1e24/nodes[artifactClass == "be.nabu.eai.module.jdbc.pool.JDBCPoolArtifact"]</from>
+			<to>pools</to>
+		</steps>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.For"
 			disabled="false"
 			id="1cd2c107-86bc-4451-85fc-d73137b41b90"
-			lineNumber="3"
+			lineNumber="4"
 			variable="pool">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 				disabled="false"
 				id="49a054c1-5d90-4695-b88d-78d5d9b4a5ce"
-				lineNumber="4">
+				lineNumber="5">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
 					id="7095042b-edf3-4386-90d0-18b14d0dd273"
-					lineNumber="5">
+					lineNumber="6">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="9d624b0b-2f2e-4429-b738-20d82bcb493e"
@@ -86,13 +125,14 @@
 					disabled="false"
 					id="60cb29c4-3c07-4588-964c-e430f82a861b"
 					label="information/started &amp;&amp; !information/proxy"
-					lineNumber="6"
+					lineNumber="7"
 					transactionVariable="transactionId">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Check synchronization status"
 						disabled="false"
+						features="TASKS_VALIDATE_SCHEMA"
 						id="0f112f6e-d903-43bb-8ea0-9de419aa2022"
-						lineNumber="7">
+						lineNumber="8">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 							disabled="false"
 							id="545fb765-6120-4eec-9fe7-61b9cf77dd5e"
@@ -185,9 +225,25 @@
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						comment="Set explicitly to no changes"
+						disabled="false"
+						features="!TASKS_VALIDATE_SCHEMA"
+						id="9725a84bea0c44329647ac4a3b6ccbad"
+						lineNumber="9">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="2568464ea8b94f49851432d87e1141f0"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>0</from>
+						<to>amountOfChanges</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						disabled="true"
 						id="6aa1901c-b09e-49b4-9aff-e251ec0d325d"
-						lineNumber="8">
+						lineNumber="10">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 							disabled="false"
 							id="95544260-b35c-4921-911b-b12fbc0c9ad5"
@@ -240,13 +296,13 @@
 				<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 						disabled="false"
 						id="4f558250-fe79-4731-ac8f-33ebc2605544"
-						lineNumber="9"
+						lineNumber="11"
 						query="amountOfChanges">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 							disabled="false"
 							id="20c40a62-aadf-4cd4-b286-1aa207b0b2c4"
 							label="0"
-							lineNumber="10">
+							lineNumber="12">
 						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 								disabled="false"
 								id="614bfd98-cc43-4899-a90d-6ea83ed47c8a"
@@ -290,7 +346,7 @@
 					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 							disabled="false"
 							id="5c2d3207-e08f-4a51-b482-16f1fd386677"
-							lineNumber="11">
+							lineNumber="13">
 						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 								disabled="false"
 								id="2f3e82a1-41f8-4ed8-a89b-f865e50749ad"
@@ -327,7 +383,7 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
 					disabled="false"
 					id="00c862a4-697b-4596-9c9b-c487fbedfecd"
-					lineNumber="12"
+					lineNumber="14"
 					suppressException="true">
 			</steps>
 		</steps>
