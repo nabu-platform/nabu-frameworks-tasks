@@ -1,10 +1,12 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="719a81c6-3fb4-404e-a7eb-8f72338436ab">
+		id="719a81c6-3fb4-404e-a7eb-8f72338436ab"
+		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get all configurations"
 			disabled="false"
-			id="1d814580-a45f-4767-8678-b4100e5db8e6">
+			id="1d814580-a45f-4767-8678-b4100e5db8e6"
+			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="3966aa84-2d71-4529-9178-b5fc135f899c"
@@ -39,7 +41,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get applicable configuration"
 			disabled="false"
-			id="598da3bf-bb48-462e-9435-a4b3663679ce">
+			id="598da3bf-bb48-462e-9435-a4b3663679ce"
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="1d6f23d3-5ae4-4d73-bf91-485136f37507"
@@ -54,7 +57,8 @@
 			comment="Get the main name, not a generated uuid part"
 			disabled="false"
 			id="17fdb3ef-67b2-4308-9b6b-e403ddc6fd3d"
-			label="input/queueName != null">
+			label="input/queueName != null"
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="72deffb8-7769-44f9-91a8-39ff43d66297"
@@ -98,11 +102,13 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 			comment="We catch any exceptions for backwards compatibility with older installations that don't have the tables"
 			disabled="false"
-			id="6fbc9541-aeda-46c9-ba81-a53a7451d14e">
+			id="6fbc9541-aeda-46c9-ba81-a53a7451d14e"
+			lineNumber="5">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="Mask it so we can add other rules"
 				disabled="false"
-				id="a0336061-98b5-4f8a-8fb1-0ea5bce87722">
+				id="a0336061-98b5-4f8a-8fb1-0ea5bce87722"
+				lineNumber="6">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="6a1aed0c-adcc-4ad8-a154-a315cf54f187"
@@ -141,6 +147,24 @@
 					<from>input/queueName</from>
 					<to>parameters/queue</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="1744f24ccc4747068bc698a691ed7d69"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/task</from>
+					<to>parameters/task</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="c5eaf92323d94ea9a5cdc65e8f34b84c"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/taskType</from>
+					<to>parameters/taskType</to>
+				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
@@ -155,10 +179,12 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.For"
 				disabled="false"
 				id="14561c81-2642-4701-b781-9e1a27f09784"
+				lineNumber="7"
 				variable="additionalRule">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
-					id="f2e3eea0-f881-4f3f-ba38-a08420fd0cbc">
+					id="f2e3eea0-f881-4f3f-ba38-a08420fd0cbc"
+					lineNumber="8">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="ac1184e2-ee5f-4db7-ac34-da046f17ac98"
@@ -237,7 +263,8 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
-					id="806942f4-b15c-4500-8360-4bb6c3aecd28">
+					id="806942f4-b15c-4500-8360-4bb6c3aecd28"
+					lineNumber="9">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="c019ec5b-0b71-4186-aafe-aaf9a3efe35c"
@@ -286,14 +313,16 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
 				disabled="false"
-				id="d755be79-89d9-4c58-add9-95e0c3177273">
+				id="d755be79-89d9-4c58-add9-95e0c3177273"
+				lineNumber="10">
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get error match based on code"
 			disabled="false"
 			id="6993cd21-d840-4f23-943c-851bca6f9e58"
-			label="input/code != null">
+			label="input/code != null"
+			lineNumber="11">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="bafa4963-d001-4a87-830b-5a9319db4bf0"
@@ -308,16 +337,19 @@
 			disabled="false"
 			id="34865059-43f7-4829-bf69-a1c538ab9311"
 			label="!error"
+			lineNumber="12"
 			variable="possibleError">
 		<steps xsi:type="be.nabu.libs.services.vm.step.For"
 				disabled="false"
 				id="9651b503-27f7-40dd-9c71-7cd978875841"
+				lineNumber="13"
 				variable="regex">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="If it matches the regex, map it"
 					disabled="false"
 					id="6245a385-1cca-4aaa-aaf8-50cea199c11f"
-					label="input/stacktrace ~ &quot;(?s)(?i).*&quot; + regex + &quot;.*&quot;">
+					label="input/stacktrace ~ &quot;(?s)(?i).*&quot; + regex + &quot;.*&quot;"
+					lineNumber="14">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="b4d49086-e43f-44a8-b70a-628493cd2626"
@@ -332,7 +364,8 @@
 					comment="If we have a matching error, stop searching"
 					disabled="false"
 					id="ee4f33a2-4d8b-45a3-b521-b3b0fe4f76fe"
-					label="error">
+					label="error"
+					lineNumber="15">
 				<count>2</count>
 			</steps>
 			<query>possibleError/regexes</query>
@@ -343,11 +376,13 @@
 			comment="If we have retry intervals, it is a transient exception and we might need to try again"
 			disabled="false"
 			id="7d6a5b37-7097-4563-be93-83389cd5a56c"
-			label="error/retryIntervals != null">
+			label="error/retryIntervals != null"
+			lineNumber="16">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="Get amount of transient errors and amount of retries"
 				disabled="false"
-				id="4b55c32d-c5cd-4b24-9d29-3bab32e539e9">
+				id="4b55c32d-c5cd-4b24-9d29-3bab32e539e9"
+				lineNumber="17">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="ffc597eb-4589-4169-9ca6-127a1387d1ff"
@@ -420,12 +455,14 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 				disabled="false"
-				id="bba9aa6c-09de-4df2-968b-ec24a581b1aa">
+				id="bba9aa6c-09de-4df2-968b-ec24a581b1aa"
+				lineNumber="18">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Do not retry anymore"
 					disabled="false"
 					id="9d055604-d3f9-4301-bdca-964d27650639"
-					label="count &gt;= amountOfRetries">
+					label="count &gt;= amountOfRetries"
+					lineNumber="19">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="42aa50de-9cce-4fb6-84d0-f82393c4c591"
@@ -443,7 +480,8 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Get the correct interval"
 					disabled="false"
-					id="d1ffa3d0-96ef-4f86-84e6-262ad7654df8">
+					id="d1ffa3d0-96ef-4f86-84e6-262ad7654df8"
+					lineNumber="20">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="9cf2c066-0f75-4b86-8a33-d4fbae83b03f"
@@ -468,7 +506,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Map general settings"
 			disabled="false"
-			id="3de0e2ec-6f5f-475c-8ba1-7ad0eca85bd4">
+			id="3de0e2ec-6f5f-475c-8ba1-7ad0eca85bd4"
+			lineNumber="21">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="7e5d8a16-e2ef-4649-9d6b-994de06b43c9"
@@ -500,7 +539,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Set default values"
 			disabled="false"
-			id="7cec226a-20c2-4f3d-a187-68ff3d508a8f">
+			id="7cec226a-20c2-4f3d-a187-68ff3d508a8f"
+			lineNumber="22">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="8e52e081-4674-487c-90ba-0b1ad47b3248"

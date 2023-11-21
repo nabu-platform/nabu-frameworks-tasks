@@ -1,3 +1,5 @@
 <structure name="parameter">
-    <field minOccurs="0" name="queue" type="java.lang.String"/>
+    <field name="queue" type="java.lang.String"/>
+    <field minOccurs="0" name="task" type="java.lang.String"/>
+    <field minOccurs="0" name="taskType" type="java.lang.String"/>
 </structure>

@@ -2,6 +2,7 @@
 	<sql>update ~tasks set
 	modified = :now,
 	started = :now,
+	stopped = null,
 	state = 'RUNNING'
 where id = :id
 and state = 'WAITING'

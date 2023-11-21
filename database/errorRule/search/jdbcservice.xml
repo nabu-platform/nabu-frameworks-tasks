@@ -2,5 +2,7 @@
 	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskErrorRule</outputDefinition>
 	<sql>select *
 from ~task_error_rules ter
-where (ter.queue is null or ter.queue = :queue)</sql>
+where (ter.queue is null or ter.queue = :queue)
+	and (ter.task is null or :task is null or ter.task = :task)
+	and (ter.task_type is null or :taskType is null or ter.task_type = :taskType)</sql>
 </jdbcService>

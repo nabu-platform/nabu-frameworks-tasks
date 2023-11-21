@@ -5,6 +5,8 @@
         <field name="stacktrace" type="java.lang.String"/>
         <field minOccurs="0" name="code" type="java.lang.String"/>
         <field minOccurs="0" name="queueName" type="java.lang.String"/>
+        <field name="task" type="java.lang.String"/>
+        <field name="taskType" type="java.lang.String"/>
     </structure>
     <structure name="output">
         <field comment="Whether or not it should be retried" name="transient" type="java.lang.Boolean"/>

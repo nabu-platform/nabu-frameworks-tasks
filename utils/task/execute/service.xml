@@ -1199,6 +1199,24 @@
 						<from>input/queue/name</from>
 						<to>queueName</to>
 					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="09033e303f6448f4a6816115500bb05f"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>input/task/task</from>
+						<to>task</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="94ae2df6c73648a78fd2ba68343be459"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>input/task/taskType</from>
+						<to>taskType</to>
+					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"

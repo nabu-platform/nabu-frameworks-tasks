@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.types.structure.StructureManager" lastModified="2018-03-16T13:01:46.735+01:00" leaf="true" version="8"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>java.lang.String</references><references>java.lang.Integer</references><references>java.lang.Boolean</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2023-10-18T14:17:56.064+02:00" lastModified="2023-10-18T14:18:22.604+02:00" leaf="true" version="10">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>java.lang.String</references>
+    <references>java.lang.Integer</references>
+    <references>java.lang.Boolean</references>
+</node>

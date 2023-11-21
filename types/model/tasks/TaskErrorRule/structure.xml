@@ -8,4 +8,6 @@
     <field comment="A comma separated list of numbers.&#10;Each number is in ms the timeout before we try again." minOccurs="0" name="retryInterval" type="java.lang.String"/>
     <field comment="You can immediately set this type of error failed" minOccurs="0" name="fail" type="java.lang.Boolean"/>
     <field comment="You can limit this logic to a particular queue or across the entire task system" minOccurs="0" name="queue" type="java.lang.String"/>
+    <field comment="Limit to a particular task" minOccurs="0" name="task" type="java.lang.String"/>
+    <field comment="Limit to a particular task type" minOccurs="0" name="taskType" type="java.lang.String"/>
 </structure>
