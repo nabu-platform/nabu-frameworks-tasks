@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-04-25T17:17:00.593+02:00" lastModified="2022-11-03T13:42:10.708+01:00" leaf="true" version="99">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-04-25T17:17:00.593+02:00" lastModified="2024-01-29T14:03:30.744+01:00" leaf="true" version="100">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.utils.Transaction.start</references>
     <references>nabu.utils.List.add</references>

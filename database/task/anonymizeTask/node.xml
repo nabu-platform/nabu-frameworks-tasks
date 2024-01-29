@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-04-24T18:12:12.396+02:00" lastModified="2024-01-29T11:54:26.044+01:00" leaf="false" version="24">
+<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2024-01-29T11:56:08.495+01:00" lastModified="2024-01-29T12:02:55.969+01:00" leaf="false" version="7">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -9,9 +9,9 @@
     <references>java.lang.Integer</references>
     <references>java.lang.Boolean</references>
     <references>be.nabu.libs.services.jdbc.AffixInput</references>
-    <references>nabu.frameworks.tasks.database.task.rollbackFinalizedTask.parameters</references>
+    <references>nabu.frameworks.tasks.database.task.anonymizeTask.parameters</references>
     <references>be.nabu.libs.types.api.KeyValuePair</references>
-    <references>nabu.frameworks.tasks.database.task.rollbackFinalizedTask.results</references>
+    <references>nabu.frameworks.tasks.database.task.anonymizeTask.results</references>
     <references>java.lang.Long</references>
     <references>java.lang.Boolean</references>
 </node>

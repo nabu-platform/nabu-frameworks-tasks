@@ -1,0 +1,5 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>update ~tasks set task_input = :taskInput, task_output = :taskOutput, alias = null, impersonator = null, anonymized = true 
+where id = :taskId
+	and (state = 'FAILED' or state = 'SUCCEEDED' or state = 'CANCELLED')</sql>
+</jdbcService>

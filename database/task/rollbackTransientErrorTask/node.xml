@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" lastModified="2018-03-16T17:09:03.549+01:00" leaf="false" version="16"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>java.lang.String</references><references>java.lang.Long</references><references>java.lang.Integer</references><references>java.lang.Boolean</references><references>nabu.frameworks.tasks.database.task.rollbackTransientErrorTask.parameters</references><references>be.nabu.libs.types.api.KeyValuePair</references><references>java.lang.Long</references><references>java.lang.Boolean</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2024-01-29T11:53:15.196+01:00" lastModified="2024-01-29T11:53:15.196+01:00" leaf="false" version="17">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>java.lang.String</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Integer</references>
+    <references>java.lang.Boolean</references>
+    <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>nabu.frameworks.tasks.database.task.rollbackTransientErrorTask.parameters</references>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
+    <references>nabu.frameworks.tasks.database.task.rollbackTransientErrorTask.results</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Boolean</references>
+</node>

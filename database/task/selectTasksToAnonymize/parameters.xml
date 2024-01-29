@@ -1,0 +1,5 @@
+<structure name="parameter">
+    <field name="taskQueueId" type="java.util.UUID"/>
+    <field name="before" timezone="UTC" type="java.util.Date"/>
+    <field minOccurs="0" name="taskType" type="java.lang.String"/>
+</structure>

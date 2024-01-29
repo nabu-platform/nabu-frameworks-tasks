@@ -242,6 +242,24 @@
 				<from>configuration/blockWindow</from>
 				<to>queue/blockWindow</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2ddbc75174494ed881b3663f1588540b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>configuration/anonymizationTimeout</from>
+				<to>queue/anonymizationTimeout</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9e944a2bc784486a811782d5e33c3d6b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>configuration/anonymizationServiceId</from>
+				<to>queue/anonymizationServiceId</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
 				disabled="false"
@@ -322,6 +340,15 @@
 				fixedValue="true">
 			<from>$any</from>
 			<to>queue/target</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="5492263cb6aa40a488d7f8f8d3182839"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>false</from>
+			<to>queue/anonymized</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
@@ -432,7 +459,8 @@
 					id="3013aaee-4373-4345-86b2-94ab32a3fd3b"
 					label="!otherQueue"
 					lineNumber="16"
-					message="=&quot;Can not find queue dependency: &quot; + input/queue/dependencyId" xsi:nil="true"/>
+					message="=&quot;Can not find queue dependency: &quot; + input/queue/dependencyId"
+					whitelist="false" xsi:nil="true"/>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 					disabled="false"
 					id="c4c37470-df07-4667-b88c-96326a65838c"
@@ -586,6 +614,7 @@
 				disabled="false"
 				id="3c30a983-c6ce-4d88-9a50-9e79c602483e"
 				lineNumber="24"
-				message="=exception" xsi:nil="true"/>
+				message="=exception"
+				whitelist="false" xsi:nil="true"/>
 	</steps>
 </sequence>

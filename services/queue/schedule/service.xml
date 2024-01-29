@@ -142,7 +142,8 @@
 			id="3ae60d59-29d6-48d2-bd65-b8d0376c1ed9"
 			label="!queue"
 			lineNumber="5"
-			message="=&quot;Could not find queue: &quot; + input/name" xsi:nil="true"/>
+			message="=&quot;Could not find queue: &quot; + input/name"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="5fbf5a94-986c-442d-8194-a861bfe6cff3"
@@ -1130,6 +1131,15 @@
 												disabled="false"
 												id="d127c23e-2031-40de-95c5-17e624c40088"
 												path="affix" xsi:nil="true"/>
+										<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+												disabled="false"
+												id="017b9dc5948a4aac9f6f65cd518d489e"
+												mask="false"
+												optional="false"
+												fixedValue="true">
+											<from>false</from>
+											<to>task/anonymized</to>
+										</steps>
 									</steps>
 									<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 											disabled="false"

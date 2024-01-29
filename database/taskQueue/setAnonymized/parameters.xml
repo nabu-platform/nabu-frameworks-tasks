@@ -1,0 +1,3 @@
+<structure name="parameter">
+    <field name="taskQueueId" type="java.util.UUID"/>
+</structure>

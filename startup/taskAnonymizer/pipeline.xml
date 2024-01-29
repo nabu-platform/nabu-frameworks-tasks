@@ -1,0 +1,10 @@
+<structure name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure definition="nabu.frameworks.tasks.providers.taskProvider" maxOccurs="unbounded" minOccurs="0" name="taskProviders"/>
+    <field name="server" type="java.lang.String"/>
+    <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.crud.taskQueue.types.output" maxOccurs="unbounded" minOccurs="0" name="queues"/>
+    <field minOccurs="0" name="before" type="java.util.Date"/>
+    <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
+    <field minOccurs="0" name="date" type="java.util.Date"/>
+</structure>

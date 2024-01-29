@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-01-29T12:03:12.150+01:00" lastModified="2024-01-29T12:40:03.826+01:00" leaf="true" version="19">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.utils.Runtime.summarizeException</references>
+    <references>nabu.frameworks.tasks.services.task.log</references>
+    <references>nabu.frameworks.tasks.specs.anonymize</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.String.toStream</references>
+    <references>nabu.utils.Object.anonymize</references>
+    <references>java.util.UUID</references>
+    <references>nabu.data.xml.Services.marshal</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.Task</references>
+    <references>nabu.frameworks.tasks.crud.taskQueue.services.get</references>
+    <references>nabu.frameworks.tasks.database.task.anonymizeTask</references>
+    <references>nabu.frameworks.tasks.crud.taskQueue.types.output</references>
+    <references>nabu.data.xml.Services.unmarshal</references>
+    <references>nabu.utils.Server.getServerName</references>
+    <references>nabu.utils.Lock.tryLock</references>
+    <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.String.split</references>
+    <references>nabu.frameworks.tasks.database.task.selectTasksToAnonymize</references>
+    <references>nabu.utils.Stream.toString</references>
+</node>

@@ -1,0 +1,5 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>update ~task_queues set anonymized = true
+where id = :taskQueueId
+	and (state = 'SUCCEEDED' or state = 'FAILED')</sql>
+</jdbcService>

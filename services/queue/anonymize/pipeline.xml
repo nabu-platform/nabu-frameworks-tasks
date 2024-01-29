@@ -1,0 +1,10 @@
+<structure interface="nabu.frameworks.tasks.specs.anonymize" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" maxOccurs="unbounded" minOccurs="0" name="tasks"/>
+    <structure collectionCrudProvider="odata" collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="taskInput"/>
+    <structure collectionCrudProvider="odata" collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="taskOutput"/>
+    <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.crud.taskQueue.types.output" name="queue"/>
+    <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
+    <field name="locked" type="java.lang.Boolean"/>
+</structure>

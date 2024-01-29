@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-01-29T12:38:07.501+01:00" lastModified="2024-01-29T13:56:27.445+01:00" leaf="true" version="16">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>java.util.Date</references>
+    <references>nabu.frameworks.tasks.specs.anonymize</references>
+    <references>nabu.frameworks.tasks.providers.taskProvider</references>
+    <references>nabu.frameworks.tasks.utils.misc.getTaskProviders</references>
+    <references>nabu.frameworks.tasks.crud.taskQueue.services.list</references>
+    <references>nabu.frameworks.tasks.crud.taskQueue.types.output</references>
+    <references>nabu.utils.Server.getServerName</references>
+    <references>nabu.utils.Runtime.interrupted</references>
+    <references>nabu.frameworks.tasks.database.taskQueue.setAnonymized</references>
+    <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>nabu.utils.Object.last</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.Server.sleep</references>
+    <references>nabu.utils.String.split</references>
+    <references>nabu.utils.Date.incrementDuration</references>
+</node>

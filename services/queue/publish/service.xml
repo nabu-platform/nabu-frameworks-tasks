@@ -458,7 +458,8 @@
 			id="967281c4-bd3e-498f-b225-4e793df4d3ab"
 			label="queue/published != null"
 			lineNumber="16"
-			message="=&quot;The queue is closed for publishing&quot;" xsi:nil="true"/>
+			message="=&quot;The queue is closed for publishing&quot;"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Register a handler to set it to published once the service is done"
 			disabled="false"
@@ -824,6 +825,15 @@
 				fixedValue="false">
 			<from>result68f2ba9defc2467d8e1555abf4dae204/serviceContext</from>
 			<to>task/serviceContext</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="3370560a531f4c3d8c3d4a2f8cf7d0b1"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>false</from>
+			<to>task/anonymized</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
@@ -1340,6 +1350,7 @@
 				disabled="false"
 				id="3c30a983-c6ce-4d88-9a50-9e79c602483e"
 				lineNumber="39"
-				message="=exception" xsi:nil="true"/>
+				message="=exception"
+				whitelist="false" xsi:nil="true"/>
 	</steps>
 </sequence>

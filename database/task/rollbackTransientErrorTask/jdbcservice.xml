@@ -1,5 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<sql>update ~tasks set state = 'CREATED', owner = null, started = null
 where id = :taskId
-and (state = 'TRANSIENT_ERROR')</sql>
+and (state = 'TRANSIENT_ERROR')
+and anonymized = false</sql>
 </jdbcService>

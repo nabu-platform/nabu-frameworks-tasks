@@ -11,6 +11,6 @@
     <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueue" name="otherQueue" namespace="nabu.frameworks.tasks.types.model.tasks"/>
     <field name="manage" type="java.lang.Boolean"/>
     <field name="queueName" type="java.lang.String"/>
-    <structure collectionName="TaskQueueConfigurations" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueueConfiguration" minOccurs="0" name="configuration" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+    <structure collectionName="TaskQueueConfigurations" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueueConfiguration" label="TaskQueueConfiguration" minOccurs="0" name="configuration" namespace="nabu.frameworks.tasks.types.model.tasks"/>
     <field minOccurs="0" name="queueSpecifier" type="java.lang.String"/>
 </structure>

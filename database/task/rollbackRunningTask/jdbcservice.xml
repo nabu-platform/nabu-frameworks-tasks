@@ -2,5 +2,6 @@
 	<sql>update ~tasks set state = 'CREATED', owner = null, started = null
 where id = :taskId
 and (:owner is null or owner = :owner)
-and (state = 'RUNNING' or state = 'WAITING')</sql>
+and (state = 'RUNNING' or state = 'WAITING')
+and anonymized = false</sql>
 </jdbcService>

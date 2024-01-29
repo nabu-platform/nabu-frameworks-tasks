@@ -1,0 +1,11 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.Task</outputDefinition>
+	<sql>select *
+from ~tasks t
+where t.task_queue_id = :taskQueueId
+	and (((state = 'SUCCEEDED' or state = 'FAILED') and stopped is not null and stopped &lt; :before)
+		or (state = 'CANCELLED' and scheduled is not null and scheduled &lt; :before)
+		or (state = 'CANCELLED' and scheduled is null and created &lt; :before))
+	and anonymized = false
+	and (:taskType is null or task_type = :taskType)</sql>
+</jdbcService>
