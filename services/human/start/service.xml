@@ -67,10 +67,29 @@
 				asynchronous="false"
 				recache="false">
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="4eaba5806a5947dbaad42f6c96ce3567"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result69e0faf2d31d4699ab284667c90f1ff0/rowCount</from>
+			<to>rowCount</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="c09d587879a6409cb2110345a49843d3"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>false</from>
+			<to>output/started</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="6583d6f899d04faaa548ed304f436143"
+			label="rowCount &gt; 0"
 			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
@@ -110,6 +129,15 @@
 				<from>transactionId</from>
 				<to>transactionId</to>
 			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="8047a1e0773b4cd0bb330ee3696be6b2"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>true</from>
+			<to>output/started</to>
 		</steps>
 	</steps>
 </sequence>

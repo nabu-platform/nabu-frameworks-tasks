@@ -10,6 +10,7 @@
     <field comment="In case we are part of a batch, this is the index inside the batch for sequential processing" generated="true" indexed="true" name="taskIndex" type="java.lang.Long"/>
     <field comment="The task to run, this could for example be a service id." name="task" type="java.lang.String"/>
     <field comment="The type of the task, this allows for example schedulers to exist next to asynchronous service runs" name="taskType" type="java.lang.String"/>
+    <field comment="An additional sub type can be added if relevant" minOccurs="0" name="taskSubType" type="java.lang.String"/>
     <field comment="Content of the task, for example xmlified input of a service" maxLength="1000000" minOccurs="0" name="taskInput" type="java.lang.String"/>
     <field comment="If based on a schedule, this is the timestamp of the instance. This allows us to make sure only one such instance exists. Because we set a unique constraint on this in combination with the task id we always need a sensible value." minOccurs="0" name="scheduled" timezone="UTC" type="java.util.Date"/>
     <field comment="When the task was done executing" minOccurs="0" name="stopped" timezone="UTC" type="java.util.Date"/>
@@ -30,5 +31,6 @@
     <field comment="The unique identifier of the impersonator" minOccurs="0" name="impersonatorId" type="java.lang.String"/>
     <field minOccurs="0" name="taskInputTypeId" type="java.lang.String"/>
     <field minOccurs="0" name="taskOutputTypeId" type="java.lang.String"/>
+    <field comment="An external id can be added to this task to synchronize it to something else" minOccurs="0" name="externalId" type="java.lang.String"/>
     <field name="anonymized" type="java.lang.Boolean"/>
 </structure>

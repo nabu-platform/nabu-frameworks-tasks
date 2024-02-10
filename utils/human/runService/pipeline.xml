@@ -1,0 +1,11 @@
+<structure name="pipeline">
+    <structure name="input">
+        <structure collectionName="Tasks" definition="nabu.frameworks.tasks.crud.task.types.output" name="task"/>
+    </structure>
+    <structure name="output">
+        <field minOccurs="0" name="taskOutput" type="java.lang.String"/>
+        <field minOccurs="0" name="taskOutputType" type="java.lang.String"/>
+    </structure>
+    <structure collectionCrudProvider="odata" collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
+    <structure collectionCrudProvider="odata" collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
+</structure>

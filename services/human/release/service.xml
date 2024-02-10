@@ -27,10 +27,29 @@
 				<to>parameters[0]/taskId</to>
 			</steps>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="452df7d1d5d64d0f9d89e9adb5513216"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultfc5735291dba4d64a167989c2c6b75b5/rowCount</from>
+			<to>rowCount</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="21256129c6cc4ba4b50dc7f8f61fd7d5"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>false</from>
+			<to>output/released</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="cfd22bea-4712-425b-8d9d-7b199996c5dd"
+			label="rowCount &gt; 0"
 			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
@@ -79,6 +98,15 @@
 				<from>Rolled back running task</from>
 				<to>title</to>
 			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="5b151fe8598445eabd6b5b523e180dd3"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>true</from>
+			<to>output/released</to>
 		</steps>
 	</steps>
 </sequence>

@@ -157,15 +157,6 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="84c97fd0658148a2bd2f3c419e95223c"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>input/target</from>
-				<to>task/target</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
 					id="2b2c07213a394dc2b8c23673a6f2728f"
 					mask="false"
 					optional="false"
@@ -247,12 +238,39 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="f1f633705a304e71b88785a8ccba915c"
+					id="51c5135bd1af4a7d846a6ea1ad374fef"
 					mask="false"
 					optional="false"
 					fixedValue="false">
-				<from>input/correlationId</from>
-				<to>task/correlationId</to>
+				<from>input/taskSubType</from>
+				<to>task/taskSubType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="da9e1641024f4d0f821686dec316d140"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/target</from>
+				<to>task/target</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="acb2417d158a4f7a8ffbdd7d644e2e64"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/externalId</from>
+				<to>task/externalId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="454d12eb6ca94b1c8d6de260f662814a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/properties</from>
+				<to>properties</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -263,6 +281,32 @@
 				fixedValue="false">
 			<from>resultfb68accfcfce4366823774c8b7d0bbaf/taskId</from>
 			<to>output/taskId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="d13a73c0eda54566b092892c923a8c99"
+			lineNumber="5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="0ec74acd8910417d954030af705802f4"
+				serviceId="nabu.frameworks.tasks.hooks.human.start"
+				resultName="result1a4152782886496a971ce0aee028b2fc"
+				temporaryMapping="true"
+				x="237"
+				y="66"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6afccaf7b1f146feb14c0ecd2c473b18"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>output/taskId</from>
+				<to>taskId</to>
+			</steps>
 		</steps>
 	</steps>
 </sequence>

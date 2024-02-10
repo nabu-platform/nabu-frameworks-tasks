@@ -3,6 +3,7 @@
     <field foreignKey="nabu.frameworks.tasks.types.model.tasks.Task:id" minOccurs="0" name="dependencyId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
     <field name="task" type="java.lang.String"/>
     <field name="taskType" type="java.lang.String"/>
+    <field minOccurs="0" name="taskSubType" type="java.lang.String"/>
     <field minOccurs="0" name="taskInput" type="java.lang.String"/>
     <field minOccurs="0" name="scheduled" timezone="UTC" type="java.util.Date"/>
     <field foreignKey="nabu.frameworks.tasks.types.model.tasks.ScheduledTask:id" minOccurs="0" name="scheduledTaskId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
@@ -17,4 +18,5 @@
     <field comment="The realm of the impersonator" minOccurs="0" name="impersonatorRealm" type="java.lang.String"/>
     <field comment="The unique identifier of the impersonator" minOccurs="0" name="impersonatorId" type="java.lang.String"/>
     <field minOccurs="0" name="taskInputTypeId" type="java.lang.String"/>
+    <field minOccurs="0" name="externalId" type="java.lang.String"/>
 </structure>

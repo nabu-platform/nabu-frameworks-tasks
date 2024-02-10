@@ -1,0 +1,1 @@
+For a "validate", the task input should be the "original" data, the task output the "new data".

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-02-07T11:57:30.499+01:00" lastModified="2024-02-07T13:38:52.370+01:00" leaf="true" version="18">
+    <comment>Create a human task to evaluate (and possibly steer) the execution of a service</comment>
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
+    <references>be.nabu.libs.types.base.Duration</references>
+    <references>be.nabu.eai.module.services.vm.api.ServiceExecutor.execute</references>
+    <references>java.util.Date</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.Date.incrementDuration</references>
+    <references>nabu.frameworks.tasks.services.schedule.parse</references>
+    <references>nabu.frameworks.tasks.services.schedule.next</references>
+    <references>nabu.utils.Object.toProperties</references>
+    <references>nabu.frameworks.tasks.services.human.create</references>
+</node>

@@ -1,0 +1,16 @@
+<structure interface="be.nabu.eai.module.services.vm.api.ServiceExecutor.execute" name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <field comment="The queue to use, if no queue is provided, a generic &quot;humanTask&quot; queue will be used" minOccurs="0" name="queue" type="java.lang.String"/>
+        <field minOccurs="0" name="taskTarget" type="java.lang.String"/>
+        <field minOccurs="0" name="schedule" type="java.lang.String"/>
+        <field comment="A precalculated moment to run the task" minOccurs="0" name="runAt" type="java.util.Date"/>
+        <field minOccurs="0" name="runIn" type="be.nabu.libs.types.base.Duration"/>
+        <structure collectionCrudProvider="odata" collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="metadata"/>
+        <field minOccurs="0" name="contextId" type="java.lang.String"/>
+        <field minOccurs="0" name="groupId" type="java.lang.String"/>
+    </structure>
+    <structure name="output"/>
+    <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="properties"/>
+</structure>
