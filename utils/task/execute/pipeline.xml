@@ -12,8 +12,8 @@
     <structure name="output"/>
     <field name="manage" type="java.lang.Boolean"/>
     <field name="started" type="java.lang.Boolean"/>
-    <structure definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
-    <structure definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
+    <structure collectionCrudProvider="odata" collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
+    <structure collectionCrudProvider="odata" collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
     <field minOccurs="0" name="taskOutput" type="java.lang.String"/>
     <field name="stopped" type="java.lang.Boolean"/>
     <structure definition="nabu.utils.types.ExceptionSummary" minOccurs="0" name="summary"/>

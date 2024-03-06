@@ -1015,6 +1015,15 @@
 				<to>transaction</to>
 			</steps>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="0a8ceb492ced4e13bb3e1d03091cbc9a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>task/taskQueueId</from>
+			<to>output/taskQueueId</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.For"
 			disabled="false"

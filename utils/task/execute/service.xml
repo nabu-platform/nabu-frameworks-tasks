@@ -569,6 +569,36 @@
 					<to>value</to>
 				</steps>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="b322f0b0eaca4704aa82a6307e6e4bd0"
+					serviceId="nabu.utils.Runtime.setContext"
+					resultName="resultceb9731340c549b3b5f53ec912f2135d"
+					temporaryMapping="true"
+					x="89"
+					y="176"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="1836d11e51b440a6bfef9b699f9e150b"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>taskQueueId</from>
+					<to>key</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="26839decdca043ab89e4e05e958c76f3"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/queue/id</from>
+					<to>value</to>
+				</steps>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
