@@ -1,0 +1,1 @@
+<structure name="singleTaskState" restrict="task" superType="nabu.frameworks.tasks.utils.human.selectHumanTasks.results"/>

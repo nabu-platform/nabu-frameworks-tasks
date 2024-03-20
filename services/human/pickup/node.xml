@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-09-18T08:41:59.133+02:00" lastModified="2024-02-07T13:47:28.086+01:00" leaf="true" version="11">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-09-18T08:41:59.133+02:00" lastModified="2024-03-19T17:46:27.883+01:00" leaf="true" version="15">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.frameworks.tasks.database.task.pickup</references>
     <references>nabu.frameworks.tasks.services.task.start</references>
+    <references>nabu.utils.Runtime.getCurrentToken</references>
     <references>java.lang.Long</references>
+    <references>nabu.utils.Object.first</references>
     <references>nabu.utils.Date.now</references>
     <references>java.lang.Boolean</references>
     <references>java.util.UUID</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.hooks.human.pickup</references>
 </node>

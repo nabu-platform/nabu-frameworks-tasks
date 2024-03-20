@@ -108,5 +108,26 @@
 			<from>true</from>
 			<to>output/released</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="a4a86026a9854a7689d6eaae763e3a42"
+				serviceId="nabu.frameworks.tasks.hooks.human.release"
+				resultName="resultcfa6da2a8a1b4bc1be2733b2feb4bc99"
+				temporaryMapping="true"
+				x="171"
+				y="176"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ace98bcdf065413aa613a1409f44d834"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskId</from>
+				<to>taskId</to>
+			</steps>
+		</steps>
 	</steps>
 </sequence>

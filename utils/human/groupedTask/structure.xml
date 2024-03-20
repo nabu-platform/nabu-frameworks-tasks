@@ -1,0 +1,4 @@
+<structure name="groupedTask">
+    <field name="task" type="java.lang.String"/>
+    <structure definition="nabu.frameworks.tasks.utils.human.singleTaskState" maxOccurs="unbounded" minOccurs="0" name="states" restrict="task"/>
+</structure>

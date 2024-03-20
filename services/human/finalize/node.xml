@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-09-07T09:40:30.258+02:00" lastModified="2024-02-07T15:39:30.532+01:00" leaf="true" version="44">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-09-07T09:40:30.258+02:00" lastModified="2024-03-19T17:42:57.501+01:00" leaf="true" version="51">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
+    <references>nabu.utils.Runtime.summarizeException</references>
     <references>nabu.frameworks.tasks.crud.task.services.get</references>
     <references>nabu.frameworks.tasks.services.task.log</references>
+    <references>nabu.utils.Runtime.getCurrentToken</references>
     <references>nabu.utils.Date.now</references>
     <references>nabu.utils.reflection.Type.of</references>
     <references>java.util.UUID</references>
     <references>nabu.data.xml.Services.marshal</references>
     <references>nabu.frameworks.tasks.crud.task.types.output</references>
     <references>java.lang.Long</references>
+    <references>nabu.utils.Object.first</references>
     <references>nabu.frameworks.tasks.database.task.stop</references>
     <references>java.lang.Boolean</references>
     <references>java.lang.Object</references>
     <references>java.lang.String</references>
-    <references>nabu.frameworks.tasks.hooks.human.stop</references>
     <references>nabu.frameworks.tasks.utils.human.runService</references>
     <references>nabu.utils.Stream.toString</references>
+    <references>nabu.frameworks.tasks.hooks.human.finalize</references>
 </node>

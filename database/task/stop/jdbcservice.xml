@@ -7,5 +7,5 @@
 	task_output_type_id = :taskOutputTypeId
 where id = :id
 and state = 'RUNNING'
-and owner = :owner</sql>
+and (:owner is null or owner = :owner)</sql>
 </jdbcService>

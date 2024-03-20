@@ -290,7 +290,7 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="0ec74acd8910417d954030af705802f4"
-				serviceId="nabu.frameworks.tasks.hooks.human.start"
+				serviceId="nabu.frameworks.tasks.hooks.human.create"
 				resultName="result1a4152782886496a971ce0aee028b2fc"
 				temporaryMapping="true"
 				x="237"

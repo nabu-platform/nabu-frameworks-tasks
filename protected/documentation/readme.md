@@ -4,6 +4,12 @@
 	- the task framework will deduce wrongly that the tables are not in sync
 	- as a workaround you can create an explicit configuration of the connection, which will make sure it is picked up
 
+# Human workflow
+
+- create (can optionally assign a target)
+- start: someone picks up the task to start working on it, owner is set to the user. other people can not pick up the task
+- once started you can "stop" (with succeeded or failed) or "release" 
+
 # Block window
 
 Sometimes you don't want tasks to be executed during a specific period. E.g. no tasks between midnight and 5 AM (because other systems have downtime), no tasks in the weekend etc.

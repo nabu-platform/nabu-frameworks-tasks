@@ -1,0 +1,5 @@
+<structure name="result">
+    <field name="task" type="java.lang.String"/>
+    <field name="state" type="java.lang.String"/>
+    <field name="count" type="java.lang.Long"/>
+</structure>

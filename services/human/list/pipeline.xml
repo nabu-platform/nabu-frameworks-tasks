@@ -1,0 +1,7 @@
+<structure name="pipeline">
+    <structure name="input"/>
+    <structure name="output">
+        <structure definition="nabu.frameworks.tasks.utils.human.groupedTask" maxOccurs="unbounded" minOccurs="0" name="tasks"/>
+    </structure>
+    <structure definition="nabu.frameworks.tasks.utils.human.selectHumanTasks.results" maxOccurs="unbounded" minOccurs="0" name="results"/>
+</structure>

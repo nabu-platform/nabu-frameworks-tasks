@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-03-19T17:57:33.150+01:00" lastModified="2024-03-19T17:59:44.454+01:00" leaf="true" version="4">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.utils.human.groupedTask</references>
+    <references>nabu.frameworks.tasks.utils.human.selectHumanTasks</references>
+    <references>nabu.frameworks.tasks.utils.human.selectHumanTasks.results</references>
+    <references>nabu.utils.List.group</references>
+</node>
