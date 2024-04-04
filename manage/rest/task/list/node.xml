@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-07-05T09:57:06.845+02:00" deprecated="2022-09-13T12:41:21.235+02:00" lastModified="2022-12-07T17:31:54.508+01:00" leaf="true" version="13">
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-07-05T09:57:06.845+02:00" deprecated="2022-09-13T12:41:21.235+02:00" lastModified="2024-03-20T09:41:37.172+01:00" leaf="true" version="14">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -8,5 +8,5 @@
     <references>nabu.services.jdbc.Services.page</references>
     <references>nabu.services.jdbc.Services.select</references>
     <references>nabu.frameworks.tasks.manage.rest.task.taskList</references>
-    <references>nabu.frameworks.tasks.manage.crud.task.services.list</references>
+    <references>nabu.frameworks.tasks.crud.task.services.list</references>
 </node>

@@ -185,7 +185,7 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="e6d19516-2345-478f-8967-a47c599894ee"
-				serviceId="nabu.frameworks.tasks.manage.crud.task.services.list"
+				serviceId="nabu.frameworks.tasks.crud.task.services.list"
 				resultName="resultc74683253b754443bc972400463cb964"
 				temporaryMapping="true"
 				x="244"

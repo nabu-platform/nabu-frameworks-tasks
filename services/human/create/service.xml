@@ -141,9 +141,9 @@
 				serviceId="nabu.frameworks.tasks.services.queue.publish"
 				resultName="resultfb68accfcfce4366823774c8b7d0bbaf"
 				temporaryMapping="true"
-				x="283"
-				y="44"
-				invocationOrder="0"
+				x="737"
+				y="153"
+				invocationOrder="1"
 				asynchronous="false"
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -272,6 +272,60 @@
 				<from>input/properties</from>
 				<to>properties</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="16a5664501224abfb4caea45f6f283a5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultd92e78eddb3c4ed9aeeab87c5a8ae9bd/token/authenticationId</from>
+				<to>task/authenticationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="83c2e295252a4123971dcb935a75cb82"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultd92e78eddb3c4ed9aeeab87c5a8ae9bd/token/impersonator</from>
+				<to>task/impersonator</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2206435fb72f46a98506a98edaae5efb"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultd92e78eddb3c4ed9aeeab87c5a8ae9bd/token/impersonatorId</from>
+				<to>task/impersonatorId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="36f9a42102a64fe2b7008aeb047dd279"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultd92e78eddb3c4ed9aeeab87c5a8ae9bd/token/impersonatorRealm</from>
+				<to>task/impersonatorRealm</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cf414c7539c84a8ba68b9f6c2c26e919"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultd92e78eddb3c4ed9aeeab87c5a8ae9bd/token/realm</from>
+				<to>task/realm</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3199f2a7489f4305bb9793e0a98be296"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultd92e78eddb3c4ed9aeeab87c5a8ae9bd/token/name</from>
+				<to>task/alias</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -281,6 +335,18 @@
 				fixedValue="false">
 			<from>resultfb68accfcfce4366823774c8b7d0bbaf/taskId</from>
 			<to>output/taskId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="34ce30134c644bc497871d423dbc029a"
+				serviceId="nabu.utils.Runtime.getCurrentToken"
+				resultName="resultd92e78eddb3c4ed9aeeab87c5a8ae9bd"
+				temporaryMapping="true"
+				x="67"
+				y="587"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"

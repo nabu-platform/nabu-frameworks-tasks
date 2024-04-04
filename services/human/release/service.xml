@@ -47,19 +47,43 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Set defaults"
+			disabled="false"
+			id="b7e5bd7ab1f144d895ff112e467bc8c2"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="b2d2b76f703e48c489f30b1fc09083c9"
+				mask="false"
+				optional="true"
+				fixedValue="true">
+			<from>Rolled back running task</from>
+			<to>input/title</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="665ed0ea4e734c3db25b88a00fd07838"
+				mask="false"
+				optional="true"
+				fixedValue="true">
+			<from>rollback</from>
+			<to>input/code</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="cfd22bea-4712-425b-8d9d-7b199996c5dd"
 			label="rowCount &gt; 0"
-			lineNumber="3">
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="7352ab8f-650e-45c4-99d2-994a89efb229"
 				serviceId="nabu.frameworks.tasks.services.task.log"
 				resultName="result65e927ffa2594b1494819a8d1a316c55"
 				temporaryMapping="true"
-				x="180"
-				y="77"
-				invocationOrder="0"
+				x="889"
+				y="23"
+				invocationOrder="1"
 				asynchronous="false"
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -82,21 +106,39 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="789d12441232475295ea4ed3d97b7289"
+					id="2e28817f72eb4ae3b372e91240485e28"
 					mask="false"
 					optional="false"
-					fixedValue="true">
-				<from>rollback</from>
+					fixedValue="false">
+				<from>resulta3c653a2810943acbf3ca9eaec0e9fcf/token/authenticationId</from>
+				<to>actor</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="57ce88f19d0c484e8157b7b8d623ffec"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/code</from>
 				<to>code</to>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="ea1f3180fbda4491a63744530079f1a0"
+					id="34806fbf277d4444972e9b5fb40a66f1"
 					mask="false"
 					optional="false"
-					fixedValue="true">
-				<from>Rolled back running task</from>
+					fixedValue="false">
+				<from>input/title</from>
 				<to>title</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="bb8c8f3db8234a29a9f955a5fae22824"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/description</from>
+				<to>description</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -128,6 +170,18 @@
 				<from>input/taskId</from>
 				<to>taskId</to>
 			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="2e2970561e0c4552a88606f74d72f6a0"
+				serviceId="nabu.utils.Runtime.getCurrentToken"
+				resultName="resulta3c653a2810943acbf3ca9eaec0e9fcf"
+				temporaryMapping="true"
+				x="467"
+				y="33"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
 		</steps>
 	</steps>
 </sequence>

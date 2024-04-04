@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <webModule>
     <path>/tasks</path>
-    <webFragments>nabu.frameworks.tasks.manage.crud.task</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.crud.taskErrorRule</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.crud.taskLog</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.crud.taskProperty</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.crud.taskQueue</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.crud.taskQueueConfiguration</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.crud.taskQueueSchedule</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.crud.taskSchedule</webFragments>
-    <webFragments>nabu.frameworks.tasks.manage.crud.taskScheduleProperty</webFragments>
+    <webFragments>nabu.frameworks.tasks.crud.task</webFragments>
+    <webFragments>nabu.frameworks.tasks.crud.taskErrorRule</webFragments>
+    <webFragments>nabu.frameworks.tasks.crud.taskLog</webFragments>
+    <webFragments>nabu.frameworks.tasks.crud.taskProperty</webFragments>
+    <webFragments>nabu.frameworks.tasks.crud.taskQueue</webFragments>
+    <webFragments>nabu.frameworks.tasks.crud.taskQueueConfiguration</webFragments>
+    <webFragments>nabu.frameworks.tasks.crud.taskQueueSchedule</webFragments>
+    <webFragments>nabu.frameworks.tasks.crud.taskSchedule</webFragments>
+    <webFragments>nabu.frameworks.tasks.crud.taskScheduleProperty</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.executeScheduled</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.reschedule</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.retry</webFragments>

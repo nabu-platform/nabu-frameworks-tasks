@@ -42,7 +42,8 @@
 			id="26d94d0f23564ae8a3d2e0bcea805b22"
 			label="!queue"
 			lineNumber="3"
-			code="404" xsi:nil="true"/>
+			code="404"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="56bd779ee38c46319d5b06a57184c43b"
@@ -63,32 +64,23 @@
 			lineNumber="5">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
-				id="2c5341e57ee94def9603ebd87142103d"
-				serviceId="nabu.frameworks.tasks.crud.taskQueue.services.update"
-				resultName="result6802a32d3a05493f96e2b6dd33b7d093"
+				id="36612af32ba745d2973535ad8233ed6c"
+				serviceId="nabu.services.jdbc.Services.update"
+				resultName="result2496fc63835d4220a0d50032e1e86415"
 				temporaryMapping="true"
-				x="160"
-				y="39"
+				x="352"
+				y="123"
 				invocationOrder="0"
 				asynchronous="false"
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="3d38c3c6e41240a485be4a31b0db97d7"
-					mask="true"
-					optional="false"
-					fixedValue="false">
-				<from>queue</from>
-				<to>instance</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="51b952bd82cd4d4baf5dfdb6f560358b"
+					id="9b4eaf615c794ec39cde076367017957"
 					mask="false"
 					optional="false"
 					fixedValue="false">
-				<from>queue/id</from>
-				<to>id</to>
+				<from>queue</from>
+				<to>instances[0]</to>
 			</steps>
 		</steps>
 	</steps>

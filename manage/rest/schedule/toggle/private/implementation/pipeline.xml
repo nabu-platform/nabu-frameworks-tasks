@@ -1,5 +1,5 @@
-<structure interface="$self:api" name="pipeline">
+<structure interface="nabu.frameworks.tasks.manage.rest.schedule.toggle:api" name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
-    <structure collectionName="TaskSchedules" definition="nabu.frameworks.tasks.manage.crud.taskSchedule.types.output" name="schedule"/>
+    <structure collectionName="TaskSchedules" definition="nabu.frameworks.tasks.crud.taskSchedule.types.output" enricher="nabu.frameworks.tasks.manage.crud.taskSchedule.services.list" name="schedule" persister="nabu.frameworks.tasks.manage.crud.taskSchedule.batch.updateAll"/>
 </structure>

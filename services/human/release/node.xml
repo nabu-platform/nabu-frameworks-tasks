@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-09-18T08:44:34.190+02:00" lastModified="2024-03-19T17:46:36.368+01:00" leaf="true" version="7">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-09-18T08:44:34.190+02:00" lastModified="2024-03-21T10:28:19.928+01:00" leaf="true" version="11">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.frameworks.tasks.hooks.human.release</references>
     <references>nabu.frameworks.tasks.services.task.log</references>
+    <references>nabu.utils.Runtime.getCurrentToken</references>
     <references>java.lang.Long</references>
     <references>java.lang.Boolean</references>
     <references>java.util.UUID</references>
+    <references>java.lang.String</references>
     <references>nabu.frameworks.tasks.database.task.rollbackRunningTask</references>
 </node>

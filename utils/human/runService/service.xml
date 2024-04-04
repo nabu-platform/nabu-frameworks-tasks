@@ -11,13 +11,43 @@
 				id="83228ea370464392b9aa98c12edee0cf"
 				label="input/taskInput != null"
 				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="4a3a7b8d69b64a25ac222a63911cf30d"
+					serviceId="nabu.utils.reflection.Type.mask"
+					resultName="resultb88afa9f64b347098f21d09d96dd35c9"
+					temporaryMapping="true"
+					x="99"
+					y="52"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="fd78b4fca140406aaccfac3315eba770"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/taskInput</from>
+					<to>instance</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="5ec371df6a8c405bbbd1609523d82228"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>=input/task/task + ":input"</from>
+					<to>type</to>
+				</steps>
+			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="f94db95140cf461993cd6d60159cae51"
+					id="c6ac2cd85c124f42b5b9215d95509565"
 					mask="false"
 					optional="false"
 					fixedValue="false">
-				<from>input/taskInput</from>
+				<from>resultb88afa9f64b347098f21d09d96dd35c9/masked</from>
 				<to>serviceInput</to>
 			</steps>
 		</steps>

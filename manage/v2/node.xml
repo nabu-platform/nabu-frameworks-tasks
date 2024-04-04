@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-09-13T12:40:14.832+02:00" lastModified="2023-04-20T17:08:35.661+02:00" leaf="true" version="8">
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-09-13T12:40:14.832+02:00" lastModified="2024-03-20T09:42:53.475+01:00" leaf="true" version="17">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
-    <references>nabu.frameworks.tasks.manage.crud.task</references>
-    <references>nabu.frameworks.tasks.manage.crud.taskErrorRule</references>
-    <references>nabu.frameworks.tasks.manage.crud.taskLog</references>
-    <references>nabu.frameworks.tasks.manage.crud.taskProperty</references>
-    <references>nabu.frameworks.tasks.manage.crud.taskQueue</references>
-    <references>nabu.frameworks.tasks.manage.crud.taskQueueConfiguration</references>
-    <references>nabu.frameworks.tasks.manage.crud.taskQueueSchedule</references>
-    <references>nabu.frameworks.tasks.manage.crud.taskSchedule</references>
-    <references>nabu.frameworks.tasks.manage.crud.taskScheduleProperty</references>
+    <references>nabu.frameworks.tasks.crud.task</references>
+    <references>nabu.frameworks.tasks.crud.taskErrorRule</references>
+    <references>nabu.frameworks.tasks.crud.taskLog</references>
+    <references>nabu.frameworks.tasks.crud.taskProperty</references>
+    <references>nabu.frameworks.tasks.crud.taskQueue</references>
+    <references>nabu.frameworks.tasks.crud.taskQueueConfiguration</references>
+    <references>nabu.frameworks.tasks.crud.taskQueueSchedule</references>
+    <references>nabu.frameworks.tasks.crud.taskSchedule</references>
+    <references>nabu.frameworks.tasks.crud.taskScheduleProperty</references>
     <references>nabu.frameworks.tasks.manage.rest.task.executeScheduled</references>
     <references>nabu.frameworks.tasks.manage.rest.task.reschedule</references>
     <references>nabu.frameworks.tasks.manage.rest.task.retry</references>

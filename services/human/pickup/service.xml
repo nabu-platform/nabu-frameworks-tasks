@@ -202,9 +202,9 @@
 				serviceId="nabu.frameworks.tasks.hooks.human.pickup"
 				resultName="result03c145384c4647b1ba450fd7f1e087a4"
 				temporaryMapping="true"
-				x="142"
-				y="206"
-				invocationOrder="0"
+				x="356"
+				y="331"
+				invocationOrder="1"
 				asynchronous="false"
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
