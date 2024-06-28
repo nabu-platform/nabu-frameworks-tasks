@@ -8,4 +8,5 @@
     <field minOccurs="0" name="published" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="affix" type="java.lang.String"/>
     <field minOccurs="0" name="lookback" type="be.nabu.libs.types.base.Duration"/>
+    <field minOccurs="0" name="anonymous" type="java.lang.Boolean"/>
 </structure>

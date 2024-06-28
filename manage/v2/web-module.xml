@@ -19,5 +19,6 @@
     <webFragments>nabu.frameworks.tasks.manage.rest.schedule.toggle</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.pause</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.resume</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.loadDistribution</webFragments>
     <audience>MANAGER</audience>
 </webModule>

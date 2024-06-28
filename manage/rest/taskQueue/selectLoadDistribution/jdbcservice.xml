@@ -1,0 +1,7 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select count(*), owner 
+from ~tasks 
+where (:taskQueueId is null or task_queue_id = any(:taskQueueId))
+	and (state = 'RUNNING' or state = 'WAITING')
+group by owner</sql>
+</jdbcService>

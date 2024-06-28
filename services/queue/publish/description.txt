@@ -1,0 +1,11 @@
+# Anonymous queue name deduction
+
+In most cases utility packages are frameworks, they may start and manage a batch process, but there is generally not much business value about it.
+For instance the CDM framework runs multiple batches where ideally you would want to configure them per document type rather than a single configuration for the whole of CDM.
+
+We could take the outermost service (so use last instead of first), however this too can run into issues depending on the code you are running.
+
+There are some alternatives we might consider:
+- inspect the project type of the services, only take services that are not in utility packages
+- check queue configuration (the only reason the name of the batch _really_ matters), there is likely only a single match in the service runtime that matches an existing queue configuration
+- make it an explicit toggle when you are using the task executor to run in batch (currently it is determined by leaving the queue name empty)

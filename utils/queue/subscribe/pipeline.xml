@@ -24,4 +24,10 @@
     <field name="amountOfRunningTasks" type="java.lang.Long"/>
     <field name="waitingCount" type="java.lang.Long"/>
     <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
+    <field name="overshoot" type="java.lang.Double"/>
+    <structure definition="nabu.misc.executor.types.ExecutorStatistics" minOccurs="0" name="statistics"/>
+    <field name="overshootCapacity" type="java.lang.Long"/>
+    <field name="maxAmountOfTasks" type="java.lang.Long"/>
+    <field name="actualAmountOfTasks" type="java.lang.Long"/>
+    <field name="maxAmountOfTasksToPickup" type="java.lang.Integer"/>
 </structure>

@@ -96,7 +96,7 @@
 			comment="Set default to anonymous if we have a specifier, otherwise the default is false"
 			disabled="false"
 			id="ceaaf0fa-b313-41f0-a340-11a19daf22ce"
-			label="input/queue/anonymous = null"
+			label="input/queue/anonymous == null"
 			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -259,6 +259,45 @@
 					fixedValue="false">
 				<from>configuration/anonymizationServiceId</from>
 				<to>queue/anonymizationServiceId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="4f4ac3a4c9814113b20cb17908ee11a9"
+					serviceId="nabu.utils.Object.last"
+					resultName="resulta52dfa1fe9c8428c95da9629b0a27b12"
+					temporaryMapping="true"
+					x="163"
+					y="62"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="b16c45fd344644bea61a1e6d8fa3863e"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/queue/anonymous</from>
+					<to>options[0]</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="0b4ab4a69ec84944b03910020368ea0b"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>configuration/anonymous</from>
+					<to>options[1]</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2359bef93d834b27a3b2e2248f2e5a43"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resulta52dfa1fe9c8428c95da9629b0a27b12/last</from>
+				<to>queue/anonymous</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Catch"

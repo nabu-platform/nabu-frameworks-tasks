@@ -1,0 +1,9 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field foreignKey="nabu.frameworks.tasks.types.model.tasks.TaskSchedule:id" minOccurs="0" name="taskScheduleId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field minOccurs="0" name="defaultOffset" type="be.nabu.libs.types.base.Duration"/>
+    </structure>
+    <structure name="output">
+        <field minOccurs="0" name="lastRun" type="java.util.Date"/>
+    </structure>
+</structure>

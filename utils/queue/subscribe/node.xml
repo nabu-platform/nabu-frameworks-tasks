@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:56:27.785+02:00" lastModified="2022-09-02T14:18:28.291+02:00" leaf="true" version="92">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:56:27.785+02:00" lastModified="2024-06-27T21:55:33.514+02:00" leaf="true" version="115">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.utils.Transaction.start</references>
     <references>nabu.utils.List.add</references>
     <references>nabu.frameworks.tasks.services.task.log</references>
+    <references>java.lang.Double</references>
     <references>nabu.frameworks.tasks.providers.taskProvider</references>
+    <references>nabu.misc.executor.Services.getStatistics</references>
+    <references>nabu.utils.Server.property</references>
     <references>nabu.frameworks.tasks.utils.queue.finalize</references>
     <references>java.lang.Integer</references>
+    <references>nabu.utils.Math.round</references>
     <references>nabu.frameworks.tasks.utils.queue.poll</references>
     <references>java.lang.Long</references>
     <references>nabu.frameworks.tasks.database.task.countByQueueId</references>
+    <references>nabu.misc.executor.types.ExecutorStatistics</references>
     <references>java.lang.Boolean</references>
     <references>be.nabu.libs.services.jdbc.AffixInput</references>
     <references>java.lang.String</references>
@@ -23,6 +29,7 @@
     <references>nabu.utils.Date.now</references>
     <references>nabu.frameworks.tasks.types.queueOutput</references>
     <references>nabu.frameworks.tasks.utils.task.execute</references>
+    <references>nabu.utils.List.minimum</references>
     <references>nabu.frameworks.tasks.utils.queue.rollback</references>
     <references>nabu.utils.List.addAll</references>
     <references>nabu.frameworks.tasks.types.taskOutput</references>

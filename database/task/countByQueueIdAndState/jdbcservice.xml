@@ -2,5 +2,6 @@
 	<sql>select count(t.id) as total, tq.name, t.state from ~tasks t join ~task_queues tq on t.task_queue_id = tq.id 
 where (:queueId is null or t.task_queue_id = any(:queueId))
 	and (:anonymous is null or tq.anonymous = :anonymous)
+	and (:taskType is null or task_type = any(:taskType))
 group by tq.name, t.state</sql>
 </jdbcService>

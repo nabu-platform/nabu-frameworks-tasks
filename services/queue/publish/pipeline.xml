@@ -23,4 +23,5 @@
     <field minOccurs="0" name="rootService" type="java.lang.String"/>
     <field maxOccurs="unbounded" minOccurs="0" name="services" type="java.lang.String"/>
     <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
+    <field minOccurs="0" name="nonTaskRootService" type="java.lang.String"/>
 </structure>

@@ -352,10 +352,35 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="If we have no task output (so the input was never customized), copy the input"
+				disabled="false"
+				id="172c6eb7d02948cbbef3332dd7d84fc7"
+				label="task/taskOutput == null"
+				lineNumber="12">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3ff7c06351484ee0929beaa8e3a1ef72"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>task/taskInput</from>
+				<to>taskOutput</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="640d1fa0dae94e84b3bef1ee83f7768e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>task/taskInputTypeId</from>
+				<to>taskOutputType</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="If you don't explicitly provide a new output, just reuse the current one"
 				disabled="false"
 				id="58ec200290f644e8a6a6ebfce3768a74"
-				lineNumber="12">
+				lineNumber="13">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="b68d02d4b36b454ab524f1192187a5c5"
@@ -380,7 +405,7 @@
 			disabled="false"
 			id="e160f635a9274f0d8c2324df0d0e4cc0"
 			label="input/owner == null"
-			lineNumber="13">
+			lineNumber="14">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="ad46def60b584ba095a423e49179d5c9"
@@ -437,7 +462,7 @@
 			comment="Stop the task"
 			disabled="false"
 			id="e9d93c57-c0af-4d73-a27a-7adee9fee52b"
-			lineNumber="14">
+			lineNumber="15">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="feaabde4-35fc-4dfd-b5a8-a68df478cf09"
@@ -530,7 +555,7 @@
 			comment="It is stopped if the rowCount is larger than 0"
 			disabled="false"
 			id="6bccb192-e376-46c6-b72f-8c5d2ca7ba35"
-			lineNumber="15">
+			lineNumber="16">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="615befcc-4e19-4bd8-8093-762859fdf3a3"
@@ -545,14 +570,14 @@
 			disabled="false"
 			id="3e001cc00aa04d27be40a71b5abd69d4"
 			label="!output/stopped"
-			lineNumber="16"
+			lineNumber="17"
 			message="Could not successfully stop the task"
 			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="f105bd50a95640d7ae9c4c4d87928123"
 			label="input/code == null"
-			lineNumber="17">
+			lineNumber="18">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="e7fd8a3149d8438f999632c5f6e5d1f7"
@@ -567,7 +592,7 @@
 			disabled="false"
 			id="de9414cbb04c48e9bc63ae26085f35e3"
 			label="input/title == null"
-			lineNumber="18">
+			lineNumber="19">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="d54ec07e28734c379d6edfe51e6c013c"
@@ -581,7 +606,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="3c126de7624e4334ab1f7bb410e5d54b"
-			lineNumber="19">
+			lineNumber="20">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="199aa017f1444b06b46c622ed183a7a7"
@@ -682,7 +707,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="0812f0a29fc64e2c87f637f1935e00a4"
-			lineNumber="20">
+			lineNumber="21">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="3f5e3b88b9504cc4a168bcb9f2f891a1"

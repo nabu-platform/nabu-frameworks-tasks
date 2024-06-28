@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-06-27T21:07:38.585+02:00" lastModified="2024-06-27T21:12:42.536+02:00" leaf="true" version="8">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.manage.rest.taskQueue.selectLoadDistribution</references>
+    <references>nabu.frameworks.tasks.manage.rest.taskQueue.loadDistributionOutput</references>
+</node>

@@ -2,3 +2,13 @@ The actual updating to WAIT for the tasks and starting them (plus logs) limited 
 By allowing parallel updates, this was boosted to slightly over 2000 / s
 
 The amount of database connections did have to keep up to make this happen.
+
+# Overshoot
+
+If we have a thread pool of 4 threads as our executor. We don't want the server to pick up 20 tasks, because 16 of those would be set to WAITING meaning they can not be picked up by other servers.
+We also generally don't want the server to pick up exactly 4 tasks because that means when a task is done, it has some overhead before it can start on the next one.
+We want the server to overshoot by a little bit, for instance 4 threads might mean 6 tasks, which allows a thread that becomes available to immediately continue with the next task. A separate thread can then pick up a new task and fill in the backlog.
+
+The overshoot is defined as a percentage based on the amount of threads in the executor, it will CEIL the resulting value, ensuring at least one overshoot for any positive number.
+
+If you want to disable overshooting alltogether, you can set it to a negative number.

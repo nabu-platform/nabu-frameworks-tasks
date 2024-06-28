@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-04-29T09:37:24.652+02:00" lastModified="2024-04-29T09:42:49.114+02:00" leaf="true" version="10">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</references>
+    <references>be.nabu.libs.types.base.Duration</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.Runtime.getContext</references>
+    <references>java.util.UUID</references>
+    <references>nabu.frameworks.tasks.crud.task.services.list</references>
+    <references>nabu.utils.String.split</references>
+    <references>nabu.utils.Date.incrementDuration</references>
+</node>

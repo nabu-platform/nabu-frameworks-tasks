@@ -13,4 +13,5 @@
     <field minOccurs="0" name="blockWindow" type="java.lang.String"/>
     <field comment="After how much time should it be anonymized" minOccurs="0" name="anonymizationTimeout" type="be.nabu.libs.types.base.Duration"/>
     <field comment="Which service do you want to use to anonymize" minOccurs="0" name="anonymizationServiceId" type="java.lang.String"/>
+    <field comment="You can template a queue to be anonymous" minOccurs="0" name="anonymous" type="java.lang.Boolean"/>
 </structure>

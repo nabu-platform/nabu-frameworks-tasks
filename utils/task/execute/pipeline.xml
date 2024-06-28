@@ -33,4 +33,5 @@
     <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
     <field minOccurs="0" name="taskOutputTypeId" type="java.lang.String"/>
     <field name="fail" type="java.lang.Boolean"/>
+    <structure definition="be.nabu.utils.cep.impl.ComplexEventImpl" name="pausedQueueEvent"/>
 </structure>

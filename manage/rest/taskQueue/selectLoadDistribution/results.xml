@@ -1,0 +1,4 @@
+<structure name="result">
+    <field name="count" type="java.lang.Long"/>
+    <field name="owner" type="java.lang.String"/>
+</structure>
