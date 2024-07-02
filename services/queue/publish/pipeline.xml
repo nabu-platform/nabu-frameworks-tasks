@@ -24,4 +24,6 @@
     <field maxOccurs="unbounded" minOccurs="0" name="services" type="java.lang.String"/>
     <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
     <field minOccurs="0" name="nonTaskRootService" type="java.lang.String"/>
+    <field name="generatedQueueName" type="java.lang.String"/>
+    <field minOccurs="0" name="originalQueueName" type="java.lang.String"/>
 </structure>

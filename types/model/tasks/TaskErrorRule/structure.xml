@@ -10,4 +10,5 @@
     <field comment="You can limit this logic to a particular queue or across the entire task system" minOccurs="0" name="queue" type="java.lang.String"/>
     <field comment="Limit to a particular task" minOccurs="0" name="task" type="java.lang.String"/>
     <field comment="Limit to a particular task type" minOccurs="0" name="taskType" type="java.lang.String"/>
+    <field minOccurs="0" name="environmentSpecific" type="java.lang.Boolean"/>
 </structure>

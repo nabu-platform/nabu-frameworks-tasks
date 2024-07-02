@@ -1,0 +1,59 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="37045213cbb64368997a7dbcaed9bac4"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="d6e5952a8f6546aebcec337f80add6e1"
+			label="input/taskQueueConfigurations"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="e4b3e9da3bce456d93fe261490d2bb46"
+				serviceId="nabu.services.jdbc.Services.merge"
+				resultName="result0e3ce87ed08f40ea92c82106b552661c"
+				temporaryMapping="true"
+				x="132"
+				y="91"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="341ef3f40b8d4256932eaac96695c4e6"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskQueueConfigurations</from>
+				<to>instances</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="5b9c8277c82e40e7af093365acb19dcb"
+			label="input/taskErrorRules"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="5983264210a34fb78638ed95ff2a62f7"
+				serviceId="nabu.services.jdbc.Services.merge"
+				resultName="resultaaff55d048c44b099bc0007282a53b85"
+				temporaryMapping="true"
+				x="173"
+				y="114"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8edcd55e4d324e179e58363ff5030e61"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskErrorRules</from>
+				<to>instances</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

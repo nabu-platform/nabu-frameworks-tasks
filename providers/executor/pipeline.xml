@@ -5,7 +5,7 @@
         <field minOccurs="0" name="queue" type="java.lang.String"/>
         <field minOccurs="0" name="taskTarget" type="java.lang.String"/>
         <field minOccurs="0" name="schedule" type="java.lang.String"/>
-        <structure collectionCrudProvider="odata" collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="metadata"/>
+        <structure collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="metadata"/>
         <field minOccurs="0" name="datastore" type="java.lang.Boolean"/>
         <field comment="A precalculated moment to run the task" minOccurs="0" name="runAt" type="java.util.Date"/>
         <field minOccurs="0" name="runIn" type="be.nabu.libs.types.base.Duration"/>

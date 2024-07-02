@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-06-28T13:09:32.890+02:00" lastModified="2024-06-28T13:12:28.756+02:00" leaf="true" version="3">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskErrorRule</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskQueueConfiguration</references>
+    <references>nabu.services.jdbc.Services.merge</references>
+    <references>java.lang.String</references>
+</node>

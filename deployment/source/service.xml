@@ -1,0 +1,79 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="f443c98564b14e22a31cff4f094ccfbb"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="97ce2af0bbbb41dbbee797dadb85c6c0"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="fdce8f8ab15543c397851b705e03193e"
+				serviceId="nabu.frameworks.tasks.crud.taskErrorRule.services.list"
+				resultName="result930495b0be3448e58c1442fa9ec5ccfa"
+				temporaryMapping="true"
+				x="129"
+				y="254"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e9ecc023604b48e7b4f5d3688953aae6"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connectionId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="faf6d1d483d24dcaa35e7bed0ad7ef56"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/connectionId</from>
+			<to>output/connectionId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="9ab3a3dfe228483eb1ae3996995a504c"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result930495b0be3448e58c1442fa9ec5ccfa/results[environmentSpecific != true]</from>
+			<to>output/taskErrorRules</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="e77e0b825acc4ac89f8dd9254d29ac95"
+				serviceId="nabu.frameworks.tasks.crud.taskQueueConfiguration.services.list"
+				resultName="result0c0082f6dfaf4551ba4d6bbaeb37926a"
+				temporaryMapping="true"
+				x="228"
+				y="55"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f0ce5b049dda460181f58d52dbe6f681"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connectionId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="c6dad23508664e0f9998e95cd7f242f4"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result0c0082f6dfaf4551ba4d6bbaeb37926a/results[environmentSpecific != true]</from>
+			<to>output/taskQueueConfigurations</to>
+		</steps>
+	</steps>
+</sequence>

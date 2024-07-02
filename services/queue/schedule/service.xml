@@ -752,6 +752,15 @@
 							<from>SCHEDULE-OVERLAP</from>
 							<to>event/code</to>
 						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="7448571eb7b9462f9f7e990301641ad3"
+								mask="false"
+								optional="false"
+								fixedValue="true">
+							<from>=schedule/task + " is still running"</from>
+							<to>event/reason</to>
+						</steps>
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"

@@ -4,7 +4,7 @@
     <field name="modified" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="concurrency" type="java.lang.Integer"/>
     <field minOccurs="0" name="target" type="java.lang.String"/>
-    <field name="name" type="java.lang.String"/>
+    <field name="name" type="java.lang.String" unique="true"/>
     <field minOccurs="0" name="executor" type="java.lang.String"/>
     <field minOccurs="0" name="allowOverlap" type="java.lang.Boolean"/>
     <field minOccurs="0" name="schedule" type="java.lang.String"/>
@@ -14,4 +14,5 @@
     <field comment="After how much time should it be anonymized" minOccurs="0" name="anonymizationTimeout" type="be.nabu.libs.types.base.Duration"/>
     <field comment="Which service do you want to use to anonymize" minOccurs="0" name="anonymizationServiceId" type="java.lang.String"/>
     <field comment="You can template a queue to be anonymous" minOccurs="0" name="anonymous" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="environmentSpecific" type="java.lang.Boolean"/>
 </structure>

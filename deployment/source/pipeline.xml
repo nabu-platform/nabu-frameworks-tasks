@@ -1,0 +1,10 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="connectionId" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <field name="connectionId" type="java.lang.String"/>
+        <structure collectionName="TaskQueueConfigurations" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueueConfiguration" label="TaskQueueConfiguration" maxOccurs="unbounded" minOccurs="0" name="taskQueueConfigurations"/>
+        <structure collectionName="TaskErrorRules" definition="nabu.frameworks.tasks.types.model.tasks.TaskErrorRule" maxOccurs="unbounded" minOccurs="0" name="taskErrorRules"/>
+    </structure>
+</structure>
