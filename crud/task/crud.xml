@@ -164,6 +164,30 @@
         <input>true</input>
         <vary>false</vary>
     </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>instanceId</key>
+        <operator>=</operator>
+        <or>false</or>
+        <input>true</input>
+        <vary>false</vary>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>instanceType</key>
+        <operator>=</operator>
+        <or>false</or>
+        <input>true</input>
+        <vary>false</vary>
+    </filters>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>contextType</key>
+        <operator>=</operator>
+        <or>false</or>
+        <input>true</input>
+        <vary>false</vary>
+    </filters>
     <foreignFields>
         <foreignName>taskQueueId:name</foreignName>
         <localName>taskQueue</localName>
@@ -187,6 +211,7 @@
     <updatePermission>task.manage</updatePermission>
     <updateRegenerateFields>modified</updateRegenerateFields>
     <updateRole>$user</updateRole>
+    <useAsAuthorizationServiceContext>false</useAsAuthorizationServiceContext>
     <useExplicitLanguage>false</useExplicitLanguage>
     <useGlobalPermissionContext>true</useGlobalPermissionContext>
     <useLanguage>false</useLanguage>

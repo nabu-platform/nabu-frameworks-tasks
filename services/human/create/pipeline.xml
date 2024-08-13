@@ -3,7 +3,7 @@
         <field minOccurs="0" name="connectionId" type="java.lang.String"/>
         <field minOccurs="0" name="transactionId" type="java.lang.String"/>
         <field comment="The name of this task, it should be readable but preferably immutable. E.g. the action code. This may be used for security checks as well" name="task" type="java.lang.String"/>
-        <structure collectionCrudProvider="odata" collectionName="teamsTemplates" comment="The input data of this task (if any)" definition="java.lang.Object" minOccurs="0" name="taskInput"/>
+        <structure collectionName="teamsTemplates" comment="The input data of this task (if any)" definition="java.lang.Object" minOccurs="0" name="taskInput"/>
         <field comment="The queue to use, if no queue is provided, a generic &quot;humanTask&quot; queue will be used" minOccurs="0" name="queue" type="java.lang.String"/>
         <field minOccurs="0" name="scheduled" timezone="UTC" type="java.util.Date"/>
         <field comment="Optionally the security context where we check the target against" minOccurs="0" name="contextId" type="java.lang.String"/>
@@ -11,6 +11,9 @@
         <field minOccurs="0" name="taskSubType" type="java.lang.String"/>
         <field comment="You can set a target (e.g. role, userid...) of who should perform this" minOccurs="0" name="target" type="java.lang.String"/>
         <field minOccurs="0" name="externalId" type="java.lang.String"/>
+        <field minOccurs="0" name="instanceId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field minOccurs="0" name="instanceType" type="java.lang.String"/>
+        <field minOccurs="0" name="contextType" type="java.lang.String"/>
         <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="properties"/>
     </structure>
     <structure name="output">

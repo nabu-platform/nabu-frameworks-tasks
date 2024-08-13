@@ -33,4 +33,7 @@
     <field minOccurs="0" name="taskOutputTypeId" type="java.lang.String"/>
     <field comment="An external id can be added to this task to synchronize it to something else" indexed="true" minOccurs="0" name="externalId" type="java.lang.String"/>
     <field name="anonymized" type="java.lang.Boolean"/>
+    <field comment="You can relate this task to a particular instance of something else" minOccurs="0" name="instanceId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field comment="Contains a short name that indicates what the instanceId is referring to (e.g. &quot;contract&quot; or &quot;organisation&quot; or...)" minOccurs="0" name="instanceType" type="java.lang.String"/>
+    <field comment="Context id is getting used more and more for security purposes. If you have a context id that needs a resolver, you can fill in the resolver type here." minOccurs="0" name="contextType" type="java.lang.String"/>
 </structure>

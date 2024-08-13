@@ -141,8 +141,8 @@
 				serviceId="nabu.frameworks.tasks.services.queue.publish"
 				resultName="resultfb68accfcfce4366823774c8b7d0bbaf"
 				temporaryMapping="true"
-				x="737"
-				y="153"
+				x="414"
+				y="13"
 				invocationOrder="1"
 				asynchronous="false"
 				recache="false">
@@ -326,6 +326,33 @@
 				<from>resultd92e78eddb3c4ed9aeeab87c5a8ae9bd/token/name</from>
 				<to>task/alias</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ba18030711d7499394e97b7c958af912"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instanceId</from>
+				<to>task/instanceId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fe2c4d54c8bf4f7c8e832488a0cb6781"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instanceType</from>
+				<to>task/instanceType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ad8a71912c0b47e48270ff0ba61bc983"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/contextType</from>
+				<to>task/contextType</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -372,6 +399,24 @@
 					fixedValue="false">
 				<from>output/taskId</from>
 				<to>taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e348085ea9f04e96aa442c9cece944c3"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/transactionId</from>
+				<to>transactionId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c4b382489b7b4af78b393882a46e9823"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connectionId</to>
 			</steps>
 		</steps>
 	</steps>

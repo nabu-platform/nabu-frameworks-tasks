@@ -511,6 +511,33 @@
 				<from>taskInputTypeId</from>
 				<to>task/taskInputTypeId</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e5403d29fae948539a0c3fadaded847e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instanceId</from>
+				<to>task/instanceId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2dd95d89a6b644c2873c12704db92540"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instanceType</from>
+				<to>task/instanceType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9c60e06ec8944049b6bca17c7551e796"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/contextType</from>
+				<to>task/contextType</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
