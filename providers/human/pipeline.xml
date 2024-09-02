@@ -13,6 +13,7 @@
         <field minOccurs="0" name="instanceId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
         <field minOccurs="0" name="instanceType" type="java.lang.String"/>
         <field minOccurs="0" name="contextType" type="java.lang.String"/>
+        <field comment="A compensation service that is run when a task is set to failed" minOccurs="0" name="compensationServiceId" type="java.lang.String"/>
     </structure>
     <structure name="output"/>
     <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="properties"/>

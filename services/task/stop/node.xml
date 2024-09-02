@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:54:18.546+02:00" lastModified="2023-09-06T14:05:32.034+02:00" leaf="true" version="41">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:54:18.546+02:00" lastModified="2024-09-02T16:57:05.600+02:00" leaf="true" version="44">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -17,5 +17,6 @@
     <references>nabu.frameworks.tasks.database.task.stop</references>
     <references>java.lang.Boolean</references>
     <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>nabu.frameworks.tasks.utils.task.compensate</references>
     <references>java.lang.String</references>
 </node>

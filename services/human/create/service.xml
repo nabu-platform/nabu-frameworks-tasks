@@ -353,6 +353,15 @@
 				<from>input/contextType</from>
 				<to>task/contextType</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cde88604c4e645219b8707591a685f7b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/compensationServiceId</from>
+				<to>task/compensationServiceId</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

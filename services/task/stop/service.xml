@@ -466,9 +466,54 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
+			id="2c266cc03e9347e29e39c167b066b2fb"
+			label="state == &quot;FAILED&quot;"
+			lineNumber="15">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="5053c4b6a6534aabad3dd40ab150fde9"
+				serviceId="nabu.frameworks.tasks.utils.task.compensate"
+				resultName="result9bc5c830f65e4d47a8e03eaad0f1708a"
+				temporaryMapping="true"
+				x="143"
+				y="134"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c8172375291e4646bccb02c686cacd4b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskId</from>
+				<to>taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7d56592a4bf5476bb1026e00a15bff5b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connectionId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c4a05a670525400293eaf93f788b15e1"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/transactionId</from>
+				<to>transactionId</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
 			id="f2646543-b8ab-4322-a13d-23056cbbaeac"
 			label="manage"
-			lineNumber="15">
+			lineNumber="16">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="bc5c5f0e-6474-4588-aee6-14541c01669e"
@@ -495,7 +540,7 @@
 			disabled="false"
 			id="d44acb2b-a26c-4116-891d-9be109a81a17"
 			label="state == &quot;ERROR&quot;"
-			lineNumber="16">
+			lineNumber="17">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="d5c72258-84f1-494c-937b-c0e0869c9d33"
@@ -578,13 +623,13 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
 			disabled="false"
 			id="b2a455da-3c0f-4777-b462-2a2c29945b61"
-			lineNumber="17"
+			lineNumber="18"
 			variable="exception">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="2b0819a8277e40df8f0faaefbb689e69"
 				label="manage"
-				lineNumber="18">
+				lineNumber="19">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="19411fd4-b5a0-490f-9ce4-a3abfee1158c"
@@ -610,7 +655,7 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 				disabled="false"
 				id="3c30a983-c6ce-4d88-9a50-9e79c602483e"
-				lineNumber="19"
+				lineNumber="20"
 				message="=exception"
 				whitelist="false" xsi:nil="true"/>
 	</steps>

@@ -63,4 +63,31 @@
 			</steps>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="3e3bd0090c9a4a1aa6752f0e2ee264d2"
+			label="task/compensationServiceId != null"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="989688f7baff453cb3436d43635d023b"
+				serviceId="nabu.frameworks.tasks.utils.task.compensate"
+				resultName="resultd2eb47d45f724188a5a49adb04ef04d1"
+				temporaryMapping="true"
+				x="189"
+				y="165"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="62126543854b4c218469788156809577"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/taskId</from>
+				<to>taskId</to>
+			</steps>
+		</steps>
+	</steps>
 </sequence>

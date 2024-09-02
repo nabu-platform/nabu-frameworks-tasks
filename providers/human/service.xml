@@ -245,6 +245,42 @@
 				<from>input/taskTarget</from>
 				<to>target</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="55d45b446f1547a3b44bad2993c4b5a5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/compensationServiceId</from>
+				<to>compensationServiceId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1566888f7aa34a2b96459e954577fad6"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/contextType</from>
+				<to>contextType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ee810b53d6424496b99e4944b392a32c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instanceType</from>
+				<to>instanceType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d45c7c488e8b42d5bdd0bfc07ebd0b85"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instanceId</from>
+				<to>instanceId</to>
+			</steps>
 		</steps>
 	</steps>
 </sequence>

@@ -476,10 +476,10 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			comment="The retry queue must never be serial, it is shared across other queues."
+			comment="The retry/compensate queue must never be serial, it is shared across other queues."
 			disabled="false"
 			id="6fe97aeb-f42b-4d6e-bbda-3018ffecabce"
-			label="queueName == &quot;$retry&quot; &amp;&amp; queue/concurrency == 0"
+			label="(queueName == &quot;$retry&quot; || queueName == &quot;$compensate&quot;) &amp;&amp; queue/concurrency == 0"
 			lineNumber="12">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

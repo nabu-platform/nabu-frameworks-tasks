@@ -1,0 +1,49 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="68986e58ac3944f0acea575750530979"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="1415bbcdc6ee46019863c833a593254e"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="a5f76c7c2bdd417289d4a110c5c45755"
+				serviceId="nabu.utils.String.split"
+				resultName="result145943bb3076461ca39e0edead719b85"
+				temporaryMapping="true"
+				x="168"
+				y="179"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="85a2a3a67a0d4d419570f08eb1fd3f4e"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>SUCCEEDED,FAILED,CANCELLED</from>
+				<to>string</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="38a84c5dc9514d8aae8ff18523b377d1"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>,</from>
+				<to>separator</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="534c07490d1b457091e0082591b8a79d"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result145943bb3076461ca39e0edead719b85/parts</from>
+			<to>output/states</to>
+		</steps>
+	</steps>
+</sequence>

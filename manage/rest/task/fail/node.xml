@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-04-24T18:09:11.667+02:00" lastModified="2023-03-20T16:01:32.821+01:00" leaf="true" version="19">
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-04-24T18:09:11.667+02:00" lastModified="2024-09-02T17:17:27.001+02:00" leaf="true" version="21">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
+    <references>nabu.frameworks.tasks.utils.task.compensate</references>
     <references>nabu.frameworks.tasks.database.task.selectById</references>
     <references>nabu.frameworks.tasks.database.task.fail</references>
     <references>nabu.frameworks.tasks.types.model.tasks.Task</references>

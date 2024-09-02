@@ -317,8 +317,8 @@
 				serviceId="nabu.frameworks.tasks.services.queue.publish"
 				resultName="resulte495530c427c482bb1375178e13163e0"
 				temporaryMapping="true"
-				x="584"
-				y="277"
+				x="510"
+				y="12"
 				invocationOrder="1"
 				asynchronous="false"
 				recache="false">
@@ -537,6 +537,15 @@
 					fixedValue="false">
 				<from>input/contextType</from>
 				<to>task/contextType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d188573ef1d74d37841a097cd2cf02e2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/compensationServiceId</from>
+				<to>task/compensationServiceId</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
