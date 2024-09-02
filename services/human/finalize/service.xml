@@ -18,7 +18,7 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			comment="If we succeeded, we need to check if it's a service task"
+			comment="If we succeeded, we need to check if it's a service task. If failed, we might need to compensate"
 			disabled="false"
 			id="686a782af5504e358a4eeb91b4501316"
 			label="input/state == &quot;SUCCEEDED&quot;"
@@ -736,6 +736,51 @@
 					fixedValue="false">
 				<from>input/state</from>
 				<to>state</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="b3d5a01b508f4ac4b5c9b0bc6451b139"
+			label="input/state == &quot;FAILED&quot;"
+			lineNumber="22">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="82e95ce88e194e718078dbc94854eb8b"
+				serviceId="nabu.frameworks.tasks.utils.task.compensate"
+				resultName="result850e76fc46954b4db7ab849ec79db7da"
+				temporaryMapping="true"
+				x="56"
+				y="90"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="efd3f07eadf848e590bdc5b98ef7443f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskId</from>
+				<to>taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fafe4ca05b694668b75da7eae003a41f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connectionId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9822f75f1e1f43bb97e09e2ebb4a39fa"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/transactionId</from>
+				<to>transactionId</to>
 			</steps>
 		</steps>
 	</steps>
