@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-09-02T16:55:48.270+02:00" lastModified="2024-09-02T17:14:08.593+02:00" leaf="true" version="9">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-09-02T16:55:48.270+02:00" lastModified="2024-09-03T10:09:13.067+02:00" leaf="true" version="15">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.frameworks.tasks.crud.task.types.output</references>
     <references>nabu.frameworks.tasks.crud.task.services.get</references>
+    <references>nabu.utils.reflection.Service.listImplementations</references>
     <references>java.lang.String</references>
     <references>java.util.UUID</references>
     <references>nabu.frameworks.tasks.specs.compensate:input</references>
     <references>nabu.frameworks.tasks.services.queue.publish</references>
+    <references>nabu.utils.types.NodeDescription</references>
     <references>nabu.data.xml.Services.marshal</references>
     <references>nabu.utils.Stream.toString</references>
 </node>
