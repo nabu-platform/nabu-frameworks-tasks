@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-04-25T17:17:00.593+02:00" lastModified="2024-06-29T18:41:24.196+02:00" leaf="true" version="133">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-04-25T17:17:00.593+02:00" lastModified="2024-09-19T11:18:11.255+02:00" leaf="true" version="134">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -10,11 +10,13 @@
     <references>nabu.utils.providers.onTransactionClose</references>
     <references>nabu.utils.Server.uuid</references>
     <references>nabu.utils.Server.property</references>
+    <references>nabu.utils.Runtime.getFeatures</references>
     <references>nabu.frameworks.tasks.services.queue.create</references>
     <references>nabu.frameworks.tasks.types.taskInput</references>
     <references>nabu.frameworks.tasks.types.model.tasks.Task</references>
     <references>nabu.utils.Runtime.getService</references>
     <references>nabu.frameworks.tasks.database.taskQueue.selectByName</references>
+    <references>nabu.utils.String.join</references>
     <references>nabu.services.jdbc.Services.insert</references>
     <references>nabu.utils.List.reverse</references>
     <references>nabu.frameworks.tasks.services.poller.wakeup</references>

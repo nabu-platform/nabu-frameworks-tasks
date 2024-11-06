@@ -87,7 +87,6 @@
     <updateBlacklistFields>anonymous</updateBlacklistFields>
     <updateBlacklistFields>state</updateBlacklistFields>
     <updateBlacklistFields>published</updateBlacklistFields>
-    <updateBlacklistFields>name</updateBlacklistFields>
     <updatePermission>task.manage</updatePermission>
     <updateRegenerateFields>modified</updateRegenerateFields>
     <updateRole>$user</updateRole>

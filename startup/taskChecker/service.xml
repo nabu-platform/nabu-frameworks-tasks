@@ -215,6 +215,15 @@
 								<from>localTransactionId</from>
 								<to>transactionId</to>
 							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="6f015fcbc70045b5a35f04fdf8a61f1e"
+									mask="false"
+									optional="false"
+									fixedValue="true">
+								<from>service</from>
+								<to>taskType</to>
+							</steps>
 						</steps>
 					</steps>
 				</steps>

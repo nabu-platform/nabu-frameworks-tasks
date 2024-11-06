@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-29T16:41:28.348+02:00" lastModified="2024-06-20T21:40:41.214+02:00" leaf="true" version="164">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-29T16:41:28.348+02:00" lastModified="2024-09-20T10:50:27.704+02:00" leaf="true" version="169">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -12,6 +12,7 @@
     <references>nabu.utils.reflection.Service.invoke</references>
     <references>java.util.Date</references>
     <references>nabu.utils.Runtime.interrupt</references>
+    <references>nabu.utils.Runtime.getFeatures</references>
     <references>nabu.data.xml.Services.store</references>
     <references>java.lang.Integer</references>
     <references>nabu.utils.types.ExceptionSummary</references>
@@ -28,6 +29,7 @@
     <references>be.nabu.utils.cep.impl.ComplexEventImpl</references>
     <references>nabu.utils.Stream.toString</references>
     <references>nabu.frameworks.tasks.services.task.start</references>
+    <references>nabu.utils.Feature.toggle</references>
     <references>nabu.frameworks.datastore.Services.retrieve</references>
     <references>nabu.frameworks.tasks.services.task.stop</references>
     <references>nabu.utils.Server.log</references>
