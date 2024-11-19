@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" lastModified="2018-01-10T18:30:17.658+01:00" leaf="true" version="18"><environmentId>hyperion</environmentId><properties/><references>java.lang.String</references><references>nabu.frameworks.tasks.types.schedule</references><references>nabu.utils.types.ParameterDescription</references><references>nabu.utils.String.split</references><references>nabu.utils.reflection.Type.newInstance</references><references>nabu.utils.reflection.Type.describe</references><references>nabu.utils.String.split</references><references>nabu.utils.reflection.Type.set</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-11-19T12:24:49.746+01:00" lastModified="2024-11-19T12:40:29.636+01:00" leaf="true" version="33">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.utils.reflection.Type.newInstance</references>
+    <references>nabu.utils.String.replace</references>
+    <references>java.lang.Long</references>
+    <references>nabu.utils.types.ParameterDescription</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.types.schedule</references>
+    <references>nabu.utils.reflection.Type.set</references>
+    <references>java.lang.Integer</references>
+    <references>nabu.utils.String.split</references>
+    <references>nabu.utils.reflection.Type.describe</references>
+</node>

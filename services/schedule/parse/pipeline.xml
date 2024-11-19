@@ -7,4 +7,10 @@
     </structure>
     <field maxOccurs="unbounded" minOccurs="0" name="parts" type="java.lang.String"/>
     <structure definition="nabu.utils.types.ParameterDescription" maxOccurs="unbounded" minOccurs="0" name="parameters"/>
+    <structure definition="nabu.utils.types.ParameterDescription" minOccurs="0" name="parameter"/>
+    <field name="limit" type="java.lang.Long"/>
+    <field minOccurs="0" name="startString" type="java.lang.String"/>
+    <field name="start" type="java.lang.Long"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="values" type="java.lang.String"/>
+    <field minOccurs="0" name="increment" type="java.lang.Integer"/>
 </structure>
