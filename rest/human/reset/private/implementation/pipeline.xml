@@ -1,0 +1,6 @@
+<structure interface="nabu.frameworks.tasks.rest.human.reset:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="Tasks" definition="nabu.frameworks.tasks.crud.task.types.output" enricher="nabu.frameworks.tasks.crud.task.services.list" name="task" persister="nabu.frameworks.tasks.crud.task.batch.updateAll"/>
+    <field name="can" type="java.lang.Boolean"/>
+</structure>

@@ -1,0 +1,3 @@
+<structure name="taskList">
+    <structure allow="id, title, description" definition="nabu.frameworks.tasks.rest.human.taskMeta" maxOccurs="unbounded" minOccurs="0" name="results"/>
+</structure>

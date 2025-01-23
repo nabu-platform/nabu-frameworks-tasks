@@ -1,0 +1,140 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="3b381bea339d4de18d93b74c123073ee"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="2acaa854210c4e0eb54c47ba5442d9ad"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="4df8a1deea4b472dae63f691e993a5be"
+				serviceId="nabu.frameworks.tasks.services.human.can"
+				resultName="result15338c1b2a1d4725a9bb65f7e89aeb82"
+				temporaryMapping="true"
+				x="180"
+				y="59"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="51a3a86970f04679b2c51be57a4881f6"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/token</from>
+				<to>token</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="047994dc58444e3cb8106999b9ca58af"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/taskId</from>
+				<to>taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="a2168c883a2e452ba802dd9a77ba78d5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/webApplicationId</from>
+				<to>webApplicationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1f7ce2d92a364e5faf7f276bd3268be2"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>update</from>
+				<to>action</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="9c5d850373e241978c09491a37fdea56"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result15338c1b2a1d4725a9bb65f7e89aeb82/can</from>
+			<to>can</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ec2a61b6def84f2faae30ae07a7f3ee2"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result15338c1b2a1d4725a9bb65f7e89aeb82/task</from>
+			<to>task</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="3ac3b39a8bb741b18254f9a205b18d93"
+			label="!can"
+			lineNumber="3"
+			code="403"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Reset output data"
+			disabled="false"
+			id="e4c5f7f3a33b47c498b1c34b35e1a047"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Drop"
+				disabled="false"
+				id="a55d421229764368a873a9f058887042"
+				path="task/taskOutput" xsi:nil="true"/>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="7d6ca120ad464ccfa2037da378e8c3a3"
+				serviceId="nabu.utils.Date.now"
+				resultName="resultc8b61f0804b0493384f0c9cc6ba4393c"
+				temporaryMapping="true"
+				x="231"
+				y="149"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="2929377bd93a48d690e5f50fb0dea59e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultc8b61f0804b0493384f0c9cc6ba4393c/date</from>
+			<to>task/modified</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="f18aa3c2f6694d7281fb65b58caab607"
+			lineNumber="5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="a309cf092b6643cd823eab69fa9861dc"
+				serviceId="nabu.services.jdbc.Services.update"
+				resultName="resultd601c9a21050433e9f7157a13174a4ac"
+				temporaryMapping="true"
+				x="106"
+				y="191"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4963a84f93ba458594d690c6901a707b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>task</from>
+				<to>instances[0]</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

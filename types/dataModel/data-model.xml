@@ -9,8 +9,8 @@
     <entries>
         <synchronize>true</synchronize>
         <type>nabu.frameworks.tasks.types.model.tasks.TaskErrorRule</type>
-        <x>1565</x>
-        <y>607</y>
+        <x>1606</x>
+        <y>600</y>
     </entries>
     <entries>
         <synchronize>true</synchronize>
@@ -53,5 +53,16 @@
         <type>nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty</type>
         <x>525</x>
         <y>95</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <x>1154</x>
+        <y>781</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.tasks.types.model.tasks.TaskMetadata</type>
+        <x>1171</x>
+        <y>676</y>
     </entries>
 </dataModel>

@@ -1,0 +1,142 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="a82f70ab797f42e9ad04a67ccda1d6df"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="42fa10b0947f47a9926b6908e4d523f7"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="806f7cdf64784285bd1a8e609fcd7b7d"
+				serviceId="nabu.frameworks.tasks.services.human.can"
+				resultName="result6539a7fc292540ceb0343fed54de38a9"
+				temporaryMapping="true"
+				x="202"
+				y="142"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="24fd5d4a43c6421b9bf3728e6c41b134"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/token</from>
+				<to>token</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="5473805556fb4af59d47a6358e56542c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/webApplicationId</from>
+				<to>webApplicationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="35447368f6994143b30c96390182a3a9"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/taskId</from>
+				<to>taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="124d70c7b3af4e0f80fef8c2f328558d"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>pickup</from>
+				<to>action</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="651782ee5f0e479faf1b5cdef4ece9a4"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result6539a7fc292540ceb0343fed54de38a9/can</from>
+			<to>can</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e89d5cd21e5b4cf68ad4633c9f81d703"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result6539a7fc292540ceb0343fed54de38a9/task</from>
+			<to>task</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="545bf4b171584d62827c1d59c858d8be"
+			label="input/token/authenticationId == null"
+			lineNumber="3"
+			code="401"
+			message="Not a valid token"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="fa7cb99cb0c84b7ca889fa0f3a5eea25"
+			label="!can"
+			lineNumber="4"
+			code="403"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="8b0c052626034fdb9d3291751bb91092"
+			lineNumber="5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="e91a664befa746348cf73583bf5c4492"
+				serviceId="nabu.frameworks.tasks.services.human.pickup"
+				resultName="resultf635df27a394449fbd4226631a0ecdac"
+				temporaryMapping="true"
+				x="190"
+				y="66"
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="def1437784b6453eac80c0caac13dfef"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/taskId</from>
+				<to>taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6e575441f5484194a3f1ef2c4dbe1cdc"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/token/authenticationId</from>
+				<to>owner</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e020326c00e84efa8dbe5bb89fcaa185"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultf635df27a394449fbd4226631a0ecdac/started</from>
+			<to>started</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="cc19c083bca547f4a469559e7421239f"
+			label="!started"
+			lineNumber="6"
+			message="Could not pick up task"
+			whitelist="false" xsi:nil="true"/>
+</sequence>

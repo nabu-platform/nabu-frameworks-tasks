@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2025-01-23T09:39:12.374+01:00" lastModified="2025-01-23T09:47:31.823+01:00" leaf="true" version="12">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.crud.taskMetadata.types.output</references>
+    <references>nabu.utils.Date.now</references>
+    <references>java.util.UUID</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
+    <references>nabu.frameworks.tasks.crud.task.types.output</references>
+    <references>nabu.frameworks.tasks.services.human.can</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.frameworks.tasks.utils.json2xml</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.String</references>
+    <references>java.io.InputStream</references>
+    <references>nabu.utils.Stream.toString</references>
+</node>

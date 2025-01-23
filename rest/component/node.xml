@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2025-01-23T09:38:17.807+01:00" lastModified="2025-01-23T09:55:10.346+01:00" leaf="true" version="5">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.rest.human.accept</references>
+    <references>nabu.frameworks.tasks.rest.human.cancel</references>
+    <references>nabu.frameworks.tasks.rest.human.list</references>
+    <references>nabu.frameworks.tasks.rest.human.overview</references>
+    <references>nabu.frameworks.tasks.rest.human.pickup</references>
+    <references>nabu.frameworks.tasks.rest.human.reject</references>
+    <references>nabu.frameworks.tasks.rest.human.release</references>
+    <references>nabu.frameworks.tasks.rest.human.reset</references>
+    <references>nabu.frameworks.tasks.rest.human.update</references>
+    <references>nabu.frameworks.tasks.rest.human.get</references>
+</node>

@@ -1,0 +1,4 @@
+<structure name="taskInstanceList">
+    <structure allow="id, authenticationId, taskIndex, state, taskInput" definition="nabu.frameworks.tasks.types.taskInstance" maxOccurs="unbounded" minOccurs="0" name="instances"/>
+    <structure definition="be.nabu.eai.repository.api.Page" minOccurs="0" name="page"/>
+</structure>

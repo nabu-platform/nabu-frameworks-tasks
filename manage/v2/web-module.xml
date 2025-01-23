@@ -20,5 +20,7 @@
     <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.pause</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.resume</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.loadDistribution</webFragments>
+    <webFragments>nabu.frameworks.tasks.crud.taskMetadata</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.component</webFragments>
     <audience>MANAGER</audience>
 </webModule>

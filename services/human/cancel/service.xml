@@ -85,8 +85,8 @@
 					serviceId="nabu.frameworks.tasks.services.task.log"
 					resultName="result65e927ffa2594b1494819a8d1a316c55"
 					temporaryMapping="true"
-					x="736"
-					y="68"
+					x="549"
+					y="82"
 					invocationOrder="1"
 					asynchronous="false"
 					recache="false">

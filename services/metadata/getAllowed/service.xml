@@ -1,0 +1,152 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="457f25d4811c44adb37f8b632b719ca9"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="24c6e7f42f8b4c2d92416e7b7a8f3c6f"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="a85b538ebb8e48c2b615cb1a8d878aa8"
+				serviceId="nabu.frameworks.tasks.crud.taskMetadata.services.list"
+				resultName="resultea4974da07564752a158f7932c601b12"
+				temporaryMapping="true"
+				x="130"
+				y="51"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e0a12737938e424aaf26ce16123dc47e"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>human</from>
+				<to>filter/taskType[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="729dd5294fa4483db3afbfef4aab3a7c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/language</from>
+				<to>language</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="681e0568f29247f399cb15ffbbb7bf54"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultea4974da07564752a158f7932c601b12/results</from>
+			<to>results</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="ed332f34db9a4f59aa2d8ee19743841f"
+			lineNumber="3"
+			variable="result"
+			into="output/allowed">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+				disabled="false"
+				id="4f04267926de4e339a6579c23a74b9d2"
+				lineNumber="4"
+				query="result/permission">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Just add it"
+					disabled="false"
+					id="60e70f7617ed4f32871be4bfffe5dc54"
+					label="null"
+					lineNumber="5">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="0aebea91c3bc4386bc8f3dd67791cff9"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result</from>
+					<to>output/allowed[0]</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+					disabled="false"
+					id="0bb0de57c142437fb0dd618250e34ed4"
+					lineNumber="6">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						disabled="false"
+						id="cc81ece9eca548bd85901e59ed978ff0"
+						lineNumber="7">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+							disabled="false"
+							id="d6cd2130d8934e5a8d88be6d3851c86f"
+							serviceId="nabu.web.application.Services.hasPermission"
+							resultName="result77f8feba20c049fcb67c3d8905d7e8cc"
+							temporaryMapping="true"
+							x="173"
+							y="45"
+							invocationOrder="0"
+							asynchronous="false"
+							recache="false">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="dc284e1cb9dc485c9b14ddb03ab412f8"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>input/webApplicationId</from>
+							<to>webApplicationId</to>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="d388869cc0294d7ea8c78c252031462b"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>result/permission</from>
+							<to>action</to>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="f387c01c59724c9eba7565c24f786eb3"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>input/token</from>
+							<to>token</to>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="a7f849f04a40408196a83971f29e1828"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>result77f8feba20c049fcb67c3d8905d7e8cc/response</from>
+						<to>hasPermission</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						disabled="false"
+						id="1690c552e6f84c6192f62f4b694f1274"
+						label="hasPermission"
+						lineNumber="8">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="a7d5755f2a6c4bbda8734a4ebd71df34"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>result</from>
+						<to>output/allowed[0]</to>
+					</steps>
+				</steps>
+			</steps>
+		</steps>
+		<query>results</query>
+	</steps>
+</sequence>

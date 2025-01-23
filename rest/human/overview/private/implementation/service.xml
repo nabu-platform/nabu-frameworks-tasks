@@ -1,0 +1,188 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="8b66b903512549258c5a68639c9ac7c1"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="ca843994fa6c4121bcb0eaf6e15f303b"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="94efa26358a04fc6b7fbdc8eda3156d3"
+				serviceId="nabu.frameworks.tasks.services.metadata.getAllowed"
+				resultName="result03c1d80d79124212a25a7040fe3a3ad8"
+				temporaryMapping="true"
+				x="287"
+				y="65"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="af6d84418e004d9b9499567fff6179d2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/language</from>
+				<to>language</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="a7f3e09afb7d4c0294143b15b3203b85"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/webApplicationId</from>
+				<to>webApplicationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="87fe9e1577a04207b1ef1f4a43b82d6a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/token</from>
+				<to>token</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e67a9fda328f48fea16063792c3135f6"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result03c1d80d79124212a25a7040fe3a3ad8/allowed</from>
+			<to>allowedResults</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			comment="If we have results, do some counts"
+			disabled="false"
+			id="0b7d0e4dfbbb4439baadd774adaf2986"
+			label="allowedResults"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="5381dc9721744eabb9e689d7c29f7809"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="0ca99b5d30dd4eaba85c0ccc3cd8694c"
+					serviceId="nabu.frameworks.tasks.utils.human.selectHumanTasks"
+					resultName="resultabbe89d3e1ce49df88da877327c9b689"
+					temporaryMapping="true"
+					x="210"
+					y="52"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="2c5d9d87f1ff41948f6eb9547ad03ac8"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>allowedResults/task</from>
+					<to>parameters/task</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0dfe8c1b57a2435d93833e36c01fa722"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultabbe89d3e1ce49df88da877327c9b689/results</from>
+				<to>counts</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.For"
+				disabled="false"
+				id="49e7158b633c429ba80c0ae96868228a"
+				lineNumber="5"
+				variable="allowedResult"
+				into="output/content/results">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="1c3f8f70b1924475a09d890357a37c34"
+					lineNumber="6">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="20012f1a355b4635ab83853511164b96"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>allowedResult/id</from>
+					<to>output/content/results[0]/id</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="395e0c0fad1046e3906fbb316b71c1f1"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>allowedResult/title</from>
+					<to>output/content/results[0]/title</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="db082f54c5c441b09a2edd9cec32cdf6"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>allowedResult/description</from>
+					<to>output/content/results[0]/description</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="7fa5b6d772da4a8f9727f0e3aeab1238"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>counts[task == /allowedResult/task &amp;&amp; state == "CREATED"]/count</from>
+					<to>output/content/results[0]/created</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="c94b2f834e534e938e5f12e5ae56ccf0"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>counts[task == /allowedResult/task &amp;&amp; state == "RUNNING"]/count</from>
+					<to>output/content/results[0]/running</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="b005f7b5cb5c4ca1ba5cbd72635688a6"
+						serviceId="nabu.utils.BigMath.sumIntegers"
+						resultName="result5a9b19533c0448f2b2dc559fac12ba03"
+						temporaryMapping="true"
+						x="132"
+						y="45"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="78123b50576b43a8aae86e66b03363b9"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>counts[task == /allowedResult/task]/count</from>
+						<to>integers</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="0008ee94c24040318bc8e51e28eb2fcd"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result5a9b19533c0448f2b2dc559fac12ba03/result</from>
+					<to>output/content/results[0]/total</to>
+				</steps>
+			</steps>
+			<query>allowedResults</query>
+		</steps>
+	</steps>
+</sequence>

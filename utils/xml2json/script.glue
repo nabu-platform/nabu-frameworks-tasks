@@ -1,0 +1,14 @@
+string xml ?= null
+@return
+string title ?= null
+@return
+string description ?= null
+
+if (xml != null)
+	object = xml.objectify(xml)
+	if (title != null)
+		title = template(title, object)
+	if (description != null)
+		description = template(description, object)
+	@return
+	string json = json.stringify(object, pretty: true)

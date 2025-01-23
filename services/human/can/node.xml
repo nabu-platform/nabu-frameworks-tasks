@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-03-20T18:05:44.492+01:00" lastModified="2025-01-23T09:49:29.626+01:00" leaf="true" version="28">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.crud.task.types.output</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskMetadata</references>
+    <references>nabu.frameworks.tasks.crud.task.services.get</references>
+    <references>nabu.frameworks.tasks.crud.taskMetadata.services.list</references>
+    <references>nabu.web.application.Services.hasPermission</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.String</references>
+    <references>java.util.UUID</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
+</node>

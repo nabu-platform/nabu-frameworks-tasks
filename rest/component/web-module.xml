@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <webFragments>nabu.frameworks.tasks.rest.human.accept</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.human.cancel</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.human.list</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.human.overview</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.human.pickup</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.human.reject</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.human.release</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.human.reset</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.human.update</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.human.get</webFragments>
+</webModule>

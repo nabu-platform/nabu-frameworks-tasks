@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-09-13T12:40:14.832+02:00" lastModified="2024-06-27T21:12:34.408+02:00" leaf="true" version="19">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-09-13T12:40:14.832+02:00" lastModified="2025-01-23T09:38:39.830+01:00" leaf="true" version="21">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
@@ -23,5 +23,7 @@
     <references>nabu.frameworks.tasks.manage.rest.taskQueue.pause</references>
     <references>nabu.frameworks.tasks.manage.rest.taskQueue.resume</references>
     <references>nabu.frameworks.tasks.manage.rest.taskQueue.loadDistribution</references>
+    <references>nabu.frameworks.tasks.crud.taskMetadata</references>
+    <references>nabu.frameworks.tasks.rest.component</references>
     <tags>Tasks Manage</tags>
 </node>

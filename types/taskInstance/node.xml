@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2025-01-22T13:46:26.026+01:00" lastModified="2025-01-23T09:33:19.260+01:00" leaf="true" version="13">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.types.model.tasks.Task</references>
+    <references>java.lang.String</references>
+    <references>java.util.UUID</references>
+</node>

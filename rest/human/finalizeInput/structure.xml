@@ -1,0 +1,5 @@
+<structure name="finalizeInput">
+    <field minOccurs="0" name="code" type="java.lang.String"/>
+    <field minOccurs="0" name="title" type="java.lang.String"/>
+    <field minOccurs="0" name="description" type="java.lang.String"/>
+</structure>

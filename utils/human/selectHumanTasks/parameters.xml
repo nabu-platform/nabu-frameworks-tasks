@@ -1,1 +1,3 @@
-<structure name="parameter"/>
+<structure name="parameter">
+    <field maxOccurs="unbounded" minOccurs="0" name="task" type="java.lang.String"/>
+</structure>

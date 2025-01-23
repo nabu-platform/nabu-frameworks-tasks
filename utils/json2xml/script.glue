@@ -1,0 +1,5 @@
+string json ?= null
+
+if (json != null)
+	@return
+	string xml = xml.stringify(json.objectify(json), pretty: true)
