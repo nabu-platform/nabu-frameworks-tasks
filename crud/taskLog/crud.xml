@@ -4,6 +4,8 @@
     <broadcastCreate>false</broadcastCreate>
     <broadcastUpdate>false</broadcastUpdate>
     <coreType>nabu.frameworks.tasks.types.model.tasks.TaskLog</coreType>
+    <createBlacklistFields>created</createBlacklistFields>
+    <createBlacklistFields>modified</createBlacklistFields>
     <createRole>$user</createRole>
     <deleteRole>$user</deleteRole>
     <filters>
@@ -44,7 +46,11 @@
     <listRole>$user</listRole>
     <provider>nabu.services.crud.provider.basic.provider</provider>
     <restLimitToUser>true</restLimitToUser>
+    <updateBlacklistFields>created</updateBlacklistFields>
+    <updateBlacklistFields>modified</updateBlacklistFields>
+    <updateRegenerateFields>modified</updateRegenerateFields>
     <updateRole>$user</updateRole>
+    <useAsAuthorizationServiceContext>false</useAsAuthorizationServiceContext>
     <useExplicitLanguage>false</useExplicitLanguage>
     <useGlobalPermissionContext>true</useGlobalPermissionContext>
     <useLanguage>false</useLanguage>

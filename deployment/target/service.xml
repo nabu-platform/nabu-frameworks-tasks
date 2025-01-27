@@ -56,4 +56,40 @@
 			</steps>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="313b46d33ff2406fb0453a8b187eb782"
+			label="input/taskMetadatas"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="060dcb356e4c4d899270c465faa9259e"
+				serviceId="nabu.services.jdbc.Services.merge"
+				resultName="resulte7ec61ef5ec549e98295f16d2f7d3044"
+				temporaryMapping="true"
+				x="117"
+				y="76"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ac3d0851a64144bd80937119dd4696a5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1dc9837a82ed44029bd2c7a7a7f8325b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskMetadatas</from>
+				<to>instances</to>
+			</steps>
+		</steps>
+	</steps>
 </sequence>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2025-01-23T09:38:17.807+01:00" lastModified="2025-01-23T09:55:10.346+01:00" leaf="true" version="5">
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2025-01-23T09:38:17.807+01:00" lastModified="2025-01-27T09:23:36.072+01:00" leaf="true" version="6">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -14,4 +14,5 @@
     <references>nabu.frameworks.tasks.rest.human.reset</references>
     <references>nabu.frameworks.tasks.rest.human.update</references>
     <references>nabu.frameworks.tasks.rest.human.get</references>
+    <references>nabu.frameworks.tasks.rest.human.properties</references>
 </node>

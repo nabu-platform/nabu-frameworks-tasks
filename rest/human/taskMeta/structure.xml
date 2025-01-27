@@ -1,4 +1,4 @@
-<structure allow="id, title, description" name="taskMeta" superType="nabu.frameworks.tasks.types.model.tasks.TaskMetadata">
+<structure allow="id, title, description, name" name="taskMeta" superType="nabu.frameworks.tasks.types.model.tasks.TaskMetadata">
     <field comment="Amount of created waiting to be picked up" name="created" type="java.lang.Long"/>
     <field comment="Amount of running that need to be accepted/rejected" name="running" type="java.lang.Long"/>
     <field comment="Total amount" name="total" type="java.lang.Long"/>

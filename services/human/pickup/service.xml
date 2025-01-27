@@ -144,10 +144,34 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Set defaults"
+			disabled="false"
+			id="021a7c0535ec4f319a07fa04764999b1"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ef22ce638f7649a6b000687e5289c3a9"
+				mask="false"
+				optional="true"
+				fixedValue="true">
+			<from>pickup</from>
+			<to>input/code</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="043fdb647d124344b2645b42944d058b"
+				mask="false"
+				optional="true"
+				fixedValue="true">
+			<from>Pick up task</from>
+			<to>input/title</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="6583d6f899d04faaa548ed304f436143"
 			label="rowCount &gt; 0"
-			lineNumber="4">
+			lineNumber="5">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="56cc9258630f4fb0b16120db374f3d7b"
@@ -202,8 +226,8 @@
 				serviceId="nabu.frameworks.tasks.hooks.human.pickup"
 				resultName="result03c145384c4647b1ba450fd7f1e087a4"
 				temporaryMapping="true"
-				x="356"
-				y="331"
+				x="160"
+				y="224"
 				invocationOrder="1"
 				asynchronous="false"
 				recache="false">
@@ -224,6 +248,72 @@
 					fixedValue="false">
 				<from>input/owner</from>
 				<to>owner</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="207c09ed297c49e5ab98fbaee58c5f31"
+				serviceId="nabu.frameworks.tasks.crud.taskLog.services.create"
+				resultName="result12d19f0acc9148a090bf798df1ae8c6f"
+				temporaryMapping="true"
+				x="587"
+				y="124"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="837ad8e7040d4352abfac5001d4aafe3"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskId</from>
+				<to>instance/taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e8ba2e0c63c848fe998b4f4b0412f0de"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/owner</from>
+				<to>instance/actor</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="5f77b21d5e9a47918400b9d9d30da5c8"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>INFO</from>
+				<to>instance/severity</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0f286008b760455da1f78eca059ae827"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/code</from>
+				<to>instance/code</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="25fbc49a8a3442b496016ad0ca920390"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/title</from>
+				<to>instance/title</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="607c7bb2712d4c39bccb82fe07d13af1"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/description</from>
+				<to>instance/description</to>
 			</steps>
 		</steps>
 	</steps>

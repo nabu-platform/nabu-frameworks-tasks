@@ -57,7 +57,7 @@
 				mask="false"
 				optional="true"
 				fixedValue="true">
-			<from>Rolled back running task</from>
+			<from>Released running task</from>
 			<to>input/title</to>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"

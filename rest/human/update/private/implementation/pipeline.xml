@@ -1,7 +1,7 @@
-<structure interface="$self:api" name="pipeline">
+<structure interface="nabu.frameworks.tasks.rest.human.update:api" name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
     <structure collectionName="Tasks" definition="nabu.frameworks.tasks.crud.task.types.output" enricher="nabu.frameworks.tasks.crud.task.services.list" name="task" persister="nabu.frameworks.tasks.crud.task.batch.updateAll"/>
-    <structure definition="nabu.frameworks.tasks.crud.taskMetadata.types.output" enricher="nabu.frameworks.tasks.crud.taskMetadata.services.list" minOccurs="0" name="metadata" persister="nabu.frameworks.tasks.crud.taskMetadata.batch.updateAll"/>
+    <structure collectionName="taskMetadatas" definition="nabu.frameworks.tasks.crud.taskMetadata.types.output" enricher="nabu.frameworks.tasks.crud.taskMetadata.services.list" minOccurs="0" name="metadata" persister="nabu.frameworks.tasks.crud.taskMetadata.batch.updateAll"/>
     <field name="can" type="java.lang.Boolean"/>
 </structure>

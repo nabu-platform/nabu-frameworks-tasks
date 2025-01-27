@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-06-28T13:09:28.957+02:00" lastModified="2024-06-28T13:11:58.358+02:00" leaf="true" version="8">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-06-28T13:09:28.957+02:00" lastModified="2025-01-27T13:00:14.389+01:00" leaf="true" version="11">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskMetadata</references>
+    <references>nabu.frameworks.tasks.crud.taskMetadata.services.list</references>
     <references>nabu.frameworks.tasks.types.model.tasks.TaskErrorRule</references>
     <references>nabu.frameworks.tasks.types.model.tasks.TaskQueueConfiguration</references>
     <references>nabu.frameworks.tasks.crud.taskErrorRule.services.list</references>

@@ -10,4 +10,5 @@
     <webFragments>nabu.frameworks.tasks.rest.human.reset</webFragments>
     <webFragments>nabu.frameworks.tasks.rest.human.update</webFragments>
     <webFragments>nabu.frameworks.tasks.rest.human.get</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.human.properties</webFragments>
 </webModule>

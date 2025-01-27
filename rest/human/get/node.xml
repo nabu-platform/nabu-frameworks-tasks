@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2025-01-23T09:47:53.441+01:00" lastModified="2025-01-23T09:55:03.586+01:00" leaf="true" version="13">
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2025-01-23T09:47:53.441+01:00" lastModified="2025-01-27T14:35:14.198+01:00" leaf="true" version="27">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
-    <references>nabu.frameworks.tasks.utils.xml2json</references>
-    <references>nabu.frameworks.tasks.crud.task.types.output</references>
     <references>nabu.frameworks.tasks.types.model.tasks.TaskMetadata</references>
-    <references>nabu.frameworks.tasks.services.human.can</references>
-    <references>java.lang.Boolean</references>
-    <references>java.util.UUID</references>
-    <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.rest.human.propertyList</references>
+    <references>nabu.frameworks.tasks.utils.xml2properties</references>
+    <references>nabu.utils.String.toStream</references>
     <references>be.nabu.libs.authentication.api.Token</references>
     <references>nabu.frameworks.tasks.types.taskInstance</references>
+    <references>nabu.frameworks.tasks.utils.xml2json</references>
+    <references>nabu.data.xml.Services.unmarshal</references>
+    <references>nabu.frameworks.tasks.crud.task.types.output</references>
+    <references>nabu.frameworks.tasks.services.human.can</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.String</references>
+    <references>nabu.data.json.Services.marshal</references>
+    <references>nabu.utils.Object.toProperties</references>
+    <references>nabu.utils.Stream.toString</references>
 </node>

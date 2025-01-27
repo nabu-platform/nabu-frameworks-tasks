@@ -288,6 +288,15 @@
 					<from>metadata/description</from>
 					<to>output/content/instances[0]/description</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="c6181389db744725824218172128609a"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>metadata/name</from>
+					<to>output/content/instances[0]/name</to>
+				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
@@ -359,6 +368,15 @@
 					<from>result205445c6a25e45e28dae9924bb5c69df/json</from>
 					<to>output/content/instances[0]/taskInput</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="b90cd4eb79d24a2a835a48a417ff5c4b"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>metadata/name</from>
+					<to>output/content/instances[0]/name</to>
+				</steps>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
@@ -395,6 +413,42 @@
 					fixedValue="false">
 				<from>result5dff8ebf80ff4224b5b77c022592799e/json</from>
 				<to>output/content/instances[0]/taskOutput</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="570007295f37453a87b2e3d77063b078"
+				label="task/taskInput != null"
+				lineNumber="10">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="c8b2a2368be5426090ad423ac7f7145d"
+					serviceId="nabu.frameworks.tasks.utils.xml2json"
+					resultName="result5dff8ebf80ff4224b5b77c022592799e"
+					temporaryMapping="true"
+					x="139"
+					y="77"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="dba64c729d184def9b0f490af1b86c56"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>task/taskInput</from>
+					<to>xml</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="322cb3e2bb8943daa5148cf8f9757c1e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result5dff8ebf80ff4224b5b77c022592799e/json</from>
+				<to>output/content/instances[0]/taskInput</to>
 			</steps>
 		</steps>
 		<query>tasks</query>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>GET</method>
-    <path>/task/human</path>
+    <path>/human/task</path>
     <queryParameters>limit, offset, orderBy, state, taskMetadataId, owner, authenticationId, contextId, correlationId, instanceId</queryParameters>
     <role>$user</role>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>

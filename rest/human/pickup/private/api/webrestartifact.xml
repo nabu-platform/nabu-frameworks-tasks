@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>PUT</method>
-    <path>/task/human/{taskId}/pickup</path>
+    <path>/human/task/{taskId}/pickup</path>
     <role>$user</role>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <useGlobalPermissionContext>false</useGlobalPermissionContext>
+    <input>nabu.frameworks.tasks.rest.human.finalizeInput</input>
     <deviceBestEffort>false</deviceBestEffort>
     <token>true</token>
     <lenient>true</lenient>

@@ -1,0 +1,8 @@
+<structure interface="nabu.frameworks.tasks.rest.human.properties:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field name="can" type="java.lang.Boolean"/>
+    <structure collectionName="Tasks" definition="nabu.frameworks.tasks.crud.task.types.output" enricher="nabu.frameworks.tasks.crud.task.services.list" name="task" persister="nabu.frameworks.tasks.crud.task.batch.updateAll"/>
+    <structure collectionName="taskMetadatas" definition="nabu.frameworks.tasks.types.model.tasks.TaskMetadata" minOccurs="0" name="metadata"/>
+    <structure definition="nabu.utils.types.ParameterDescription" maxOccurs="unbounded" minOccurs="0" name="parameters"/>
+</structure>

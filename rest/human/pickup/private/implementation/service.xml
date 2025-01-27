@@ -121,6 +121,33 @@
 				<from>input/token/authenticationId</from>
 				<to>owner</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="abd120f863514cc7b5226d67b64ac6ba"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/content/code</from>
+				<to>code</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="25cf5e9a8ad04f1d8c4c681d94eb3e57"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/content/title</from>
+				<to>title</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f5a156aae6c94ac99202727f6717c0d0"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/content/description</from>
+				<to>description</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

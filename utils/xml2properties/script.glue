@@ -1,0 +1,6 @@
+string xml ?= null
+
+if (xml != null)
+	object = xml.objectify(xml)
+	@return
+	be.nabu.libs.types.api.KeyValuePair[] properties = nabu.utils.Object.toProperties(object)/properties

@@ -44,6 +44,15 @@
 				<from>input/token</from>
 				<to>token</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="84c4793ca87b4260bfff174c41f2e3a5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/taskMetadataId</from>
+				<to>taskMetadataId</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -181,8 +190,62 @@
 					<from>result5a9b19533c0448f2b2dc559fac12ba03/result</from>
 					<to>output/content/results[0]/total</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d16147493bb64b1d9e853b2c73b6ca9c"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>allowedResult/name</from>
+					<to>output/content/results[0]/name</to>
+				</steps>
 			</steps>
 			<query>allowedResults</query>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="4d992fa2d1a4405f8e7880b71c060e14"
+			label="output/content/results"
+			lineNumber="7">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="1ef33e69c51940d7b64e5adb8c8f189a"
+				serviceId="nabu.utils.List.sort"
+				resultName="resulte7a477cacc47476a829f758d0aefd650"
+				temporaryMapping="true"
+				x="63"
+				y="92"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b8af63742e1c431d8b7077c86329557b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>output/content/results</from>
+				<to>list</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ebc1bd257f9942328e7f140cfe871318"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>name</from>
+				<to>fields[0]</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="53b0ee5de7414ce1a7eb9fabc0695214"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resulte7a477cacc47476a829f758d0aefd650/list</from>
+			<to>output/content/results</to>
 		</steps>
 	</steps>
 </sequence>

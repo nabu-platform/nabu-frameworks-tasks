@@ -76,4 +76,39 @@
 			<to>output/taskQueueConfigurations</to>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="9787eb1f586441edb75935bd6f42ae91"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="e273391bf9884e2bb3b9739983584860"
+				serviceId="nabu.frameworks.tasks.crud.taskMetadata.services.list"
+				resultName="result41ba87c449b249a5aa7ced4d5e5fb06b"
+				temporaryMapping="true"
+				x="106"
+				y="63"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3cf65e6e0491453ba6905f72eae7903a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connectionId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="b7508a353f8e40af98d5c82ae41ff370"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result41ba87c449b249a5aa7ced4d5e5fb06b/results</from>
+			<to>output/taskMetadatas</to>
+		</steps>
+	</steps>
 </sequence>
