@@ -200,6 +200,39 @@
 					<to>output/content/results[0]/name</to>
 				</steps>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Fill in defaults"
+					disabled="false"
+					id="0f30349b302845caaebe01c2af2f2304"
+					lineNumber="7">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4ea2aea1aa1d43ccb7840146295dbcbb"
+						mask="false"
+						optional="true"
+						fixedValue="true">
+					<from>0</from>
+					<to>output/content/results[0]/created</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d9335387a1424757b96c3a9297f903e6"
+						mask="false"
+						optional="true"
+						fixedValue="true">
+					<from>0</from>
+					<to>output/content/results[0]/running</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="74e7739f88814ce8bc73da1f0df7a201"
+						mask="false"
+						optional="true"
+						fixedValue="true">
+					<from>0</from>
+					<to>output/content/results[0]/total</to>
+				</steps>
+			</steps>
 			<query>allowedResults</query>
 		</steps>
 	</steps>
@@ -207,7 +240,7 @@
 			disabled="false"
 			id="4d992fa2d1a4405f8e7880b71c060e14"
 			label="output/content/results"
-			lineNumber="7">
+			lineNumber="8">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="1ef33e69c51940d7b64e5adb8c8f189a"
