@@ -123,12 +123,12 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
-				id="9f25e14b783c41769999e1bca04a633d"
+				id="0e2b8e6b9323459b99c30153a9cd40b8"
 				mask="false"
-				optional="false"
+				optional="true"
 				fixedValue="false">
 			<from>result5904073b656a475e97642d9c6985c291/description/id</from>
-			<to>taskInputTypeId</to>
+			<to>input/taskInputTypeId</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
@@ -181,15 +181,6 @@
 					fixedValue="false">
 				<from>taskInput</from>
 				<to>task/taskInput</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="9370f76191cd4cbd982e203c0dff6d36"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>taskInputTypeId</from>
-				<to>task/taskInputTypeId</to>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
@@ -361,6 +352,15 @@
 					fixedValue="false">
 				<from>input/compensationServiceId</from>
 				<to>task/compensationServiceId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cc3ca7a123a942fb887602b456fe408e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskInputTypeId</from>
+				<to>task/taskInputTypeId</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-02-07T11:57:30.499+01:00" lastModified="2024-09-02T17:19:42.839+02:00" leaf="true" version="21">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-02-07T11:57:30.499+01:00" lastModified="2025-01-28T10:02:24.693+01:00" leaf="true" version="22">
     <comment>Create a human task to evaluate (and possibly steer) the execution of a service</comment>
-    <environmentId>apollo</environmentId>
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>

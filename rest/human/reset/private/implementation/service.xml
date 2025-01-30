@@ -137,4 +137,75 @@
 			</steps>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="d607c0b0ced241b7976e5fd4aed4cbfc"
+			lineNumber="6">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="67a2b64681164a8a99708e2934d8b849"
+				serviceId="nabu.frameworks.tasks.rest.human.get"
+				resultName="resultd75d9d540e77475cab97b4fa46c7fdf6"
+				temporaryMapping="true"
+				x="316"
+				y="37"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cb20c54d49824be492d8c554824816fb"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/taskId</from>
+				<to>path/taskId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="83d5039bf8564edb8d2474d8918f8351"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/token</from>
+				<to>token</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="95411fdce08e4e3595fe8c3042c6ddc3"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/language</from>
+				<to>language</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f17df76b923f455db9bc00e752647722"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/asKeyValue</from>
+				<to>query/asKeyValue</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8240ffbddd824c61864c725d08d7c48c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/webApplicationId</from>
+				<to>webApplicationId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="19fad0ec2985494fa6dc957958ff6933"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultd75d9d540e77475cab97b4fa46c7fdf6/content</from>
+			<to>output/content</to>
+		</steps>
+	</steps>
 </sequence>

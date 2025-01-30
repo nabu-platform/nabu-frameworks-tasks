@@ -2,18 +2,20 @@
 <restInterface>
     <method>PUT</method>
     <path>/human/task/{taskId}/reset</path>
+    <queryParameters>asKeyValue</queryParameters>
     <role>$user</role>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <useGlobalPermissionContext>false</useGlobalPermissionContext>
+    <output>nabu.frameworks.tasks.types.taskInstance</output>
     <deviceBestEffort>false</deviceBestEffort>
     <token>true</token>
     <lenient>true</lenient>
     <webApplicationId>true</webApplicationId>
     <geoPosition>false</geoPosition>
     <useAsAuthorizationServiceContext>false</useAsAuthorizationServiceContext>
-    <language>false</language>
+    <language>true</language>
     <allowFormBinding>false</allowFormBinding>
     <caseInsensitive>false</caseInsensitive>
     <cache>false</cache>

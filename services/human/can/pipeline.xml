@@ -8,7 +8,7 @@
     <structure name="output">
         <field name="can" type="java.lang.Boolean"/>
         <structure collectionName="Tasks" definition="nabu.frameworks.tasks.crud.task.types.output" enricher="nabu.frameworks.tasks.crud.task.services.list" name="task" persister="nabu.frameworks.tasks.crud.task.batch.updateAll"/>
-        <structure definition="nabu.frameworks.tasks.types.model.tasks.TaskMetadata" minOccurs="0" name="metadata"/>
+        <structure collectionName="taskMetadatas" definition="nabu.frameworks.tasks.types.model.tasks.TaskMetadata" minOccurs="0" name="metadata"/>
     </structure>
     <field name="permission" type="java.lang.String"/>
 </structure>

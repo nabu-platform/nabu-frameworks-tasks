@@ -1,0 +1,9 @@
+be.nabu.libs.types.api.KeyValuePair[] properties ?= null
+
+object = structure()
+
+for (property : properties)
+	object[/property/key] = property/value
+	
+@return
+string xml = xml.stringify(object)

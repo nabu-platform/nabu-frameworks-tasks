@@ -2,7 +2,7 @@
 <restInterface>
     <method>GET</method>
     <path>/human/task</path>
-    <queryParameters>limit, offset, orderBy, state, taskMetadataId, owner, authenticationId, contextId, correlationId, instanceId</queryParameters>
+    <queryParameters>limit, offset, orderBy, state, taskMetadataId, owner, authenticationId, contextId, correlationId, instanceId, asKeyValue, taskIndex</queryParameters>
     <role>$user</role>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>

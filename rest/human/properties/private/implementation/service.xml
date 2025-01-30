@@ -233,6 +233,6 @@
 				<to>output/content/properties[0]/label</to>
 			</steps>
 		</steps>
-		<query>parameters</query>
+		<query>parameters[scope != "PRIVATE"]</query>
 	</steps>
 </sequence>

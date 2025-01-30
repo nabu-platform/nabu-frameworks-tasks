@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.crud.CRUDArtifactManager" created="2025-01-22T12:46:00.194+01:00" lastModified="2025-01-22T15:52:16.075+01:00" leaf="false" version="10">
+<node artifactManager="be.nabu.eai.module.services.crud.CRUDArtifactManager" created="2025-01-22T12:46:00.194+01:00" lastModified="2025-01-28T09:01:31.169+01:00" leaf="false" version="11">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>

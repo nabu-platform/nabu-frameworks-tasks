@@ -87,15 +87,6 @@
 				<from>output/task/taskType</from>
 				<to>filter/taskType[0]</to>
 			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="64a6315392e74d35964dad6991e14880"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>output/task/taskSubType</from>
-				<to>filter/taskSubType[0]</to>
-			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -260,7 +251,7 @@
 					mask="false"
 					optional="false"
 					fixedValue="true">
-				<from>=output/task/state == "RUNNING" &amp;&amp; input/token/authenticationId</from>
+				<from>=output/task/state == "RUNNING" &amp;&amp; output/task/owner == input/token/authenticationId</from>
 				<to>output/can</to>
 			</steps>
 		</steps>

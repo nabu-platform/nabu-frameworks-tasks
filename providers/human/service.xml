@@ -281,6 +281,15 @@
 				<from>input/instanceId</from>
 				<to>instanceId</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="31c0260bffe741c59f5b76b6dde4e54c"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>=input/serviceId + ":input"</from>
+				<to>taskInputTypeId</to>
+			</steps>
 		</steps>
 	</steps>
 </sequence>
