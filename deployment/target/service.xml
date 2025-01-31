@@ -27,6 +27,15 @@
 				<from>input/taskQueueConfigurations</from>
 				<to>instances</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d216d8a0d69c4c2f8d5740357627b79d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
@@ -53,6 +62,15 @@
 					fixedValue="false">
 				<from>input/taskErrorRules</from>
 				<to>instances</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="bedb97938ad440d9b504030a428ca352"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
 			</steps>
 		</steps>
 	</steps>
