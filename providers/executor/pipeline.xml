@@ -17,6 +17,7 @@
         <field minOccurs="0" name="instanceType" type="java.lang.String"/>
         <field minOccurs="0" name="contextType" type="java.lang.String"/>
         <field comment="A compensation service that is run when a task is set to failed" minOccurs="0" name="compensationServiceId" type="java.lang.String"/>
+        <field minOccurs="0" name="narrativeId" type="java.lang.String"/>
     </structure>
     <structure name="output"/>
     <structure collectionName="TaskQueues" definition="nabu.frameworks.tasks.types.model.tasks.TaskQueue" name="queue" namespace="nabu.frameworks.tasks.types.model.tasks"/>

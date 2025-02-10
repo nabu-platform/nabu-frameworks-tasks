@@ -547,6 +547,15 @@
 				<from>input/compensationServiceId</from>
 				<to>task/compensationServiceId</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="97910d2e81b44f55a1cea400648c86ee"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/narrativeId</from>
+				<to>task/narrativeId</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"

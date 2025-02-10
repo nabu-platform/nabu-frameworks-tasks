@@ -436,6 +436,15 @@
 					<from>taskInput</from>
 					<to>task/taskInput</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="56dd794541884419879df99ddf26c73f"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>task/narrativeId</from>
+					<to>task/narrativeId</to>
+				</steps>
 			</steps>
 		</steps>
 	</steps>

@@ -38,4 +38,6 @@
     <field comment="Context id is getting used more and more for security purposes. If you have a context id that needs a resolver, you can fill in the resolver type here." minOccurs="0" name="contextType" type="java.lang.String"/>
     <field comment="A compensation service that is run when a task is set to failed" minOccurs="0" name="compensationServiceId" type="java.lang.String"/>
     <field comment="Features that were enabled when the task was submitted. They need to be re-enabled when it is executed." minOccurs="0" name="features" type="java.lang.String"/>
+    <field indexed="true" minOccurs="0" name="conversationId" type="java.lang.String"/>
+    <field indexed="true" minOccurs="0" name="narrativeId" type="java.lang.String"/>
 </structure>

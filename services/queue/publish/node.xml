@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-04-25T17:17:00.593+02:00" lastModified="2024-09-19T11:18:11.255+02:00" leaf="true" version="134">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-04-25T17:17:00.593+02:00" lastModified="2025-02-10T13:43:27.470+01:00" leaf="true" version="136">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
@@ -13,6 +13,7 @@
     <references>nabu.utils.Runtime.getFeatures</references>
     <references>nabu.frameworks.tasks.services.queue.create</references>
     <references>nabu.frameworks.tasks.types.taskInput</references>
+    <references>nabu.utils.Runtime.getNarrativeId</references>
     <references>nabu.frameworks.tasks.types.model.tasks.Task</references>
     <references>nabu.utils.Runtime.getService</references>
     <references>nabu.frameworks.tasks.database.taskQueue.selectByName</references>
@@ -39,6 +40,7 @@
     <references>nabu.utils.Object.first</references>
     <references>nabu.frameworks.tasks.utils.queue.setPublished</references>
     <references>nabu.utils.Runtime.getCorrelationId</references>
+    <references>nabu.utils.Runtime.getConversationId</references>
     <references>nabu.frameworks.tasks.types.model.tasks.TaskProperty</references>
     <references>nabu.frameworks.tasks.types.model.tasks.TaskQueue</references>
     <references>nabu.frameworks.tasks.services.schedule.next</references>
