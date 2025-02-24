@@ -35,6 +35,24 @@
 				<from>input/language</from>
 				<to>language</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f4609fa7ac3f4eec9ffd5a7143e04eef"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/taskMetadataId</from>
+				<to>filter/id</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4a3667018e584461bc9708ca23c822db"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/code</from>
+				<to>filter/code</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

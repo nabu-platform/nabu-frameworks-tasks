@@ -3,11 +3,12 @@
         <field name="webApplicationId" type="java.lang.String"/>
         <field minOccurs="0" name="language" type="java.lang.String"/>
         <field maxOccurs="unbounded" minOccurs="0" name="taskMetadataId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="code" type="java.lang.String"/>
         <structure definition="be.nabu.libs.authentication.api.Token" minOccurs="0" name="token"/>
     </structure>
     <structure name="output">
-        <structure definition="nabu.frameworks.tasks.crud.taskMetadata.types.output" enricher="nabu.frameworks.tasks.crud.taskMetadata.services.list" maxOccurs="unbounded" minOccurs="0" name="allowed" persister="nabu.frameworks.tasks.crud.taskMetadata.batch.updateAll"/>
+        <structure collectionName="taskMetadatas" definition="nabu.frameworks.tasks.crud.taskMetadata.types.output" enricher="nabu.frameworks.tasks.crud.taskMetadata.services.list" maxOccurs="unbounded" minOccurs="0" name="allowed" persister="nabu.frameworks.tasks.crud.taskMetadata.batch.updateAll"/>
     </structure>
-    <structure definition="nabu.frameworks.tasks.crud.taskMetadata.types.output" enricher="nabu.frameworks.tasks.crud.taskMetadata.services.list" maxOccurs="unbounded" minOccurs="0" name="results" persister="nabu.frameworks.tasks.crud.taskMetadata.batch.updateAll"/>
+    <structure collectionName="taskMetadatas" definition="nabu.frameworks.tasks.crud.taskMetadata.types.output" enricher="nabu.frameworks.tasks.crud.taskMetadata.services.list" maxOccurs="unbounded" minOccurs="0" name="results" persister="nabu.frameworks.tasks.crud.taskMetadata.batch.updateAll"/>
     <field name="hasPermission" type="java.lang.Boolean"/>
 </structure>

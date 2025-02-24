@@ -88,6 +88,15 @@
 				<from>input/language</from>
 				<to>language</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="30087e23285047089c95acaa7118229a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/code</from>
+				<to>code</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

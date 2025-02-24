@@ -11,4 +11,5 @@
     <field maxOccurs="unbounded" minOccurs="0" name="orderBy" type="java.lang.String"/>
     <field minOccurs="0" name="asKeyValue" type="java.lang.Boolean"/>
     <field maxOccurs="unbounded" minOccurs="0" name="taskIndex" type="java.lang.Long"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="code" type="java.lang.String"/>
 </structure>
