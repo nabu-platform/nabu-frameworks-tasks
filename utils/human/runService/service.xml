@@ -52,10 +52,96 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="If we have an output in the task, it should be a modified version of the input (as per the human actions taken in the task). It should be more correct than the task input"
+				disabled="false"
+				id="60b825d32b7549b4bda4d3e1ae899d2c"
+				label="input/task/taskOutput != null"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="c9f2d3403ad64dd6a0c141ca19d8af87"
+					serviceId="nabu.data.xml.Services.unmarshal"
+					resultName="result01899d3b41a74f4d890c6d7700f16a68"
+					temporaryMapping="true"
+					x="441"
+					y="163"
+					invocationOrder="1"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="9b1e8ff956384f4cbccb8255eb77bf7c"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resultb39bb590b7c34a9aae1b2cf7dcf7cb37/stream</from>
+					<to>input</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="b83552bb2a74490d85d17a72554e92e9"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>=input/task/task + ":input"</from>
+					<to>type</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a0b6b9959e7b41ecb7cd02f1ba550c5b"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>UTF-8</from>
+					<to>charset</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="03fac9d6ffa34a9c81ff9e34cecf08c8"
+					serviceId="nabu.utils.String.toStream"
+					resultName="resultb39bb590b7c34a9aae1b2cf7dcf7cb37"
+					temporaryMapping="true"
+					x="22"
+					y="122"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="41c1ae7a74ca441ea808e415e23e78ba"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>UTF-8</from>
+					<to>charset</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="34e97910ceec462b9af8729cac39b03c"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/task/taskOutput</from>
+					<to>string</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4d468b44e05944b6ae918a6c420143f8"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result01899d3b41a74f4d890c6d7700f16a68/unmarshalled</from>
+				<to>serviceInput</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="If we don't have an output, take the input"
 				disabled="false"
 				id="f1a04f8bec974998878b60ab1c8253ff"
 				label="input/task/taskInput != null"
-				lineNumber="4">
+				lineNumber="5">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="dc7f000dcf2d4f538807f0e4e129735e"
@@ -139,7 +225,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="03674afdfd104279bcaf8a60b996def9"
-			lineNumber="5">
+			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="72b06fb1da2e496e907ea47ef549cbcb"
@@ -184,7 +270,7 @@
 			disabled="false"
 			id="e2278acb-3823-4f3f-b0bb-cbfda63790be"
 			label="serviceOutput != null"
-			lineNumber="6">
+			lineNumber="7">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="fa46fdc0-9c27-49b2-b7eb-58cbe9e6514f"
