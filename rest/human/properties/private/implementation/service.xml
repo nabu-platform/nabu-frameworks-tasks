@@ -90,11 +90,27 @@
 			code="403"
 			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="We use the service input"
+			disabled="false"
+			id="c1033abe6a644625849717768ff2ff1f"
+			label="task/taskInputTypeId == null &amp;&amp; task/taskSubType == &quot;service&quot;"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="56834c6dcb414a29ab30e608d671f59c"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>=task/task + ":input"</from>
+			<to>task/taskInputTypeId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Make sure we have a task type (if available)"
 			disabled="false"
 			id="dbccb44167654cd597dc38b0eab695e7"
 			label="task/taskOutputTypeId == null &amp;&amp; task/taskInputTypeId != null"
-			lineNumber="4">
+			lineNumber="5">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="7f7dbae91cbe495eba0c7facd2a260fb"
@@ -107,13 +123,8 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="229fe1b5d95447bfa04f271e3c9d6eb1"
-			label="task/taskOutputTypeId != null"
-			lineNumber="5">
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			disabled="false"
 			id="c850b982-2d55-4464-9d60-f34a1749d6af"
+			label="task/taskOutputTypeId != null"
 			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"

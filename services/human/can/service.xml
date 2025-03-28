@@ -138,21 +138,21 @@
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
-						id="be2d0fa688c8419ca3228a8670798d23"
-						mask="false"
-						optional="false"
-						fixedValue="false">
-					<from>permission</from>
-					<to>action</to>
-				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-						disabled="false"
 						id="00b76f9371fd4e9a91930eb946be37b2"
 						mask="false"
 						optional="false"
 						fixedValue="false">
 					<from>output/task/contextId</from>
 					<to>context</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="27cc5d996bd242c09a4bbfeee6dd34eb"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>output/metadata/permission</from>
+					<to>action</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2025-01-22T13:45:49.355+01:00" lastModified="2025-02-24T10:49:43.522+01:00" leaf="true" version="48">
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2025-01-22T13:45:49.355+01:00" lastModified="2025-03-25T17:25:14.371+01:00" leaf="true" version="49">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -16,7 +16,9 @@
     <references>nabu.data.xml.Services.unmarshal</references>
     <references>nabu.frameworks.tasks.crud.task.types.output</references>
     <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.crud.taskProperty.types.output</references>
     <references>nabu.data.json.Services.marshal</references>
+    <references>nabu.frameworks.tasks.crud.taskProperty.services.list</references>
     <references>nabu.utils.Object.toProperties</references>
     <references>nabu.frameworks.tasks.rest.human.taskInstanceList</references>
     <references>nabu.utils.Stream.toString</references>

@@ -4,8 +4,17 @@ string title ?= null
 @return
 string description ?= null
 
+nabu.frameworks.tasks.types.model.tasks.TaskProperty [] properties ?= null
+
+if (properties != null)
+	p = structure()
+	for (property : properties)
+		p = structure(p, lambda(property/key): property/value)
+
 if (xml != null)
 	object = xml.objectify(xml)
+	if (p != null)
+		object = structure(p, object)
 	if (title != null)
 		title = template(title, object)
 	if (description != null)

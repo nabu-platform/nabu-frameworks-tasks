@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.glue.GlueServiceManager" created="2025-01-23T08:47:48.855+01:00" lastModified="2025-01-23T08:49:10.661+01:00" leaf="true" version="3">
+<node artifactManager="be.nabu.eai.module.services.glue.GlueServiceManager" created="2025-01-23T08:47:48.855+01:00" lastModified="2025-03-25T17:22:20.389+01:00" leaf="true" version="6">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskProperty</references>
 </node>

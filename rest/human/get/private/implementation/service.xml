@@ -168,9 +168,9 @@
 					serviceId="nabu.frameworks.tasks.utils.xml2json"
 					resultName="result205445c6a25e45e28dae9924bb5c69df"
 					temporaryMapping="true"
-					x="191"
-					y="94"
-					invocationOrder="0"
+					x="610"
+					y="188"
+					invocationOrder="1"
 					asynchronous="false"
 					recache="false">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -199,6 +199,15 @@
 						fixedValue="false">
 					<from>metadata/description</from>
 					<to>description</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="17c6e2229c4e4307b1fbe430dab41f5c"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resultb2304a2129784564be304d077a149de3/results</from>
+					<to>properties</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -236,6 +245,27 @@
 					fixedValue="false">
 				<from>metadata/name</from>
 				<to>output/content/name</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="65a87b64ac7e4abda5b26fa81d8db2cc"
+					serviceId="nabu.frameworks.tasks.crud.taskProperty.services.list"
+					resultName="resultb2304a2129784564be304d077a149de3"
+					temporaryMapping="true"
+					x="88"
+					y="287"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="e298433e07de4169b8dad7ac995f7c26"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>task/id</from>
+					<to>filter/taskId[0]</to>
+				</steps>
 			</steps>
 		</steps>
 	</steps>
