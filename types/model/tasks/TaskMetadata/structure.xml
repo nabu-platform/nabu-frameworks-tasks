@@ -9,4 +9,5 @@
     <field comment="The short title for any given task with this metadata. You can use variables in it." minOccurs="0" name="title" translatable="true" type="java.lang.String"/>
     <field comment="A broader description for any given task with this metadata. You can use variables in it." minOccurs="0" name="description" translatable="true" type="java.lang.String"/>
     <field comment="The permission necessary to interact with this task (if any)" minOccurs="0" name="permission" type="java.lang.String"/>
+    <field comment="An optional permission context to execute against" minOccurs="0" name="context" type="java.lang.String"/>
 </structure>
