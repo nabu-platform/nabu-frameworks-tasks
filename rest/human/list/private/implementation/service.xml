@@ -462,6 +462,15 @@
 						<from>taskProperties[taskId == /task/id]</from>
 						<to>properties</to>
 					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="327e26b82e894d039848e8b3607173e2"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>task/taskInputTypeId</from>
+						<to>xmlTypeId</to>
+					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
@@ -788,6 +797,15 @@
 							fixedValue="false">
 						<from>task/taskOutput</from>
 						<to>xml</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="bf6b54b8c73149da9849cdf254534ac6"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>task/taskOutputTypeId</from>
+						<to>xmlTypeId</to>
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"

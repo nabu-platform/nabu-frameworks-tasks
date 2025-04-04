@@ -4,6 +4,8 @@ string title ?= null
 @return
 string description ?= null
 
+string xmlTypeId ?= null
+
 nabu.frameworks.tasks.types.model.tasks.TaskProperty [] properties ?= null
 
 if (properties != null)
@@ -12,7 +14,7 @@ if (properties != null)
 		p = structure(p, lambda(property/key): property/value)
 
 if (xml != null)
-	object = xml.objectify(xml)
+	object = when(xmlTypeId == null, xml.objectify(xml), nabu.data.xml.Services.unmarshal(input: xml, type: xmlTypeId, ignoreUndefinedFields: true)/unmarshalled)
 	if (p != null)
 		object = structure(p, object)
 	if (title != null)
