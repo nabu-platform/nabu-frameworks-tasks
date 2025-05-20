@@ -1776,8 +1776,10 @@
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						comment="If we are not going to retry, emit an event to notify everyone of the pause"
 						disabled="false"
 						id="3d881afa21334927ac1a2ee9b60f302f"
+						label="classification/retryInterval == null"
 						lineNumber="41">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 							disabled="false"
@@ -1987,15 +1989,6 @@
 							fixedValue="false">
 						<from>result4381eb98595343979d3f4c87a79961b5/date</from>
 						<to>classification/runAt</to>
-					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-							disabled="false"
-							id="d7d21a24-c78e-4576-a0c8-2bc8bfcbae4c"
-							mask="false"
-							optional="false"
-							fixedValue="true">
-						<from>WARNING</from>
-						<to>event/severity</to>
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
