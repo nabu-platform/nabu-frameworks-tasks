@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-29T16:41:28.348+02:00" lastModified="2025-05-20T10:13:26.036+02:00" leaf="true" version="171">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-29T16:41:28.348+02:00" lastModified="2025-06-03T11:55:44.731+02:00" leaf="true" version="172">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.utils.Transaction.start</references>
     <references>nabu.utils.Runtime.summarizeException</references>
-    <references>nabu.frameworks.notifier.Services.notify</references>
     <references>nabu.frameworks.tasks.services.schedule.wakeup</references>
     <references>nabu.frameworks.tasks.utils.task.retry</references>
     <references>nabu.utils.reflection.Service.invoke</references>

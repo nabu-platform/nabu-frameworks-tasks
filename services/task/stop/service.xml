@@ -24,6 +24,7 @@
 				id="98d5049a-4669-499a-b3ba-82ed2833dfb6"
 				mask="false"
 				optional="false"
+				patch="false"
 				fixedValue="false">
 			<from>result5061d92f1c7f4588a566e41928d678d0/transactionId</from>
 			<to>input/transactionId</to>
@@ -33,6 +34,7 @@
 				id="bf5b7314-c663-4102-ab31-584413f7dfda"
 				mask="false"
 				optional="false"
+				patch="false"
 				fixedValue="true">
 			<from>true</from>
 			<to>manage</to>
@@ -60,6 +62,7 @@
 				id="acc4de5e-6234-4cf9-8908-9f227581018e"
 				mask="false"
 				optional="false"
+				patch="false"
 				fixedValue="false">
 			<from>result4874bb8cb5894e369fc3f5b0a9d3767d/server</from>
 			<to>input/owner</to>
@@ -75,6 +78,7 @@
 				id="6cecdec8-7f77-401b-a620-8efd4c79c742"
 				mask="false"
 				optional="false"
+				patch="false"
 				fixedValue="true">
 			<from>stop</from>
 			<to>input/code</to>
@@ -95,6 +99,7 @@
 					id="cfcfc3ac-06f8-443a-87a8-d1b7f6edb3a0"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="true">
 				<from>SUCCEEDED</from>
 				<to>state</to>
@@ -104,6 +109,7 @@
 					id="49abd11e-323b-4357-9c9a-5bda05ea872b"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="true">
 				<from>INFO</from>
 				<to>severity</to>
@@ -113,6 +119,7 @@
 					id="8f38cb86-00e0-458c-bd12-9b6215e72402"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="true">
 				<from>Stopped task processing</from>
 				<to>title</to>
@@ -133,6 +140,7 @@
 						id="ae5ab69e-6d62-444d-b459-51d73095e992"
 						mask="false"
 						optional="false"
+						patch="false"
 						fixedValue="true">
 					<from>TRANSIENT_ERROR</from>
 					<to>state</to>
@@ -142,6 +150,7 @@
 						id="75014183-fe9c-4ac0-b0c3-7a330bd67008"
 						mask="false"
 						optional="false"
+						patch="false"
 						fixedValue="true">
 					<from>TRANSIENT_ERROR</from>
 					<to>severity</to>
@@ -151,6 +160,7 @@
 						id="5773ba35-235f-42db-bb51-e5eba07d62e0"
 						mask="false"
 						optional="false"
+						patch="false"
 						fixedValue="false">
 					<from>input/errorMessage</from>
 					<to>title</to>
@@ -172,6 +182,7 @@
 							id="7cd6de1779a44ab78a4f171b23b4ee73"
 							mask="false"
 							optional="false"
+							patch="false"
 							fixedValue="true">
 						<from>FAILED</from>
 						<to>state</to>
@@ -181,6 +192,7 @@
 							id="24ad000d85114b53b7e294748d6abb45"
 							mask="false"
 							optional="false"
+							patch="false"
 							fixedValue="true">
 						<from>ERROR</from>
 						<to>severity</to>
@@ -190,6 +202,7 @@
 							id="df3b133e79754981ba59726ee22e8d2b"
 							mask="false"
 							optional="false"
+							patch="false"
 							fixedValue="false">
 						<from>input/errorMessage</from>
 						<to>title</to>
@@ -204,6 +217,7 @@
 							id="fa495399-5385-41f3-ac09-c176d7e82c33"
 							mask="false"
 							optional="false"
+							patch="false"
 							fixedValue="true">
 						<from>ERROR</from>
 						<to>state</to>
@@ -213,6 +227,7 @@
 							id="78d688fc-4b0c-41a2-a241-d97cedaf5fb1"
 							mask="false"
 							optional="false"
+							patch="false"
 							fixedValue="true">
 						<from>ERROR</from>
 						<to>severity</to>
@@ -222,6 +237,7 @@
 							id="43086285-a252-441c-8e42-06b57d4fd808"
 							mask="false"
 							optional="false"
+							patch="false"
 							fixedValue="false">
 						<from>input/errorMessage</from>
 						<to>title</to>
@@ -251,6 +267,7 @@
 					id="55bcd9fa-587c-48b9-89b7-a013add1eaa2"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/connectionId</from>
 				<to>connection</to>
@@ -260,6 +277,7 @@
 					id="9be8de3e-24d5-4fbc-96e9-3ee793d3b3f8"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/transactionId</from>
 				<to>transaction</to>
@@ -269,6 +287,7 @@
 					id="9836ccbf-eb3f-4174-82f8-540af466e59b"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/taskId</from>
 				<to>parameters[0]/id</to>
@@ -278,6 +297,7 @@
 					id="0ab8f929-d217-4e48-826a-f0dd2b96ee2d"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/taskOutput</from>
 				<to>parameters[0]/taskOutput</to>
@@ -287,6 +307,7 @@
 					id="e676d30a-4f0b-413f-aba8-78310604dd68"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>state</from>
 				<to>parameters[0]/state</to>
@@ -296,6 +317,7 @@
 					id="daae1a51-557a-400e-9a42-ca14fb118a5c"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/owner</from>
 				<to>parameters[0]/owner</to>
@@ -305,6 +327,7 @@
 					id="205f6f8f-ac5b-447f-a15e-2c9c6503ab16"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>result4b22999357064d9e9a1782e40b2efc8f/date</from>
 				<to>parameters[0]/now</to>
@@ -314,6 +337,7 @@
 					id="992cd843-18f4-4b2e-a990-8c790d6ab18c"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/affix</from>
 				<to>affix[0]</to>
@@ -323,6 +347,7 @@
 					id="14270af66ee54e01a97272b1ef44251a"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/taskOutputTypeId</from>
 				<to>parameters[0]/taskOutputTypeId</to>
@@ -333,6 +358,7 @@
 				id="254779c8-6332-4b24-8813-ed11b7268ad4"
 				mask="false"
 				optional="false"
+				patch="false"
 				fixedValue="false">
 			<from>result052f07f635a541ffb2831f03bd872977/rowCount</from>
 			<to>rowCount</to>
@@ -360,6 +386,7 @@
 				id="615befcc-4e19-4bd8-8093-762859fdf3a3"
 				mask="false"
 				optional="false"
+				patch="false"
 				fixedValue="true">
 			<from>=rowCount &gt; 0</from>
 			<to>output/stopped</to>
@@ -386,6 +413,7 @@
 					id="51417b5a-0354-44a7-8e1b-825721b1a115"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>severity</from>
 				<to>severity</to>
@@ -395,6 +423,7 @@
 					id="aaf0ec6e-e178-415d-bd60-7328c668377a"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/owner</from>
 				<to>actor</to>
@@ -404,6 +433,7 @@
 					id="c367dfc2-fcb5-4e8a-9b98-633824689dc9"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/connectionId</from>
 				<to>connectionId</to>
@@ -413,6 +443,7 @@
 					id="b9c7214a-e1b9-4888-8101-3c7cb85e4345"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/transactionId</from>
 				<to>transactionId</to>
@@ -422,6 +453,7 @@
 					id="2b477e29-d372-49d4-9eef-c8b961f5939f"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/taskId</from>
 				<to>taskId</to>
@@ -431,6 +463,7 @@
 					id="76f0fdc4-9296-4e1a-9ded-b92da5ca5235"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/code</from>
 				<to>code</to>
@@ -440,6 +473,7 @@
 					id="fab63e62-c6c4-4875-865b-aa804b4003dd"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/errorDescription</from>
 				<to>description</to>
@@ -449,6 +483,7 @@
 					id="fdce313b-426b-4d66-b73c-dd20b4a38d64"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>title</from>
 				<to>title</to>
@@ -458,6 +493,7 @@
 					id="78f849ff-037b-4b0a-b784-6f6af97ff84d"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/affix</from>
 				<to>affix</to>
@@ -485,6 +521,7 @@
 					id="c8172375291e4646bccb02c686cacd4b"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/taskId</from>
 				<to>taskId</to>
@@ -494,6 +531,7 @@
 					id="7d56592a4bf5476bb1026e00a15bff5b"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/connectionId</from>
 				<to>connectionId</to>
@@ -503,6 +541,7 @@
 					id="c4a05a670525400293eaf93f788b15e1"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/transactionId</from>
 				<to>transactionId</to>
@@ -530,106 +569,23 @@
 					id="d35c56ac-7739-4bf8-88b8-bb87a86cca85"
 					mask="false"
 					optional="false"
+					patch="false"
 					fixedValue="false">
 				<from>input/transactionId</from>
 				<to>transactionId</to>
 			</steps>
 		</steps>
 	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			disabled="false"
-			id="d44acb2b-a26c-4116-891d-9be109a81a17"
-			label="state == &quot;ERROR&quot;"
-			lineNumber="17">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-				disabled="false"
-				id="d5c72258-84f1-494c-937b-c0e0869c9d33"
-				serviceId="nabu.frameworks.notifier.Services.notify"
-				resultName="result85c9d5ea4e4a4c3ba66da469eff5230d"
-				temporaryMapping="true"
-				x="482"
-				y="142"
-				invocationOrder="1"
-				asynchronous="false"
-				recache="false">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="6dfd140d-6025-4d0e-8e21-3e921eb9f2bd"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>resultad91705b681b41b4b35f19ecf5b6995b/services</from>
-				<to>context</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="40eed1b1-cc27-48c9-8db0-4a18cc720289"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>input/errorMessage</from>
-				<to>message</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="dbfc524b-fe2e-4c30-80bd-dea96c6a31ba"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>input/errorDescription</from>
-				<to>description</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="e9cb2a45-d0dc-4be2-a9da-564fa299571c"
-					mask="false"
-					optional="false"
-					fixedValue="true">
-				<from>ERROR</from>
-				<to>severity</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="bd7695a1-cee8-445b-bb1e-102f39206ee9"
-					mask="false"
-					optional="false"
-					fixedValue="true">
-				<from>nabu.frameworks.tasks</from>
-				<to>type</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="1c1e1514-513e-4aa5-88ec-c2243ef30f02"
-					mask="false"
-					optional="false"
-					fixedValue="true">
-				<from>1</from>
-				<to>code</to>
-			</steps>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-				disabled="false"
-				id="c9c207e8-477e-48f7-8b56-039ac949318e"
-				serviceId="nabu.utils.Runtime.getServices"
-				resultName="resultad91705b681b41b4b35f19ecf5b6995b"
-				temporaryMapping="true"
-				x="30"
-				y="64"
-				invocationOrder="0"
-				asynchronous="false"
-				recache="false">
-		</steps>
-	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
 			disabled="false"
 			id="b2a455da-3c0f-4777-b462-2a2c29945b61"
-			lineNumber="18"
+			lineNumber="17"
 			variable="exception">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="2b0819a8277e40df8f0faaefbb689e69"
 				label="manage"
-				lineNumber="19">
+				lineNumber="18">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="19411fd4-b5a0-490f-9ce4-a3abfee1158c"
@@ -646,6 +602,7 @@
 						id="59dbb8cb-9569-40a3-85a4-462181040d52"
 						mask="false"
 						optional="false"
+						patch="false"
 						fixedValue="false">
 					<from>input/transactionId</from>
 					<to>transactionId</to>
@@ -655,7 +612,7 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 				disabled="false"
 				id="3c30a983-c6ce-4d88-9a50-9e79c602483e"
-				lineNumber="20"
+				lineNumber="19"
 				message="=exception"
 				whitelist="false" xsi:nil="true"/>
 	</steps>

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:54:18.546+02:00" lastModified="2024-09-02T16:57:05.600+02:00" leaf="true" version="44">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-07-05T13:54:18.546+02:00" lastModified="2025-06-03T11:56:08.862+02:00" leaf="true" version="45">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.utils.Transaction.start</references>
-    <references>nabu.frameworks.notifier.Services.notify</references>
     <references>nabu.frameworks.tasks.services.task.log</references>
-    <references>nabu.utils.Runtime.getServices</references>
     <references>nabu.utils.Transaction.commit</references>
     <references>nabu.utils.Date.now</references>
     <references>java.util.UUID</references>
