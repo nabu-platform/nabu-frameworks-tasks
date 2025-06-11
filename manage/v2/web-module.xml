@@ -22,5 +22,6 @@
     <webFragments>nabu.frameworks.tasks.manage.rest.taskQueue.loadDistribution</webFragments>
     <webFragments>nabu.frameworks.tasks.crud.taskMetadata</webFragments>
     <webFragments>nabu.frameworks.tasks.rest.component</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.rest.task.retryAll</webFragments>
     <audience>MANAGER</audience>
 </webModule>

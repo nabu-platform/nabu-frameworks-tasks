@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-04-24T18:09:11.667+02:00" lastModified="2025-06-11T11:10:50.457+02:00" leaf="true" version="19">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.crud.task.types.output</references>
+    <references>nabu.frameworks.tasks.database.task.rollbackFinalizedTask</references>
+    <references>nabu.utils.providers.onTransactionClose</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.frameworks.tasks.manage.rest.task.retryAllInput</references>
+    <references>nabu.frameworks.tasks.database.taskQueue.resumeQueue</references>
+    <references>nabu.frameworks.tasks.crud.task.services.list</references>
+</node>

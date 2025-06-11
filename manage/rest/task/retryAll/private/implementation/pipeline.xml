@@ -1,0 +1,7 @@
+<structure interface="nabu.frameworks.tasks.manage.rest.task.retryAll:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field name="rowCount" type="java.lang.Long"/>
+    <structure collectionName="Tasks" definition="nabu.frameworks.tasks.crud.task.types.output" enricher="nabu.frameworks.tasks.crud.task.services.list" maxOccurs="unbounded" minOccurs="0" name="tasks" persister="nabu.frameworks.tasks.crud.task.batch.updateAll"/>
+    <field name="hasUpdated" type="java.lang.Boolean"/>
+</structure>
