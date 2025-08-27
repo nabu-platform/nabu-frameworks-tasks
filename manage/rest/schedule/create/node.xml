@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-07-05T10:04:59.610+02:00" deprecated="2022-09-13T12:41:21.131+02:00" lastModified="2018-07-05T10:04:59.610+02:00" leaf="true" version="1">
-    <environmentId>hyperion</environmentId>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-07-05T10:04:59.610+02:00" deprecated="2022-09-13T12:41:21.131+02:00" lastModified="2025-08-26T12:22:00.218+02:00" leaf="true" version="2">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.frameworks.tasks.manage.rest.schedule.taskScheduleInput</references>
     <references>nabu.frameworks.tasks.manage.rest.schedule.taskSchedule</references>
+    <references>nabu.services.jdbc.utils.merge</references>
 </node>

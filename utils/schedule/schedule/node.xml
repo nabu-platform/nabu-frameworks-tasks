@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" lastModified="2018-01-11T15:33:17.393+01:00" leaf="true" version="6"><environmentId>hyperion</environmentId><properties/><references>java.lang.String</references><references>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</references><references>java.util.Date</references><references>java.lang.Boolean</references><references>java.lang.Long</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2025-08-26T12:22:00.504+02:00" lastModified="2025-08-26T12:22:00.504+02:00" leaf="true" version="7">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskSchedule</references>
+    <references>java.lang.Long</references>
+    <references>java.util.Date</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.String</references>
+</node>

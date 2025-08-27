@@ -9,4 +9,6 @@
     </structure>
     <structure collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
     <structure collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
+    <structure definition="be.nabu.libs.authentication.api.Token" minOccurs="0" name="runAs"/>
+    <field minOccurs="0" name="originalServiceContext" type="java.lang.String"/>
 </structure>

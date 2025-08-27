@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2024-01-29T11:54:03.550+01:00" lastModified="2024-01-29T11:54:03.550+01:00" leaf="false" version="14">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2024-01-29T11:54:03.550+01:00" lastModified="2025-08-26T12:22:00.476+02:00" leaf="false" version="15">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
@@ -12,6 +12,7 @@
     <references>nabu.frameworks.tasks.database.task.rollbackRunningTask.parameters</references>
     <references>be.nabu.libs.types.api.KeyValuePair</references>
     <references>nabu.frameworks.tasks.database.task.rollbackRunningTask.results</references>
+    <references>be.nabu.libs.services.jdbc.api.Statistic</references>
     <references>java.lang.Long</references>
     <references>java.lang.Boolean</references>
 </node>

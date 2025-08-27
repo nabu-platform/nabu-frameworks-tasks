@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-12-17T13:35:04.078+01:00" deprecated="2022-09-13T12:41:21.044+02:00" lastModified="2018-12-18T11:54:26.574+01:00" leaf="true" version="34">
-    <environmentId>hyperion</environmentId>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-12-17T13:35:04.078+01:00" deprecated="2022-09-13T12:41:21.044+02:00" lastModified="2025-08-26T12:22:00.182+02:00" leaf="true" version="35">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty</references>
     <references>nabu.frameworks.tasks.manage.rest.schedule.input.propertyOutputList</references>

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-02-07T13:55:01.140+01:00" lastModified="2025-02-26T11:32:31.235+01:00" leaf="true" version="13">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-02-07T13:55:01.140+01:00" lastModified="2025-08-26T12:22:00.524+02:00" leaf="true" version="18">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.data.xml.Services.unmarshal</references>
     <references>nabu.frameworks.tasks.crud.task.types.output</references>
+    <references>nabu.utils.Runtime.setServiceContext</references>
     <references>nabu.utils.reflection.Service.invoke</references>
     <references>nabu.utils.String.toStream</references>
     <references>java.lang.Object</references>
     <references>java.lang.String</references>
+    <references>nabu.utils.Runtime.getServiceContext</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
     <references>nabu.data.xml.Services.marshal</references>
     <references>nabu.utils.reflection.Type.mask</references>
     <references>nabu.utils.Stream.toString</references>

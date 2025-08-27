@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-09-09T21:17:43.465+02:00" lastModified="2023-03-20T16:01:20.202+01:00" leaf="true" version="7">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-09-09T21:17:43.465+02:00" lastModified="2025-08-26T12:22:00.291+02:00" leaf="true" version="8">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>

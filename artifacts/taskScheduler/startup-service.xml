@@ -2,5 +2,10 @@
 <startupService>
     <service>nabu.frameworks.tasks.startup.taskScheduler</service>
     <asynchronous>true</asynchronous>
+    <runPostDeployment>false</runPostDeployment>
     <properties/>
+    <runPreDeployment>false</runPreDeployment>
+    <runDuringDeployment>false</runDuringDeployment>
+    <runAtStartup>true</runAtStartup>
+    <runAfterStartup>false</runAfterStartup>
 </startupService>

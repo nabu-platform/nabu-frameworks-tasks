@@ -1,1 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-05-18T07:53:21.296+02:00" lastModified="2018-05-18T07:53:21.296+02:00" leaf="false" version="9"><environmentId>hyperion</environmentId><hidden>false</hidden><properties/><references>java.lang.String</references><references>java.lang.Long</references><references>java.lang.Integer</references><references>java.lang.Boolean</references><references>nabu.frameworks.tasks.database.taskQueue.selectByName.parameters</references><references>be.nabu.libs.types.api.KeyValuePair</references><references>nabu.frameworks.tasks.types.model.tasks.TaskQueue</references><references>java.lang.Long</references><references>java.lang.Boolean</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-05-18T07:53:21.296+02:00" lastModified="2025-08-26T12:22:00.500+02:00" leaf="false" version="10">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>java.lang.String</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Integer</references>
+    <references>java.lang.Boolean</references>
+    <references>be.nabu.libs.services.jdbc.AffixInput</references>
+    <references>nabu.frameworks.tasks.database.taskQueue.selectByName.parameters</references>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskQueue</references>
+    <references>be.nabu.libs.services.jdbc.api.Statistic</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Boolean</references>
+</node>

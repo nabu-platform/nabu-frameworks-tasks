@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-07-05T10:04:59.700+02:00" deprecated="2022-09-13T12:41:21.143+02:00" lastModified="2018-07-05T10:04:59.700+02:00" leaf="true" version="1">
-    <environmentId>hyperion</environmentId>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2018-07-05T10:04:59.700+02:00" deprecated="2022-09-13T12:41:21.143+02:00" lastModified="2025-08-26T12:22:00.230+02:00" leaf="true" version="2">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
-    <references>java.lang.Long</references>
-    <references>java.util.Date</references>
-    <references>java.lang.Boolean</references>
+    <references>nabu.services.jdbc.Services.paging</references>
+    <references>nabu.services.jdbc.Services.page</references>
     <references>nabu.frameworks.tasks.manage.rest.schedule.taskScheduleList</references>
-    <references>java.lang.String</references>
-    <references>java.util.UUID</references>
-    <references>java.lang.Integer</references>
+    <references>nabu.services.jdbc.Services.select</references>
 </node>

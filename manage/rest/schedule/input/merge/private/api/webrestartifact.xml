@@ -3,9 +3,16 @@
     <method>PUT</method>
     <path>/schedule/{scheduleId}/properties</path>
     <role>manager</role>
+    <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
+    <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
+    <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
+    <useGlobalPermissionContext>false</useGlobalPermissionContext>
     <input>nabu.frameworks.tasks.manage.rest.schedule.input.propertyInputList</input>
+    <deviceBestEffort>false</deviceBestEffort>
     <lenient>false</lenient>
     <webApplicationId>false</webApplicationId>
+    <geoPosition>false</geoPosition>
+    <useAsAuthorizationServiceContext>false</useAsAuthorizationServiceContext>
     <language>false</language>
     <allowFormBinding>false</allowFormBinding>
     <caseInsensitive>false</caseInsensitive>
@@ -16,4 +23,16 @@
     <allowHeaderAsQueryParameter>false</allowHeaderAsQueryParameter>
     <useServerCache>false</useServerCache>
     <source>false</source>
+    <allowRaw>false</allowRaw>
+    <domain>false</domain>
+    <origin>false</origin>
+    <scheme>false</scheme>
+    <ignoreOffline>false</ignoreOffline>
+    <allowRootArrays>false</allowRootArrays>
+    <captureErrors>false</captureErrors>
+    <captureSuccessful>false</captureSuccessful>
+    <limitedToInterface>false</limitedToInterface>
+    <allowExplicitResponseCode>false</allowExplicitResponseCode>
+    <stubbed>false</stubbed>
+    <clusterLock>false</clusterLock>
 </restInterface>

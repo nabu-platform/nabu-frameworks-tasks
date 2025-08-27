@@ -10,6 +10,7 @@
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <useGlobalPermissionContext>false</useGlobalPermissionContext>
     <output>nabu.frameworks.tasks.manage.rest.task.taskList</output>
+    <deviceBestEffort>false</deviceBestEffort>
     <lenient>false</lenient>
     <webApplicationId>false</webApplicationId>
     <geoPosition>false</geoPosition>
@@ -35,4 +36,5 @@
     <limitedToInterface>false</limitedToInterface>
     <allowExplicitResponseCode>false</allowExplicitResponseCode>
     <stubbed>false</stubbed>
+    <clusterLock>false</clusterLock>
 </restInterface>

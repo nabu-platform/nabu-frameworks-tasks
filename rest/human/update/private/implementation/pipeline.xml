@@ -5,4 +5,6 @@
     <structure collectionName="taskMetadatas" definition="nabu.frameworks.tasks.crud.taskMetadata.types.output" enricher="nabu.frameworks.tasks.crud.taskMetadata.services.list" minOccurs="0" name="metadata" persister="nabu.frameworks.tasks.crud.taskMetadata.batch.updateAll"/>
     <field name="can" type="java.lang.Boolean"/>
     <structure definition="nabu.frameworks.tasks.rest.human.propertyList" name="propertyList"/>
+    <structure definition="nabu.utils.types.ParameterDescription" maxOccurs="unbounded" minOccurs="0" name="privateParameters"/>
+    <structure definition="nabu.frameworks.tasks.rest.human.propertyList" name="inheritedProperties"/>
 </structure>

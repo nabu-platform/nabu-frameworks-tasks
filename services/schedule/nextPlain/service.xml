@@ -1,10 +1,12 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="5212617d-1ee6-49d0-bc46-cdce34c9e6e3">
+		id="5212617d-1ee6-49d0-bc46-cdce34c9e6e3"
+		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="c843bfeb-21a4-4338-9d16-dea2ebbbc908"
-			label="input/amount = null">
+			label="input/amount = null"
+			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="95873815-bb1f-453d-bca9-adb272c2ec36"
@@ -18,10 +20,12 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.For"
 			disabled="false"
 			id="03d5df72-b917-4fe2-9eb0-c7613cd8ed1c"
+			lineNumber="3"
 			into="output/nextRun">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
-				id="cf8f9849-9014-4e92-a86a-865697cb1d60">
+				id="cf8f9849-9014-4e92-a86a-865697cb1d60"
+				lineNumber="4">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="4e8e408b-26c8-448f-9e11-1d5e3b995e76"

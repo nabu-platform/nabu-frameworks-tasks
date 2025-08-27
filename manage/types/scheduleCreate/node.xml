@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2018-05-18T08:13:38.117+02:00" deprecated="2022-09-13T12:41:05.465+02:00" lastModified="2018-05-18T08:14:23.279+02:00" leaf="true" version="4">
-    <environmentId>hyperion</environmentId>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2018-05-18T08:13:38.117+02:00" deprecated="2022-09-13T12:41:05.465+02:00" lastModified="2025-08-26T12:22:00.443+02:00" leaf="true" version="5">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>java.lang.String</references>
     <references>java.util.Date</references>

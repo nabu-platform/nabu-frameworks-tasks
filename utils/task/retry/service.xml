@@ -213,6 +213,7 @@
 				disabled="false"
 				id="3c30a983-c6ce-4d88-9a50-9e79c602483e"
 				lineNumber="8"
-				message="=exception" xsi:nil="true"/>
+				message="=exception"
+				whitelist="false" xsi:nil="true"/>
 	</steps>
 </sequence>

@@ -1,10 +1,12 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="42948dbb-bc47-4e4b-9e33-ba3f5c9e9cc9">
+		id="42948dbb-bc47-4e4b-9e33-ba3f5c9e9cc9"
+		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Set lock name"
 			disabled="false"
-			id="7a2b16dc-3fb5-4f5f-92c0-936d4ca81b6a">
+			id="7a2b16dc-3fb5-4f5f-92c0-936d4ca81b6a"
+			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="d8b1ef72-cb29-4466-b1fb-75a96ce27c85"
@@ -17,7 +19,8 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="9a916502-5b62-422e-9a75-3efa8fb56c6b">
+			id="9a916502-5b62-422e-9a75-3efa8fb56c6b"
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="671a80e7-6456-49d3-a464-9b15a9527728"
@@ -52,10 +55,12 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 			comment="Make sure we release the lock"
 			disabled="false"
-			id="e0a41dfd-81af-45b3-91e3-4a9fb3c38014">
+			id="e0a41dfd-81af-45b3-91e3-4a9fb3c38014"
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
-				id="2f46bc34-e15a-4e97-9480-79cb97afa477">
+				id="2f46bc34-e15a-4e97-9480-79cb97afa477"
+				lineNumber="5">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="1d07587c-4c89-43c8-bf08-d9995bdc6d39"
@@ -109,11 +114,13 @@
 				comment="A queue can only be done if there is no more publishing to it"
 				disabled="false"
 				id="0624b84c-517a-4b69-b143-482776082fbb"
-				label="queue/published != null">
+				label="queue/published != null"
+				lineNumber="6">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Get the amount of unfinished tasks"
 					disabled="false"
-					id="c6f78526-89b7-417c-b33a-23c3ee1c8cbd">
+					id="c6f78526-89b7-417c-b33a-23c3ee1c8cbd"
+					lineNumber="7">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="57d76e69-5b61-4e2c-9ed9-b15085590fc5"
@@ -206,11 +213,13 @@
 					comment="If there are no more tasks remaining, it is officially done"
 					disabled="false"
 					id="1ff71fc8-8005-4b58-8316-9252eb983146"
-					label="amountOfTasks = 0">
+					label="amountOfTasks = 0"
+					lineNumber="8">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Set the new state"
 						disabled="false"
-						id="532cf7fe-8a44-48ca-b8e3-f7ba35d9c83a">
+						id="532cf7fe-8a44-48ca-b8e3-f7ba35d9c83a"
+						lineNumber="9">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
 							id="5043835b-1415-4c1f-a1c0-823910e8ec1f"
@@ -224,7 +233,8 @@
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Update the queue and its dependencies"
 						disabled="false"
-						id="7d642d88-b06e-440e-9755-bf6e35639013">
+						id="7d642d88-b06e-440e-9755-bf6e35639013"
+						lineNumber="10">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 							disabled="false"
 							id="9b18779c-9c44-4938-a55b-0109b3f086a1"
@@ -317,7 +327,8 @@
 						comment="If we activated a queue, make sure the task runner is active again"
 						disabled="false"
 						id="74485935-bbd7-4554-8eac-89c51b2a3140"
-						label="rowCount &gt; 0">
+						label="rowCount &gt; 0"
+						lineNumber="11">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 							disabled="false"
 							id="32c758b1-496d-484d-b894-121a471a57b3"
@@ -345,10 +356,12 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Finally"
 				disabled="false"
-				id="8c233acc-1e5e-452f-a662-961f9fdbd938">
+				id="8c233acc-1e5e-452f-a662-961f9fdbd938"
+				lineNumber="12">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
-					id="23bae92d-6f86-4e68-84e3-482adbf40691">
+					id="23bae92d-6f86-4e68-84e3-482adbf40691"
+					lineNumber="13">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="ea27cf6a-9319-4d51-96b1-22d561b5fd8d"

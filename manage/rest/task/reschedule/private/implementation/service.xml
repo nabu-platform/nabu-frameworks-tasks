@@ -93,7 +93,8 @@
 			label="task/scheduled = null || task/scheduled &lt; oneHourInFuture"
 			lineNumber="3"
 			code="TASK-1"
-			message="You cannot reschedule this task because it is scheduled in the past or near future" xsi:nil="true"/>
+			message="You cannot reschedule this task because it is scheduled in the past or near future"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="map new schedule"
 			disabled="false"

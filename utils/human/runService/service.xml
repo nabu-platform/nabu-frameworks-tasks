@@ -224,8 +224,162 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="03674afdfd104279bcaf8a60b996def9"
+			id="e348ede85ef24d51bf5945e6614ef189"
 			lineNumber="6">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="b3c5d8448d9641c59782398b84702ee0"
+				serviceId="nabu.utils.Runtime.getServiceContext"
+				resultName="result841e71a2843a4eb990d58c589d5528c0"
+				temporaryMapping="true"
+				x="57"
+				y="82"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e58b1233a09b464ebd78b1367973e7cd"
+				fixedValue="false">
+			<from>result841e71a2843a4eb990d58c589d5528c0/serviceContext</from>
+			<to>originalServiceContext</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="92e12f0c-d53e-4107-8d6a-679f8b57872a"
+			lineNumber="7"
+			query="input/task/serviceContext">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Set service context"
+				disabled="false"
+				id="58d8eb20-b91f-4bf6-a072-48fb364a8b14"
+				label="null"
+				lineNumber="8">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="3a0e724c-d97d-4b5e-823d-cd0f47a5e1a2"
+					serviceId="nabu.utils.Runtime.setServiceContext"
+					resultName="resultdae0991bee3b42da8a26e44951466eb9"
+					temporaryMapping="true"
+					x="26"
+					y="98"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="7258796d-86ef-49d6-82f7-4692d292e609"
+						mask="false"
+						optional="false"
+						patch="false"
+						fixedValue="false">
+					<from>input/task/task</from>
+					<to>context</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Set service context"
+				disabled="false"
+				id="6577e5bf4d4d4888a645563d8b2c9925"
+				lineNumber="9">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="113d92cec51e4aef972b71d5f7b42413"
+					serviceId="nabu.utils.Runtime.setServiceContext"
+					resultName="resultdae0991bee3b42da8a26e44951466eb9"
+					temporaryMapping="true"
+					x="26"
+					y="98"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="58762eaf-6b02-4a82-9809-83e81c5cc669"
+						mask="false"
+						optional="false"
+						patch="false"
+						fixedValue="false">
+					<from>input/task/serviceContext</from>
+					<to>context</to>
+				</steps>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Map the runAs"
+			disabled="false"
+			id="087f38d8-b15e-4c7d-b929-f23813e7a427"
+			label="input/task/alias != null"
+			lineNumber="10">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="9cf4cee3-9c3d-48ea-8183-8b7ac3ba1e4c"
+				mask="false"
+				optional="false"
+				patch="false"
+				fixedValue="false">
+			<from>input/task/alias</from>
+			<to>runAs/name</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="b18ee067-a333-4cdb-a98b-920945cafb59"
+				mask="false"
+				optional="false"
+				patch="false"
+				fixedValue="false">
+			<from>input/task/realm</from>
+			<to>runAs/realm</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ceb42480-9084-4eff-89f8-9bad33de599f"
+				mask="false"
+				optional="false"
+				patch="false"
+				fixedValue="false">
+			<from>input/task/authenticationId</from>
+			<to>runAs/authenticationId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="84aa86d9-8422-4323-af80-0599d03115be"
+				mask="false"
+				optional="false"
+				patch="false"
+				fixedValue="false">
+			<from>input/task/impersonator</from>
+			<to>runAs/impersonator</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="91c641a8-249d-429e-9358-07b67ffc6878"
+				mask="false"
+				optional="false"
+				patch="false"
+				fixedValue="false">
+			<from>input/task/impersonatorRealm</from>
+			<to>runAs/impersonatorRealm</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="f775b7a8-fd23-4610-8a21-5cc4e6bb59ec"
+				mask="false"
+				optional="false"
+				patch="false"
+				fixedValue="false">
+			<from>input/task/impersonatorId</from>
+			<to>runAs/impersonatorId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="03674afdfd104279bcaf8a60b996def9"
+			lineNumber="11">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="72b06fb1da2e496e907ea47ef549cbcb"
@@ -255,6 +409,20 @@
 				<from>serviceInput</from>
 				<to>input</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f0bfb6f1b3ec4f5190b2b729318cafe2"
+					fixedValue="true">
+				<from>true</from>
+				<to>scopedContext</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="eef73fe703b84924b80e401b3d1501ca"
+					fixedValue="false">
+				<from>runAs</from>
+				<to>runAs</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -270,7 +438,7 @@
 			disabled="false"
 			id="e2278acb-3823-4f3f-b0bb-cbfda63790be"
 			label="serviceOutput != null"
-			lineNumber="7">
+			lineNumber="12">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="fa46fdc0-9c27-49b2-b7eb-58cbe9e6514f"
@@ -357,6 +525,36 @@
 				fixedValue="true">
 			<from>=input/task/task + ":output"</from>
 			<to>output/taskOutputType</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Finally"
+			disabled="false"
+			id="eebe2ff01cce42da8c8858b5a843b567"
+			lineNumber="13">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Set service context"
+				disabled="false"
+				id="35334abbdd3d47bb9285818183dc769b"
+				lineNumber="14">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="08eaa327a5724a8286d134d5d5fe692f"
+					serviceId="nabu.utils.Runtime.setServiceContext"
+					resultName="resultdae0991bee3b42da8a26e44951466eb9"
+					temporaryMapping="true"
+					x="26"
+					y="98"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a07913b3009e449494e39c54a7799093"
+						fixedValue="false">
+					<from>originalServiceContext</from>
+					<to>context</to>
+				</steps>
+			</steps>
 		</steps>
 	</steps>
 </sequence>

@@ -1,4 +1,4 @@
-<structure interface="$self:api" name="pipeline">
+<structure interface="nabu.frameworks.tasks.manage.rest.schedule.input.list:api" name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
     <structure collectionName="TaskScheduleProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty" maxOccurs="unbounded" minOccurs="0" name="existing" namespace="nabu.frameworks.tasks.types.model.tasks"/>

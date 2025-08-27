@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-12-14T15:11:23.138+01:00" lastModified="2020-12-14T15:16:52.524+01:00" leaf="true" version="8">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-12-14T15:11:23.138+01:00" lastModified="2025-08-26T12:22:00.529+02:00" leaf="true" version="9">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.frameworks.tasks.database.task.pickup</references>
     <references>nabu.utils.Server.getServerName</references>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2020-09-25T11:17:51.479+02:00" lastModified="2023-10-18T14:19:14.759+02:00" leaf="false" version="7">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2020-09-25T11:17:51.479+02:00" lastModified="2025-08-26T12:22:00.492+02:00" leaf="false" version="8">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
@@ -12,6 +12,7 @@
     <references>nabu.frameworks.tasks.database.errorRule.search.parameters</references>
     <references>be.nabu.libs.types.api.KeyValuePair</references>
     <references>nabu.frameworks.tasks.types.model.tasks.TaskErrorRule</references>
+    <references>be.nabu.libs.services.jdbc.api.Statistic</references>
     <references>java.lang.Long</references>
     <references>java.lang.Boolean</references>
 </node>

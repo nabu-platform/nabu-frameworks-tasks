@@ -179,15 +179,6 @@
 				lineNumber="8">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="bdc0f8b3-5836-4672-8f9f-50db79c9c343"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>parameter/name</from>
-				<to>output/content/properties[0]/key</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
 					id="d3d55393-f533-4e51-8867-538fb4f28a29"
 					mask="false"
 					optional="false"
@@ -243,7 +234,47 @@
 				<from>result9576801e206040868a226b894ec11dde/conventionized</from>
 				<to>output/content/properties[0]/label</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="75a27989d6a440fca4e71dd38054792c"
+					serviceId="nabu.utils.String.replace"
+					resultName="result23fe3d04cd1f44a49ffeae4e45dc924e"
+					temporaryMapping="true"
+					x="68"
+					y="209"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="53430d3111a8473582cbb3a254dc310b"
+						fixedValue="false">
+					<from>parameter/path</from>
+					<to>content</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="63c91faf5fe840dd92e7a77bbdb55315"
+						fixedValue="true">
+					<from>/</from>
+					<to>match</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="60471f48fb614caabe7d1cabd78ae774"
+						fixedValue="true">
+					<from>.</from>
+					<to>replace</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8e2193768d4c4432a9278fc6cb0531e6"
+					fixedValue="false">
+				<from>result23fe3d04cd1f44a49ffeae4e45dc924e/content</from>
+				<to>output/content/properties[0]/key</to>
+			</steps>
 		</steps>
-		<query>parameters[scope != "PRIVATE"]</query>
+		<query>parameters[scope != "PRIVATE" &amp;&amp; simple == true]</query>
 	</steps>
 </sequence>

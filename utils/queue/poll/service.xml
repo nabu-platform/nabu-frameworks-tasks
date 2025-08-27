@@ -1,11 +1,13 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="0ce87069-ebcc-4a66-a2ff-26d9c22788a3">
+		id="0ce87069-ebcc-4a66-a2ff-26d9c22788a3"
+		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Add $any, the server name, the server group and the server aliases"
 			disabled="false"
 			id="0828b11f4d314b5c981d3357b8f4c66d"
-			label="!input/targets">
+			label="!input/targets"
+			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="4aa3e7e78785479cbe735e8c8319e8c8"
@@ -102,7 +104,8 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="2155808f-436a-4966-ab85-fbd55eb7574e">
+			id="2155808f-436a-4966-ab85-fbd55eb7574e"
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="0ade2e6d-0deb-4a2f-9a1a-6ccf3c2e0be6"
@@ -128,7 +131,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="36f08de8-11b5-4450-bd20-2b246779cfce"
-			label="input/queue/lookback != null">
+			label="input/queue/lookback != null"
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="5b170012-234b-4e65-abe2-0d85b12bd305"
@@ -181,7 +185,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="3f302815-a8d8-4ac2-9d9b-f34b6f173bac"
-			label="input/queue/affix != null">
+			label="input/queue/affix != null"
+			lineNumber="5">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="9c5309e0-63c0-4e5b-a867-981b81a057ba"
@@ -234,16 +239,19 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			disabled="false"
 			id="566ebc23-94f8-46a7-9c8c-1aca71dca5c8"
+			lineNumber="6"
 			query="input/queue/concurrency">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 				comment="If serial, we are interested in lowest non-final task index only"
 				disabled="false"
 				id="31ffa9c6-1dfe-42a0-acd9-22d42af9e996"
-				label="0">
+				label="0"
+				lineNumber="7">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Get task"
 					disabled="false"
-					id="923a7b3382ed46c3b0c46aae1bc6230b">
+					id="923a7b3382ed46c3b0c46aae1bc6230b"
+					lineNumber="8">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="1fe7520feb53434096bba344872f5603"
@@ -389,7 +397,8 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="true"
 					id="55e7bcbf-4d88-4121-ae2d-c4a2bf7f047e"
-					label="task/state = &quot;CREATED&quot; &amp;&amp; (task/scheduled = null || task/scheduled &lt;= reference)">
+					label="task/state = &quot;CREATED&quot; &amp;&amp; (task/scheduled = null || task/scheduled &lt;= reference)"
+					lineNumber="9">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="5bd2dac0-d142-4088-be4d-347de5e7eee8"
@@ -404,7 +413,8 @@
 					comment="For serial queues, we ignore tasks in the future, this make them non-serial in a way!"
 					disabled="false"
 					id="81ced1ff49814a8b939a7fc24331a50e"
-					label="task/state = &quot;CREATED&quot;">
+					label="task/state = &quot;CREATED&quot;"
+					lineNumber="10">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="64f2082c636c41069f02b7544598ca32"
@@ -419,7 +429,8 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="Otherwise, we just want available tasks"
 				disabled="false"
-				id="671b2358-7a95-4fb6-ab96-623e2e81e41e">
+				id="671b2358-7a95-4fb6-ab96-623e2e81e41e"
+				lineNumber="11">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="dbc4637c-a7ca-410f-8a1a-f5634590fe5d"
