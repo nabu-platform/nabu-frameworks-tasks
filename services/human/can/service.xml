@@ -235,9 +235,10 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-				comment="No permission means it is simply allowed at this point"
+				comment="No permission means it is simply allowed at this point. If there is no task metadata at all however, we assume you can't"
 				disabled="false"
 				id="8ef5e1fd031b4a4eb53a3c7db5c7bde4"
+				label="output/metadata != null || input/allowNonExistingMetadata == true"
 				lineNumber="7">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"

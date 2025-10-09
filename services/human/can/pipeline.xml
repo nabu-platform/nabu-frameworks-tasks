@@ -4,6 +4,7 @@
         <field name="taskId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
         <field comment="pickup, release, finalize, cancel, update, get" name="action" type="java.lang.String"/>
         <structure definition="be.nabu.libs.authentication.api.Token" minOccurs="0" name="token"/>
+        <field minOccurs="0" name="allowNonExistingMetadata" type="java.lang.Boolean"/>
     </structure>
     <structure name="output">
         <field name="can" type="java.lang.Boolean"/>

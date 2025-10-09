@@ -13,4 +13,5 @@
     <field comment="The realm of the impersonator" minOccurs="0" name="impersonatorRealm" type="java.lang.String"/>
     <field comment="The unique identifier of the impersonator" minOccurs="0" name="impersonatorId" type="java.lang.String"/>
     <field comment="Features that were enabled when the task was submitted. They need to be re-enabled when it is executed." minOccurs="0" name="features" type="java.lang.String"/>
+    <field comment="Can be used for long running processes, &quot;:&quot; separated multiple possible" indexed="true" maxLength="256" minOccurs="0" name="narrativeId" type="java.lang.String"/>
 </structure>

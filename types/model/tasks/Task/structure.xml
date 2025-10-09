@@ -17,7 +17,7 @@
     <field comment="There are three times of interest: created indicates when the task was initially created, started means when the actor started performing the task and stopped is when it stopped" minOccurs="0" name="started" timezone="UTC" type="java.util.Date"/>
     <field indexed="false" maxLength="1000000" minOccurs="0" name="taskOutput" type="java.lang.String"/>
     <field comment="The parent task (if any), it is a way to link tasks to one another." foreignKey="nabu.frameworks.tasks.types.model.tasks.Task:id" minOccurs="0" name="parentId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-    <field comment="You can use this field to link the task to something arbitrary (e.g. cms nodes)" indexed="true" maxLength="256" minOccurs="0" name="correlationId" type="java.lang.String"/>
+    <field comment="You can use this field to link the task to something arbitrary (e.g. cms nodes). Retrofitted to match global correlationId standard: thread local identifier" indexed="true" maxLength="256" minOccurs="0" name="correlationId" type="java.lang.String"/>
     <field comment="A grouping within a single queue. This is for the user to group tasks together logically" indexed="true" maxLength="256" minOccurs="0" name="groupId" type="java.lang.String"/>
     <field comment="An id that identifies the content-to-be-processed for the task. For instance if you want to start processing an invoice, this could be the invoice number. This is a logical identifier for lookup purposes." indexed="true" maxLength="256" minOccurs="0" name="contextId" type="java.lang.String"/>
     <field comment="The service context that should be set for the execution of this task" minOccurs="0" name="serviceContext" type="java.lang.String"/>
@@ -38,6 +38,6 @@
     <field comment="Context id is getting used more and more for security purposes. If you have a context id that needs a resolver, you can fill in the resolver type here." maxLength="256" minOccurs="0" name="contextType" type="java.lang.String"/>
     <field comment="A compensation service that is run when a task is set to failed" maxLength="256" minOccurs="0" name="compensationServiceId" type="java.lang.String"/>
     <field comment="Features that were enabled when the task was submitted. They need to be re-enabled when it is executed." minOccurs="0" name="features" type="java.lang.String"/>
-    <field indexed="true" maxLength="256" minOccurs="0" name="conversationId" type="java.lang.String"/>
-    <field indexed="true" maxLength="256" minOccurs="0" name="narrativeId" type="java.lang.String"/>
+    <field comment="Action-local identifier, can span many systems but should (in the end) be one overarching action being done." indexed="true" maxLength="256" minOccurs="0" name="conversationId" type="java.lang.String"/>
+    <field comment="Can be used for long running processes, &quot;:&quot; separated multiple possible" indexed="true" maxLength="256" minOccurs="0" name="narrativeId" type="java.lang.String"/>
 </structure>
