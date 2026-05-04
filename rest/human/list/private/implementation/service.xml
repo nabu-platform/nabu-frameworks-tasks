@@ -65,10 +65,6 @@
 				<from>allowedResults/task</from>
 				<to>filter/task</to>
 			</link>
-			<link id="dceef1ffb3e5425e8578a61a64cb1a3f">
-				<from>allowedResults/taskType</from>
-				<to>filter/taskType</to>
-			</link>
 			<link id="215ab983c6764e71ba6f0a1fdbd4884d">
 				<from>input/query/owner</from>
 				<to>filter/owner</to>
@@ -109,6 +105,10 @@
 				<from>input/query/q</from>
 				<to>filter/q</to>
 			</link>
+			<link id="4659c5062741449cb66b6adcd70d095d">
+				<from>result57b20c76438a410392b5c823292d9703/list</from>
+				<to>filter/taskType</to>
+			</link>
 		</invoke>
 		<invoke id="8fb534054aa84aadad78e99ad6852492"
 			resultName="result0638bff75b444c429f3aeec47b5a63a5"
@@ -137,6 +137,16 @@
 			<from>resulta680b8fa15c34609a8b1f79d216b200b/results</from>
 			<to>tasks</to>
 		</link>
+		<invoke id="57b20c76438a410392b5c823292d9703"
+			resultName="result57b20c76438a410392b5c823292d9703"
+			serviceId="nabu.utils.List.unique"
+			x="35"
+			y="656">
+			<link id="0bc0f9ba700c43c8bee7866f94f92336">
+				<from>allowedResults/taskType</from>
+				<to>list</to>
+			</link>
+		</invoke>
 	</map>
 	<map id="6283254afb90400da35cae3b49611f86"
 		label="tasks">
