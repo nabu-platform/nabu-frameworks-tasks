@@ -1,3 +1,4 @@
 <structure name="result">
     <field name="total" type="java.lang.Long"/>
+    <field name="overlapTotal" type="java.lang.Long"/>
 </structure>

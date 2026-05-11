@@ -1,6 +1,14 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<sql>select count(id) as total from ~tasks where task_schedule_id = :scheduleId
-	and (:scheduled is null or scheduled = :scheduled)
-	and (:states is null or state = any(:states))
-	and (:queueId is null or task_queue_id = :queueId)</sql>
+	<sql>select
+	count(id) as total,
+	count(case
+		when state in ('WAITING', 'RUNNING', 'ERROR') then 1
+		when state = 'CREATED' and :before is not null and scheduled &lt;= :before then 1
+		else null
+	end) as overlap_total
+from ~tasks
+where task_schedule_id = :scheduleId
+and (:scheduled is null or scheduled = :scheduled)
+and (:states is null or state = any(:states))
+and (:queueId is null or task_queue_id = :queueId) </sql>
 </jdbcService>
