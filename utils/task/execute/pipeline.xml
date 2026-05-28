@@ -1,40 +1,40 @@
 <structure name="pipeline">
-    <structure name="input">
-        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
-        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
-        <field name="localLock" type="java.lang.String"/>
-        <field minOccurs="0" name="clusterLock" type="java.lang.String"/>
-        <structure definition="nabu.frameworks.tasks.types.queueOutput" name="queue"/>
-        <structure definition="nabu.frameworks.tasks.types.taskOutput" name="task"/>
-        <field maxOccurs="unbounded" minOccurs="0" name="targets" type="java.lang.String"/>
-        <field minOccurs="0" name="taskType" type="java.lang.String"/>
-    </structure>
-    <structure name="output"/>
-    <field name="manage" type="java.lang.Boolean"/>
-    <field name="started" type="java.lang.Boolean"/>
-    <structure collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
-    <structure collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
-    <field minOccurs="0" name="taskOutput" type="java.lang.String"/>
-    <field name="stopped" type="java.lang.Boolean"/>
-    <structure definition="nabu.utils.types.ExceptionSummary" minOccurs="0" name="summary"/>
-    <field minOccurs="0" name="amountOfRescheduledTasks" type="java.lang.Integer"/>
-    <field name="chain" type="java.lang.Boolean"/>
-    <field name="useXml" type="java.lang.Boolean"/>
-    <structure name="classification">
-        <field name="transient" type="java.lang.Boolean"/>
-        <field name="code" type="java.lang.String"/>
-        <field name="fail" type="java.lang.Boolean"/>
-        <field minOccurs="0" name="message" type="java.lang.String"/>
-        <field minOccurs="0" name="retryInterval" type="java.lang.Integer"/>
-        <field minOccurs="0" name="runAt" type="java.util.Date"/>
-    </structure>
-    <structure definition="be.nabu.libs.authentication.api.Token" minOccurs="0" name="runAs"/>
-    <structure definition="be.nabu.utils.cep.impl.ComplexEventImpl" name="event"/>
-    <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
-    <field minOccurs="0" name="taskOutputTypeId" type="java.lang.String"/>
-    <field name="fail" type="java.lang.Boolean"/>
-    <structure definition="be.nabu.utils.cep.impl.ComplexEventImpl" name="pausedQueueEvent"/>
-    <field maxOccurs="unbounded" name="originallyEnabledFeatures" type="java.lang.String"/>
-    <field maxOccurs="unbounded" minOccurs="0" name="parts" type="java.lang.String"/>
-    <field maxOccurs="unbounded" minOccurs="0" name="featuresToEnable" type="java.lang.String"/>
+	<structure name="input">
+		<field minOccurs="0" name="connectionId" type="java.lang.String"/>
+		<field minOccurs="0" name="transactionId" type="java.lang.String"/>
+		<field name="localLock" type="java.lang.String"/>
+		<field minOccurs="0" name="clusterLock" type="java.lang.String"/>
+		<structure definition="nabu.frameworks.tasks.types.queueOutput" name="queue"/>
+		<structure definition="nabu.frameworks.tasks.types.taskOutput" name="task"/>
+		<field maxOccurs="unbounded" minOccurs="0" name="targets" type="java.lang.String"/>
+		<field minOccurs="0" name="taskType" type="java.lang.String"/>
+	</structure>
+	<structure name="output"/>
+	<field name="manage" type="java.lang.Boolean"/>
+	<field name="started" type="java.lang.Boolean"/>
+	<structure collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
+	<structure collectionName="teamsTemplates" definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
+	<field minOccurs="0" name="taskOutput" type="java.lang.String"/>
+	<field name="stopped" type="java.lang.Boolean"/>
+	<structure definition="nabu.utils.types.ExceptionSummary" minOccurs="0" name="summary"/>
+	<field minOccurs="0" name="amountOfRescheduledTasks" type="java.lang.Integer"/>
+	<field name="chain" type="java.lang.Boolean"/>
+	<field name="useXml" type="java.lang.Boolean"/>
+	<structure name="classification">
+		<field name="transient" type="java.lang.Boolean"/>
+		<field name="code" type="java.lang.String"/>
+		<field name="fail" type="java.lang.Boolean"/>
+		<field minOccurs="0" name="message" type="java.lang.String"/>
+		<field minOccurs="0" name="retryInterval" type="java.lang.Integer"/>
+		<field minOccurs="0" name="runAt" type="java.util.Date"/>
+	</structure>
+	<structure definition="be.nabu.libs.authentication.api.Token" minOccurs="0" name="runAs"/>
+	<structure definition="be.nabu.utils.cep.impl.ComplexEventImpl" name="event"/>
+	<structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
+	<field minOccurs="0" name="taskOutputTypeId" type="java.lang.String"/>
+	<field name="fail" type="java.lang.Boolean"/>
+	<structure definition="be.nabu.utils.cep.impl.ComplexEventImpl" name="pausedQueueEvent"/>
+	<field maxOccurs="unbounded" name="originallyEnabledFeatures" type="java.lang.String"/>
+	<field maxOccurs="unbounded" minOccurs="0" name="parts" type="java.lang.String"/>
+	<field maxOccurs="unbounded" minOccurs="0" name="featuresToEnable" type="java.lang.String"/>
 </structure>

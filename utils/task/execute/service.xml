@@ -145,12 +145,17 @@
 		</link>
 	</map>
 	<map id="e2e5f9b70a2e47838efb709bac7c3f73"
-		comment="If it was a scheduled task, change the event type"
+		comment="If it was a scheduled task, change the event type and severity"
 		label="input/task/taskScheduleId != null">
 		<link id="6857b7b1038647e3accbfa52f76715fa"
 			fixedValue="true">
 			<from>scheduled-task-execute</from>
 			<to>event/eventName</to>
+		</link>
+		<link id="04d673e52c264125a0713d1483e91ec8"
+			fixedValue="true">
+			<from>INFO</from>
+			<to>event/severity</to>
 		</link>
 	</map>
 	<sequence id="09c4f976646a4ba1ac26d0c3b9c24304"
