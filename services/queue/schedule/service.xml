@@ -1,4 +1,4 @@
-<sequence id="0a36a914-aa81-47c4-a8a0-1466806698c6">
+<sequence id="733d6336565f4ef3a2857404cbd2565b">
 	<map id="bc24fb6a-0f02-466a-8314-934914788652"
 		label="input/after = null">
 		<invoke id="8e12f78f-d056-4459-b8ca-9db481f5d921"
@@ -307,93 +307,314 @@
 						<to>output/earliest</to>
 					</link>
 				</map>
-				<sequence id="1896b122-7bee-4b8d-9916-345bcadc681c"
+				<sequence id="5951fdaeaa6a407ab918c7d559ba880b"
 					label="!schedule/allowOverlap">
-					<map id="4404352a-b973-4a78-be02-6971e679bead"
+					<map id="97423f1d91ea4853a80352a17eb9533c"
 						comment="Count the running tasks, important for overlapping">
-						<invoke id="da90c04a-9b1c-44d2-99dc-9a1241c4b72f"
+						<invoke id="fe28b870265245bba11c2f2d8ca32a85"
 							resultName="result35ab69bcc6664d9dbc55ee959ffbf1a8"
 							serviceId="nabu.frameworks.tasks.database.task.countByScheduleId"
-							x="30"
-							y="94">
-							<link id="f53681a9-3f0b-4bff-99c6-0c23434a7712">
+							x="25"
+							y="25">
+							<link id="83b4114fad3d40c887f62352c6579ed1">
 								<from>input/connectionId</from>
 								<to>connection</to>
 							</link>
-							<link id="bac27af9-7890-49f0-aef4-17e57b1e1e64">
+							<link id="7681d5bb77034c8e9520efd2a1c13e17">
 								<from>input/transactionId</from>
 								<to>transaction</to>
 							</link>
-							<link id="d8195bf9-3aff-49c7-8425-fc4f0a879e94">
+							<link id="abcfc1273a14458f8b5bbe6ac4c5bd55">
 								<from>schedule/id</from>
 								<to>parameters/scheduleId</to>
 							</link>
-							<link id="21eef2ef-9a1c-4965-a113-9748e0e4faa1">
+							<link id="b539d76285b94efd8a7ac0de9d4c537a">
 								<from>taskStates</from>
 								<to>parameters/states</to>
 							</link>
-							<link id="523cde6b-ab8f-4e6a-82b1-4893de36453b">
+							<link id="aac48e713b6c49399519c19db390c034">
 								<from>queue/id</from>
 								<to>parameters/queueId</to>
 							</link>
-							<link id="7038a13266e54b84a97cdede7616fd87">
+							<link id="97fc8abe01a14fffaf81c9ca36ab395f">
 								<from>now</from>
 								<to>parameters/before</to>
 							</link>
 						</invoke>
-						<link id="6c2b721c-f1bf-449c-8e82-2cbc0a4bdcc3">
+						<link id="53efcb84bd4148db807166cad74ea2b9">
 							<from>result35ab69bcc6664d9dbc55ee959ffbf1a8/results[0]/total</from>
 							<to>count</to>
 						</link>
-						<link id="e7ceeb770e8d4be093f9893f5da6e01e">
+						<link id="6d9760ddf6f34646a06511eabcbd252c">
 							<from>result35ab69bcc6664d9dbc55ee959ffbf1a8/results[0]/overlapTotal</from>
 							<to>overlapTotal</to>
 						</link>
+						<link id="e80ee14d8eaa43e0b2b9b62a2f834b1c">
+							<from>result35ab69bcc6664d9dbc55ee959ffbf1a8/results[0]/overlapScheduled</from>
+							<to>overlapScheduled</to>
+						</link>
 					</map>
-					<map id="86231e25-90e7-4119-a2c4-72dda2b850b8"
+					<map id="3b713ef4dce143a6b5f93ef2874785cb"
 						comment="If there are any active tasks for this scheduler, we don't add a new instance"
 						label="count &gt; 0">
-						<link id="b5c36a73-16e3-4f2c-b92a-4978894dad9a"
+						<link id="336a5d6eb1474657965a398c69b97ba3"
 							fixedValue="true">
 							<from>false</from>
 							<to>submitTask</to>
 						</link>
 					</map>
-					<map id="0ecffe67e7b94ef592d79b63a4a54f11"
+					<map id="bac47c74938a4dbeb79d49b8fb6fb1ff"
 						comment="If there are any overlapping tasks for this scheduler, we update the event"
 						label="overlapTotal &gt; 0">
-						<invoke id="ebbb8c6ce6674ed7b2d8133ab6792c44"
+						<invoke id="f6dae692a81b47d49aa177a17c633f59"
 							resultName="result3f81721a1e22423fa9d2a35c3833662a"
 							serviceId="nabu.utils.Server.log"
-							x="47"
-							y="109">
-							<link id="d756bead7ff44d81ae1996363102a8c7"
+							x="25"
+							y="25">
+							<link id="9f0ed646eeea495ca0791236efbca6d7"
 								fixedValue="true">
 								<from>="Skipping scheduled task for: " + schedule/task + " because no overlap is allowed"</from>
 								<to>message</to>
 							</link>
-							<link id="d516ce87769748fc968245025bba6bd3"
+							<link id="4a3541d52e864459b00f79b3dec2ecd4"
 								fixedValue="true">
 								<from>DEBUG</from>
 								<to>level</to>
 							</link>
 						</invoke>
-						<link id="91af8c91d71a4eae8626f6ee699001e3"
+						<link id="9b16ed0de04947e0a23cc72999fa1096"
 							fixedValue="true">
 							<from>WARNING</from>
 							<to>event/severity</to>
 						</link>
-						<link id="82b0f11c392540e6a47326704ff93e1f"
+						<link id="21c1f22b0b104e0c8bf99555d0ccbe0f"
 							fixedValue="true">
 							<from>SCHEDULE-OVERLAP</from>
 							<to>event/code</to>
 						</link>
-						<link id="7d05574acfb2440ea1d407f16d422c42"
+						<link id="2dd1964f86444a10b0abd53bcb5998cb"
 							fixedValue="true">
 							<from>=schedule/task + " already has overlapping scheduled work"</from>
 							<to>event/reason</to>
 						</link>
 					</map>
+					<sequence id="d447309017f44f9bb2686a1127e4a5c1"
+						comment="Escalate overlap to a scheduling gap once the next expected occurrence was missed"
+						label="overlapTotal &gt; 0 &amp;&amp; overlapScheduled != null &amp;&amp; schedule/schedule != null"
+						synchronized="true">
+						<map id="7c2016f9d26a40338310b2a940a84cbd"
+							comment="Clear previous loop values before gap detection">
+							<drop id="4f76c03bc554476285ab2f8a981acd91"
+								path="missed"/>
+							<drop id="4df54bbacee04aeaafb40ed0bc0d5d14"
+								path="blockingTask"/>
+							<drop id="4219b488178f49a3aa4674a9dc57f9ec"
+								path="scheduleGapLogs"/>
+						</map>
+						<map id="49af16af2140474bbbccf76c0c05aad4"
+							comment="Calculate the first occurrence that should have followed the blocking task">
+							<invoke id="103b081fee2948e6ad701012f1d7ccf9"
+								resultName="resultScheduleGapParsed"
+								serviceId="nabu.frameworks.tasks.services.schedule.parse"
+								x="25"
+								y="25">
+								<link id="a75f81d2d91d4bcaa7f87677c124d5af">
+									<from>schedule/schedule</from>
+									<to>schedule</to>
+								</link>
+							</invoke>
+							<invoke id="2dededa08a5549369f3a004e5f54b11c"
+								invocationOrder="1"
+								resultName="resultScheduleGapNext"
+								serviceId="nabu.frameworks.tasks.services.schedule.next"
+								x="275"
+								y="110">
+								<link id="41b114d9d496445797c3b060e01b8922">
+									<from>resultScheduleGapParsed/schedule</from>
+									<to>schedule</to>
+								</link>
+								<link id="5bb3d74673e14422832bd3b31d47a25b">
+									<from>overlapScheduled</from>
+									<to>after</to>
+								</link>
+							</invoke>
+							<link id="10ac2e0246bd4ea78e320ad9e06a6d81">
+								<from>resultScheduleGapNext/nextRun</from>
+								<to>missed</to>
+							</link>
+						</map>
+						<sequence id="935d1104990f45ffa6af8c30077c7601"
+							label="missed != null &amp;&amp; missed &lt;= now">
+							<map id="a1bd707257354a02aa68bd77e98e1826"
+								comment="Select the actual blocking task only once the gap is real">
+								<invoke id="55286bb0ed5c42719a90ce037f1c9603"
+									resultName="resultScheduleGapBlockingTask"
+									serviceId="nabu.frameworks.tasks.database.task.selectByScheduleIdAndScheduled"
+									x="25"
+									y="25">
+									<link id="7a63516a34a44a27b268eac4f4c0e64d">
+										<from>input/connectionId</from>
+										<to>connection</to>
+									</link>
+									<link id="129a3f138d8741bb9db2b3857004217a">
+										<from>input/transactionId</from>
+										<to>transaction</to>
+									</link>
+									<link id="4873c53a1ff5405d8c972ea48066e325">
+										<from>schedule/id</from>
+										<to>parameters/scheduleId</to>
+									</link>
+									<link id="ff221228d6994e5ea44c5d27d6dd48e5">
+										<from>overlapScheduled</from>
+										<to>parameters/scheduled</to>
+									</link>
+									<link id="cc9d3f4793f54f47bd786d8c046abda7">
+										<from>queue/id</from>
+										<to>parameters/queueId</to>
+									</link>
+									<link id="b97d11e775154a9faa947113f8576193">
+										<from>taskStates</from>
+										<to>parameters/states</to>
+									</link>
+								</invoke>
+								<link id="7876c14ef29b4ba3a009e98698e868b5">
+									<from>resultScheduleGapBlockingTask/results</from>
+									<to>blockingTask</to>
+								</link>
+								<drop id="44ded5dd5582448daf05b1c19a213744"
+									path="affix"/>
+							</map>
+							<map id="475d35662d6f4d308ac638058b33289d"
+								comment="For affixed queues, check and write the marker log in the affixed task log table"
+								label="blockingTask &amp;&amp; queue/affix != null">
+								<invoke id="be4628445fcc43a8913ea6e83c6584b5"
+									resultName="resultScheduleGapAffixTables"
+									serviceId="nabu.utils.String.split"
+									x="25"
+									y="25">
+									<link id="bfd3d2cd50b4426dbbfcaa48ff3bdc20"
+										fixedValue="true">
+										<from>task_logs</from>
+										<to>string</to>
+									</link>
+									<link id="2ad6047b8cff4c779a1ad43a0ed084c8"
+										fixedValue="true">
+										<from>,</from>
+										<to>separator</to>
+									</link>
+								</invoke>
+								<link id="08820a19f47a4c718949a2b5b83137ef">
+									<from>resultScheduleGapAffixTables/parts</from>
+									<to>affix/tables</to>
+								</link>
+								<link id="f0e102288ee34881b4eede329b184b56">
+									<from>queue/affix</from>
+									<to>affix/affix</to>
+								</link>
+							</map>
+							<map id="4e857aa36e54481d8265ad870b609882"
+								comment="Check for an existing gap marker log on the blocking task"
+								label="blockingTask">
+								<invoke id="66e5a880aee746e9a76fce6ce17cd971"
+									resultName="resultScheduleGapLogs"
+									serviceId="nabu.frameworks.tasks.database.taskLog.selectByTask"
+									x="25"
+									y="25">
+									<link id="94530a53ef804335a791e423bc914bf1">
+										<from>input/connectionId</from>
+										<to>connection</to>
+									</link>
+									<link id="eecac57f00be490b838d71bce61f04f8">
+										<from>input/transactionId</from>
+										<to>transaction</to>
+									</link>
+									<link id="924bd2f855ae4f07ac36851191e6fb60">
+										<from>blockingTask/id</from>
+										<to>parameters/taskId</to>
+									</link>
+									<link id="cb69c7ed28b140e4b7b4dd4f79b22ec2"
+										fixedValue="true">
+										<from>SCHEDULE-GAP</from>
+										<to>parameters/code</to>
+									</link>
+									<link id="0484fa768e6841399b8038023849fb12">
+										<from>affix</from>
+										<to>affix[0]</to>
+									</link>
+									<link id="7281413b92a8445096b9ea5da6a4e455"
+										fixedValue="true">
+										<from>1</from>
+										<to>limit</to>
+									</link>
+								</invoke>
+								<link id="44ec63a3cca64bcbb95bdfd75fc0dfe8">
+									<from>resultScheduleGapLogs/results</from>
+									<to>scheduleGapLogs</to>
+								</link>
+							</map>
+							<map id="7f275328f5814f1592c2211cbf7b534e"
+								comment="Mark the blocking task and upgrade the event once per blocking task"
+								label="blockingTask &amp;&amp; !scheduleGapLogs">
+								<invoke id="56f911352b504defadf193c6b09bf280"
+									resultName="resultScheduleGapLog"
+									serviceId="nabu.frameworks.tasks.services.task.log"
+									x="25"
+									y="25">
+									<link id="d3bb0f0d1c2f43c98f0fa85a0fb7b084">
+										<from>input/connectionId</from>
+										<to>connectionId</to>
+									</link>
+									<link id="1335707bfa704a179e91a87d1d49e309">
+										<from>input/transactionId</from>
+										<to>transactionId</to>
+									</link>
+									<link id="90cd0a5ae3564adeb40edbdae7ea7e40">
+										<from>blockingTask/id</from>
+										<to>taskId</to>
+									</link>
+									<link id="5179b8dbc439434e895060f2fece81a0"
+										fixedValue="true">
+										<from>ERROR</from>
+										<to>severity</to>
+									</link>
+									<link id="372384ffbfd24b03a00f02c9c1ccd8fd"
+										fixedValue="true">
+										<from>SCHEDULE-GAP</from>
+										<to>code</to>
+									</link>
+									<link id="f9294aae6b40474ea666572cafda27d8"
+										fixedValue="true">
+										<from>Scheduled occurrence missed</from>
+										<to>title</to>
+									</link>
+									<link id="b8c36f7f0183445d878c9bf24d5621e1"
+										fixedValue="true">
+										<from>=schedule/task + " missed scheduled occurrence " + missed + " because task " + blockingTask/id + " scheduled at " + overlapScheduled + " is still in state " + blockingTask/state</from>
+										<to>description</to>
+									</link>
+									<link id="1403a87086c64bd7a0e146f18f7dcd69">
+										<from>affix</from>
+										<to>affix</to>
+									</link>
+								</invoke>
+								<link id="e29e8e1f9d71464eb4c133a95d114b9e"
+									fixedValue="true">
+									<from>ERROR</from>
+									<to>event/severity</to>
+								</link>
+								<link id="b0ea214a9b2d435592d08be351544009"
+									fixedValue="true">
+									<from>SCHEDULE-GAP</from>
+									<to>event/code</to>
+								</link>
+								<link id="5403b7dcddf341d58d900ab0eb0d56e2"
+									fixedValue="true">
+									<from>=schedule/task + " missed scheduled occurrence " + missed + " because previous scheduled task is still blocking"</from>
+									<to>event/reason</to>
+								</link>
+							</map>
+						</sequence>
+					</sequence>
 				</sequence>
 				<sequence id="197e3e64-4e26-4869-b57e-bba8aac3bfd1"
 					label="submitTask">

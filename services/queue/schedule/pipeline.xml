@@ -1,28 +1,32 @@
 <structure name="pipeline">
-    <structure name="input">
-        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
-        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
-        <field name="name" type="java.lang.String"/>
-        <field minOccurs="0" name="after" type="java.util.Date"/>
-        <field minOccurs="0" name="manual" type="java.lang.Boolean"/>
-    </structure>
-    <structure name="output">
-        <field name="earliest" type="java.util.Date"/>
-    </structure>
-    <structure definition="nabu.frameworks.tasks.types.queueOutput" minOccurs="0" name="queue"/>
-    <structure collectionName="TaskSchedules" definition="nabu.frameworks.tasks.types.model.tasks.TaskSchedule" maxOccurs="unbounded" minOccurs="0" name="schedules" namespace="nabu.frameworks.tasks.types.model.tasks"/>
-    <field name="next" type="java.util.Date"/>
-    <field name="count" type="java.lang.Long"/>
-    <field name="disabled" type="java.lang.Boolean"/>
-    <field name="lock" type="java.lang.String"/>
-    <structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" name="task" namespace="nabu.frameworks.tasks.types.model.tasks"/>
-    <field maxOccurs="unbounded" name="taskStates" type="java.lang.String"/>
-    <field name="submitTask" type="java.lang.Boolean"/>
-    <structure collectionName="TaskScheduleProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty" maxOccurs="unbounded" minOccurs="0" name="scheduleProperties" namespace="nabu.frameworks.tasks.types.model.tasks"/>
-    <structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" name="taskProperty" namespace="nabu.frameworks.tasks.types.model.tasks"/>
-    <structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" maxOccurs="unbounded" minOccurs="0" name="taskProperties" namespace="nabu.frameworks.tasks.types.model.tasks"/>
-    <structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
-    <structure definition="be.nabu.utils.cep.impl.ComplexEventImpl" name="event"/>
-    <field name="overlapTotal" type="java.lang.Long"/>
-    <field minOccurs="0" name="now" type="java.util.Date"/>
+	<structure name="input">
+		<field minOccurs="0" name="connectionId" type="java.lang.String"/>
+		<field minOccurs="0" name="transactionId" type="java.lang.String"/>
+		<field name="name" type="java.lang.String"/>
+		<field minOccurs="0" name="after" type="java.util.Date"/>
+		<field minOccurs="0" name="manual" type="java.lang.Boolean"/>
+	</structure>
+	<structure name="output">
+		<field name="earliest" type="java.util.Date"/>
+	</structure>
+	<structure definition="nabu.frameworks.tasks.types.queueOutput" minOccurs="0" name="queue"/>
+	<structure collectionName="TaskSchedules" definition="nabu.frameworks.tasks.types.model.tasks.TaskSchedule" maxOccurs="unbounded" minOccurs="0" name="schedules" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+	<field name="next" type="java.util.Date"/>
+	<field name="count" type="java.lang.Long"/>
+	<field name="disabled" type="java.lang.Boolean"/>
+	<field name="lock" type="java.lang.String"/>
+	<structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" name="task" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+	<field maxOccurs="unbounded" name="taskStates" type="java.lang.String"/>
+	<field name="submitTask" type="java.lang.Boolean"/>
+	<structure collectionName="TaskScheduleProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskScheduleProperty" maxOccurs="unbounded" minOccurs="0" name="scheduleProperties" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+	<structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" name="taskProperty" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+	<structure collectionName="TaskProperties" definition="nabu.frameworks.tasks.types.model.tasks.TaskProperty" maxOccurs="unbounded" minOccurs="0" name="taskProperties" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+	<structure definition="be.nabu.libs.services.jdbc.AffixInput" minOccurs="0" name="affix"/>
+	<structure definition="be.nabu.utils.cep.impl.ComplexEventImpl" name="event"/>
+	<field name="overlapTotal" type="java.lang.Long"/>
+	<field minOccurs="0" name="overlapScheduled" type="java.util.Date"/>
+	<field minOccurs="0" name="missed" type="java.util.Date"/>
+	<structure collectionName="Tasks" definition="nabu.frameworks.tasks.types.model.tasks.Task" minOccurs="0" name="blockingTask" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+	<structure collectionName="TaskLogs" definition="nabu.frameworks.tasks.types.model.tasks.TaskLog" maxOccurs="unbounded" minOccurs="0" name="scheduleGapLogs" namespace="nabu.frameworks.tasks.types.model.tasks"/>
+	<field minOccurs="0" name="now" type="java.util.Date"/>
 </structure>

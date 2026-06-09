@@ -1,7 +1,6 @@
 <structure name="parameter">
-	<field minOccurs="0" name="before" timezone="UTC" type="java.util.Date"/>
 	<field name="scheduleId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-	<field minOccurs="0" name="scheduled" timezone="UTC" type="java.util.Date"/>
-	<field maxOccurs="unbounded" minOccurs="0" name="states" type="java.lang.String"/>
+	<field name="scheduled" timezone="UTC" type="java.util.Date"/>
 	<field minOccurs="0" name="queueId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+	<field maxOccurs="unbounded" minOccurs="0" name="states" type="java.lang.String"/>
 </structure>

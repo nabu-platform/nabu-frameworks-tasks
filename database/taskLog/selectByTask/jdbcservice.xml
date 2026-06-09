@@ -2,5 +2,6 @@
 	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskLog</outputDefinition>
 	<sql>select *
 from ~task_logs tl
-where tl.task_id = :taskId</sql>
+where tl.task_id = :taskId
+and (:code is null or tl.code = :code)</sql>
 </jdbcService>

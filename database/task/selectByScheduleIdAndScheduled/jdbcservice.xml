@@ -1,0 +1,11 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.Task</outputDefinition>
+	<sql>select *
+from ~tasks
+where task_schedule_id = :scheduleId
+and scheduled = :scheduled
+and (:queueId is null or task_queue_id = :queueId)
+and (:states is null or state = any(:states))
+order by task_index desc
+</sql>
+</jdbcService>

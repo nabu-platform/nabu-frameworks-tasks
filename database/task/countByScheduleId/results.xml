@@ -1,4 +1,5 @@
 <structure name="result">
-    <field name="total" type="java.lang.Long"/>
-    <field name="overlapTotal" type="java.lang.Long"/>
+	<field name="total" type="java.lang.Long"/>
+	<field name="overlapTotal" type="java.lang.Long"/>
+	<field name="overlapScheduled" timezone="UTC" type="java.util.Date"/>
 </structure>

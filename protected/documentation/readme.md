@@ -10,6 +10,12 @@
 - start: someone picks up the task to start working on it, owner is set to the user. other people can not pick up the task
 - once started you can "stop" (with succeeded or failed) or "release" 
 
+# Events
+
+The scheduler will emit an event SCHEDULE-OVERLAP (warning) if we detect that a new schedule instance can not be created yet because the last one isn't done.
+This event can be between the execution of the last one and the execution of the next one.
+Once we pass the time window of the execution of the next one, we will emit a single SCHEDULE-GAP (error) event.
+
 # Block window
 
 Sometimes you don't want tasks to be executed during a specific period. E.g. no tasks between midnight and 5 AM (because other systems have downtime), no tasks in the weekend etc.

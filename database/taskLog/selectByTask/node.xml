@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-04-24T12:25:50.064+02:00" lastModified="2025-08-26T12:22:00.465+02:00" leaf="false" version="4">
+<node artifactManager="be.nabu.eai.module.services.jdbc.JDBCServiceManager" created="2018-04-24T12:25:50.064+02:00" lastModified="2026-06-04T14:23:32.293+02:00" leaf="false" version="6">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>

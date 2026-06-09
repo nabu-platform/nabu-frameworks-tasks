@@ -5,7 +5,12 @@
 		when state in ('WAITING', 'RUNNING', 'ERROR') then 1
 		when state = 'CREATED' and :before is not null and scheduled &lt;= :before then 1
 		else null
-	end) as overlap_total
+	end) as overlap_total,
+	max(case
+		when state in ('WAITING', 'RUNNING', 'ERROR') then scheduled
+		when state = 'CREATED' and :before is not null and scheduled &lt;= :before then scheduled
+		else null
+	end) as overlap_scheduled
 from ~tasks
 where task_schedule_id = :scheduleId
 and (:scheduled is null or scheduled = :scheduled)

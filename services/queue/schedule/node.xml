@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-18T08:40:02.314+02:00" lastModified="2026-05-05T15:38:35.189+02:00" leaf="true" version="109">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2018-05-18T08:40:02.314+02:00" lastModified="2026-06-04T15:02:15.076+02:00" leaf="true" version="121">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.utils.List.add</references>
+    <references>nabu.frameworks.tasks.services.task.log</references>
+    <references>nabu.frameworks.tasks.database.taskLog.selectByTask</references>
     <references>java.util.Date</references>
     <references>nabu.utils.Server.uuid</references>
     <references>nabu.frameworks.tasks.database.taskQueueSchedule.selectForLock</references>
@@ -25,6 +27,7 @@
     <references>nabu.utils.Server.log</references>
     <references>nabu.utils.Date.now</references>
     <references>nabu.frameworks.tasks.types.queueOutput</references>
+    <references>nabu.frameworks.tasks.types.model.tasks.TaskLog</references>
     <references>nabu.utils.Server.getServerName</references>
     <references>nabu.utils.Lock.lock</references>
     <references>nabu.frameworks.tasks.database.taskSchedule.selectByQueueId</references>
@@ -33,4 +36,5 @@
     <references>nabu.frameworks.tasks.database.taskSchedule.disable</references>
     <references>nabu.utils.Lock.unlock</references>
     <references>nabu.frameworks.tasks.services.schedule.next</references>
+    <references>nabu.frameworks.tasks.database.task.selectByScheduleIdAndScheduled</references>
 </node>
