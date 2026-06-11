@@ -210,6 +210,7 @@
 			</map>
 			<for id="361db426d8c349c7b69b1203f131e861"
 				label="featuresToEnable != null"
+				query="featuresToEnable"
 				variable="featureToEnable">
 				<map id="e92a1bbb0d434dacb8eea159fc79fd9e">
 					<invoke id="6baf689176dc4d2d942532bbe714979e"
@@ -230,7 +231,6 @@
 						</link>
 					</invoke>
 				</map>
-				<query>featuresToEnable</query>
 			</for>
 		</sequence>
 		<map id="c265de8e4fa244aba774bb7188d4d0d2"
@@ -456,6 +456,21 @@
 					patch="false">
 					<from>taskScheduleId</from>
 					<to>key</to>
+				</link>
+			</invoke>
+			<invoke id="81aa64b38ae74d118ff760612e30dd0e"
+				resultName="result81aa64b38ae74d118ff760612e30dd0e"
+				serviceId="nabu.utils.Runtime.setContext"
+				x="194"
+				y="426">
+				<link id="f1305291f0e640e7a40ac769e058d778"
+					fixedValue="true">
+					<from>taskService</from>
+					<to>key</to>
+				</link>
+				<link id="bee470529ba64c5098da97b1dec32755">
+					<from>input/task/task</from>
+					<to>value</to>
 				</link>
 			</invoke>
 		</map>
@@ -1168,6 +1183,7 @@
 			</map>
 			<for id="6b7e8aaeae6f4cec84506517aff7f85f"
 				label="featuresToEnable != null"
+				query="featuresToEnable"
 				variable="featureToEnable">
 				<map id="ce79e30341cd4277a2213845f1a1ac94">
 					<invoke id="1ec396e21d2f4bc995f9dafd2e551add"
@@ -1188,7 +1204,6 @@
 						</link>
 					</invoke>
 				</map>
-				<query>featuresToEnable</query>
 			</for>
 		</finally>
 	</sequence>

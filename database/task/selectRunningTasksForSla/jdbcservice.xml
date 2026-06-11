@@ -1,0 +1,29 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>select
+	t.id,
+	t.task,
+	t.started,
+	t.owner,
+	t.task_queue_id,
+	t.correlation_id,
+	t.context_id,
+	last_sla.severity as lastSlaSeverity,
+	last_sla.created as lastSlaCreated
+from ~tasks t
+join ~task_queues q on q.id = t.task_queue_id
+left join (
+	select tl.task_id, tl.severity, tl.created
+	from ~task_logs tl
+	join (
+		select task_id, max(created) as created
+		from ~task_logs
+		where code = 'SLA-BREACH'
+		group by task_id
+	) latest on latest.task_id = tl.task_id and latest.created = tl.created
+	where tl.code = 'SLA-BREACH'
+) last_sla on last_sla.task_id = t.id
+where q.state in ('ACTIVE', 'PAUSED')
+and t.state = 'RUNNING'
+order by t.started asc
+</sql>
+</jdbcService>

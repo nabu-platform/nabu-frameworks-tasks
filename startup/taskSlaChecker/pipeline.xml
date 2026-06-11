@@ -1,0 +1,15 @@
+<structure name="pipeline">
+	<structure name="input"/>
+	<structure name="output"/>
+	<structure definition="nabu.frameworks.tasks.providers.taskProvider" maxOccurs="unbounded" minOccurs="0" name="taskProviders"/>
+	<structure definition="nabu.frameworks.tasks.database.task.selectRunningTasksForSla.results" maxOccurs="unbounded" minOccurs="0" name="runningTasks"/>
+	<structure definition="be.nabu.libs.services.api.DefinedServiceLevelAgreement" maxOccurs="unbounded" minOccurs="0" name="agreements"/>
+	<field minOccurs="0" name="interrupted" type="java.lang.Boolean"/>
+	<field minOccurs="0" name="elapsedMs" type="java.lang.Long"/>
+	<field minOccurs="0" name="thresholdDuration" type="java.lang.Long"/>
+	<field minOccurs="0" name="slaName" type="java.lang.String"/>
+	<field minOccurs="0" name="logTitle" type="java.lang.String"/>
+	<field minOccurs="0" name="logDescription" type="java.lang.String"/>
+	<field minOccurs="0" name="worstSeverity" type="java.lang.String"/>
+	<structure definition="be.nabu.utils.cep.api.ComplexEvent" minOccurs="0" name="event"/>
+</structure>

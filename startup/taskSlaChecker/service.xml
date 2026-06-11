@@ -1,0 +1,281 @@
+<sequence id="6ee6621a64884d9fa2f67ba47b15001d">
+	<map id="dbb7065e786e418b887bfdfc4f682495"
+		comment="Get task providers">
+		<invoke id="4af81da623bf4eb78ee22db9fac52dd3"
+			resultName="resultTaskSlaProviders"
+			serviceId="nabu.frameworks.tasks.utils.misc.getTaskProviders"
+			x="25"
+			y="25">
+		</invoke>
+		<link id="ef6967f94abf417ebd9fbcdb3c2f8c2f">
+			<from>resultTaskSlaProviders/providers</from>
+			<to>taskProviders</to>
+		</link>
+	</map>
+	<for id="9278987cc7534d36871fe6133b875b73"
+		query="true">
+		<sequence id="85ed4b64a83d4e5a8109f48c67d3446c">
+			<map id="3135fe8d2ca54acda45183962e615ce9">
+				<invoke id="a9e544ff326441138cb8994185de23ec"
+					resultName="resultTaskSlaInterrupted"
+					serviceId="nabu.utils.Runtime.interrupted"
+					x="25"
+					y="25">
+					<link id="cb30d588d31a460080100893d2d32414"
+						fixedValue="true">
+						<from>nabu.frameworks.tasks.artifacts.taskSlaChecker</from>
+						<to>artifactId</to>
+					</link>
+				</invoke>
+				<link id="ef11b0fef30c4ae9a00c3b15127f09a9">
+					<from>resultTaskSlaInterrupted/interrupted</from>
+					<to>interrupted</to>
+				</link>
+			</map>
+			<for id="01604485847a437896ef24b462882109"
+				query="taskProviders[connectionId != null &amp;&amp; skip != true]"
+				variable="taskProvider">
+				<sequence id="55f0334aabdc4c5da5eede396044dd67"
+					scopeDefaultTransaction="true">
+					<map id="474113b88a49447387775b71da5450d1">
+						<invoke id="52434e96306743bf933a4545d791a4c1"
+							resultName="resultTaskSlaRunningTasks"
+							serviceId="nabu.frameworks.tasks.database.task.selectRunningTasksForSla"
+							x="25"
+							y="25">
+							<link id="b669c1be44a8429dbb5ca06c836c7d6b">
+								<from>taskProvider/connectionId</from>
+								<to>connection</to>
+							</link>
+						</invoke>
+						<link id="826c73cdbd7e460f934b0be74ee0aae4">
+							<from>resultTaskSlaRunningTasks/results</from>
+							<to>runningTasks</to>
+						</link>
+					</map>
+					<for id="22a4d905d0da4a99bf6c9ab9b79eff52"
+						query="runningTasks"
+						variable="runningTask">
+						<sequence id="f2ecaed6cf224d9884cbb5b34e31cd90">
+							<map id="f20eedba95224c8785be72c234b9e2b4">
+								<drop id="61d9c081ee554357a426cf5d658c4e55"
+									path="agreements"/>
+								<drop id="57a1769671ab495589817b57930b0af3"
+									path="thresholdDuration"/>
+								<drop id="7582c1fbdbfd4432b37f257b11cb7007"
+									path="slaName"/>
+								<drop id="ec7c3d8198c6440d8658f557877c0e57"
+									path="elapsedMs"/>
+								<drop id="4eaf23b96fc24235a616df27a2382cf7"
+									path="logTitle"/>
+								<drop id="2d5184926f924481aa2f4553d6f5d284"
+									path="logDescription"/>
+								<drop id="c570c556dcbf47b08badb3daa492e9ab"
+									path="worstSeverity"/>
+							</map>
+							<map id="66ed5db0b89c42ffb7b73292e57d9a25">
+								<invoke id="6acf425fdff443ed95610abf166b9f17"
+									resultName="resultTaskSlaAgreements"
+									serviceId="nabu.utils.Runtime.getServiceLevelAgreements"
+									x="25"
+									y="25">
+									<link id="0f2af4da05164f31a9120b7b0e54e0d9">
+										<from>runningTask/task</from>
+										<to>id</to>
+									</link>
+								</invoke>
+								<link id="b872fe92050a448ea4c16ceb7b14ebac">
+									<from>resultTaskSlaAgreements/agreements</from>
+									<to>agreements</to>
+								</link>
+								<invoke id="427ab1935eaf415cbdd6b52b32871448"
+									resultName="resultTaskSlaNow"
+									serviceId="nabu.utils.Date.now"
+									x="25"
+									y="110">
+								</invoke>
+								<invoke id="e677ce8db52c4c0d8460f8c80c4f1733"
+									invocationOrder="1"
+									resultName="resultTaskSlaElapsed"
+									serviceId="nabu.utils.Date.diff"
+									x="275"
+									y="195">
+									<link id="51184ec0b021480083e42b88316f82af">
+										<from>runningTask/started</from>
+										<to>start</to>
+									</link>
+									<link id="ce97bf830a5d4a80a7fc869c422e67f3">
+										<from>resultTaskSlaNow/date</from>
+										<to>end</to>
+									</link>
+									<link id="a824a387141c43a6901e351d2adde2b7"
+										fixedValue="true">
+										<from>MILLISECONDS</from>
+										<to>unit</to>
+									</link>
+								</invoke>
+								<link id="aa70870bcd9d4269b3904d27bcc77679">
+									<from>resultTaskSlaElapsed/diff</from>
+									<to>elapsedMs</to>
+								</link>
+							</map>
+							<for id="9628c1539b9f412a93c95f90c0996066"
+								query="agreements"
+								variable="agreement">
+								<map id="dd602aa84e894b35bc183e49b400b13e"
+									label="agreement/thresholdDuration != null &amp;&amp; elapsedMs &gt; agreement/thresholdDuration &amp;&amp; (worstSeverity == null || agreement/severity &gt; worstSeverity)">
+									<link id="9781c20df0124d20bc9ede85faa95e9d">
+										<from>agreement/severity</from>
+										<to>worstSeverity</to>
+									</link>
+									<link id="925d9d0ae11841b28c7534eb4bf5eca3">
+										<from>agreement/thresholdDuration</from>
+										<to>thresholdDuration</to>
+									</link>
+									<link id="ad5a284514c3482e9addd7f8e4256dcf">
+										<from>agreement/name</from>
+										<to>slaName</to>
+									</link>
+								</map>
+							</for>
+							<sequence id="2322520b0d4246f1b7228c5d8ca83aac"
+								label="worstSeverity != null &amp;&amp; (runningTask/lastSlaSeverity = null || worstSeverity != runningTask/lastSlaSeverity)">
+								<map id="fb3df0090a564229a83d6aaa510525f3"
+									comment="Set log title and description">
+									<link id="6062e3cf2e764e6880783ab0b1603154"
+										fixedValue="true">
+										<from>="SLA breach: " + slaName</from>
+										<to>logTitle</to>
+									</link>
+									<link id="3a42b257d0764b5f8d9734e74fbb015f"
+										fixedValue="true">
+										<from>="Task '" + runningTask/task + "' exceeded SLA '" + slaName + "' after " + elapsedMs + "ms (threshold: " + thresholdDuration + "ms)"</from>
+										<to>logDescription</to>
+									</link>
+								</map>
+								<map id="4039a4dcf38b4db28322176162fc98c2">
+									<invoke id="c44f9625b5734a55b1c353a0d9def7cf"
+										resultName="resultTaskSlaLog"
+										serviceId="nabu.frameworks.tasks.services.task.log"
+										x="25"
+										y="25">
+										<link id="211e969006d7462693d67aec194b9ad4">
+											<from>taskProvider/connectionId</from>
+											<to>connectionId</to>
+										</link>
+										<link id="19f7ce52de44488e9cbe7bd6764de7a6">
+											<from>runningTask/id</from>
+											<to>taskId</to>
+										</link>
+										<link id="c22895bb19074b1695354b4b4630089e">
+											<from>worstSeverity</from>
+											<to>severity</to>
+										</link>
+										<link id="1e1c04ffbb2e4b6ab34a245d7ed042cb"
+											fixedValue="true">
+											<from>SLA-BREACH</from>
+											<to>code</to>
+										</link>
+										<link id="3bd8b4d86efc41de9507188e33116ee5">
+											<from>logTitle</from>
+											<to>title</to>
+										</link>
+										<link id="1b2d74a80e074720a4981dad1275413a">
+											<from>logDescription</from>
+											<to>description</to>
+										</link>
+									</invoke>
+									<invoke id="792059f7888c4552a23838724ad48e83"
+										invocationOrder="1"
+										resultName="resultTaskSlaEvent"
+										serviceId="nabu.utils.Event.create"
+										x="275"
+										y="110">
+										<link id="435abb825694485b87cf86f42e41b233">
+											<from>runningTask/task</from>
+											<to>event/artifactId</to>
+										</link>
+										<link id="8c0bc464c2924c5ab131db6c10279bf9">
+											<from>worstSeverity</from>
+											<to>event/severity</to>
+										</link>
+										<link id="657b83c8b0294e449510d55e397a20c2">
+											<from>logDescription</from>
+											<to>event/message</to>
+										</link>
+										<link id="5ca621fda26846a58a76f034b4b13012"
+											fixedValue="true">
+											<from>SLA-BREACH</from>
+											<to>event/code</to>
+										</link>
+										<link id="c8dcb475cd7a4f2cb34e56668e3dd794">
+											<from>runningTask/correlationId</from>
+											<to>event/correlationId</to>
+										</link>
+										<link id="80fb4b65394142308e18012adf2d6db9">
+											<from>runningTask/contextId</from>
+											<to>event/context</to>
+										</link>
+										<link id="e2cbb5205f6340d68df8ea4f09125e0c"
+											fixedValue="true">
+											<from>sla-breach</from>
+											<to>event/eventName</to>
+										</link>
+										<link id="b3b3ee387bcc41948624e9f68fd355f5"
+											fixedValue="true">
+											<from>sla</from>
+											<to>event/eventCategory</to>
+										</link>
+										<link id="021c2f6eb18142358c310e09196210f4">
+											<from>thresholdDuration</from>
+											<to>event/duration</to>
+										</link>
+										<link id="ce229d68932f49c4ace17ce8b97da318">
+											<from>slaName</from>
+											<to>event/localId</to>
+										</link>
+									</invoke>
+									<invoke id="cdad1c8853f0482e8d57edbfa494c8a3"
+										invocationOrder="2"
+										resultName="resultTaskSlaFire"
+										serviceId="nabu.utils.Event.fire"
+										x="525"
+										y="195">
+										<link id="c8e50f3cc05f4c3f8d0dfa9df512db0f">
+											<from>resultTaskSlaEvent/event</from>
+											<to>event</to>
+										</link>
+									</invoke>
+								</map>
+							</sequence>
+						</sequence>
+					</for>
+					<catch id="925be37f3b2d40ccb49a244646161695">
+					</catch>
+				</sequence>
+			</for>
+		</sequence>
+		<sequence id="e93e97d632d149ae9074d4a52688abcb">
+			<map id="b217d04fa16a46f9a4db3fef4ceedcc0">
+				<invoke id="6ccb50da45084e24b75a95f7b186995e"
+					resultName="resultTaskSlaSleep"
+					serviceId="nabu.utils.Server.sleep"
+					x="25"
+					y="25">
+					<link id="9afbc7beccb740d09015ae3605b9df89"
+						fixedValue="true">
+						<from>MINUTES</from>
+						<to>unit</to>
+					</link>
+					<link id="6078fdb8f0a448e495655b75280bf066"
+						fixedValue="true">
+						<from>1</from>
+						<to>amount</to>
+					</link>
+				</invoke>
+			</map>
+			<catch id="43dfd7095abd40e1981b5a15291e35f6">
+			</catch>
+		</sequence>
+	</for>
+</sequence>

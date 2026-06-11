@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2026-06-10T15:26:44.657+02:00" lastModified="2026-06-10T17:28:15.530+02:00" leaf="true" version="15">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.services.task.log</references>
+    <references>nabu.utils.Runtime.getServiceLevelAgreements</references>
+    <references>be.nabu.libs.services.api.DefinedServiceLevelAgreement</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.frameworks.tasks.providers.taskProvider</references>
+    <references>nabu.frameworks.tasks.database.task.selectRunningTasksForSla</references>
+    <references>be.nabu.utils.cep.api.ComplexEvent</references>
+    <references>nabu.frameworks.tasks.utils.misc.getTaskProviders</references>
+    <references>nabu.utils.Date.diff</references>
+    <references>nabu.utils.Runtime.interrupted</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.utils.Event.fire</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.Event.create</references>
+    <references>nabu.utils.Server.sleep</references>
+    <references>nabu.frameworks.tasks.database.task.selectRunningTasksForSla.results</references>
+</node>
