@@ -34,6 +34,19 @@ jobs:
           restore-keys: |
             maven-${{ runner.os }}-
 
+      - name: Check out poms repository
+        uses: actions/checkout@v4
+        with:
+          repository: nabu-platform/poms
+          path: poms
+
+      - name: Install modules parent pom
+        run: >-
+          mvn -B install:install-file
+          -Dpackaging=pom
+          -Dfile=poms/modules.xml
+          -DpomFile=poms/modules.xml
+
       - name: Determine release version
         id: version
         shell: bash
