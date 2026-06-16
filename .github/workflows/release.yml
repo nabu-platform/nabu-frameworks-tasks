@@ -1,90 +1,90 @@
 name: Release module
 
 on:
-	push:
-		tags:
-			- 'v*'
+  push:
+    tags:
+      - 'v*'
 
 permissions:
-	contents: write
-	packages: write
+  contents: write
+  packages: write
 
 concurrency:
-	group: release-${{ github.ref }}
-	cancel-in-progress: false
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-	release:
-		runs-on: ubuntu-latest
-		steps:
-			- name: Check out sources
-				uses: actions/checkout@v4
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@v4
 
-			- name: Set up Java
-				uses: actions/setup-java@v4
-				with:
-					java-version: '8'
-					distribution: 'temurin'
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '8'
+          distribution: 'temurin'
 
-			- name: Set up Maven cache
-				uses: actions/cache@v4
-				with:
-					path: ~/.m2/repository
-					key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
-					restore-keys: |
-						maven-${{ runner.os }}-
+      - name: Set up Maven cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            maven-${{ runner.os }}-
 
-			- name: Determine release version
-				id: version
-				shell: bash
-				run: |
-					set -euo pipefail
-					release_version="${GITHUB_REF_NAME#v}"
-					if [ -z "$release_version" ]; then
-						echo 'Could not determine release version from tag'
-						exit 1
-					fi
-					echo "value=$release_version" >> "$GITHUB_OUTPUT"
+      - name: Determine release version
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+          release_version="${GITHUB_REF_NAME#v}"
+          if [ -z "$release_version" ]; then
+            echo 'Could not determine release version from tag'
+            exit 1
+          fi
+          echo "value=$release_version" >> "$GITHUB_OUTPUT"
 
-			- name: Set module version
-				run: mvn -B versions:set -DnewVersion=${{ steps.version.outputs.value }} -DgenerateBackupPoms=false
+      - name: Set module version
+        run: mvn -B versions:set -DnewVersion=${{ steps.version.outputs.value }} -DgenerateBackupPoms=false
 
-			- name: Build module
-				run: mvn -B -Duser.timezone=UTC clean install
+      - name: Build module
+        run: mvn -B -Duser.timezone=UTC clean install
 
-			- name: Collect release asset
-				id: asset
-				shell: bash
-				run: |
-					set -euo pipefail
-					group_id=$(sed -n 's:.*<groupId>\(.*\)</groupId>.*:\1:p' pom.xml | head -n 1)
-					artifact_id=$(sed -n 's:.*<artifactId>\(.*\)</artifactId>.*:\1:p' pom.xml | head -n 1)
-					version='${{ steps.version.outputs.value }}'
-					jar_asset="/tmp/${group_id}.${artifact_id}/${group_id}.${artifact_id}.${version}.jar"
-					nar_asset="/tmp/${group_id}.${artifact_id}/${group_id}.${artifact_id}.${version}.nar"
-					if [ ! -f "$jar_asset" ]; then
-						echo "Expected built artifact not found: $jar_asset"
-						exit 1
-					fi
-					cp "$jar_asset" "$nar_asset"
-					echo "path=$nar_asset" >> "$GITHUB_OUTPUT"
-					echo "name=$(basename "$nar_asset")" >> "$GITHUB_OUTPUT"
+      - name: Collect release asset
+        id: asset
+        shell: bash
+        run: |
+          set -euo pipefail
+          group_id=$(sed -n 's:.*<groupId>\(.*\)</groupId>.*:\1:p' pom.xml | head -n 1)
+          artifact_id=$(sed -n 's:.*<artifactId>\(.*\)</artifactId>.*:\1:p' pom.xml | head -n 1)
+          version='${{ steps.version.outputs.value }}'
+          jar_asset="/tmp/${group_id}.${artifact_id}/${group_id}.${artifact_id}.${version}.jar"
+          nar_asset="/tmp/${group_id}.${artifact_id}/${group_id}.${artifact_id}.${version}.nar"
+          if [ ! -f "$jar_asset" ]; then
+            echo "Expected built artifact not found: $jar_asset"
+            exit 1
+          fi
+          cp "$jar_asset" "$nar_asset"
+          echo "path=$nar_asset" >> "$GITHUB_OUTPUT"
+          echo "name=$(basename "$nar_asset")" >> "$GITHUB_OUTPUT"
 
-			- name: Publish package to GitHub Maven
-				run: >-
-					mvn -B deploy:deploy-file
-					-Durl=https://maven.pkg.github.com/nabu-platform/maven
-					-DrepositoryId=github
-					-Dfile=${{ steps.asset.outputs.path }}
-					-DgroupId=nabu.frameworks
-					-DartifactId=tasks
-					-Dversion=${{ steps.version.outputs.value }}
-					-Dpackaging=nar
-				env:
-					GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish package to GitHub Maven
+        run: >-
+          mvn -B deploy:deploy-file
+          -Durl=https://maven.pkg.github.com/nabu-platform/maven
+          -DrepositoryId=github
+          -Dfile=${{ steps.asset.outputs.path }}
+          -DgroupId=nabu.frameworks
+          -DartifactId=tasks
+          -Dversion=${{ steps.version.outputs.value }}
+          -Dpackaging=nar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-			- name: Create GitHub release
-				uses: softprops/action-gh-release@v2
-				with:
-					files: ${{ steps.asset.outputs.path }}
-					generate_release_notes: true
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.asset.outputs.path }}
+          generate_release_notes: true
