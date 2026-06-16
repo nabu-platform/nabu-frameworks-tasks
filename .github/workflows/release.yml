@@ -41,11 +41,12 @@ jobs:
           path: poms
 
       - name: Install modules parent pom
+        working-directory: poms
         run: >-
           mvn -B install:install-file
           -Dpackaging=pom
-          -Dfile=poms/modules.xml
-          -DpomFile=poms/modules.xml
+          -Dfile=modules.xml
+          -DpomFile=modules.xml
 
       - name: Determine release version
         id: version
