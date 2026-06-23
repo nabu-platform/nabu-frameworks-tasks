@@ -1,0 +1,9 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.frameworks.tasks.types.model.tasks.TaskQueue</outputDefinition>
+	<sql>select *
+from ~task_queues tq
+where tq.anonymous = true
+	and (:states is null or tq.state = any(:states))
+	and tq.name like :name || ':%'
+</sql>
+</jdbcService>
