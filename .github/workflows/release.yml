@@ -160,6 +160,40 @@ jobs:
           MAVEN_BUILD_USER: ${{ secrets.MAVEN_BUILD_USER }}
           MAVEN_BUILD_TOKEN: ${{ secrets.MAVEN_BUILD_TOKEN }}
 
+      - name: Remove optional dependencies for CI build
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY2'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          ET.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
+          ET.register_namespace('xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+          ns = {'m': 'http://maven.apache.org/POM/4.0.0'}
+          pom_path = Path('pom.xml')
+          tree = ET.parse(pom_path)
+          root = tree.getroot()
+          deps = root.find('m:dependencies', ns)
+          removed = []
+          if deps is not None:
+          	for dep in list(deps.findall('m:dependency', ns)):
+          		optional = dep.findtext('m:optional', default='', namespaces=ns).strip().lower()
+          		if optional != 'true':
+          			continue
+          		group_id = dep.findtext('m:groupId', default='', namespaces=ns)
+          		artifact_id = dep.findtext('m:artifactId', default='', namespaces=ns)
+          		removed.append(f'{group_id}:{artifact_id}')
+          		deps.remove(dep)
+          if removed:
+          	tree.write(pom_path, encoding='unicode')
+          	print('Removed optional dependencies for CI build:')
+          	for entry in removed:
+          		print(entry)
+          else:
+          	print('No optional dependencies removed for CI build')
+          PY2
+
       - name: Determine release version
         id: version
         shell: bash
