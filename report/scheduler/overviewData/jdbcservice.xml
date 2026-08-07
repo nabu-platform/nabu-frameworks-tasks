@@ -1,0 +1,54 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>with last_runs as (
+	select
+		ts.id as task_schedule_id,
+		ts.task,
+		ts.schedule,
+		tq.name as queue_name,
+		tq.id as task_queue_id,
+		t.scheduled as last_scheduled,
+		row_number() over (
+			partition by ts.id, tq.id
+			order by t.scheduled desc nulls last, t.started desc nulls last, t.created desc nulls last
+		) as row_number,
+		t.started as last_started,
+		t.stopped as last_stopped,
+		t.state as last_state,
+		case
+			when t.state = 'SUCCEEDED' then true
+			when t.state in ('ERROR', 'FAILED') then false
+			else null
+		end as succeeded
+	from ~task_schedules ts
+	join ~task_queue_schedules tqs on tqs.task_schedule_id = ts.id
+	join ~task_queues tq on tq.id = tqs.task_queue_id
+	left join ~tasks t on t.task_schedule_id = ts.id and t.task_queue_id = tq.id and (t.started is not null or t.stopped is not null)
+	where ts.enabled = true
+		and ts.manual = false
+), next_runs as (
+	select
+		lr.task_schedule_id,
+		lr.task_queue_id,
+		min(t.scheduled) as next_run
+	from last_runs lr
+	join ~tasks t on t.task_schedule_id = lr.task_schedule_id and t.task_queue_id = lr.task_queue_id
+	where lr.row_number = 1
+		and lr.last_scheduled is not null
+		and t.scheduled &gt; lr.last_scheduled
+	group by lr.task_schedule_id, lr.task_queue_id
+)
+select
+	lr.task_schedule_id,
+	lr.task,
+	lr.schedule,
+	lr.queue_name,
+	lr.last_started,
+	lr.last_stopped,
+	lr.last_state,
+	lr.succeeded,
+	nr.next_run
+from last_runs lr
+left join next_runs nr on nr.task_schedule_id = lr.task_schedule_id and nr.task_queue_id = lr.task_queue_id
+where lr.row_number = 1
+order by lr.task, lr.queue_name</sql>
+</jdbcService>

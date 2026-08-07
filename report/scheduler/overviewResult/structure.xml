@@ -1,0 +1,3 @@
+<structure name="schedulerOverviewConnectionResult" superType="nabu.frameworks.tasks.report.scheduler.overviewData.results">
+	<field name="connectionId" type="java.lang.String"/>
+</structure>

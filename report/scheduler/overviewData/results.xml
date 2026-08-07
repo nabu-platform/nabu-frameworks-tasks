@@ -1,0 +1,11 @@
+<structure name="result">
+	<field name="taskScheduleId" type="java.util.UUID"/>
+	<field name="task" type="java.lang.String"/>
+	<field minOccurs="0" name="schedule" type="java.lang.String"/>
+	<field name="queueName" type="java.lang.String"/>
+	<field minOccurs="0" name="lastStarted" timezone="UTC" type="java.util.Date"/>
+	<field minOccurs="0" name="lastStopped" timezone="UTC" type="java.util.Date"/>
+	<field minOccurs="0" name="lastState" type="java.lang.String"/>
+	<field minOccurs="0" name="succeeded" type="java.lang.Boolean"/>
+	<field minOccurs="0" name="nextRun" timezone="UTC" type="java.util.Date"/>
+</structure>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2026-07-06T10:08:33.784+02:00" lastModified="2026-07-06T14:06:19.541+02:00" leaf="true" version="22">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.utils.misc.getSupportedConnections</references>
+    <references>nabu.frameworks.tasks.report.scheduler.overviewResultList</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.tasks.report.scheduler.overviewData</references>
+</node>

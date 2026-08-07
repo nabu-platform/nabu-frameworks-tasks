@@ -23,5 +23,6 @@
     <webFragments>nabu.frameworks.tasks.crud.taskMetadata</webFragments>
     <webFragments>nabu.frameworks.tasks.rest.component</webFragments>
     <webFragments>nabu.frameworks.tasks.manage.rest.task.retryAll</webFragments>
+    <webFragments>nabu.frameworks.tasks.report.component</webFragments>
     <audience>MANAGER</audience>
 </webModule>

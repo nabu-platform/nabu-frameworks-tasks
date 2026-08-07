@@ -1,0 +1,45 @@
+<sequence id="440146d57a5d433cab4c41e1d4f38715">
+	<map id="5d5363b3c3234ce18223b2c3b31292d7">
+		<invoke id="6e28a6a1a3534277895d4535a8ce55a2"
+			resultName="resultSupportedConnections"
+			serviceId="nabu.frameworks.tasks.utils.misc.getSupportedConnections"
+			x="25"
+			y="25">
+		</invoke>
+		<link id="ac861d690826418a81cdb42af0c6fba2">
+			<from>resultSupportedConnections/connections</from>
+			<to>connections</to>
+		</link>
+	</map>
+	<for id="8caebaf7e6a8488e93e95e26377afe98"
+		into="output/content/schedulers"
+		query="connections"
+		variable="connection">
+		<map id="edf1d3d6e8ae4f99a0708a5483a6943e">
+			<invoke id="21ddc9acb2fd4c71925e66bbe7b1ddd5"
+				resultName="resultOverviewData"
+				serviceId="nabu.frameworks.tasks.report.scheduler.overviewData"
+				x="25"
+				y="25">
+				<link id="bf4a850bbb1346d6b17b72f13229f7c3">
+					<from>connection</from>
+					<to>connection</to>
+				</link>
+			</invoke>
+			<link id="7170466527d7457cbf42ae3127250c4b">
+				<from>resultOverviewData/results</from>
+				<to>output/content/schedulers</to>
+			</link>
+		</map>
+		<for id="97b203c1a95b41dc8bd595f2a5277223"
+			query="output/content/schedulers"
+			variable="scheduler">
+			<map id="aa157ab0d4d5494eb656e1d008971f23">
+				<link id="02bc8a24c5ee4a48b93c9f5153c1253f">
+					<from>connection</from>
+					<to>scheduler/connectionId</to>
+				</link>
+			</map>
+		</for>
+	</for>
+</sequence>

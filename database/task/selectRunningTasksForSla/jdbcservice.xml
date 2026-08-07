@@ -7,6 +7,7 @@
 	t.task_queue_id,
 	t.correlation_id,
 	t.context_id,
+	t.task_schedule_id,
 	last_sla.severity as lastSlaSeverity,
 	last_sla.created as lastSlaCreated
 from ~tasks t

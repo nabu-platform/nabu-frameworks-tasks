@@ -143,6 +143,11 @@
 			<from>input/queue/name</from>
 			<to>event/context</to>
 		</link>
+		<link id="88871ac7c70b44f9b075f8357081fcef"
+			fixedValue="true">
+			<from>Execute task</from>
+			<to>event/message</to>
+		</link>
 	</map>
 	<map id="e2e5f9b70a2e47838efb709bac7c3f73"
 		comment="If it was a scheduled task, change the event type and severity"
@@ -156,6 +161,16 @@
 			fixedValue="true">
 			<from>INFO</from>
 			<to>event/severity</to>
+		</link>
+		<link id="4db9742afe1b4cd89d78a3d7536ba849"
+			fixedValue="true">
+			<from>scheduler</from>
+			<to>event/eventCategory</to>
+		</link>
+		<link id="a17323fb94084f519af07bfe47349d9b"
+			fixedValue="true">
+			<from>Execute scheduled task</from>
+			<to>event/message</to>
 		</link>
 	</map>
 	<sequence id="09c4f976646a4ba1ac26d0c3b9c24304"

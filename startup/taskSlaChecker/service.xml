@@ -139,7 +139,7 @@
 								</map>
 							</for>
 							<sequence id="2322520b0d4246f1b7228c5d8ca83aac"
-								label="worstSeverity != null &amp;&amp; (runningTask/lastSlaSeverity = null || worstSeverity != runningTask/lastSlaSeverity)">
+								label="worstSeverity != null &amp;&amp; (runningTask/lastSlaSeverity == null || worstSeverity != runningTask/lastSlaSeverity)">
 								<map id="fb3df0090a564229a83d6aaa510525f3"
 									comment="Set log title and description">
 									<link id="6062e3cf2e764e6880783ab0b1603154"
@@ -151,6 +151,19 @@
 										fixedValue="true">
 										<from>="Task '" + runningTask/task + "' exceeded SLA '" + slaName + "' after " + elapsedMs + "ms (threshold: " + thresholdDuration + "ms)"</from>
 										<to>logDescription</to>
+									</link>
+									<link id="3d4e6eb854f04b69a68ffa23cedb9265"
+										fixedValue="true">
+										<from>task</from>
+										<to>eventCategory</to>
+									</link>
+								</map>
+								<map id="a4a2bc80601940629cd26fc172341087"
+									label="runningTask/taskScheduleId != null">
+									<link id="e0837b4d20a64f08b63617b6ae3bab29"
+										fixedValue="true">
+										<from>scheduler</from>
+										<to>eventCategory</to>
 									</link>
 								</map>
 								<map id="4039a4dcf38b4db28322176162fc98c2">
@@ -221,11 +234,6 @@
 											<from>sla-breach</from>
 											<to>event/eventName</to>
 										</link>
-										<link id="b3b3ee387bcc41948624e9f68fd355f5"
-											fixedValue="true">
-											<from>sla</from>
-											<to>event/eventCategory</to>
-										</link>
 										<link id="021c2f6eb18142358c310e09196210f4">
 											<from>thresholdDuration</from>
 											<to>event/duration</to>
@@ -233,6 +241,10 @@
 										<link id="ce229d68932f49c4ace17ce8b97da318">
 											<from>slaName</from>
 											<to>event/localId</to>
+										</link>
+										<link id="a193a87708cd4a0896243e091e09ad29">
+											<from>eventCategory</from>
+											<to>event/eventCategory</to>
 										</link>
 									</invoke>
 									<invoke id="cdad1c8853f0482e8d57edbfa494c8a3"

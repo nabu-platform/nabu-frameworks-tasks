@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2026-06-10T15:26:44.657+02:00" lastModified="2026-06-10T17:28:15.530+02:00" leaf="true" version="15">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2026-06-10T15:26:44.657+02:00" lastModified="2026-06-30T11:12:27.270+02:00" leaf="true" version="18">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -10,7 +10,6 @@
     <references>nabu.utils.Date.now</references>
     <references>nabu.frameworks.tasks.providers.taskProvider</references>
     <references>nabu.frameworks.tasks.database.task.selectRunningTasksForSla</references>
-    <references>be.nabu.utils.cep.api.ComplexEvent</references>
     <references>nabu.frameworks.tasks.utils.misc.getTaskProviders</references>
     <references>nabu.utils.Date.diff</references>
     <references>nabu.utils.Runtime.interrupted</references>
