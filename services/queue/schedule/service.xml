@@ -383,11 +383,6 @@
 								<to>level</to>
 							</link>
 						</invoke>
-						<link id="9b16ed0de04947e0a23cc72999fa1096"
-							fixedValue="true">
-							<from>WARNING</from>
-							<to>event/severity</to>
-						</link>
 						<link id="21c1f22b0b104e0c8bf99555d0ccbe0f"
 							fixedValue="true">
 							<from>SCHEDULE-OVERLAP</from>
