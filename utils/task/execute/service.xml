@@ -180,21 +180,14 @@
 			label="input/task/features != null">
 			<map id="21a4a3f7214c42eaa1a5aac73478ab75"
 				comment="Get the currently enabled features (there might be some overlap)">
-				<invoke id="b0180d69245b41c7a2ac5858df5f4f1e"
-					resultName="result6cc46a4296064a6d9690efdcaf51e1df"
-					serviceId="nabu.utils.Runtime.getFeatures"
-					x="119"
-					y="54">
-					<link id="e81351262626427ca609943d7da33959"
-						fixedValue="true"
-						patch="false">
-						<from>true</from>
-						<to>enabledOnly</to>
-					</link>
+				<invoke id="8c919e32612043bc885773bdccd92695"
+					resultName="result8c919e32612043bc885773bdccd92695"
+					serviceId="nabu.utils.Feature.getEnabled"
+					x="263"
+					y="244">
 				</invoke>
-				<link id="a63176bcacbf42b5af4cdeb4b94a5f65"
-					patch="false">
-					<from>result6cc46a4296064a6d9690efdcaf51e1df/features/enabled/name</from>
+				<link id="3249c950aea84940b1e1160227904d53">
+					<from>result8c919e32612043bc885773bdccd92695/features</from>
 					<to>originallyEnabledFeatures</to>
 				</link>
 			</map>

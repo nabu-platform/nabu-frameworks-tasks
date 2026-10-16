@@ -587,37 +587,32 @@
 			<from>false</from>
 			<to>task/anonymized</to>
 		</link>
-		<invoke id="8e529a72363e4b55892f7cc7c2dfe112"
-			resultName="resultee30634b888f475e86eeb1b4c74f20a4"
-			serviceId="nabu.utils.Runtime.getFeatures"
-			x="37"
-			y="539">
-			<link id="ea6326246b1741df8209ed2f11a4a1da"
-				fixedValue="true">
-				<from>true</from>
-				<to>enabledOnly</to>
-			</link>
-		</invoke>
 		<invoke id="ce174c08536c4daab942a6154cbbda83"
 			invocationOrder="1"
 			resultName="result98bbecea0006499a841afbbee2a24fdb"
 			serviceId="nabu.utils.String.join"
 			x="524"
 			y="512">
-			<link id="7c9692e8eea54ee5bf47daddeda60069">
-				<from>resultee30634b888f475e86eeb1b4c74f20a4/features/enabled/name</from>
-				<to>parts</to>
-			</link>
 			<link id="fb97aa9be3df4ac1937b587e5d744937"
 				fixedValue="true">
 				<from>,</from>
 				<to>separator</to>
+			</link>
+			<link id="66f032897ea34cbfaa1c9d3ac14a0d78">
+				<from>resultf718b04c30894ae9bc584130c29cf7f3/features</from>
+				<to>parts</to>
 			</link>
 		</invoke>
 		<link id="0482ca5ee0b14073810c9eec7a2cff5f">
 			<from>result98bbecea0006499a841afbbee2a24fdb/string</from>
 			<to>task/features</to>
 		</link>
+		<invoke id="f718b04c30894ae9bc584130c29cf7f3"
+			resultName="resultf718b04c30894ae9bc584130c29cf7f3"
+			serviceId="nabu.utils.Feature.getEnabled"
+			x="58"
+			y="562">
+		</invoke>
 	</map>
 	<map id="1e8b244d-9fda-4247-8d0d-e1a32a3c5530"
 		label="input/stage = true">
